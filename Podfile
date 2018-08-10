@@ -9,6 +9,7 @@ target 'nns.st' do
   pod 'Alamofire', '~> 4.4'
   pod 'Himotoki', '~> 3.0'
   pod 'BrightFutures'
+  pod 'APIKit', '~> 3.1'
 
   target 'nns.stTests' do
     inherit! :search_paths
