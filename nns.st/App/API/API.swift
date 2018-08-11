@@ -7,28 +7,23 @@
 //
 
 import Foundation
-import UIKit
+import APIKit
 
-import Alamofire
-import BrightFutures
+//import Alamofire
+//import BrightFutures
 
-class API {
+/// NNSAPI
+final class API {
     
-    class func testCodeForAPI() -> Future<AnyObject, NSError> {
-        let promise = Promise<AnyObject, NSError>()
-        let queue = DispatchQueue(label: "testCodeForAPI", attributes: .concurrent)
-        Alamofire.request("https://jsonplaceholder.typicode.com/todos/1").responseJSON(queue: queue) { (response) in
-            switch response.result {
-            case .success(let value):
-                print("json : \(value)")
-                promise.success(value as AnyObject)
-            case .failure(let error):
-                print("error : \(error)")
-                promise.failure(error as NSError)
-            }
+    private init() {}
+    
+    struct TestRequest: NNSRequest {
+        typealias Response = TestResponse
+        
+        let method: HTTPMethod = .get
+        var path: String {
+            return "/todos/\(userId)"
         }
-        return promise.future
+        let userId: Int
     }
-    
 }
-
