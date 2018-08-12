@@ -30,7 +30,7 @@ class BackgroundView: UIView {
         gradientLayer = CAGradientLayer()
         gradientLayer!.colors = [topColor.cgColor, bottomColor.cgColor]
         gradientLayer!.frame = self.bounds
-        layer.addSublayer(gradientLayer!)
+        layer.insertSublayer(gradientLayer!, at: 0)
         layer.masksToBounds = true
     }
     
