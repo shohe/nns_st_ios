@@ -169,10 +169,32 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="forgetBtn" destination="lz2-ED-xye" id="yCj-n6-RFc"/>
+                        <outlet property="loginBtn" destination="AUv-8E-drh" id="LRq-rw-Y8W"/>
+                        <outlet property="mailaddress" destination="0TI-m2-dl6" id="wEf-cD-SOo"/>
+                        <outlet property="password" destination="RxH-Z2-frU" id="SWf-Ba-5aI"/>
+                        <outlet property="signupBtn" destination="IZr-4p-Ox7" id="Tca-XH-Q88"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZO-ZK-zWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-28" y="10.344827586206897"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TgS-4O-Sim">
+            <objects>
+                <viewController id="uk5-Uh-Izf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rsE-yC-aH5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Dnz-Ck-CHH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MZ2-Wy-iMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="10"/>
         </scene>
     </scenes>
 </document>

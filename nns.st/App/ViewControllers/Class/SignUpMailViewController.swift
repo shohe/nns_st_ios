@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignUpMailViewController.swift
 //  nns.st
 //
 //  Created by SHOHE on 2018/08/12.
@@ -8,16 +8,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignUpMailViewController: UIViewController {
 
-    @IBOutlet weak var mailaddress: UnderlineTextField!
-    @IBOutlet weak var password: UnderlineTextField!
-    
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var forgetBtn: UIButton!
-    @IBOutlet weak var signupBtn: UIButton!
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
