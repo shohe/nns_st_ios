@@ -19,6 +19,7 @@
 		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
 		09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */; };
+		09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA4211FF94A009C6428 /* BackgroundView.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -60,6 +61,7 @@
 		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		09DDAAA4211FF94A009C6428 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		091BEF0D211303C0008ED8C5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				09DDAAA2211FF915009C6428 /* Views */,
 				09DDAA9B211FF47F009C6428 /* ViewControllers */,
 				091BEF0E211303DD008ED8C5 /* API */,
 			);
@@ -211,6 +214,22 @@
 				091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboad;
+			sourceTree = "<group>";
+		};
+		09DDAAA2211FF915009C6428 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09DDAAA3211FF924009C6428 /* Class */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		09DDAAA3211FF924009C6428 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				09DDAAA4211FF94A009C6428 /* BackgroundView.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		6131F426DB2658C07D2DBE75 /* Frameworks */ = {
@@ -458,6 +477,7 @@
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
 				0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */,
+				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
