@@ -127,7 +127,6 @@
 				091BEF0D211303C0008ED8C5 /* App */,
 				091BEEDF21130017008ED8C5 /* AppDelegate.swift */,
 				091BEEE621130019008ED8C5 /* Assets.xcassets */,
-				091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */,
 				091BEEEB21130019008ED8C5 /* Info.plist */,
 			);
 			path = nns.st;
@@ -209,6 +208,7 @@
 			children = (
 				091BEEE321130017008ED8C5 /* Main.storyboard */,
 				09DDAA9E211FF613009C6428 /* Login.storyboard */,
+				091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboad;
 			sourceTree = "<group>";
