@@ -9,8 +9,6 @@
 import UIKit
 
 class UnderlineTextField: UITextField {
-
-    var gradientLayer: CAGradientLayer?
     
     @IBInspectable var height: CGFloat = 1 {
         didSet {
@@ -69,7 +67,6 @@ class UnderlineTextField: UITextField {
         attributedTxt.append(placeholderTxt)
         
         self.attributedPlaceholder = attributedTxt
-        
         self.layer.addSublayer(border)
     }
 
