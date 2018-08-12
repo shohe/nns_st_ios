@@ -8,14 +8,30 @@
 
 import UIKit
 
+@IBDesignable
 class BackgroundView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var gradientLayer: CAGradientLayer?
+    
+    @IBInspectable var topColor: UIColor = UIColor.white {
+        didSet {
+            self.setGradation()
+        }
     }
-    */
-
+    
+    @IBInspectable var bottomColor: UIColor = UIColor.black {
+        didSet {
+            self.setGradation()
+        }
+    }
+    
+    private func setGradation() {
+        gradientLayer?.removeFromSuperlayer()
+        gradientLayer = CAGradientLayer()
+        gradientLayer!.colors = [topColor.cgColor, bottomColor.cgColor]
+        gradientLayer!.frame = self.bounds
+        layer.addSublayer(gradientLayer!)
+        layer.masksToBounds = true
+    }
+    
 }
