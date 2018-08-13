@@ -10,6 +10,8 @@ import UIKit
 
 class SignUpMailViewController: UIViewController {
     
+    @IBOutlet weak var mailaddress: ContainButtonTextField!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.transparentNavigationBar()
@@ -26,6 +28,12 @@ class SignUpMailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension SignUpMailViewController {
+    
+    
+    
 }
 
 
