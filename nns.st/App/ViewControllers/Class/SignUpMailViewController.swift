@@ -30,12 +30,6 @@ class SignUpMailViewController: UIViewController {
 
 }
 
-extension SignUpMailViewController {
-    
-    
-    
-}
-
 
 // MARK: - Navigation
 extension SignUpMailViewController {

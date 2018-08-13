@@ -26,6 +26,7 @@
 		09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAAD21206507009C6428 /* SignUpMailViewController.swift */; };
 		09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAAF212074EA009C6428 /* UIViewController+transparentNavigationBar.swift */; };
 		09DDAAB221207EEB009C6428 /* ContainButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB121207EEB009C6428 /* ContainButtonTextField.swift */; };
+		09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -74,6 +75,7 @@
 		09DDAAAD21206507009C6428 /* SignUpMailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMailViewController.swift; sourceTree = "<group>"; };
 		09DDAAAF212074EA009C6428 /* UIViewController+transparentNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+transparentNavigationBar.swift"; sourceTree = "<group>"; };
 		09DDAAB121207EEB009C6428 /* ContainButtonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainButtonTextField.swift; sourceTree = "<group>"; };
+		09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				091BEEE121130017008ED8C5 /* ViewController.swift */,
 				09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */,
 				09DDAAAD21206507009C6428 /* SignUpMailViewController.swift */,
+				09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
 				09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */,
+				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
 			);
