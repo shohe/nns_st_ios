@@ -130,6 +130,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushNextBtn:" destination="tXA-LB-ADx" eventType="touchUpInside" id="EiF-Qx-ugB"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5V4-nW-6rN">
                                 <rect key="frame" x="24" y="71.5" width="327" height="160"/>
@@ -492,6 +495,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pushNextBtn:" destination="UN8-5L-ldb" eventType="touchUpInside" id="Zee-oM-oPr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
