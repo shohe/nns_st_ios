@@ -29,6 +29,10 @@
 		09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */; };
 		09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */; };
 		09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB7212241CB009C6428 /* MainViewController.swift */; };
+		09DDAABB2122AE96009C6428 /* ThreeViewsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAABA2122AE96009C6428 /* ThreeViewsFlowLayout.swift */; };
+		09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */; };
+		09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */; };
+		09DDAAC221231258009C6428 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAC121231258009C6428 /* CarouselView.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -80,6 +84,10 @@
 		09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		09DDAAB7212241CB009C6428 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		09DDAABA2122AE96009C6428 /* ThreeViewsFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewsFlowLayout.swift; sourceTree = "<group>"; };
+		09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeColumnCell.swift; sourceTree = "<group>"; };
+		09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThreeColumnCell.xib; sourceTree = "<group>"; };
+		09DDAAC121231258009C6428 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +250,8 @@
 		09DDAAA2211FF915009C6428 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09DDAAC02122D35D009C6428 /* XIB */,
+				09DDAAB92122AAFA009C6428 /* Layout */,
 				09DDAAA3211FF924009C6428 /* Class */,
 			);
 			path = Views;
@@ -253,6 +263,8 @@
 				09DDAAA4211FF94A009C6428 /* BackgroundView.swift */,
 				09DDAAA621202D5C009C6428 /* UnderlineTextField.swift */,
 				09DDAAB121207EEB009C6428 /* ContainButtonTextField.swift */,
+				09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */,
+				09DDAAC121231258009C6428 /* CarouselView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -265,6 +277,22 @@
 				09DDAAAF212074EA009C6428 /* UIViewController+transparentNavigationBar.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		09DDAAB92122AAFA009C6428 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				09DDAABA2122AE96009C6428 /* ThreeViewsFlowLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		09DDAAC02122D35D009C6428 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */,
+			);
+			path = XIB;
 			sourceTree = "<group>";
 		};
 		6131F426DB2658C07D2DBE75 /* Frameworks */ = {
@@ -402,6 +430,7 @@
 				091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */,
 				091BEEE721130019008ED8C5 /* Assets.xcassets in Resources */,
 				091BEEE521130017008ED8C5 /* Main.storyboard in Resources */,
+				09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
@@ -519,7 +549,9 @@
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
+				09DDAABB2122AE96009C6428 /* ThreeViewsFlowLayout.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
+				09DDAAC221231258009C6428 /* CarouselView.swift in Sources */,
 				09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */,
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
