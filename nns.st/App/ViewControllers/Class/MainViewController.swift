@@ -10,8 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: CarouselView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBInspectable var itemWidth: CGFloat = 0.0
+    
     
     static func instantiateViewController() -> MainViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -44,12 +45,6 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController: UICollectionViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        for cell in collectionView.visibleCells {
-//            collectionView.transformScale(cell: cell)
-//        }
-    }
     
 }
 

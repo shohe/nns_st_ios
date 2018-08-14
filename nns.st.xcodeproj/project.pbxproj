@@ -31,7 +31,6 @@
 		09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB7212241CB009C6428 /* MainViewController.swift */; };
 		09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */; };
 		09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */; };
-		09DDAAC221231258009C6428 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAC121231258009C6428 /* CarouselView.swift */; };
 		09DDAAC421231B5A009C6428 /* CarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAC321231B5A009C6428 /* CarouselFlowLayout.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
@@ -86,7 +85,6 @@
 		09DDAAB7212241CB009C6428 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeColumnCell.swift; sourceTree = "<group>"; };
 		09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThreeColumnCell.xib; sourceTree = "<group>"; };
-		09DDAAC121231258009C6428 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		09DDAAC321231B5A009C6428 /* CarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFlowLayout.swift; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,7 +262,6 @@
 				09DDAAA621202D5C009C6428 /* UnderlineTextField.swift */,
 				09DDAAB121207EEB009C6428 /* ContainButtonTextField.swift */,
 				09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */,
-				09DDAAC121231258009C6428 /* CarouselView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
-				09DDAAC221231258009C6428 /* CarouselView.swift in Sources */,
 				09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */,
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
