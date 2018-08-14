@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = collectionView.collectionViewLayout as! CarouselFlowLayout
         layout.itemSize = CGSize(width: itemWidth, height: collectionView.frame.size.height)
         
         let inset = (UIScreen.main.bounds.width - itemWidth) / 2.0
@@ -61,7 +61,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
