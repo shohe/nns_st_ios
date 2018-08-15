@@ -49,6 +49,7 @@ extension MainViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select cell index: \(indexPath.row)")
+        self.present(ConfirmRequestViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
 }

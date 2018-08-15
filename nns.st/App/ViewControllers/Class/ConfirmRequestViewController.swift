@@ -9,6 +9,12 @@
 import UIKit
 
 class ConfirmRequestViewController: UIViewController {
+    
+    static func instantiateViewController() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
+        return viewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +37,15 @@ class ConfirmRequestViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+}
 
+
+// MARK: - Navigation
+extension ConfirmRequestViewController {
+    
+    @IBAction func backPreView(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
