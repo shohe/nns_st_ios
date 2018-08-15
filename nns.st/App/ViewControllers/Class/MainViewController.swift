@@ -47,6 +47,10 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("select cell index: \(indexPath.row)")
+    }
+    
 }
 
 
