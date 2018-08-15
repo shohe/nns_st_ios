@@ -1,5 +1,5 @@
 //
-//  StylistProfileWithStarCell.swift
+//  PriceButtonCell.swift
 //  nns.st
 //
 //  Created by SHOHE on 2018/08/15.
@@ -8,30 +8,31 @@
 
 import UIKit
 
-class StylistProfileWithStarCell: UITableViewCell {
+class PriceButtonCell: UITableViewCell {
+    
+    @IBOutlet weak var priceButton: UIButton!
     
     static var identifier:String {
         get{
-            return "StylistProfileWithStarCell"
+            return "PriceButtonCell"
         }
     }
     
     static var nib:UINib {
         get{
-            return UINib(nibName: "StylistProfileWithStarCell", bundle: nil)
+            return UINib(nibName: "PriceButtonCell", bundle: nil)
         }
     }
     
     static var height:CGFloat {
         get{
-            return UIScreen.main.bounds.height / 3.5
+            return 90.0
         }
     }
-    
-    @IBOutlet weak var statusComment: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

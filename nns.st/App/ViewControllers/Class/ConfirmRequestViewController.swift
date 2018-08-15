@@ -22,8 +22,8 @@ class ConfirmRequestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(StylistProfileWithStarCell.nib,
-                           forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
+        tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
+        tableView.register(PriceButtonCell.nib, forCellReuseIdentifier: PriceButtonCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,24 +58,33 @@ extension ConfirmRequestViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+        var cell: UITableViewCell
         
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as! StylistProfileWithStarCell
+        case 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: PriceButtonCell.identifier, for: indexPath) as! PriceButtonCell
+        default:
+            cell = UITableViewCell()
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return UIScreen.main.bounds.height / 3.5
+        switch indexPath.row {
+        case 0:
+            return StylistProfileWithStarCell.height
+        case 1:
+            return PriceButtonCell.height
+        default:
+            return 50
         }
-        return 100
     }
     
 }
