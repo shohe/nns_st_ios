@@ -24,6 +24,7 @@ class ConfirmRequestViewController: UIViewController {
 
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(PriceButtonCell.nib, forCellReuseIdentifier: PriceButtonCell.identifier)
+        tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +59,7 @@ extension ConfirmRequestViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,6 +70,8 @@ extension ConfirmRequestViewController: UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as! StylistProfileWithStarCell
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: PriceButtonCell.identifier, for: indexPath) as! PriceButtonCell
+        case 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: SalonAddressCell.identifier, for: indexPath) as! SalonAddressCell
         default:
             cell = UITableViewCell()
         }
@@ -82,6 +85,8 @@ extension ConfirmRequestViewController: UITableViewDataSource {
             return StylistProfileWithStarCell.height
         case 1:
             return PriceButtonCell.height
+        case 2:
+            return SalonAddressCell.height
         default:
             return 50
         }

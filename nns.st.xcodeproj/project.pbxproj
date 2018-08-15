@@ -39,6 +39,8 @@
 		09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAACF21244D83009C6428 /* PriceButtonCell.swift */; };
 		09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAD021244D83009C6428 /* PriceButtonCell.xib */; };
 		09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAD521245CE1009C6428 /* PriceButton.swift */; };
+		09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAD721246BB1009C6428 /* SalonAddressCell.swift */; };
+		09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAD821246BB1009C6428 /* SalonAddressCell.xib */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -100,6 +102,8 @@
 		09DDAACF21244D83009C6428 /* PriceButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButtonCell.swift; sourceTree = "<group>"; };
 		09DDAAD021244D83009C6428 /* PriceButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceButtonCell.xib; sourceTree = "<group>"; };
 		09DDAAD521245CE1009C6428 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
+		09DDAAD721246BB1009C6428 /* SalonAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonAddressCell.swift; sourceTree = "<group>"; };
+		09DDAAD821246BB1009C6428 /* SalonAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalonAddressCell.xib; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				09DDAACB21241688009C6428 /* StylistProfileWithStarCell.swift */,
 				09DDAACF21244D83009C6428 /* PriceButtonCell.swift */,
 				09DDAAD521245CE1009C6428 /* PriceButton.swift */,
+				09DDAAD721246BB1009C6428 /* SalonAddressCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */,
 				09DDAACC21241688009C6428 /* StylistProfileWithStarCell.xib */,
 				09DDAAD021244D83009C6428 /* PriceButtonCell.xib */,
+				09DDAAD821246BB1009C6428 /* SalonAddressCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				091BEEE721130019008ED8C5 /* Assets.xcassets in Resources */,
 				091BEEE521130017008ED8C5 /* Main.storyboard in Resources */,
 				09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */,
+				09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */,
 				09DDAAC82123FD6B009C6428 /* Confirm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,6 +569,7 @@
 				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
+				09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */,
 				09DDAAC421231B5A009C6428 /* CarouselFlowLayout.swift in Sources */,
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
 				0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */,
