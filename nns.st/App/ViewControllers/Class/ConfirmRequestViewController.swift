@@ -10,6 +10,9 @@ import UIKit
 
 class ConfirmRequestViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
@@ -19,24 +22,14 @@ class ConfirmRequestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.register(StylistProfileWithStarCell.nib,
+                           forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 }
 
@@ -46,6 +39,43 @@ extension ConfirmRequestViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - UITableViewDelegate
+extension ConfirmRequestViewController: UITableViewDelegate {
+    
+}
+
+
+// MARK: - UITableViewDataSource
+extension ConfirmRequestViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        
+        if indexPath.row == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as! StylistProfileWithStarCell
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return UIScreen.main.bounds.height / 3.5
+        }
+        return 100
     }
     
 }
