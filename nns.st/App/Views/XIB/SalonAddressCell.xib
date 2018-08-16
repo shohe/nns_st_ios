@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pfR-A9-mIa">
-                        <rect key="frame" x="12" y="16" width="141.5" height="118"/>
+                        <rect key="frame" x="24" y="16" width="141.5" height="118"/>
                         <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="118" id="8cT-vB-wie"/>
@@ -34,28 +34,28 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAL-JA-xpL">
-                        <rect key="frame" x="153.5" y="16" width="247.5" height="118"/>
+                        <rect key="frame" x="165.5" y="16" width="235.5" height="118"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hair salon 店名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-ux-XyM">
-                                <rect key="frame" x="12" y="12" width="223.5" height="22"/>
+                                <rect key="frame" x="12" y="12" width="211.5" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="〒000-0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTW-8P-eZZ">
-                                <rect key="frame" x="12" y="51" width="223.5" height="15"/>
+                                <rect key="frame" x="12" y="51" width="211.5" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="県県県市市市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgc-cH-YLT">
-                                <rect key="frame" x="12" y="68" width="223.5" height="15"/>
+                                <rect key="frame" x="12" y="68" width="211.5" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="町町町0-0 ビル名 0F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-Sb-2cW">
-                                <rect key="frame" x="12" y="85" width="223.5" height="15"/>
+                                <rect key="frame" x="12" y="85" width="211.5" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
                     <constraint firstAttribute="trailing" secondItem="eAL-JA-xpL" secondAttribute="trailing" constant="12" id="DbK-OA-Fhi"/>
                     <constraint firstAttribute="bottom" secondItem="eAL-JA-xpL" secondAttribute="bottom" constant="16" id="GDZ-bq-xV6"/>
                     <constraint firstAttribute="bottom" secondItem="pfR-A9-mIa" secondAttribute="bottom" constant="16" id="Gux-XY-r4v"/>
-                    <constraint firstItem="pfR-A9-mIa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="UvH-xd-Htb"/>
+                    <constraint firstItem="pfR-A9-mIa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="UvH-xd-Htb"/>
                     <constraint firstItem="eAL-JA-xpL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="hys-FI-EHd"/>
                     <constraint firstItem="pfR-A9-mIa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="jJY-eK-Mro"/>
                 </constraints>

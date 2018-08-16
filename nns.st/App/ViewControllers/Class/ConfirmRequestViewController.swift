@@ -65,7 +65,7 @@ extension ConfirmRequestViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,12 +88,14 @@ extension ConfirmRequestViewController: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell {
                 return cell
             }
-        case 4:
+        
+        default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell {
+                if indexPath.row != 4 {
+                    cell.nonTitle()
+                }
                 return cell
             }
-        default:
-            return UITableViewCell()
         }
         
         return UITableViewCell()

@@ -10,6 +10,10 @@ import UIKit
 
 class ReviewCell: UITableViewCell {
     
+    @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var headerHeightConst: NSLayoutConstraint!
+    @IBOutlet weak var headerBottomConst: NSLayoutConstraint!
+    
     static var identifier:String {
         get{
             return "ReviewCell"
@@ -31,6 +35,12 @@ class ReviewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func nonTitle() -> Void {
+        headerTitle.isHidden = true
+        headerHeightConst.constant = 0
+        headerBottomConst.constant = 0
     }
     
 }
