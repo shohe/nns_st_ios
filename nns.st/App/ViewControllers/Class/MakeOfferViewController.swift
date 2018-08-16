@@ -10,6 +10,8 @@ import UIKit
 
 class MakeOfferViewController: UIViewController {
     
+    @IBOutlet weak var snapmap: UIImageView!
+    
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MONavigationController") as! UINavigationController
@@ -19,28 +21,42 @@ class MakeOfferViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.transparentNavigationBar()
+        self.leftSideCornerRadius(view: snapmap)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+
+
+extension MakeOfferViewController {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func backPreView(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    @IBAction func tapDateTimeField(_ sender: UITapGestureRecognizer) {
+        print("tap date/time field")
+    }
+    
+    @IBAction func tapDateMap(_ sender: UITapGestureRecognizer) {
+        print("tap map field")
+    }
+    
+    func leftSideCornerRadius(view: UIImageView) -> Void {
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .topLeft], cornerRadii: CGSize(width: 5, height: 5))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        view.layer.mask = mask
+    }
+    
 }
