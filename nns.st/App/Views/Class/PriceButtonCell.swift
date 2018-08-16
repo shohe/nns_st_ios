@@ -24,11 +24,6 @@ class PriceButtonCell: UITableViewCell {
         }
     }
     
-    static var height:CGFloat {
-        get{
-            return 90.0
-        }
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -24,12 +24,7 @@ class SalonAddressCell: UITableViewCell {
             return UINib(nibName: "SalonAddressCell", bundle: nil)
         }
     }
-    
-    static var height:CGFloat {
-        get{
-            return 150.0
-        }
-    }
+
     
     @IBInspectable var pinColor: UIColor = UIColor.red
     

@@ -21,7 +21,11 @@ class ConfirmRequestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // row height automatic
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // register cells
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(PriceButtonCell.nib, forCellReuseIdentifier: PriceButtonCell.identifier)
         tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
@@ -79,6 +83,10 @@ extension ConfirmRequestViewController: UITableViewDataSource {
                 cell.drawSnapshot(latitude: 35.908887, longitude: 139.482338)
                 return cell
             }
+        case 3:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell {
+                return cell
+            }
         default:
             return UITableViewCell()
         }
@@ -86,19 +94,19 @@ extension ConfirmRequestViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return StylistProfileWithStarCell.height
-        case 1:
-            return PriceButtonCell.height
-        case 2:
-            return SalonAddressCell.height
-        case 3:
-            return CommentCell.height
-        default:
-            return 50
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.row {
+//        case 0:
+//            return StylistProfileWithStarCell.height
+//        case 1:
+//            return PriceButtonCell.height
+//        case 2:
+//            return SalonAddressCell.height
+//        case 3:
+//            return CommentCell.height
+//        default:
+//            return 50
+//        }
+//    }
     
 }

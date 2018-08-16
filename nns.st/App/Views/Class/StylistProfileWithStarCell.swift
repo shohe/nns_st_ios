@@ -21,12 +21,7 @@ class StylistProfileWithStarCell: UITableViewCell {
             return UINib(nibName: "StylistProfileWithStarCell", bundle: nil)
         }
     }
-    
-    static var height:CGFloat {
-        get{
-            return UIScreen.main.bounds.height / 3.5
-        }
-    }
+
     
     @IBOutlet weak var statusComment: UILabel!
     
