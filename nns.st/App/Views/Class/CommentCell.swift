@@ -12,9 +12,6 @@ class CommentCell: UITableViewCell {
     
     @IBOutlet weak var comment: UILabel!
     
-    static let commentLeftConst: CGFloat = 32.0
-    static let commentRightConst: CGFloat = 24.0
-    
     static var identifier:String {
         get{
             return "CommentCell"
