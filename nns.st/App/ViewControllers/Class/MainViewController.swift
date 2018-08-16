@@ -45,6 +45,15 @@ class MainViewController: UIViewController {
 }
 
 
+extension MainViewController {
+    
+    @IBAction func pressOfferBtn(_ sender: UIButton) {
+        self.present(MakeOfferViewController.instantiateViewController(), animated: true, completion: nil)
+    }
+    
+}
+
+
 extension MainViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

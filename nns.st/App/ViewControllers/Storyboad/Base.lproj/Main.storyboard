@@ -35,6 +35,9 @@
                                                 <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressOfferBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vy-w1-H9h"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ow7-xZ-2z1">
                                         <rect key="frame" x="49" y="0.0" width="60" height="60"/>
