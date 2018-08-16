@@ -37,3 +37,12 @@ class PriceButtonCell: UITableViewCell {
     }
     
 }
+
+
+extension PriceButtonCell {
+    
+    @IBAction func makeReservation(_ sender: PriceButton) {
+        print("make reservation")
+    }
+    
+}

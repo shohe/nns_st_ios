@@ -77,6 +77,7 @@ extension ConfirmRequestViewController: UITableViewDataSource {
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: PriceButtonCell.identifier, for: indexPath) as? PriceButtonCell {
+                cell.selectionStyle = .none
                 return cell
             }
         case 2:

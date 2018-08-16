@@ -21,5 +21,11 @@ class PriceButton: UIButton {
             self.layer.borderColor = borderColor.cgColor
         }
     }
+    
+    @IBInspectable var highlightedColor: UIColor = UIColor.clear {
+        didSet {
+            self.setBackgroundColor(highlightedColor, for: .highlighted)
+        }
+    }
 
 }
