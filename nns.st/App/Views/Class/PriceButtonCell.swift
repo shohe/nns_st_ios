@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol PriceButtonCellDelegate {
+    func priceButtonCell(_ didSelectedButton: PriceButton)
+}
+
 class PriceButtonCell: UITableViewCell {
+    
+    var delegate: PriceButtonCellDelegate? = nil
     
     @IBOutlet weak var priceButton: UIButton!
     
@@ -42,7 +48,7 @@ class PriceButtonCell: UITableViewCell {
 extension PriceButtonCell {
     
     @IBAction func makeReservation(_ sender: PriceButton) {
-        print("make reservation")
+        self.delegate?.priceButtonCell(sender)
     }
     
 }

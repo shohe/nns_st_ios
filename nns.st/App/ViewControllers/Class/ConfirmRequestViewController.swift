@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ConfirmRequestViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -78,6 +79,7 @@ extension ConfirmRequestViewController: UITableViewDataSource {
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: PriceButtonCell.identifier, for: indexPath) as? PriceButtonCell {
                 cell.selectionStyle = .none
+                cell.delegate = self as PriceButtonCellDelegate
                 return cell
             }
         case 2:
@@ -100,6 +102,16 @@ extension ConfirmRequestViewController: UITableViewDataSource {
         }
         
         return UITableViewCell()
+    }
+    
+}
+
+
+// MARK: - PriceButtonCellDelegate
+extension ConfirmRequestViewController: PriceButtonCellDelegate {
+    
+    func priceButtonCell(_ didSelectedButton: PriceButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
