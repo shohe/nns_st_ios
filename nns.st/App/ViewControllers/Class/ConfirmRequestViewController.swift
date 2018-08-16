@@ -25,6 +25,7 @@ class ConfirmRequestViewController: UIViewController {
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(PriceButtonCell.nib, forCellReuseIdentifier: PriceButtonCell.identifier)
         tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
+        tableView.register(CommentCell.nib, forCellReuseIdentifier: CommentCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,6 +94,8 @@ extension ConfirmRequestViewController: UITableViewDataSource {
             return PriceButtonCell.height
         case 2:
             return SalonAddressCell.height
+        case 3:
+            return CommentCell.height
         default:
             return 50
         }
