@@ -47,6 +47,8 @@
 		09DDAAE22125364F009C6428 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAE02125364F009C6428 /* ReviewCell.xib */; };
 		09DDAAE421254F70009C6428 /* UIButton+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */; };
 		09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAE521254FA4009C6428 /* UIColor+image.swift */; };
+		09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAE921258638009C6428 /* Offer.storyboard */; };
+		09DDAAEC212586AC009C6428 /* MakeOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -116,6 +118,8 @@
 		09DDAAE02125364F009C6428 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
 		09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+backgroundColor.swift"; sourceTree = "<group>"; };
 		09DDAAE521254FA4009C6428 /* UIColor+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+image.swift"; sourceTree = "<group>"; };
+		09DDAAE921258638009C6428 /* Offer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Offer.storyboard; sourceTree = "<group>"; };
+		09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOfferViewController.swift; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 				09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */,
 				09DDAAB7212241CB009C6428 /* MainViewController.swift */,
 				09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */,
+				09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				091BEEE321130017008ED8C5 /* Main.storyboard */,
 				09DDAAC72123FD6B009C6428 /* Confirm.storyboard */,
 				09DDAA9E211FF613009C6428 /* Login.storyboard */,
+				09DDAAE921258638009C6428 /* Offer.storyboard */,
 				091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboad;
@@ -477,6 +483,7 @@
 				09DDAAE22125364F009C6428 /* ReviewCell.xib in Resources */,
 				091BEEE521130017008ED8C5 /* Main.storyboard in Resources */,
 				09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */,
+				09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */,
 				09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */,
 				09DDAAC82123FD6B009C6428 /* Confirm.storyboard in Resources */,
 			);
@@ -605,6 +612,7 @@
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
 				09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */,
+				09DDAAEC212586AC009C6428 /* MakeOfferViewController.swift in Sources */,
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
 				09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */,
 				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
