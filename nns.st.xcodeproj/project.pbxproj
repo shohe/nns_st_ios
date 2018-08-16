@@ -29,6 +29,24 @@
 		09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */; };
 		09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */; };
 		09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAB7212241CB009C6428 /* MainViewController.swift */; };
+		09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */; };
+		09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */; };
+		09DDAAC421231B5A009C6428 /* CarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAC321231B5A009C6428 /* CarouselFlowLayout.swift */; };
+		09DDAAC82123FD6B009C6428 /* Confirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAC72123FD6B009C6428 /* Confirm.storyboard */; };
+		09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */; };
+		09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAACB21241688009C6428 /* StylistProfileWithStarCell.swift */; };
+		09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAACC21241688009C6428 /* StylistProfileWithStarCell.xib */; };
+		09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAACF21244D83009C6428 /* PriceButtonCell.swift */; };
+		09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAD021244D83009C6428 /* PriceButtonCell.xib */; };
+		09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAD521245CE1009C6428 /* PriceButton.swift */; };
+		09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAD721246BB1009C6428 /* SalonAddressCell.swift */; };
+		09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAD821246BB1009C6428 /* SalonAddressCell.xib */; };
+		09DDAADD21251453009C6428 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAADB21251453009C6428 /* CommentCell.swift */; };
+		09DDAADE21251453009C6428 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAADC21251453009C6428 /* CommentCell.xib */; };
+		09DDAAE12125364F009C6428 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAADF2125364F009C6428 /* ReviewCell.swift */; };
+		09DDAAE22125364F009C6428 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAE02125364F009C6428 /* ReviewCell.xib */; };
+		09DDAAE421254F70009C6428 /* UIButton+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */; };
+		09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAE521254FA4009C6428 /* UIColor+image.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -80,6 +98,24 @@
 		09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		09DDAAB7212241CB009C6428 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeColumnCell.swift; sourceTree = "<group>"; };
+		09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThreeColumnCell.xib; sourceTree = "<group>"; };
+		09DDAAC321231B5A009C6428 /* CarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFlowLayout.swift; sourceTree = "<group>"; };
+		09DDAAC72123FD6B009C6428 /* Confirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirm.storyboard; sourceTree = "<group>"; };
+		09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRequestViewController.swift; sourceTree = "<group>"; };
+		09DDAACB21241688009C6428 /* StylistProfileWithStarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylistProfileWithStarCell.swift; sourceTree = "<group>"; };
+		09DDAACC21241688009C6428 /* StylistProfileWithStarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StylistProfileWithStarCell.xib; sourceTree = "<group>"; };
+		09DDAACF21244D83009C6428 /* PriceButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButtonCell.swift; sourceTree = "<group>"; };
+		09DDAAD021244D83009C6428 /* PriceButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceButtonCell.xib; sourceTree = "<group>"; };
+		09DDAAD521245CE1009C6428 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
+		09DDAAD721246BB1009C6428 /* SalonAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonAddressCell.swift; sourceTree = "<group>"; };
+		09DDAAD821246BB1009C6428 /* SalonAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalonAddressCell.xib; sourceTree = "<group>"; };
+		09DDAADB21251453009C6428 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		09DDAADC21251453009C6428 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		09DDAADF2125364F009C6428 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		09DDAAE02125364F009C6428 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+backgroundColor.swift"; sourceTree = "<group>"; };
+		09DDAAE521254FA4009C6428 /* UIColor+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+image.swift"; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +261,7 @@
 				09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */,
 				09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */,
 				09DDAAB7212241CB009C6428 /* MainViewController.swift */,
+				09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -233,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				091BEEE321130017008ED8C5 /* Main.storyboard */,
+				09DDAAC72123FD6B009C6428 /* Confirm.storyboard */,
 				09DDAA9E211FF613009C6428 /* Login.storyboard */,
 				091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */,
 			);
@@ -242,6 +280,8 @@
 		09DDAAA2211FF915009C6428 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09DDAAC02122D35D009C6428 /* XIB */,
+				09DDAAB92122AAFA009C6428 /* Layout */,
 				09DDAAA3211FF924009C6428 /* Class */,
 			);
 			path = Views;
@@ -253,6 +293,13 @@
 				09DDAAA4211FF94A009C6428 /* BackgroundView.swift */,
 				09DDAAA621202D5C009C6428 /* UnderlineTextField.swift */,
 				09DDAAB121207EEB009C6428 /* ContainButtonTextField.swift */,
+				09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */,
+				09DDAACB21241688009C6428 /* StylistProfileWithStarCell.swift */,
+				09DDAACF21244D83009C6428 /* PriceButtonCell.swift */,
+				09DDAAD521245CE1009C6428 /* PriceButton.swift */,
+				09DDAAD721246BB1009C6428 /* SalonAddressCell.swift */,
+				09DDAADB21251453009C6428 /* CommentCell.swift */,
+				09DDAADF2125364F009C6428 /* ReviewCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -263,8 +310,31 @@
 				09DDAAA9212058B5009C6428 /* UIImage+reSizeImage.swift */,
 				09DDAAAB2120590F009C6428 /* UIImage+scaleImage.swift */,
 				09DDAAAF212074EA009C6428 /* UIViewController+transparentNavigationBar.swift */,
+				09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */,
+				09DDAAE521254FA4009C6428 /* UIColor+image.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		09DDAAB92122AAFA009C6428 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				09DDAAC321231B5A009C6428 /* CarouselFlowLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		09DDAAC02122D35D009C6428 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */,
+				09DDAACC21241688009C6428 /* StylistProfileWithStarCell.xib */,
+				09DDAAD021244D83009C6428 /* PriceButtonCell.xib */,
+				09DDAAD821246BB1009C6428 /* SalonAddressCell.xib */,
+				09DDAADC21251453009C6428 /* CommentCell.xib */,
+				09DDAAE02125364F009C6428 /* ReviewCell.xib */,
+			);
+			path = XIB;
 			sourceTree = "<group>";
 		};
 		6131F426DB2658C07D2DBE75 /* Frameworks */ = {
@@ -400,8 +470,15 @@
 			files = (
 				09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */,
 				091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */,
+				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
+				09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */,
 				091BEEE721130019008ED8C5 /* Assets.xcassets in Resources */,
+				09DDAADE21251453009C6428 /* CommentCell.xib in Resources */,
+				09DDAAE22125364F009C6428 /* ReviewCell.xib in Resources */,
 				091BEEE521130017008ED8C5 /* Main.storyboard in Resources */,
+				09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */,
+				09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */,
+				09DDAAC82123FD6B009C6428 /* Confirm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,22 +586,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
+				09DDAAE12125364F009C6428 /* ReviewCell.swift in Sources */,
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
+				09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */,
+				09DDAAC421231B5A009C6428 /* CarouselFlowLayout.swift in Sources */,
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
 				0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */,
 				09DDAAB221207EEB009C6428 /* ContainButtonTextField.swift in Sources */,
 				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
+				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
+				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
+				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
 				09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */,
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
+				09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */,
+				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
+				09DDAAE421254F70009C6428 /* UIButton+backgroundColor.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
+				09DDAADD21251453009C6428 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
