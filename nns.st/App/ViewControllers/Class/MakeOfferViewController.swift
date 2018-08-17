@@ -45,11 +45,7 @@ extension MakeOfferViewController {
     }
     
     @IBAction func tapDateTimeField(_ sender: UITapGestureRecognizer) {
-        print("tap date/time field")
-    }
-    
-    @IBAction func tapDateMap(_ sender: UITapGestureRecognizer) {
-        print("tap map field")
+        print("tap date/time")
     }
     
     func leftSideCornerRadius(view: UIImageView) -> Void {
