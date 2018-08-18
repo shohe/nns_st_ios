@@ -16,6 +16,7 @@
 		091BEF0021130019008ED8C5 /* nns_stUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEFF21130019008ED8C5 /* nns_stUITests.swift */; };
 		091BEF102113040E008ED8C5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEF0F2113040E008ED8C5 /* API.swift */; };
 		091F8D12212723340095608F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D11212723340095608F /* MapViewController.swift */; };
+		091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D13212726330095608F /* BottomSheetViewController.swift */; };
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
 		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
@@ -88,6 +89,7 @@
 		091BEF0121130019008ED8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		091BEF0F2113040E008ED8C5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		091F8D11212723340095608F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		091F8D13212726330095608F /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
 		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */,
 				09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */,
 				091F8D11212723340095608F /* MapViewController.swift */,
+				091F8D13212726330095608F /* BottomSheetViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
+				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
 				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,

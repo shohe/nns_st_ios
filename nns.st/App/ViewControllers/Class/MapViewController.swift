@@ -9,6 +9,16 @@
 import UIKit
 
 class MapViewController: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.transparentNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.addBottomSheetView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +31,20 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension MapViewController {
+    
+    func addBottomSheetView() {
+        let viewController = BottomSheetViewController.instantiateViewController()
+        viewController.view.layer.cornerRadius = 10
+        
+        self.addChildViewController(viewController)
+        self.view.addSubview(viewController.view)
+        
+        viewController.didMove(toParentViewController: self)
+        viewController.view.frame.origin = CGPoint(x: 0.0, y: self.view.frame.maxY)
     }
-    */
-
+    
 }
