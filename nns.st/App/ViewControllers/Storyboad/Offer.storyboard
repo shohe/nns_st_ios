@@ -498,25 +498,33 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hA-uS-9r7">
-                                <rect key="frame" x="24" y="56" width="327" height="57.5"/>
+                                <rect key="frame" x="24" y="57" width="327" height="57.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-sa-wvg">
-                                <rect key="frame" x="227" y="66" width="31" height="57.5"/>
+                                <rect key="frame" x="227" y="67" width="31" height="57.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="erE-K8-hVn">
-                                <rect key="frame" x="22" y="121.5" width="331" height="31"/>
+                                <rect key="frame" x="22" y="122.5" width="331" height="31"/>
                                 <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                             </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZ2-Ct-csM">
+                                <rect key="frame" x="0.0" y="56" width="375" height="0.5"/>
+                                <color key="backgroundColor" red="0.86064537951843589" green="0.86697332202639232" blue="0.88595714955026184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Inz-9M-cpM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3kA-t3-i7e" firstAttribute="trailing" secondItem="Pg1-nY-MBn" secondAttribute="trailing" id="7Us-Cd-6Qw"/>
+                            <constraint firstItem="rZ2-Ct-csM" firstAttribute="top" secondItem="Pg1-nY-MBn" secondAttribute="bottom" id="7xL-Gy-PJm"/>
                             <constraint firstItem="3kA-t3-i7e" firstAttribute="trailing" secondItem="erE-K8-hVn" secondAttribute="trailing" constant="24" id="CDG-Jk-V4g"/>
                             <constraint firstItem="erE-K8-hVn" firstAttribute="leading" secondItem="3kA-t3-i7e" secondAttribute="leading" constant="24" id="GTN-Rn-dgA"/>
                             <constraint firstItem="3hA-uS-9r7" firstAttribute="leading" secondItem="3kA-t3-i7e" secondAttribute="leading" constant="24" id="H5I-C2-Zlu"/>
@@ -525,9 +533,11 @@
                             <constraint firstItem="3kA-t3-i7e" firstAttribute="trailing" secondItem="3hA-uS-9r7" secondAttribute="trailing" constant="24" id="UXa-cf-HqF"/>
                             <constraint firstItem="erE-K8-hVn" firstAttribute="top" secondItem="3hA-uS-9r7" secondAttribute="bottom" constant="8" id="c7q-Ci-IXE"/>
                             <constraint firstItem="JeG-sa-wvg" firstAttribute="centerX" secondItem="3hA-uS-9r7" secondAttribute="centerX" constant="55" id="csy-3E-dKr"/>
+                            <constraint firstItem="3hA-uS-9r7" firstAttribute="top" secondItem="rZ2-Ct-csM" secondAttribute="bottom" id="eQG-bl-Uw2"/>
                             <constraint firstItem="JeG-sa-wvg" firstAttribute="centerY" secondItem="3hA-uS-9r7" secondAttribute="centerY" constant="10" id="iXV-1N-eAC"/>
                             <constraint firstItem="JeG-sa-wvg" firstAttribute="height" secondItem="3hA-uS-9r7" secondAttribute="height" id="l8h-6z-IdV"/>
-                            <constraint firstItem="3hA-uS-9r7" firstAttribute="top" secondItem="Pg1-nY-MBn" secondAttribute="bottom" id="tBH-iC-mJK"/>
+                            <constraint firstItem="rZ2-Ct-csM" firstAttribute="leading" secondItem="3kA-t3-i7e" secondAttribute="leading" id="q6V-sD-ihy"/>
+                            <constraint firstItem="3kA-t3-i7e" firstAttribute="trailing" secondItem="rZ2-Ct-csM" secondAttribute="trailing" id="wEk-PF-cnz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3kA-t3-i7e"/>
                         <userDefinedRuntimeAttributes>

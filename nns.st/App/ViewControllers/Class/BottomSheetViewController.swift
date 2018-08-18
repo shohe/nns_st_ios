@@ -87,16 +87,24 @@ extension BottomSheetViewController {
     }
     
     func initTableView() {
+        // UI
         tableView = UITableView()
         tableView.frame = CGRect(x: 0.0, y: searchBar.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height - searchBar.frame.size.height)
         tableView.backgroundColor = .clear
+        
+        // data
         tableView.tag = 99
         tableView.dataSource = self
         
         // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
+        
         // register cells
         tableView.register(SearchResultCell.nib, forCellReuseIdentifier: SearchResultCell.identifier)
+    }
+    
+    func resizeTable(height: CGFloat) {
+        tableView.frame = CGRect(x: 0.0, y: searchBar.frame.size.height, width: self.view.frame.size.width, height: height)
     }
     
     func showTableView() {
@@ -136,6 +144,7 @@ extension BottomSheetViewController {
                 let offsetY: CGFloat = self.view.frame.height/2 - convertedKeyboardFrame.minY
                 if offsetY < 0 { return }
                 self.view.transform = CGAffineTransform(translationX: 0, y: -offsetY)
+                tableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: keyboardFrame.size.height + searchBar.frame.size.height, right: 0)
                 self.showTableView()
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
