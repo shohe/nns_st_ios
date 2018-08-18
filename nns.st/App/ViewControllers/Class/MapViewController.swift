@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapview: MKMapView!
     
     var locationManager: CLLocationManager? = nil
+    var resultSearchController:UISearchController? = nil
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,6 +51,7 @@ extension MapViewController {
         
         viewController.didMove(toParentViewController: self)
         viewController.view.frame.origin = CGPoint(x: 0.0, y: self.view.frame.maxY)
+        viewController.mapview = mapview
     }
     
     func initLocationManager() {
@@ -78,7 +80,6 @@ extension MapViewController {
 
 
 extension MapViewController: MKMapViewDelegate {
-    
     
 }
 

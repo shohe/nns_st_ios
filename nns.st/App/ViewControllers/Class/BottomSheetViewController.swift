@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class BottomSheetViewController: UIViewController {
     
@@ -17,8 +18,11 @@ class BottomSheetViewController: UIViewController {
     }
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var km: UILabel!
     
     var tableView: UITableView!
+    var matchingItems:[MKMapItem] = []
+    var mapview: MKMapView? = nil
     
     static func instantiateViewController() -> BottomSheetViewController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -85,15 +89,22 @@ extension BottomSheetViewController {
     func initTableView() {
         tableView = UITableView()
         tableView.frame = CGRect(x: 0.0, y: searchBar.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height - searchBar.frame.size.height)
-        tableView.alpha = 0.5
+        tableView.backgroundColor = .clear
         tableView.tag = 99
+        tableView.dataSource = self
     }
     
     func showTableView() {
+        distanceLabel.isHidden = true
+        slider.isHidden = true
+        km.isHidden = true
         self.view.addSubview(tableView)
     }
     
     func hideTableView() {
+        distanceLabel.isHidden = false
+        slider.isHidden = false
+        km.isHidden = false
         if let vtag = self.view.viewWithTag(99) {
             vtag.removeFromSuperview()
         }
@@ -116,10 +127,12 @@ extension BottomSheetViewController {
                 
                 self.view.transform = CGAffineTransform.identity
                 let convertedKeyboardFrame = self.view.convert(keyboardFrame, from: nil)
-                let offsetY: CGFloat = self.searchBar!.frame.maxY - convertedKeyboardFrame.minY
+                // let offsetY: CGFloat = self.searchBar!.frame.maxY - convertedKeyboardFrame.minY
+                let offsetY: CGFloat = self.view.frame.height/2 - convertedKeyboardFrame.minY
                 if offsetY < 0 { return }
                 self.view.transform = CGAffineTransform(translationX: 0, y: -offsetY)
                 self.showTableView()
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
         }
         
@@ -130,6 +143,7 @@ extension BottomSheetViewController {
         UIView.animate(withDuration: duration!, animations: { () in
             self.view.transform = CGAffineTransform.identity
             self.hideTableView()
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
         })
     }
     
@@ -141,6 +155,38 @@ extension BottomSheetViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let mapView = mapview, let searchBarText = searchBar.text else { return true }
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = searchBarText
+        request.region = mapView.region
+        let search = MKLocalSearch(request: request)
+        search.start { response, _ in
+            guard let response = response else { return }
+            self.matchingItems = response.mapItems
+            self.tableView.reloadData()
+        }
+        return true
+    }
+    
+}
+
+
+
+extension BottomSheetViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return matchingItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()//tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let selectedItem = matchingItems[indexPath.row].placemark
+        cell.textLabel?.text = selectedItem.name
+        cell.detailTextLabel?.text = ""
+        return cell
     }
     
 }

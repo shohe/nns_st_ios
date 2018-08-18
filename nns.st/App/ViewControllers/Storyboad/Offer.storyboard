@@ -462,7 +462,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zzi-dr-ffL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <outlet property="delegate" destination="E0C-tc-wmO" id="LVT-vA-K2V"/>
                                 </connections>
@@ -471,7 +471,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lxq-DQ-ECm" firstAttribute="bottom" secondItem="Zzi-dr-ffL" secondAttribute="bottom" id="RzW-sU-dHY"/>
-                            <constraint firstItem="Zzi-dr-ffL" firstAttribute="top" secondItem="lxq-DQ-ECm" secondAttribute="top" id="iuB-KF-fKZ"/>
+                            <constraint firstItem="Zzi-dr-ffL" firstAttribute="top" secondItem="kce-RG-WaR" secondAttribute="top" id="iuB-KF-fKZ"/>
                             <constraint firstItem="Zzi-dr-ffL" firstAttribute="leading" secondItem="lxq-DQ-ECm" secondAttribute="leading" id="plA-Ej-YDW"/>
                             <constraint firstItem="lxq-DQ-ECm" firstAttribute="trailing" secondItem="Zzi-dr-ffL" secondAttribute="trailing" id="tdo-h9-3MD"/>
                         </constraints>
@@ -483,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc2-qN-ZvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="125"/>
+            <point key="canvasLocation" x="1020" y="124.58770614692655"/>
         </scene>
         <!--Bottom Sheet View Controller-->
         <scene sceneID="Lpz-4w-7YL">
@@ -538,6 +538,7 @@
                     </view>
                     <connections>
                         <outlet property="distanceLabel" destination="3hA-uS-9r7" id="PED-2v-U5K"/>
+                        <outlet property="km" destination="JeG-sa-wvg" id="PHm-Ir-mAk"/>
                         <outlet property="searchBar" destination="Pg1-nY-MBn" id="j13-4K-OZg"/>
                         <outlet property="slider" destination="erE-K8-hVn" id="AtW-Wn-ALJ"/>
                     </connections>
