@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
+    
+    @IBOutlet weak var mapview: MKMapView!
+    
+    var locationManager: CLLocationManager? = nil
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,8 +28,7 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.initLocationManager()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +50,63 @@ extension MapViewController {
         
         viewController.didMove(toParentViewController: self)
         viewController.view.frame.origin = CGPoint(x: 0.0, y: self.view.frame.maxY)
+    }
+    
+    func initLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager!.delegate = self
+    }
+    
+    func initMap() {
+        var region:MKCoordinateRegion = mapview.region
+        region.center = mapview.userLocation.coordinate
+        
+        region.span.latitudeDelta = 0.02
+        region.span.longitudeDelta = 0.02
+        
+        mapview.setRegion(region,animated:true)
+        
+        mapview.mapType = MKMapType.standard
+        
+        mapview.userTrackingMode = MKUserTrackingMode.follow
+        mapview.userTrackingMode = MKUserTrackingMode.followWithHeading
+    }
+    
+
+    
+}
+
+
+extension MapViewController: MKMapViewDelegate {
+    
+    
+}
+
+
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .notDetermined:
+            locationManager?.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse:
+            locationManager?.startUpdatingLocation()
+        default:
+            break
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let coordinate = locations.last?.coordinate {
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let region = MKCoordinateRegion(center: coordinate, span: span)
+            mapview.region = region
+        }
+        
     }
     
 }
