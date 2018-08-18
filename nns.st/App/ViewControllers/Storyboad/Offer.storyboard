@@ -493,38 +493,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MpD-78-rch" userLabel="HoldView">
-                                <rect key="frame" x="162.5" y="10" width="50" height="5"/>
-                                <color key="backgroundColor" red="0.75289050852441042" green="0.75289050852441042" blue="0.75289050852441042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="JeG-g2-h9C"/>
-                                    <constraint firstAttribute="height" constant="5" id="XvV-eL-5Om"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <real key="value" value="2.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <searchBar contentMode="redraw" placeholder="現在地" backgroundImage="nil" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-nY-MBn">
-                                <rect key="frame" x="0.0" y="15" width="375" height="56"/>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hA-uS-9r7">
-                                <rect key="frame" x="24" y="71" width="327" height="57.5"/>
+                                <rect key="frame" x="24" y="56" width="327" height="57.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-sa-wvg">
-                                <rect key="frame" x="227" y="81" width="31" height="57.5"/>
+                                <rect key="frame" x="227" y="66" width="31" height="57.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="erE-K8-hVn">
-                                <rect key="frame" x="22" y="136.5" width="331" height="31"/>
+                                <rect key="frame" x="22" y="121.5" width="331" height="31"/>
                                 <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                             </slider>
                         </subviews>
@@ -532,17 +518,15 @@
                         <constraints>
                             <constraint firstItem="3kA-t3-i7e" firstAttribute="trailing" secondItem="Pg1-nY-MBn" secondAttribute="trailing" id="7Us-Cd-6Qw"/>
                             <constraint firstItem="3kA-t3-i7e" firstAttribute="trailing" secondItem="erE-K8-hVn" secondAttribute="trailing" constant="24" id="CDG-Jk-V4g"/>
-                            <constraint firstItem="Pg1-nY-MBn" firstAttribute="top" secondItem="MpD-78-rch" secondAttribute="bottom" id="GHv-cP-Lqn"/>
                             <constraint firstItem="erE-K8-hVn" firstAttribute="leading" secondItem="3kA-t3-i7e" secondAttribute="leading" constant="24" id="GTN-Rn-dgA"/>
                             <constraint firstItem="3hA-uS-9r7" firstAttribute="leading" secondItem="3kA-t3-i7e" secondAttribute="leading" constant="24" id="H5I-C2-Zlu"/>
+                            <constraint firstAttribute="top" secondItem="Pg1-nY-MBn" secondAttribute="top" id="O5l-yx-F7C"/>
                             <constraint firstItem="Pg1-nY-MBn" firstAttribute="leading" secondItem="3kA-t3-i7e" secondAttribute="leading" id="Q2r-P6-5Pp"/>
-                            <constraint firstItem="MpD-78-rch" firstAttribute="top" secondItem="fZp-5B-RNm" secondAttribute="top" constant="10" id="Rw9-Fb-3Gd"/>
                             <constraint firstItem="3kA-t3-i7e" firstAttribute="trailing" secondItem="3hA-uS-9r7" secondAttribute="trailing" constant="24" id="UXa-cf-HqF"/>
                             <constraint firstItem="erE-K8-hVn" firstAttribute="top" secondItem="3hA-uS-9r7" secondAttribute="bottom" constant="8" id="c7q-Ci-IXE"/>
                             <constraint firstItem="JeG-sa-wvg" firstAttribute="centerX" secondItem="3hA-uS-9r7" secondAttribute="centerX" constant="55" id="csy-3E-dKr"/>
                             <constraint firstItem="JeG-sa-wvg" firstAttribute="centerY" secondItem="3hA-uS-9r7" secondAttribute="centerY" constant="10" id="iXV-1N-eAC"/>
                             <constraint firstItem="JeG-sa-wvg" firstAttribute="height" secondItem="3hA-uS-9r7" secondAttribute="height" id="l8h-6z-IdV"/>
-                            <constraint firstItem="MpD-78-rch" firstAttribute="centerX" secondItem="3kA-t3-i7e" secondAttribute="centerX" id="raT-yt-9L9"/>
                             <constraint firstItem="3hA-uS-9r7" firstAttribute="top" secondItem="Pg1-nY-MBn" secondAttribute="bottom" id="tBH-iC-mJK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3kA-t3-i7e"/>
@@ -552,13 +536,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="searchBarColor">
-                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="distanceLabel" destination="3hA-uS-9r7" id="PED-2v-U5K"/>
                         <outlet property="searchBar" destination="Pg1-nY-MBn" id="j13-4K-OZg"/>
+                        <outlet property="slider" destination="erE-K8-hVn" id="AtW-Wn-ALJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dw5-Cw-tZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
