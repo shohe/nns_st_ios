@@ -92,6 +92,11 @@ extension BottomSheetViewController {
         tableView.backgroundColor = .clear
         tableView.tag = 99
         tableView.dataSource = self
+        
+        // row height automatic
+        tableView.rowHeight = UITableViewAutomaticDimension
+        // register cells
+        tableView.register(SearchResultCell.nib, forCellReuseIdentifier: SearchResultCell.identifier)
     }
     
     func showTableView() {
@@ -182,10 +187,11 @@ extension BottomSheetViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()//tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
+
         let selectedItem = matchingItems[indexPath.row].placemark
-        cell.textLabel?.text = selectedItem.name
-        cell.detailTextLabel?.text = ""
+        cell.name.text = selectedItem.name
+        cell.address.text = selectedItem.name
         return cell
     }
     

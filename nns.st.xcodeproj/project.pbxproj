@@ -17,6 +17,8 @@
 		091BEF102113040E008ED8C5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEF0F2113040E008ED8C5 /* API.swift */; };
 		091F8D12212723340095608F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D11212723340095608F /* MapViewController.swift */; };
 		091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D13212726330095608F /* BottomSheetViewController.swift */; };
+		091F8D172128567A0095608F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D152128567A0095608F /* SearchResultCell.swift */; };
+		091F8D182128567A0095608F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091F8D162128567A0095608F /* SearchResultCell.xib */; };
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
 		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
@@ -90,6 +92,8 @@
 		091BEF0F2113040E008ED8C5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		091F8D11212723340095608F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		091F8D13212726330095608F /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		091F8D152128567A0095608F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		091F8D162128567A0095608F /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
 		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				09DDAAD721246BB1009C6428 /* SalonAddressCell.swift */,
 				09DDAADB21251453009C6428 /* CommentCell.swift */,
 				09DDAADF2125364F009C6428 /* ReviewCell.swift */,
+				091F8D152128567A0095608F /* SearchResultCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				09DDAAD821246BB1009C6428 /* SalonAddressCell.xib */,
 				09DDAADC21251453009C6428 /* CommentCell.xib */,
 				09DDAAE02125364F009C6428 /* ReviewCell.xib */,
+				091F8D162128567A0095608F /* SearchResultCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */,
+				091F8D182128567A0095608F /* SearchResultCell.xib in Resources */,
 				091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
 				09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */,
@@ -618,6 +625,7 @@
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
+				091F8D172128567A0095608F /* SearchResultCell.swift in Sources */,
 				09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */,
 				09DDAAEC212586AC009C6428 /* MakeOfferViewController.swift in Sources */,
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
