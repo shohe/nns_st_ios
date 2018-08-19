@@ -17,20 +17,18 @@ class MapViewController: UIViewController {
     @IBInspectable var CRfillColor: UIColor = UIColor.clear
     @IBInspectable var CRlineWidth: CGFloat = 1.0
 
-    
     private var locationManager: CLLocationManager? = nil
     private var resultSearchController:UISearchController? = nil
     private var bottomSheet: BottomSheetViewController!
     private var annotation: MKPointAnnotation = MKPointAnnotation()
     private var isSet: Bool = false
+    private let delta: Double = 0.03
     
     // for circle
     private var circle: MKCircle = MKCircle()
     private var circleRenderer: MKCircleRenderer = MKCircleRenderer()
     private var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
-    private var circleRadius: Double = 100.0
-    
-    private let delta: Double = 0.02
+    private var circleRadius: Double = 1000.0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -85,7 +83,7 @@ extension MapViewController {
     func updateMap(coordinate: CLLocationCoordinate2D, isDropPin: Bool) {
         let span = MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
         var center: CLLocationCoordinate2D = coordinate
-        center.latitude -= 0.005
+        center.latitude -= 0.006
         let region = MKCoordinateRegion(center: center, span: span)
         mapview.region = region
         mapview.setRegion(region, animated: true)
@@ -186,7 +184,7 @@ extension MapViewController: BottomSheetDelegate {
     }
     
     func bottomSheet(_bottmSheet: BottomSheetViewController, didScrolledSlider slider: UISlider) {
-        circleRadius = Double(slider.value * 100)
+        circleRadius = Double(slider.value * 1000)
         updateCircle(radius: circleRadius)
     }
     

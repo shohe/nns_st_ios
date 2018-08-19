@@ -470,7 +470,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lxq-DQ-ECm" firstAttribute="bottom" secondItem="Zzi-dr-ffL" secondAttribute="bottom" id="RzW-sU-dHY"/>
+                            <constraint firstAttribute="bottom" secondItem="Zzi-dr-ffL" secondAttribute="bottom" id="RzW-sU-dHY"/>
                             <constraint firstItem="Zzi-dr-ffL" firstAttribute="top" secondItem="kce-RG-WaR" secondAttribute="top" id="iuB-KF-fKZ"/>
                             <constraint firstItem="Zzi-dr-ffL" firstAttribute="leading" secondItem="lxq-DQ-ECm" secondAttribute="leading" id="plA-Ej-YDW"/>
                             <constraint firstItem="lxq-DQ-ECm" firstAttribute="trailing" secondItem="Zzi-dr-ffL" secondAttribute="trailing" id="tdo-h9-3MD"/>
@@ -513,7 +513,7 @@
                                         <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="9.9000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="erE-K8-hVn">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="erE-K8-hVn">
                                         <rect key="frame" x="30" y="123" width="315" height="31"/>
                                         <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
