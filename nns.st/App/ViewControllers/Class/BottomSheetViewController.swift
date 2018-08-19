@@ -9,6 +9,11 @@
 import UIKit
 import MapKit
 
+protocol BottomSheetDelegate {
+    func bottomSheet(_ bottomSheet: BottomSheetViewController, didCanceled items: [MKMapItem])
+    func bottomSheet(_ bottomSheet: BottomSheetViewController, SearchButtonClicked items: [MKMapItem])
+}
+
 class BottomSheetViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar! {
@@ -28,6 +33,7 @@ class BottomSheetViewController: UIViewController {
     var tableView: UITableView!
     var matchingItems:[MKMapItem] = []
     var mapview: MKMapView? = nil
+    var delegate: BottomSheetDelegate? = nil
     
     static func instantiateViewController() -> BottomSheetViewController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -110,6 +116,7 @@ extension BottomSheetViewController {
         tableView.register(SearchResultCell.nib, forCellReuseIdentifier: SearchResultCell.identifier)
     }
     
+    
     func showTableView() {
         distanceLabel.isHidden = true
         slider.isHidden = true
@@ -164,6 +171,7 @@ extension BottomSheetViewController {
                 self.showTableView()
                 
                 self.showCancel()
+                self.delegate?.bottomSheet(self, didCanceled: matchingItems)
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
         }
@@ -182,6 +190,7 @@ extension BottomSheetViewController {
     
     @IBAction func cancel(_ sender: UIButton) {
         searchBar.resignFirstResponder()
+        self.delegate?.bottomSheet(self, didCanceled: matchingItems)
     }
     
     func showCancel() {
@@ -213,6 +222,7 @@ extension BottomSheetViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        self.delegate?.bottomSheet(self, SearchButtonClicked: matchingItems)
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -242,9 +252,10 @@ extension BottomSheetViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
 
-        let selectedItem = matchingItems[indexPath.row].placemark
+        let selectedItem = matchingItems[indexPath.row]
         cell.name.text = selectedItem.name
-        cell.address.text = selectedItem.name
+        cell.address.text = selectedItem.placemark.title
+        cell.placemark = selectedItem.placemark
         return cell
     }
     

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class SearchResultCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
+    
+    var placemark: MKPlacemark!
     
     static var identifier:String {
         get{
