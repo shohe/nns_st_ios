@@ -57,6 +57,8 @@ class BottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initTableView()
+        self.slider.addTarget(self, action: #selector(onChanged(_:)), for: .valueChanged)
+//        slider.addTarget(self, action: #selector(self.onChange), for: .valueChanged)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -213,6 +215,10 @@ extension BottomSheetViewController {
     
     @IBAction func setDistance(_ sender: UIButton) {
         print("setDintance")
+    }
+    
+    @objc func onChanged(_ sender: UISlider) {
+        distanceLabel.text = String("\(round(sender.value * 10) / 10)")
     }
 }
 

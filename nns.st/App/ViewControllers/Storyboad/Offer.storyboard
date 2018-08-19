@@ -502,15 +502,12 @@
                                         <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-sa-wvg">
-                                        <rect key="frame" x="218" y="66.5" width="31" height="57.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="25"/>
-                                        <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="erE-K8-hVn">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="9.9000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="erE-K8-hVn">
                                         <rect key="frame" x="22" y="123" width="331" height="31"/>
                                         <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fO-Vn-wvF">
                                         <rect key="frame" x="24" y="171" width="327" height="46"/>
@@ -530,20 +527,26 @@
                                             <action selector="setDistance:" destination="FlF-qH-3rt" eventType="touchUpInside" id="FHa-Uu-Iha"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-sa-wvg">
+                                        <rect key="frame" x="227" y="69.5" width="31" height="57.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="25"/>
+                                        <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3hA-uS-9r7" secondAttribute="trailing" constant="24" id="1KU-20-A4s"/>
                                     <constraint firstItem="erE-K8-hVn" firstAttribute="top" secondItem="3hA-uS-9r7" secondAttribute="bottom" constant="4" id="9VC-u6-787"/>
                                     <constraint firstItem="erE-K8-hVn" firstAttribute="leading" secondItem="5kU-GP-cMz" secondAttribute="leading" constant="24" id="MAJ-yW-gM0"/>
                                     <constraint firstAttribute="trailing" secondItem="9fO-Vn-wvF" secondAttribute="trailing" constant="24" id="O0A-kX-WH3"/>
-                                    <constraint firstItem="JeG-sa-wvg" firstAttribute="centerX" secondItem="5kU-GP-cMz" secondAttribute="centerX" constant="46" id="P5L-hO-CGi"/>
+                                    <constraint firstItem="JeG-sa-wvg" firstAttribute="centerX" secondItem="5kU-GP-cMz" secondAttribute="centerX" constant="55" id="P5L-hO-CGi"/>
                                     <constraint firstAttribute="trailing" secondItem="erE-K8-hVn" secondAttribute="trailing" constant="24" id="Tj2-EW-I4K"/>
                                     <constraint firstItem="9fO-Vn-wvF" firstAttribute="leading" secondItem="5kU-GP-cMz" secondAttribute="leading" constant="24" id="eqq-QI-ufQ"/>
                                     <constraint firstItem="3hA-uS-9r7" firstAttribute="leading" secondItem="5kU-GP-cMz" secondAttribute="leading" constant="24" id="f1L-t5-Fq7"/>
                                     <constraint firstAttribute="bottom" secondItem="9fO-Vn-wvF" secondAttribute="bottom" constant="36" id="gVC-aN-ivG"/>
                                     <constraint firstItem="9fO-Vn-wvF" firstAttribute="top" secondItem="erE-K8-hVn" secondAttribute="bottom" constant="18" id="kBE-SB-O0m"/>
                                     <constraint firstItem="JeG-sa-wvg" firstAttribute="height" secondItem="3hA-uS-9r7" secondAttribute="height" id="s26-5n-KdM"/>
-                                    <constraint firstItem="JeG-sa-wvg" firstAttribute="centerY" secondItem="3hA-uS-9r7" secondAttribute="centerY" constant="5" id="v51-EW-grw"/>
+                                    <constraint firstItem="JeG-sa-wvg" firstAttribute="centerY" secondItem="3hA-uS-9r7" secondAttribute="centerY" constant="8" id="v51-EW-grw"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" placeholder="現在地" backgroundImage="nil" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-nY-MBn">
