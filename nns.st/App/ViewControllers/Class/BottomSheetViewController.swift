@@ -13,6 +13,7 @@ protocol BottomSheetDelegate {
     func bottomSheet(_ bottomSheet: BottomSheetViewController, didCanceled items: [MKMapItem])
     func bottomSheet(_ bottomSheet: BottomSheetViewController, SearchButtonClicked items: [MKMapItem])
     func bottomSheet(_bottmSheet: BottomSheetViewController, didScrolledSlider slider: UISlider)
+    func bottomSheet(_bottmSheet: BottomSheetViewController, didSetDistance button: UIButton)
 }
 
 class BottomSheetViewController: UIViewController {
@@ -215,7 +216,7 @@ extension BottomSheetViewController {
     }
     
     @IBAction func setDistance(_ sender: UIButton) {
-        print("setDintance")
+        delegate?.bottomSheet(_bottmSheet: self, didSetDistance: sender)
     }
     
     @objc func onChanged(_ sender: UISlider) {

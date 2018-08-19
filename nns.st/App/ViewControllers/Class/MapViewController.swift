@@ -10,12 +10,19 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
+protocol MapViewControllerDelegate {
+    func mapView(_mapViewController: MapViewController, didSetDistance item: MapViewItem)
+}
+
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapview: MKMapView!
     @IBInspectable var CRstrokeColor: UIColor = UIColor.white
     @IBInspectable var CRfillColor: UIColor = UIColor.clear
     @IBInspectable var CRlineWidth: CGFloat = 1.0
+    
+    var delegate: MapViewControllerDelegate? = nil
 
     private var locationManager: CLLocationManager? = nil
     private var resultSearchController:UISearchController? = nil
@@ -29,6 +36,15 @@ class MapViewController: UIViewController {
     private var circleRenderer: MKCircleRenderer = MKCircleRenderer()
     private var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
     private var circleRadius: Double = 1000.0
+    
+    
+    
+    static func instantiateViewController() -> MapViewController {
+        let storyboard = UIStoryboard(name: "Offer", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        
+        return viewController
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -83,7 +99,7 @@ extension MapViewController {
     func updateMap(coordinate: CLLocationCoordinate2D, isDropPin: Bool) {
         let span = MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
         var center: CLLocationCoordinate2D = coordinate
-        center.latitude -= 0.006
+        center.latitude -= 0.007
         let region = MKCoordinateRegion(center: center, span: span)
         mapview.region = region
         mapview.setRegion(region, animated: true)
@@ -186,6 +202,15 @@ extension MapViewController: BottomSheetDelegate {
     func bottomSheet(_bottmSheet: BottomSheetViewController, didScrolledSlider slider: UISlider) {
         circleRadius = Double(slider.value * 1000)
         updateCircle(radius: circleRadius)
+    }
+    
+    func bottomSheet(_bottmSheet: BottomSheetViewController, didSetDistance button: UIButton) {
+        let title = (bottomSheet.searchBar.text != "") ? bottomSheet.searchBar.text : "現在地"
+        if let title = title {
+            let item = MapViewItem(coordinate: coordinate, title: title, distance: CGFloat(round(circleRadius/100)/10))
+            delegate?.mapView(_mapViewController: self, didSetDistance: item)
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

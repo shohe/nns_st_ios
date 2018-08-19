@@ -129,6 +129,9 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在地" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQH-Ha-uSt">
                                                 <rect key="frame" x="8" y="4" width="37" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="108" id="G7Y-1d-DkG"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -153,14 +156,14 @@
                                         <color key="textColor" red="0.73868020960000003" green="0.74411139650000002" blue="0.7604049571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6p-Ix-cg2">
-                                        <rect key="frame" x="32" y="50" width="82" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6p-Ix-cg2">
+                                        <rect key="frame" x="27.5" y="50" width="91.5" height="41"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
                                         <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圏内" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trw-5L-6ft">
-                                        <rect key="frame" x="122" y="69" width="25" height="15"/>
+                                        <rect key="frame" x="127" y="69" width="25" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.73868020960000003" green="0.74411139650000002" blue="0.7604049571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -179,7 +182,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFq-rG-fk4" userLabel="GestureLayerForMap">
-                                <rect key="frame" x="32" y="319.5" width="311" height="120"/>
+                                <rect key="frame" x="32" y="320" width="311" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -436,13 +439,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapDistance" destination="H6p-Ix-cg2" id="w4B-9q-fIJ"/>
+                        <outlet property="mapTitle" destination="oQH-Ha-uSt" id="guJ-AS-5fK"/>
                         <outlet property="snapmap" destination="7YR-jS-VHS" id="AEb-0X-WXr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYK-V2-61c" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="7rk-sz-Qud">
                     <connections>
-                        <segue destination="E0C-tc-wmO" kind="show" id="kNL-hq-cx6"/>
+                        <action selector="tapMapField:" destination="AlS-eo-ddH" id="E1T-Eh-Sy4"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="PJf-SU-Og1">
@@ -456,7 +461,7 @@
         <!--Map View Controller-->
         <scene sceneID="FFV-RM-4gp">
             <objects>
-                <viewController id="E0C-tc-wmO" customClass="MapViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E0C-tc-wmO" customClass="MapViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kce-RG-WaR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

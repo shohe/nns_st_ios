@@ -11,6 +11,8 @@ import UIKit
 class MakeOfferViewController: UIViewController {
     
     @IBOutlet weak var snapmap: UIImageView!
+    @IBOutlet weak var mapTitle: UILabel!
+    @IBOutlet weak var mapDistance: UILabel!
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -33,7 +35,7 @@ class MakeOfferViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
 
@@ -48,11 +50,27 @@ extension MakeOfferViewController {
         print("tap date/time")
     }
     
+    @IBAction func tapMapField(_ sender: UITapGestureRecognizer) {
+        let viewController = MapViewController.instantiateViewController()
+        viewController.delegate = self
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func leftSideCornerRadius(view: UIImageView) -> Void {
         let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .topLeft], cornerRadii: CGSize(width: 5, height: 5))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         view.layer.mask = mask
+    }
+    
+}
+
+
+extension MakeOfferViewController: MapViewControllerDelegate {
+    
+    func mapView(_mapViewController: MapViewController, didSetDistance item: MapViewItem) {
+        mapTitle.text = item.title
+        mapDistance.text = "\(item.distance)km"
     }
     
 }
