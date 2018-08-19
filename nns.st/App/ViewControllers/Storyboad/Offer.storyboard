@@ -477,6 +477,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lxq-DQ-ECm"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="CRstrokeColor">
+                            <color key="value" red="0.0" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="CRfillColor">
+                            <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="0.35968191964285712" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="CRlineWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="mapview" destination="Zzi-dr-ffL" id="HIg-4Y-5Bp"/>
                     </connections>
@@ -503,7 +514,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="9.9000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="erE-K8-hVn">
-                                        <rect key="frame" x="22" y="123" width="331" height="31"/>
+                                        <rect key="frame" x="30" y="123" width="315" height="31"/>
                                         <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="maximumTrackTintColor" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -537,10 +548,10 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3hA-uS-9r7" secondAttribute="trailing" constant="24" id="1KU-20-A4s"/>
                                     <constraint firstItem="erE-K8-hVn" firstAttribute="top" secondItem="3hA-uS-9r7" secondAttribute="bottom" constant="4" id="9VC-u6-787"/>
-                                    <constraint firstItem="erE-K8-hVn" firstAttribute="leading" secondItem="5kU-GP-cMz" secondAttribute="leading" constant="24" id="MAJ-yW-gM0"/>
+                                    <constraint firstItem="erE-K8-hVn" firstAttribute="leading" secondItem="5kU-GP-cMz" secondAttribute="leading" constant="32" id="MAJ-yW-gM0"/>
                                     <constraint firstAttribute="trailing" secondItem="9fO-Vn-wvF" secondAttribute="trailing" constant="24" id="O0A-kX-WH3"/>
                                     <constraint firstItem="JeG-sa-wvg" firstAttribute="centerX" secondItem="5kU-GP-cMz" secondAttribute="centerX" constant="55" id="P5L-hO-CGi"/>
-                                    <constraint firstAttribute="trailing" secondItem="erE-K8-hVn" secondAttribute="trailing" constant="24" id="Tj2-EW-I4K"/>
+                                    <constraint firstAttribute="trailing" secondItem="erE-K8-hVn" secondAttribute="trailing" constant="32" id="Tj2-EW-I4K"/>
                                     <constraint firstItem="9fO-Vn-wvF" firstAttribute="leading" secondItem="5kU-GP-cMz" secondAttribute="leading" constant="24" id="eqq-QI-ufQ"/>
                                     <constraint firstItem="3hA-uS-9r7" firstAttribute="leading" secondItem="5kU-GP-cMz" secondAttribute="leading" constant="24" id="f1L-t5-Fq7"/>
                                     <constraint firstAttribute="bottom" secondItem="9fO-Vn-wvF" secondAttribute="bottom" constant="36" id="gVC-aN-ivG"/>
@@ -549,7 +560,7 @@
                                     <constraint firstItem="JeG-sa-wvg" firstAttribute="centerY" secondItem="3hA-uS-9r7" secondAttribute="centerY" constant="8" id="v51-EW-grw"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" placeholder="現在地" backgroundImage="nil" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-nY-MBn">
+                            <searchBar contentMode="redraw" placeholder="現在地から" backgroundImage="nil" translatesAutoresizingMaskIntoConstraints="NO" id="Pg1-nY-MBn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>

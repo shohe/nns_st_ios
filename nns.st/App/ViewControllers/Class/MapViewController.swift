@@ -13,12 +13,22 @@ import CoreLocation
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapview: MKMapView!
+    @IBInspectable var CRstrokeColor: UIColor = UIColor.white
+    @IBInspectable var CRfillColor: UIColor = UIColor.clear
+    @IBInspectable var CRlineWidth: CGFloat = 1.0
+
     
     private var locationManager: CLLocationManager? = nil
     private var resultSearchController:UISearchController? = nil
     private var bottomSheet: BottomSheetViewController!
     private var annotation: MKPointAnnotation = MKPointAnnotation()
     private var isSet: Bool = false
+    
+    // for circle
+    private var circle: MKCircle = MKCircle()
+    private var circleRenderer: MKCircleRenderer = MKCircleRenderer()
+    private var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
+    private var circleRadius: Double = 100.0
     
     private let delta: Double = 0.02
     
@@ -80,6 +90,9 @@ extension MapViewController {
         mapview.region = region
         mapview.setRegion(region, animated: true)
         
+        self.coordinate = coordinate
+        updateCircle(radius: circleRadius)
+        
         if isDropPin {
             mapview.removeAnnotation(annotation)
             annotation.coordinate = coordinate
@@ -87,10 +100,28 @@ extension MapViewController {
         }
     }
     
+    func updateCircle(radius: CLLocationDistance) {
+        mapview.removeOverlays(mapview.overlays)
+        circle = MKCircle(center: coordinate, radius: radius)
+        mapview.add(circle)
+    }
+    
 }
 
 
 extension MapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            circleRenderer = MKCircleRenderer(overlay: overlay)
+            circleRenderer.strokeColor = CRstrokeColor
+            circleRenderer.fillColor = CRfillColor
+            circleRenderer.lineWidth = CRlineWidth
+            return circleRenderer
+        }
+        return MKOverlayRenderer()
+    }
+    
 }
 
 
@@ -152,6 +183,11 @@ extension MapViewController: BottomSheetDelegate {
             bottomSheet.searchBar.text = item.name
         }
         bottomSheet.searchBar.resignFirstResponder()
+    }
+    
+    func bottomSheet(_bottmSheet: BottomSheetViewController, didScrolledSlider slider: UISlider) {
+        circleRadius = Double(slider.value * 100)
+        updateCircle(radius: circleRadius)
     }
     
 }

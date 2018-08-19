@@ -12,6 +12,7 @@ import MapKit
 protocol BottomSheetDelegate {
     func bottomSheet(_ bottomSheet: BottomSheetViewController, didCanceled items: [MKMapItem])
     func bottomSheet(_ bottomSheet: BottomSheetViewController, SearchButtonClicked items: [MKMapItem])
+    func bottomSheet(_bottmSheet: BottomSheetViewController, didScrolledSlider slider: UISlider)
 }
 
 class BottomSheetViewController: UIViewController {
@@ -219,6 +220,7 @@ extension BottomSheetViewController {
     
     @objc func onChanged(_ sender: UISlider) {
         distanceLabel.text = String("\(round(sender.value * 10) / 10)")
+        delegate?.bottomSheet(_bottmSheet: self, didScrolledSlider: sender)
     }
 }
 
