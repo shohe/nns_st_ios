@@ -19,6 +19,11 @@ class BottomSheetViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var km: UILabel!
+    @IBOutlet weak var cancelRightConst: NSLayoutConstraint!
+    @IBOutlet weak var cancelLeftConst: NSLayoutConstraint!
+    @IBOutlet weak var cancelWidth: NSLayoutConstraint!
+    @IBOutlet weak var setButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     var tableView: UITableView!
     var matchingItems:[MKMapItem] = []
@@ -36,6 +41,7 @@ class BottomSheetViewController: UIViewController {
         self.prepareBackgroundView()
         self.configureObserver()
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -66,7 +72,7 @@ extension BottomSheetViewController {
         let blurEffect = UIBlurEffect.init(style: .extraLight)
         let visualEffect = UIVisualEffectView.init(effect: blurEffect)
         let bluredView = UIVisualEffectView.init(effect: blurEffect)
-        bluredView.alpha = 0.8
+        bluredView.alpha = 0.7
         bluredView.contentView.addSubview(visualEffect)
         
         let radius = view.layer.cornerRadius
@@ -74,43 +80,41 @@ extension BottomSheetViewController {
         visualEffect.contentView.layer.cornerRadius = radius
         bluredView.frame = UIScreen.main.bounds
         bluredView.contentView.layer.cornerRadius = radius
-
+        
+        view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, cornerRadius: view.layer.cornerRadius).cgPath
+        view.layer.shadowColor = UIColor.darkGray.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = CGSize(width: 0.0, height: -2.0)
+        view.layer.shadowRadius = 10
+        
         view.insertSubview(bluredView, at: 0)
     }
     
     func initBottomSheet() {
         UIView.animate(withDuration: 0.3) {
             let frame = self.view.frame
-            let componentY = UIScreen.main.bounds.height - 200
+            let componentY = UIScreen.main.bounds.height - self.containerView.frame.height
             self.view.frame = CGRect(x: 0, y: componentY, width: frame.width, height: frame.height)
         }
     }
     
     func initTableView() {
-        // UI
         tableView = UITableView()
         tableView.frame = CGRect(x: 0.0, y: searchBar.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height - searchBar.frame.size.height)
         tableView.backgroundColor = .clear
-        
-        // data
         tableView.tag = 99
         tableView.dataSource = self
         
-        // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        // register cells
         tableView.register(SearchResultCell.nib, forCellReuseIdentifier: SearchResultCell.identifier)
-    }
-    
-    func resizeTable(height: CGFloat) {
-        tableView.frame = CGRect(x: 0.0, y: searchBar.frame.size.height, width: self.view.frame.size.width, height: height)
     }
     
     func showTableView() {
         distanceLabel.isHidden = true
         slider.isHidden = true
         km.isHidden = true
+        setButton.isHidden = true
         self.view.addSubview(tableView)
     }
     
@@ -118,10 +122,20 @@ extension BottomSheetViewController {
         distanceLabel.isHidden = false
         slider.isHidden = false
         km.isHidden = false
+        setButton.isHidden = false
         if let vtag = self.view.viewWithTag(99) {
             vtag.removeFromSuperview()
         }
     }
+    
+    func updateTableViewInset(keyboadHeight: CGFloat) {
+        let margin: CGFloat = 30.0
+        let insets: UIEdgeInsets = UIEdgeInsets(top: -margin, left: 0, bottom: keyboadHeight + searchBar.frame.size.height + margin, right: 0)
+        
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
+    }
+    
     
     func configureObserver() {
         let notification = NotificationCenter.default
@@ -137,15 +151,19 @@ extension BottomSheetViewController {
     @objc func keyboardWillShow(notification: Notification?) {
         if let userInfo = notification?.userInfo {
             if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let _ = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
-                
+
                 self.view.transform = CGAffineTransform.identity
                 let convertedKeyboardFrame = self.view.convert(keyboardFrame, from: nil)
-                // let offsetY: CGFloat = self.searchBar!.frame.maxY - convertedKeyboardFrame.minY
-                let offsetY: CGFloat = self.view.frame.height/2 - convertedKeyboardFrame.minY
+//                let height = (matchingItems.count > 0) ? self.view.frame.height/2 : self.searchBar!.frame.maxY
+                let height = self.view.frame.height/2
+                let offsetY: CGFloat = height - convertedKeyboardFrame.minY
                 if offsetY < 0 { return }
+                
                 self.view.transform = CGAffineTransform(translationX: 0, y: -offsetY)
-                tableView.contentInset = UIEdgeInsets(top: -30, left: 0, bottom: keyboardFrame.size.height + searchBar.frame.size.height, right: 0)
+                self.updateTableViewInset(keyboadHeight: keyboardFrame.height)
                 self.showTableView()
+                
+                self.showCancel()
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
         }
@@ -157,10 +175,36 @@ extension BottomSheetViewController {
         UIView.animate(withDuration: duration!, animations: { () in
             self.view.transform = CGAffineTransform.identity
             self.hideTableView()
+            self.hideCancel()
             self.navigationController?.setNavigationBarHidden(false, animated: true)
         })
     }
     
+    @IBAction func cancel(_ sender: UIButton) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func showCancel() {
+        UIView.animate(withDuration: 2.0) {
+            self.cancelRightConst.constant = 14.0
+            self.cancelLeftConst.constant = 5.0
+            self.cancelWidth.constant = 48.0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func hideCancel() {
+        UIView.animate(withDuration: 2.0) {
+            self.cancelRightConst.constant = 0.0
+            self.cancelLeftConst.constant = 0.0
+            self.cancelWidth.constant = 0.0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func setDistance(_ sender: UIButton) {
+        print("setDintance")
+    }
 }
 
 
