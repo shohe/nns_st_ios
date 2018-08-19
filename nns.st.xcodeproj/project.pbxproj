@@ -22,6 +22,8 @@
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
 		09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B4F21298DA300C1FF3F /* MapViewItem.swift */; };
 		09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */; };
+		09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */; };
+		09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */; };
 		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
 		09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */; };
@@ -99,6 +101,8 @@
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
 		09A05B4F21298DA300C1FF3F /* MapViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewItem.swift; sourceTree = "<group>"; };
 		09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotMaker.swift; sourceTree = "<group>"; };
+		09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDatePickerView.swift; sourceTree = "<group>"; };
+		09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupDatePickerView.xib; sourceTree = "<group>"; };
 		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				09DDAADB21251453009C6428 /* CommentCell.swift */,
 				09DDAADF2125364F009C6428 /* ReviewCell.swift */,
 				091F8D152128567A0095608F /* SearchResultCell.swift */,
+				09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				09DDAADC21251453009C6428 /* CommentCell.xib */,
 				09DDAAE02125364F009C6428 /* ReviewCell.xib */,
 				091F8D162128567A0095608F /* SearchResultCell.xib */,
+				09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */,
 				091F8D182128567A0095608F /* SearchResultCell.xib in Resources */,
 				091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */,
+				09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
 				09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */,
 				091BEEE721130019008ED8C5 /* Assets.xcassets in Resources */,
@@ -647,6 +654,7 @@
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
+				09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */,
 				091F8D172128567A0095608F /* SearchResultCell.swift in Sources */,
 				09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */,
 				09DDAAB0212074EA009C6428 /* UIViewController+transparentNavigationBar.swift in Sources */,
