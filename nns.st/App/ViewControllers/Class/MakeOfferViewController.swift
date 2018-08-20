@@ -13,6 +13,8 @@ class MakeOfferViewController: UIViewController {
     @IBOutlet weak var snapmap: UIImageView!
     @IBOutlet weak var mapTitle: UILabel!
     @IBOutlet weak var mapDistance: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var time: UILabel!
     
     var pickerView: PopupDatePickerView!
     
@@ -26,6 +28,7 @@ class MakeOfferViewController: UIViewController {
         super.viewWillAppear(animated)
         self.transparentNavigationBar()
         self.leftSideCornerRadius(view: snapmap)
+        self.setDateTime(date: Date())
     }
     
     override func viewDidLoad() {
@@ -76,6 +79,16 @@ extension MakeOfferViewController {
         pickerView.hidePopupDatePicker()
     }
     
+    func setDateTime(date: Date) {
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy / MM / dd"
+        timeFormatter.dateFormat = "HH : mm ~"
+        
+        self.date.text = dateFormatter.string(from: date)
+        self.time.text = timeFormatter.string(from: date)
+    }
+    
 }
 
 
@@ -97,7 +110,8 @@ extension MakeOfferViewController: PopupDatePickerViewDelegate {
     }
     
     func popupDatePicker(_pickerView: PopupDatePickerView, didSelected sender: UIButton) {
-        
+        removePickerView()
+        setDateTime(date: pickerView.picker.date)
     }
     
 }
