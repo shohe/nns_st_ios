@@ -195,7 +195,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0x-ct-Y4o">
+                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0x-ct-Y4o" userLabel="VeryShort">
                                 <rect key="frame" x="32" y="469.5" width="58" height="90.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -203,8 +203,11 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectHairType:" destination="AlS-eo-ddH" eventType="touchUpInside" id="lRd-R3-c6L"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gex-U6-cwZ">
+                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gex-U6-cwZ" userLabel="Short">
                                 <rect key="frame" x="95" y="469.5" width="58.5" height="90.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -212,8 +215,11 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectHairType:" destination="AlS-eo-ddH" eventType="touchUpInside" id="rMp-Ex-KZq"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00W-RR-6A9">
+                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00W-RR-6A9" userLabel="Midium">
                                 <rect key="frame" x="158.5" y="469.5" width="58" height="90.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -221,8 +227,11 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectHairType:" destination="AlS-eo-ddH" eventType="touchUpInside" id="9ft-BZ-5pP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioN-6i-8iI">
+                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioN-6i-8iI" userLabel="Long">
                                 <rect key="frame" x="221.5" y="469.5" width="58.5" height="90.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -230,8 +239,11 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectHairType:" destination="AlS-eo-ddH" eventType="touchUpInside" id="MLU-yt-1qh"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gi-zF-lEb">
+                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gi-zF-lEb" userLabel="VeryLong">
                                 <rect key="frame" x="285" y="469.5" width="58" height="90.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -239,6 +251,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectHairType:" destination="AlS-eo-ddH" eventType="touchUpInside" id="Kq8-ED-zRT"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHt-xy-Fh1">
                                 <rect key="frame" x="90" y="469.5" width="5" height="90.5"/>
@@ -438,12 +453,22 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                            <color key="value" white="1" alpha="0.59547991071428574" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="date" destination="i1o-Vq-gs0" id="mpc-yd-n84"/>
+                        <outlet property="long" destination="ioN-6i-8iI" id="FaU-gE-xic"/>
                         <outlet property="mapDistance" destination="H6p-Ix-cg2" id="w4B-9q-fIJ"/>
                         <outlet property="mapTitle" destination="oQH-Ha-uSt" id="guJ-AS-5fK"/>
+                        <outlet property="midium" destination="00W-RR-6A9" id="FW0-2p-XYd"/>
+                        <outlet property="short" destination="gex-U6-cwZ" id="eFg-0Q-zFz"/>
                         <outlet property="snapmap" destination="7YR-jS-VHS" id="AEb-0X-WXr"/>
                         <outlet property="time" destination="S75-hH-a05" id="EaZ-nI-s0A"/>
+                        <outlet property="veryLong" destination="9gi-zF-lEb" id="Car-mq-wTk"/>
+                        <outlet property="veryShort" destination="L0x-ct-Y4o" id="l1y-3b-sy7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYK-V2-61c" userLabel="First Responder" sceneMemberID="firstResponder"/>

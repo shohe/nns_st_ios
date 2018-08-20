@@ -16,7 +16,16 @@ class MakeOfferViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
     
+    @IBOutlet weak var veryShort: UIButton!
+    @IBOutlet weak var short: UIButton!
+    @IBOutlet weak var midium: UIButton!
+    @IBOutlet weak var long: UIButton!
+    @IBOutlet weak var veryLong: UIButton!
+    
+    @IBInspectable var selectedColor: UIColor = UIColor.white
+    
     var pickerView: PopupDatePickerView!
+    var hairTypeItem: [UIButton] = []
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -33,7 +42,7 @@ class MakeOfferViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hairTypeItem = [veryShort, short, midium, long, veryLong]
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +69,13 @@ extension MakeOfferViewController {
         let viewController = MapViewController.instantiateViewController()
         viewController.delegate = self
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func selectHairType(_ sender: UIButton) {
+        for item in hairTypeItem {
+            item.backgroundColor = UIColor.white
+        }
+        sender.backgroundColor = selectedColor
     }
     
     func leftSideCornerRadius(view: UIImageView) -> Void {
