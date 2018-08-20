@@ -14,6 +14,8 @@ class MakeOfferViewController: UIViewController {
     @IBOutlet weak var mapTitle: UILabel!
     @IBOutlet weak var mapDistance: UILabel!
     
+    var pickerView: PopupDatePickerView!
+    
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MONavigationController") as! UINavigationController
@@ -47,7 +49,8 @@ extension MakeOfferViewController {
     }
     
     @IBAction func tapDateTimeField(_ sender: UITapGestureRecognizer) {
-        print("tap date/time")
+        addPickerView()
+        pickerView.initPopupDatePicker()
     }
     
     @IBAction func tapMapField(_ sender: UITapGestureRecognizer) {
@@ -63,6 +66,16 @@ extension MakeOfferViewController {
         view.layer.mask = mask
     }
     
+    func addPickerView() {
+        pickerView = PopupDatePickerView(frame: self.view.bounds)
+        pickerView.delegate = self
+        self.view.addSubview(pickerView)
+    }
+    
+    func removePickerView() {
+        pickerView.hidePopupDatePicker()
+    }
+    
 }
 
 
@@ -71,6 +84,20 @@ extension MakeOfferViewController: MapViewControllerDelegate {
     func mapView(_mapViewController: MapViewController, didSetDistance item: MapViewItem) {
         mapTitle.text = item.title
         mapDistance.text = "\(item.distance)km"
+        SnapShotMaker.drawSnapshot(coordinate: item.coordinate, source: snapmap, pinColor: .red)
+    }
+    
+}
+
+
+extension MakeOfferViewController: PopupDatePickerViewDelegate {
+    
+    func popupDatePicker(_pickerView: PopupDatePickerView, didCanceled sender: UIButton) {
+        removePickerView()
+    }
+    
+    func popupDatePicker(_pickerView: PopupDatePickerView, didSelected sender: UIButton) {
+        
     }
     
 }
