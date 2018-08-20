@@ -28,6 +28,16 @@
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
 		09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194F212AB2B1006562D0 /* ConfirmOfferViewController.swift */; };
+		09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1951212AC1AA006562D0 /* OutcomeInfoCell.swift */; };
+		09BB1954212AC1AA006562D0 /* OutcomeInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB1952212AC1AA006562D0 /* OutcomeInfoCell.xib */; };
+		09BB1957212AD515006562D0 /* DateInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1955212AD515006562D0 /* DateInfoCell.swift */; };
+		09BB1958212AD515006562D0 /* DateInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB1956212AD515006562D0 /* DateInfoCell.xib */; };
+		09BB195B212AD531006562D0 /* HairTypeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1959212AD531006562D0 /* HairTypeInfoCell.swift */; };
+		09BB195C212AD531006562D0 /* HairTypeInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB195A212AD531006562D0 /* HairTypeInfoCell.xib */; };
+		09BB195F212AD550006562D0 /* DistanceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB195D212AD550006562D0 /* DistanceInfoCell.swift */; };
+		09BB1960212AD550006562D0 /* DistanceInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB195E212AD550006562D0 /* DistanceInfoCell.xib */; };
+		09BB1963212AD747006562D0 /* CommentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1961212AD747006562D0 /* CommentInfoCell.swift */; };
+		09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB1962212AD747006562D0 /* CommentInfoCell.xib */; };
 		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
 		09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */; };
@@ -111,6 +121,16 @@
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
 		09BB194F212AB2B1006562D0 /* ConfirmOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOfferViewController.swift; sourceTree = "<group>"; };
+		09BB1951212AC1AA006562D0 /* OutcomeInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeInfoCell.swift; sourceTree = "<group>"; };
+		09BB1952212AC1AA006562D0 /* OutcomeInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutcomeInfoCell.xib; sourceTree = "<group>"; };
+		09BB1955212AD515006562D0 /* DateInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoCell.swift; sourceTree = "<group>"; };
+		09BB1956212AD515006562D0 /* DateInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateInfoCell.xib; sourceTree = "<group>"; };
+		09BB1959212AD531006562D0 /* HairTypeInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairTypeInfoCell.swift; sourceTree = "<group>"; };
+		09BB195A212AD531006562D0 /* HairTypeInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HairTypeInfoCell.xib; sourceTree = "<group>"; };
+		09BB195D212AD550006562D0 /* DistanceInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceInfoCell.swift; sourceTree = "<group>"; };
+		09BB195E212AD550006562D0 /* DistanceInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceInfoCell.xib; sourceTree = "<group>"; };
+		09BB1961212AD747006562D0 /* CommentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInfoCell.swift; sourceTree = "<group>"; };
+		09BB1962212AD747006562D0 /* CommentInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentInfoCell.xib; sourceTree = "<group>"; };
 		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +375,11 @@
 				09DDAADF2125364F009C6428 /* ReviewCell.swift */,
 				091F8D152128567A0095608F /* SearchResultCell.swift */,
 				09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */,
+				09BB1951212AC1AA006562D0 /* OutcomeInfoCell.swift */,
+				09BB1955212AD515006562D0 /* DateInfoCell.swift */,
+				09BB1959212AD531006562D0 /* HairTypeInfoCell.swift */,
+				09BB195D212AD550006562D0 /* DistanceInfoCell.swift */,
+				09BB1961212AD747006562D0 /* CommentInfoCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -391,6 +416,11 @@
 				09DDAAE02125364F009C6428 /* ReviewCell.xib */,
 				091F8D162128567A0095608F /* SearchResultCell.xib */,
 				09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */,
+				09BB1952212AC1AA006562D0 /* OutcomeInfoCell.xib */,
+				09BB1956212AD515006562D0 /* DateInfoCell.xib */,
+				09BB195A212AD531006562D0 /* HairTypeInfoCell.xib */,
+				09BB195E212AD550006562D0 /* DistanceInfoCell.xib */,
+				09BB1962212AD747006562D0 /* CommentInfoCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -529,6 +559,7 @@
 				09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */,
 				091F8D182128567A0095608F /* SearchResultCell.xib in Resources */,
 				091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */,
+				09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */,
 				09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
 				09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */,
@@ -537,8 +568,12 @@
 				09DDAAE22125364F009C6428 /* ReviewCell.xib in Resources */,
 				091BEEE521130017008ED8C5 /* Main.storyboard in Resources */,
 				09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */,
+				09BB1958212AD515006562D0 /* DateInfoCell.xib in Resources */,
+				09BB1960212AD550006562D0 /* DistanceInfoCell.xib in Resources */,
 				09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */,
+				09BB1954212AC1AA006562D0 /* OutcomeInfoCell.xib in Resources */,
 				09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */,
+				09BB195C212AD531006562D0 /* HairTypeInfoCell.xib in Resources */,
 				09DDAAC82123FD6B009C6428 /* Confirm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
+				09BB195B212AD531006562D0 /* HairTypeInfoCell.swift in Sources */,
 				09DDAAE12125364F009C6428 /* ReviewCell.swift in Sources */,
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
@@ -658,15 +694,18 @@
 				09DDAAB221207EEB009C6428 /* ContainButtonTextField.swift in Sources */,
 				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
+				09BB195F212AD550006562D0 /* DistanceInfoCell.swift in Sources */,
 				09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
 				09BB194C212AA535006562D0 /* OfferItem.swift in Sources */,
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
+				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
 				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
+				09BB1963212AD747006562D0 /* CommentInfoCell.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
@@ -685,6 +724,7 @@
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
 				091F8D12212723340095608F /* MapViewController.swift in Sources */,
 				09DDAADD21251453009C6428 /* CommentCell.swift in Sources */,
+				09BB1957212AD515006562D0 /* DateInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

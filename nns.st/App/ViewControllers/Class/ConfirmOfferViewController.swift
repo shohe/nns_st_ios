@@ -12,6 +12,7 @@ class ConfirmOfferViewController: UIViewController {
     
     var offerItem: OfferItem?
     
+    @IBOutlet weak var tableView: UITableView!
     
     static func instantiateViewController() -> ConfirmOfferViewController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -23,23 +24,61 @@ class ConfirmOfferViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // row height automatic
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // register cells
+        tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
+        tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
+        tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
+        tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
+        tableView.register(CommentInfoCell.nib, forCellReuseIdentifier: CommentInfoCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+
+extension ConfirmOfferViewController: UITableViewDataSource {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: OutcomeInfoCell.identifier, for: indexPath) as? OutcomeInfoCell {
+                return cell
+            }
+        case 1:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DateInfoCell.identifier, for: indexPath) as? DateInfoCell {
+                return cell
+            }
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: HairTypeInfoCell.identifier, for: indexPath) as? HairTypeInfoCell {
+                return cell
+            }
+        case 3:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DistanceInfoCell.identifier, for: indexPath) as? DistanceInfoCell {
+                return cell
+            }
+        case 4:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: CommentInfoCell.identifier, for: indexPath) as? CommentInfoCell {
+                return cell
+            }
+       default:
+            return UITableViewCell()
+        }
+        return UITableViewCell()
+    }
+    
 }

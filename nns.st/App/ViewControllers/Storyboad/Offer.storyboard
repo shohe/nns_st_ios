@@ -504,9 +504,54 @@
                     <view key="view" contentMode="scaleToFill" id="PXy-DW-deM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0u-J3-7Vb">
+                                <rect key="frame" x="32" y="581" width="311" height="62"/>
+                                <color key="backgroundColor" red="0.0" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="ks5-HV-WKm"/>
+                                </constraints>
+                                <state key="normal" title="この内容でオファーする">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGf-Nj-7jX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NIe-eM-ZJl" id="RzR-gC-njp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kdt-od-bf3" firstAttribute="bottom" secondItem="k0u-J3-7Vb" secondAttribute="bottom" constant="24" id="6KK-QS-Ut7"/>
+                            <constraint firstItem="k0u-J3-7Vb" firstAttribute="leading" secondItem="kdt-od-bf3" secondAttribute="leading" constant="32" id="DdU-Ou-8UX"/>
+                            <constraint firstItem="kdt-od-bf3" firstAttribute="trailing" secondItem="k0u-J3-7Vb" secondAttribute="trailing" constant="32" id="JfR-Mb-igb"/>
+                            <constraint firstItem="mGf-Nj-7jX" firstAttribute="leading" secondItem="kdt-od-bf3" secondAttribute="leading" id="NiJ-tN-rfc"/>
+                            <constraint firstItem="k0u-J3-7Vb" firstAttribute="top" secondItem="mGf-Nj-7jX" secondAttribute="bottom" constant="24" id="PuE-lI-Q8W"/>
+                            <constraint firstItem="mGf-Nj-7jX" firstAttribute="top" secondItem="kdt-od-bf3" secondAttribute="top" id="cGO-w6-0pJ"/>
+                            <constraint firstItem="kdt-od-bf3" firstAttribute="trailing" secondItem="mGf-Nj-7jX" secondAttribute="trailing" id="pSf-um-OVA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kdt-od-bf3"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="mGf-Nj-7jX" id="SQj-NY-VH5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8N-mW-xFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
