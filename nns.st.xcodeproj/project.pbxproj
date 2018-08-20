@@ -25,6 +25,8 @@
 		09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */; };
 		09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
+		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
+		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
 		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
 		09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */; };
@@ -105,6 +107,8 @@
 		09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDatePickerView.swift; sourceTree = "<group>"; };
 		09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupDatePickerView.xib; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
+		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
+		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
 		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				09A05B4F21298DA300C1FF3F /* MapViewItem.swift */,
+				09BB194B212AA535006562D0 /* OfferItem.swift */,
+				09BB194D212AA6EA006562D0 /* HairType.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -653,10 +659,12 @@
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
+				09BB194C212AA535006562D0 /* OfferItem.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
 				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
+				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
 				09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */,
 				091F8D172128567A0095608F /* SearchResultCell.swift in Sources */,

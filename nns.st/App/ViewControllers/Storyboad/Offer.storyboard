@@ -133,7 +133,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HiH-y8-gXQ">
                                         <rect key="frame" x="12" y="19" width="53" height="23"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在地" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQH-Ha-uSt">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未設定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQH-Ha-uSt">
                                                 <rect key="frame" x="8" y="4" width="37" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="108" id="G7Y-1d-DkG"/>
@@ -280,7 +280,7 @@
                                 <rect key="frame" x="280" y="469.5" width="5" height="90.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBP-6q-d1p">
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBP-6q-d1p">
                                 <rect key="frame" x="32" y="581" width="311" height="62"/>
                                 <color key="backgroundColor" red="0.0" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -470,6 +470,7 @@
                         <outlet property="mapDistance" destination="H6p-Ix-cg2" id="w4B-9q-fIJ"/>
                         <outlet property="mapTitle" destination="oQH-Ha-uSt" id="guJ-AS-5fK"/>
                         <outlet property="midium" destination="00W-RR-6A9" id="FW0-2p-XYd"/>
+                        <outlet property="offerButton" destination="mBP-6q-d1p" id="axN-y5-3fy"/>
                         <outlet property="offerMenu" destination="VFa-gt-aWz" id="y5T-pT-Hs3"/>
                         <outlet property="offerPrice" destination="gZC-ln-3Hf" id="Zai-Gr-DkK"/>
                         <outlet property="short" destination="gex-U6-cwZ" id="eFg-0Q-zFz"/>
