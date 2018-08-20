@@ -10,6 +10,13 @@ import UIKit
 
 class MakeOfferViewController: UIViewController {
     
+    @IBOutlet weak var offerMenu: UITextField!
+    @IBOutlet weak var offerPrice: UITextField! {
+        didSet {
+            offerPrice?.addDoneToolbar(onDone: (target: self, action: #selector(donePrice)))
+        }
+    }
+    
     @IBOutlet weak var snapmap: UIImageView!
     @IBOutlet weak var mapTitle: UILabel!
     @IBOutlet weak var mapDistance: UILabel!
@@ -128,6 +135,29 @@ extension MakeOfferViewController: PopupDatePickerViewDelegate {
     func popupDatePicker(_pickerView: PopupDatePickerView, didSelected sender: UIButton) {
         removePickerView()
         setDateTime(date: pickerView.picker.date)
+    }
+    
+}
+
+
+extension MakeOfferViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func donePrice() {
+        offerPrice.resignFirstResponder()
+        if let price = (offerPrice.text as NSString?)?.floatValue {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = NumberFormatter.Style.decimal
+            let formattedPrice = numberFormatter.string(from: NSNumber(value: price))
+            
+            if let price = formattedPrice {
+                offerPrice.text = "¥\(price)"
+            }
+        }
     }
     
 }

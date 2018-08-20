@@ -42,13 +42,16 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AlS-eo-ddH" id="q30-ri-VL3"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="予算金額 : ¥4,500" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZC-ln-3Hf">
                                 <rect key="frame" x="32" y="137" width="311" height="48"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-il-XGe" userLabel="BaseDateTimeField">
                                 <rect key="frame" x="32" y="192" width="311" height="120"/>
@@ -464,6 +467,8 @@
                         <outlet property="mapDistance" destination="H6p-Ix-cg2" id="w4B-9q-fIJ"/>
                         <outlet property="mapTitle" destination="oQH-Ha-uSt" id="guJ-AS-5fK"/>
                         <outlet property="midium" destination="00W-RR-6A9" id="FW0-2p-XYd"/>
+                        <outlet property="offerMenu" destination="VFa-gt-aWz" id="y5T-pT-Hs3"/>
+                        <outlet property="offerPrice" destination="gZC-ln-3Hf" id="Zai-Gr-DkK"/>
                         <outlet property="short" destination="gex-U6-cwZ" id="eFg-0Q-zFz"/>
                         <outlet property="snapmap" destination="7YR-jS-VHS" id="AEb-0X-WXr"/>
                         <outlet property="time" destination="S75-hH-a05" id="EaZ-nI-s0A"/>
