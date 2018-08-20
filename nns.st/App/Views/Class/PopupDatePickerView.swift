@@ -37,6 +37,7 @@ class PopupDatePickerView: UIView {
     private func initView() {
         let contentView = Bundle.main.loadNibNamed("PopupDatePickerView", owner: self, options: nil)?.first as! UIView
         contentView.frame = self.bounds
+        self.alpha = 0
         addSubview(contentView)
     }
 
@@ -54,19 +55,23 @@ extension PopupDatePickerView {
     func initPopupDatePicker() {
         UIView.animate(withDuration: 0.3) {
             self.bottomConst.constant = self.show
+            self.alpha = 1
             self.layoutIfNeeded()
         }
     }
     
     func hidePopupDatePicker() {
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.bottomConst.constant = self.hide
+            self.alpha = 0
             self.layoutIfNeeded()
         }) { (complete) in
             if complete {
                 self.removeFromSuperview()
             }
         }
+        
     }
     
 }
