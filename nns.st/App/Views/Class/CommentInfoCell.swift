@@ -10,6 +10,8 @@ import UIKit
 
 class CommentInfoCell: UITableViewCell {
     
+    @IBOutlet weak var textView: UITextView!
+    
     static var identifier:String {
         get{
             return "CommentInfoCell"
@@ -24,13 +26,22 @@ class CommentInfoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        initTextView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+}
+
+
+extension CommentInfoCell {
+    
+    func initTextView() {
+
     }
     
 }

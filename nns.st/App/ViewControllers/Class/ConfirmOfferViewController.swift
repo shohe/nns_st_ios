@@ -13,6 +13,8 @@ class ConfirmOfferViewController: UIViewController {
     var offerItem: OfferItem?
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var commentTextViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var commentTextView: UITextView!
     
     static func instantiateViewController() -> ConfirmOfferViewController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -30,9 +32,8 @@ class ConfirmOfferViewController: UIViewController {
         // register cells
         tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
         tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
-        tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
         tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
-        tableView.register(CommentInfoCell.nib, forCellReuseIdentifier: CommentInfoCell.identifier)
+        tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +51,7 @@ extension ConfirmOfferViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,21 +65,35 @@ extension ConfirmOfferViewController: UITableViewDataSource {
                 return cell
             }
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: HairTypeInfoCell.identifier, for: indexPath) as? HairTypeInfoCell {
-                return cell
-            }
-        case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: DistanceInfoCell.identifier, for: indexPath) as? DistanceInfoCell {
                 return cell
             }
-        case 4:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: CommentInfoCell.identifier, for: indexPath) as? CommentInfoCell {
+            
+        case 3:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: HairTypeInfoCell.identifier, for: indexPath) as? HairTypeInfoCell {
                 return cell
             }
        default:
             return UITableViewCell()
         }
         return UITableViewCell()
+    }
+    
+}
+
+
+extension ConfirmOfferViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 3 {
+            let space: CGFloat = 235.0
+            
+            var frame: CGRect = tableView.frame
+            frame.size.height = tableView.contentSize.height
+            tableView.frame = frame
+            
+            commentTextViewHeight.constant = self.view.frame.height - tableView.frame.height - space - (self.navigationController?.navigationBar.frame.height)!
+        }
     }
     
 }

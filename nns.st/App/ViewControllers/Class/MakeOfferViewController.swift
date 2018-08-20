@@ -70,11 +70,17 @@ extension MakeOfferViewController {
     }
     
     @IBAction func tapDateTimeField(_ sender: UITapGestureRecognizer) {
+        offerMenu.resignFirstResponder()
+        offerPrice.resignFirstResponder()
+        
         addPickerView()
         pickerView.initPopupDatePicker()
     }
     
     @IBAction func tapMapField(_ sender: UITapGestureRecognizer) {
+        offerMenu.resignFirstResponder()
+        donePrice()
+        
         let viewController = MapViewController.instantiateViewController()
         viewController.delegate = self
         self.navigationController?.pushViewController(viewController, animated: true)
