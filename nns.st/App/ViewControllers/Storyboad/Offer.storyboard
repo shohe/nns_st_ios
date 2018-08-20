@@ -294,6 +294,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmOffer:" destination="AlS-eo-ddH" eventType="touchUpInside" id="6Uz-Nz-TrW"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFQ-yo-56C">
                                 <rect key="frame" x="0.0" y="130" width="375" height="7"/>
@@ -492,7 +495,22 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="176.80000000000001" y="124.58770614692655"/>
+            <point key="canvasLocation" x="25" y="125"/>
+        </scene>
+        <!--Confirm Offer View Controller-->
+        <scene sceneID="4Kf-aD-Q5k">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmOfferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NIe-eM-ZJl" customClass="ConfirmOfferViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PXy-DW-deM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kdt-od-bf3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8N-mW-xFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="878"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="FFV-RM-4gp">
@@ -535,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc2-qN-ZvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="124.58770614692655"/>
+            <point key="canvasLocation" x="1111" y="125"/>
         </scene>
         <!--Bottom Sheet View Controller-->
         <scene sceneID="Lpz-4w-7YL">
@@ -663,7 +681,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dw5-Cw-tZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="125"/>
+            <point key="canvasLocation" x="1815" y="125"/>
         </scene>
     </scenes>
     <resources>
