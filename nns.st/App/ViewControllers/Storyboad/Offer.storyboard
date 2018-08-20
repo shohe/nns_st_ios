@@ -47,11 +47,14 @@
                                     <outlet property="delegate" destination="AlS-eo-ddH" id="q30-ri-VL3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="予算金額 : ¥4,500" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZC-ln-3Hf">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="予算金額 : ¥4,500" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZC-ln-3Hf">
                                 <rect key="frame" x="32" y="137" width="311" height="48"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="AlS-eo-ddH" id="27Y-g1-n9k"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-il-XGe" userLabel="BaseDateTimeField">
                                 <rect key="frame" x="32" y="192" width="311" height="120"/>

@@ -112,6 +112,29 @@ extension MakeOfferViewController {
         self.time.text = timeFormatter.string(from: date)
     }
     
+    func textToPrice(text: String?) -> String {
+        if let price = (text as NSString?)?.floatValue {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let formattedPrice = numberFormatter.string(from: NSNumber(value: price))
+            if let price = formattedPrice {
+                return "¥\(price)"
+            }
+        }
+        return ""
+    }
+    
+    func priceToNumber(text: String?) -> String? {
+        if var price = (text as NSString?) {
+            price = price.replacingOccurrences(of: "¥", with: "") as NSString
+            price = price.replacingOccurrences(of: ",", with: "") as NSString
+            if price != "0" {
+                return String(price)
+            }
+        }
+        return nil
+    }
+    
 }
 
 
@@ -147,17 +170,16 @@ extension MakeOfferViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 /* offerPrice */ {
+            textField.text = priceToNumber(text: textField.text)
+        }
+        return true
+    }
+    
     @objc func donePrice() {
         offerPrice.resignFirstResponder()
-        if let price = (offerPrice.text as NSString?)?.floatValue {
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = NumberFormatter.Style.decimal
-            let formattedPrice = numberFormatter.string(from: NSNumber(value: price))
-            
-            if let price = formattedPrice {
-                offerPrice.text = "¥\(price)"
-            }
-        }
+        offerPrice.text = textToPrice(text: offerPrice.text)
     }
     
 }
