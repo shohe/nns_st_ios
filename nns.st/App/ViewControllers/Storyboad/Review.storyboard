@@ -36,7 +36,16 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="MEa-Ts-n61" id="lSU-KX-pUG"/>
+                                </connections>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="レビューを書く" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEf-Tc-vTD">
+                                <rect key="frame" x="46" y="173" width="86" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.84655948515915358" green="0.85278386035378928" blue="0.87145698593769638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-do-X68">
                                 <rect key="frame" x="42" y="86" width="291" height="52"/>
                                 <subviews>
@@ -181,10 +190,12 @@
                             <constraint firstItem="af6-9c-Amu" firstAttribute="trailing" secondItem="Hbt-jz-bOS" secondAttribute="trailing" constant="4" id="7ZR-ld-aEA"/>
                             <constraint firstItem="ZWo-3B-Byh" firstAttribute="trailing" secondItem="af6-9c-Amu" secondAttribute="trailing" constant="32" id="9M4-GS-Jdn"/>
                             <constraint firstItem="af6-9c-Amu" firstAttribute="leading" secondItem="ZWo-3B-Byh" secondAttribute="leading" constant="32" id="BCX-PG-T4k"/>
+                            <constraint firstItem="Hbt-jz-bOS" firstAttribute="top" secondItem="OEf-Tc-vTD" secondAttribute="top" constant="-9" id="Fpl-eD-ezB"/>
                             <constraint firstItem="af6-9c-Amu" firstAttribute="leading" secondItem="Hbt-jz-bOS" secondAttribute="leading" constant="-4" id="Jzx-rk-OM4"/>
                             <constraint firstItem="ZWo-3B-Byh" firstAttribute="trailing" secondItem="G1c-do-X68" secondAttribute="trailing" constant="42" id="Pfz-MT-mVR"/>
                             <constraint firstItem="Hbt-jz-bOS" firstAttribute="bottom" secondItem="af6-9c-Amu" secondAttribute="bottom" constant="-2" id="Qbz-2J-k4V"/>
                             <constraint firstItem="Lby-ch-Axk" firstAttribute="leading" secondItem="ZWo-3B-Byh" secondAttribute="leading" constant="32" id="T4b-EC-C0l"/>
+                            <constraint firstItem="Hbt-jz-bOS" firstAttribute="leading" secondItem="OEf-Tc-vTD" secondAttribute="leading" constant="-10" id="e4D-aH-cwR"/>
                             <constraint firstItem="G1c-do-X68" firstAttribute="top" secondItem="ZWo-3B-Byh" secondAttribute="top" constant="66" id="wbR-3d-3sM"/>
                             <constraint firstItem="ZWo-3B-Byh" firstAttribute="trailing" secondItem="Lby-ch-Axk" secondAttribute="trailing" constant="32" id="yGJ-Ae-dDg"/>
                             <constraint firstItem="af6-9c-Amu" firstAttribute="height" secondItem="rAw-fj-1d9" secondAttribute="height" multiplier="1:4" id="zzD-mA-REG"/>
@@ -203,6 +214,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="placeholder" destination="OEf-Tc-vTD" id="r1l-6s-9gP"/>
                         <outlet property="sendButton" destination="Lby-ch-Axk" id="hDy-At-cZh"/>
                         <outlet property="star01" destination="ncF-Vy-WGs" id="ZjX-RL-gUv"/>
                         <outlet property="star02" destination="t6O-V4-DJo" id="UOB-Q0-e8E"/>

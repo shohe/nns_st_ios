@@ -17,6 +17,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var star04: UIButton!
     @IBOutlet weak var star05: UIButton!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var placeholder: UILabel!
     
     private var stars: [UIButton] = []
     
@@ -64,9 +65,30 @@ extension ReviewViewController {
         }
     }
     
-    func updateSendButton(isEnable: Bool) {
+    private func updateSendButton(isEnable: Bool) {
         sendButton.isEnabled = isEnable
         sendButton.alpha = (isEnable) ? 1 : 0.3
+    }
+    
+    private func updatePlaceholder(isShown: Bool) {
+        placeholder.alpha = (isShown) ? 1 : 0
+    }
+    
+}
+
+
+extension ReviewViewController: UITextViewDelegate {
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        updatePlaceholder(isShown: false)
+        return true
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        if textView.text == "" {
+            updatePlaceholder(isShown: true)
+        }
+        return true
     }
     
 }
