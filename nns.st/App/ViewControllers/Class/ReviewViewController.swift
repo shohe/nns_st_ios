@@ -20,6 +20,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var placeholder: UILabel!
     
     private var stars: [UIButton] = []
+    private var loadingView: LoadingView?
     
     static func instantiateViewController() -> ReviewViewController {
         let storyboard = UIStoryboard(name: "Review", bundle: nil)
@@ -53,7 +54,22 @@ extension ReviewViewController {
     }
     
     @IBAction func sendReview(_ sender: UIButton) {
+        textView.resignFirstResponder()
         
+        loadingView = LoadingView(frame: self.view.bounds)
+        loadingView?.setComment(text: "レビュー送信中...")
+        self.view.addSubview(loadingView!)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.loadingView!.alpha = 1
+        }) { (complete) in
+            /* send this offer to server */
+            // here is just sample. remove after all.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }
     }
     
     private func evaluateStar(sender: UIButton) {

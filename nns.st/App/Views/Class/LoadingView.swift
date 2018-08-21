@@ -10,6 +10,8 @@ import UIKit
 
 class LoadingView: UIView {
 
+    @IBOutlet weak var commentLabel: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
@@ -19,6 +21,11 @@ class LoadingView: UIView {
         super.init(coder: aDecoder)
         initView()
     }
+
+}
+
+
+extension LoadingView {
     
     private func initView() {
         let contentView = Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)?.first as! UIView
@@ -26,5 +33,9 @@ class LoadingView: UIView {
         self.alpha = 0
         addSubview(contentView)
     }
-
+    
+    func setComment(text: String?) {
+        commentLabel.text = text
+    }
+    
 }
