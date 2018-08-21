@@ -51,6 +51,14 @@ extension MainViewController {
         self.present(MakeOfferViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
+    @IBAction func pressHistoryBtn(_ sender: UIButton) {
+        self.present(HistoryListViewController.instantiateViewController(), animated: true, completion: nil)
+    }
+    
+    @IBAction func pressCharityBtn(_ sender: UIButton) {
+        print("pressCharityBtn")
+    }
+    
 }
 
 
