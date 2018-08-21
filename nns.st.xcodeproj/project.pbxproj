@@ -40,6 +40,8 @@
 		09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB1962212AD747006562D0 /* CommentInfoCell.xib */; };
 		09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1965212BE96A006562D0 /* LoadingView.swift */; };
 		09BB1968212BE97F006562D0 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB1967212BE97F006562D0 /* LoadingView.xib */; };
+		09BB196A212C210E006562D0 /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09BB1969212C210E006562D0 /* Review.storyboard */; };
+		09BB196C212C2126006562D0 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB196B212C2126006562D0 /* ReviewViewController.swift */; };
 		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
 		09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */; };
@@ -135,6 +137,8 @@
 		09BB1962212AD747006562D0 /* CommentInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentInfoCell.xib; sourceTree = "<group>"; };
 		09BB1965212BE96A006562D0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		09BB1967212BE97F006562D0 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		09BB1969212C210E006562D0 /* Review.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
+		09BB196B212C2126006562D0 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 				091F8D11212723340095608F /* MapViewController.swift */,
 				091F8D13212726330095608F /* BottomSheetViewController.swift */,
 				09BB194F212AB2B1006562D0 /* ConfirmOfferViewController.swift */,
+				09BB196B212C2126006562D0 /* ReviewViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				09DDAA9E211FF613009C6428 /* Login.storyboard */,
 				09DDAAE921258638009C6428 /* Offer.storyboard */,
 				091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */,
+				09BB1969212C210E006562D0 /* Review.storyboard */,
 			);
 			path = Storyboad;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */,
 				09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
+				09BB196A212C210E006562D0 /* Review.storyboard in Resources */,
 				09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */,
 				091BEEE721130019008ED8C5 /* Assets.xcassets in Resources */,
 				09DDAADE21251453009C6428 /* CommentCell.xib in Resources */,
@@ -706,6 +713,7 @@
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
+				09BB196C212C2126006562D0 /* ReviewViewController.swift in Sources */,
 				09BB194C212AA535006562D0 /* OfferItem.swift in Sources */,
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
 				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
