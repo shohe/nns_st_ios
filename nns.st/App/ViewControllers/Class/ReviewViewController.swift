@@ -66,8 +66,11 @@ extension ReviewViewController {
     }
     
     private func updateSendButton(isEnable: Bool) {
-        sendButton.isEnabled = isEnable
-        sendButton.alpha = (isEnable) ? 1 : 0.3
+        UIView.animate(withDuration: 0.3, animations: {
+            self.sendButton.alpha = (isEnable) ? 1 : 0.3
+        }) { (complete) in
+            self.sendButton.isEnabled = isEnable
+        }
     }
     
     private func updatePlaceholder(isShown: Bool) {
