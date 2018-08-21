@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 
 class ConfirmRequestViewController: UIViewController {
@@ -84,7 +85,8 @@ extension ConfirmRequestViewController: UITableViewDataSource {
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: SalonAddressCell.identifier, for: indexPath) as? SalonAddressCell {
-                cell.drawSnapshot(latitude: 35.908887, longitude: 139.482338)
+                let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 35.908887, longitude: 139.482338)
+                SnapShotMaker.drawSnapshot(coordinate: coordinate, source: cell.mapSnap, pinColor: cell.pinColor)
                 return cell
             }
         case 3:
