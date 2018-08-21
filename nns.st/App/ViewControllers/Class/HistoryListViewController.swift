@@ -55,11 +55,12 @@ extension HistoryListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: HistoryCell.identifier, for: indexPath) as? HistoryCell {
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()
@@ -68,8 +69,11 @@ extension HistoryListViewController: UITableViewDataSource {
 }
 
 
+// MARK: - UITableViewDelegate
 extension HistoryListViewController: UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
     
 }

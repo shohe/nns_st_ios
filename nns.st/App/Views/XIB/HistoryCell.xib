@@ -20,12 +20,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="406" height="106.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018 - 00 - 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6R-LK-7Ak">
-                        <rect key="frame" x="20" y="12" width="366" height="12.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jQZ-4G-Zuz">
                         <rect key="frame" x="24" y="32.5" width="56" height="56"/>
                         <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,7 +44,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDU-wO-ETg">
                                 <rect key="frame" x="0.0" y="0.0" width="27" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -69,12 +63,18 @@
                             <constraint firstItem="bDU-wO-ETg" firstAttribute="top" secondItem="yP5-4S-Ltm" secondAttribute="top" id="un4-od-VrT"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6R-LK-7Ak">
+                        <rect key="frame" x="20" y="12" width="63" height="12.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <color key="backgroundColor" red="0.95046530673749785" green="0.95745365520246895" blue="0.97841870059738223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="e6R-LK-7Ak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="4x3-ZU-bUN"/>
-                    <constraint firstAttribute="trailing" secondItem="e6R-LK-7Ak" secondAttribute="trailing" constant="20" id="9hr-Ak-gSa"/>
                     <constraint firstItem="yP5-4S-Ltm" firstAttribute="leading" secondItem="jQZ-4G-Zuz" secondAttribute="trailing" constant="12" id="N1t-EW-rRx"/>
                     <constraint firstItem="jQZ-4G-Zuz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Tep-Tw-Ciu"/>
+                    <constraint firstItem="e6R-LK-7Ak" firstAttribute="centerX" secondItem="jQZ-4G-Zuz" secondAttribute="centerX" id="UCT-QF-ece"/>
                     <constraint firstAttribute="bottom" secondItem="jQZ-4G-Zuz" secondAttribute="bottom" constant="18" id="UHj-FA-Q3n"/>
                     <constraint firstItem="4IC-gp-RVU" firstAttribute="leading" secondItem="yP5-4S-Ltm" secondAttribute="trailing" constant="12" id="V9U-hi-onP"/>
                     <constraint firstItem="yP5-4S-Ltm" firstAttribute="centerY" secondItem="jQZ-4G-Zuz" secondAttribute="centerY" id="XaW-yx-D1m"/>
