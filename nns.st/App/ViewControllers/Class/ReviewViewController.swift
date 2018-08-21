@@ -63,10 +63,10 @@ extension ReviewViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.loadingView!.alpha = 1
         }) { (complete) in
-            /* send this offer to server */
+            /* send this review to server */
             // here is just sample. remove after all.
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.dismiss(animated: true, completion: nil)
+                self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
             }
             
         }
