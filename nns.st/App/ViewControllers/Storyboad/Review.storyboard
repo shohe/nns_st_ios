@@ -40,12 +40,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-do-X68">
                                 <rect key="frame" x="42" y="86" width="291" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncF-Vy-WGs">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncF-Vy-WGs">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
-                                        <color key="backgroundColor" red="0.79154956340000004" green="0.79969525340000003" blue="0.35964354869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ncF-Vy-WGs" secondAttribute="height" multiplier="1:1" id="kJR-cS-Kd2"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="SfU-Ft-THC"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t78-5r-HFv">
                                         <rect key="frame" x="52" y="0.0" width="8" height="52"/>
@@ -53,23 +56,32 @@
                                             <constraint firstAttribute="width" constant="8" id="oo4-MU-ZOM"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6O-V4-DJo">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6O-V4-DJo">
                                         <rect key="frame" x="60" y="0.0" width="51.5" height="52"/>
-                                        <color key="backgroundColor" red="0.79154956340000004" green="0.79969525340000003" blue="0.35964354869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="e1D-ol-vhk"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTm-KY-OzY">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTm-KY-OzY">
                                         <rect key="frame" x="119.5" y="0.0" width="52" height="52"/>
-                                        <color key="backgroundColor" red="0.79154956340000004" green="0.79969525340000003" blue="0.35964354869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kTm-KY-OzY" secondAttribute="height" multiplier="1:1" id="MrV-da-hyx"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="izN-3m-a2s"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-KF-hho">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-KF-hho">
                                         <rect key="frame" x="179.5" y="0.0" width="51.5" height="52"/>
-                                        <color key="backgroundColor" red="0.79154956340000004" green="0.79969525340000003" blue="0.35964354869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="RGo-KF-hho" secondAttribute="height" multiplier="1:1" id="PA5-xa-o9r"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="xOw-co-s9y"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cr-4p-eK8">
                                         <rect key="frame" x="111.5" y="0.0" width="8" height="52"/>
@@ -80,12 +92,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3I-2H-MNE">
                                         <rect key="frame" x="231" y="0.0" width="8" height="52"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-tU-WjD">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-tU-WjD">
                                         <rect key="frame" x="239" y="0.0" width="52" height="52"/>
-                                        <color key="backgroundColor" red="0.79154956340000004" green="0.79969525340000003" blue="0.35964354869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="x7g-tU-WjD" secondAttribute="height" multiplier="1:1" id="PxL-ev-c5v"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="msh-yF-i90"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -137,7 +152,7 @@
                                     <constraint firstAttribute="bottom" secondItem="Y8D-aU-sqT" secondAttribute="bottom" id="zV6-cH-ikz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lby-ch-Axk">
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lby-ch-Axk">
                                 <rect key="frame" x="32" y="353" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -151,6 +166,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendReview:" destination="MEa-Ts-n61" eventType="touchUpInside" id="J0c-64-N2x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -185,6 +203,12 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="sendButton" destination="Lby-ch-Axk" id="hDy-At-cZh"/>
+                        <outlet property="star01" destination="ncF-Vy-WGs" id="ZjX-RL-gUv"/>
+                        <outlet property="star02" destination="t6O-V4-DJo" id="UOB-Q0-e8E"/>
+                        <outlet property="star03" destination="kTm-KY-OzY" id="Kyb-ft-0ZT"/>
+                        <outlet property="star04" destination="RGo-KF-hho" id="dCV-5j-aNs"/>
+                        <outlet property="star05" destination="x7g-tU-WjD" id="H9X-Y6-aaa"/>
                         <outlet property="textView" destination="Hbt-jz-bOS" id="t6e-HV-GON"/>
                     </connections>
                 </viewController>
