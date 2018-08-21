@@ -10,6 +10,9 @@ import UIKit
 
 class DistanceInfoCell: UITableViewCell {
     
+    @IBOutlet weak var placeTitle: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     static var identifier:String {
         get{
             return "DistanceInfoCell"
@@ -31,6 +34,20 @@ class DistanceInfoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+}
+
+
+extension DistanceInfoCell {
+    
+    func setEachValue(item: OfferItem?) {
+        if let item = item {
+            placeTitle.text = item.place
+            if let distance = item.distance {
+                distanceLabel.text = "\(distance)km"
+            }
+        }
     }
     
 }

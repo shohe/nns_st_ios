@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum HairType: Int {
     
@@ -15,5 +16,35 @@ enum HairType: Int {
     case midium = 3
     case long = 4
     case veryLong = 5
+    
+    func title() -> String {
+        switch self {
+        case .veryShort:
+            return "veryShort"
+        case .short:
+            return "short"
+        case .midium:
+            return "midium"
+        case .long:
+            return "long"
+        case .veryLong:
+            return "veryLong"
+        }
+    }
+    
+    func image() -> UIImage {
+        switch self {
+        case .veryShort:
+            return UIImage()
+        case .short:
+            return UIImage()
+        case .midium:
+            return UIImage()
+        case .long:
+            return UIImage()
+        case .veryLong:
+            return UIImage()
+        }
+    }
     
 }

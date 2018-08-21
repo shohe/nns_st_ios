@@ -46,11 +46,11 @@ class MakeOfferViewController: UIViewController {
         super.viewWillAppear(animated)
         self.transparentNavigationBar()
         self.leftSideCornerRadius(view: snapmap)
-        self.setDateTime(date: Date())
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setDateTime(date: Date())
         hairTypeItem = [veryShort, short, midium, long, veryLong]
     }
 
@@ -79,7 +79,6 @@ extension MakeOfferViewController {
     
     @IBAction func tapMapField(_ sender: UITapGestureRecognizer) {
         offerMenu.resignFirstResponder()
-        donePrice()
         
         let viewController = MapViewController.instantiateViewController()
         viewController.delegate = self
@@ -158,7 +157,7 @@ extension MakeOfferViewController {
     
     @IBAction func confirmOffer(_ sender: UIButton) {
         let viewController = ConfirmOfferViewController.instantiateViewController()
-        viewController.offerItem = offerItem
+        viewController.offerItem = self.offerItem
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -174,6 +173,7 @@ extension MakeOfferViewController: MapViewControllerDelegate {
         
         offerItem.location = item.coordinate
         offerItem.distance = item.distance
+        offerItem.place = item.title
         setEnableButton(offer: offerItem)
     }
     
@@ -220,10 +220,10 @@ extension MakeOfferViewController: UITextFieldDelegate {
     
     @objc func donePrice() {
         offerPrice.resignFirstResponder()
-        offerPrice.text = textToPrice(text: offerPrice.text)
         if let price = (offerPrice.text as NSString?)?.floatValue {
             offerItem.price = CGFloat(price)
         }
+        offerPrice.text = textToPrice(text: offerPrice.text)
         setEnableButton(offer: offerItem)
     }
     

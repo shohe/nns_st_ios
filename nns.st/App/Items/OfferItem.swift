@@ -15,6 +15,7 @@ class OfferItem: NSObject {
     var price: CGFloat?
     var datetime: Date?
     var location: CLLocationCoordinate2D?
+    var place: String?
     var distance: CGFloat?
     var hairType: HairType?
     

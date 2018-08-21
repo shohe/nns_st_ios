@@ -10,6 +10,13 @@ import UIKit
 
 class OutcomeInfoCell: UITableViewCell {
     
+    @IBOutlet weak var menuLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var charityPriceLabel: UILabel!
+    @IBOutlet weak var charityTitle: UILabel!
+    
+    let charityRate: CGFloat = 0.05
+    
     static var identifier:String {
         get{
             return "OutcomeInfoCell"
@@ -31,6 +38,35 @@ class OutcomeInfoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+}
+
+
+extension OutcomeInfoCell {
+    
+    func setEachValue(item: OfferItem?) {
+        if let item = item {
+            menuLabel.text = item.menu
+            setPrice(price: item.price)
+        }
+    }
+    
+    private func setPrice(price: CGFloat?) {
+        if let price = price {
+            priceLabel.text = makePriceLabel(price: price)
+            charityPriceLabel.text = makePriceLabel(price: price*charityRate)
+        }
+    }
+    
+    private func makePriceLabel(price: CGFloat) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattedPrice = numberFormatter.string(from: NSNumber(value: Float(price)))
+        if let price = formattedPrice {
+            return "¥\(price)JPY"
+        }
+        return "¥0JPY"
     }
     
 }
