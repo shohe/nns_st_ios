@@ -40,6 +40,7 @@ class ConfirmOfferViewController: UIViewController {
         tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
         tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
         tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
+        tableView.register(NominationCell.nib, forCellReuseIdentifier: NominationCell.identifier)
         tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
     }
 
@@ -79,9 +80,16 @@ extension ConfirmOfferViewController: UITableViewDataSource {
                 return cell
             }
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DistanceInfoCell.identifier, for: indexPath) as? DistanceInfoCell {
-                cell.setEachValue(item: offerItem)
-                return cell
+            if offerItem?.stylistId == nil {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: DistanceInfoCell.identifier, for: indexPath) as? DistanceInfoCell {
+                    cell.setEachValue(item: offerItem)
+                    return cell
+                }
+            } else {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: NominationCell.identifier, for: indexPath) as? NominationCell {
+                    cell.setEachValue(item: offerItem)
+                    return cell
+                }
             }
             
         case 3:
