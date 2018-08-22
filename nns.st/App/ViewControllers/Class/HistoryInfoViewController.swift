@@ -61,6 +61,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: DoubleButtonCell.identifier, for: indexPath) as? DoubleButtonCell {
                 cell.selectionStyle = .none
+                cell.delegate = self as DoubleButtonCellDelegate
                 return cell
             }
         case 2:
@@ -91,4 +92,16 @@ extension HistoryInfoViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+}
+
+
+// MARK: - DoubleButtonCellDelegate
+extension HistoryInfoViewController: DoubleButtonCellDelegate {
+    func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
+        print("_didSelectedOfferButton")
+    }
+    
+    func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {
+        print("_didSelectedProfileButton")
+    }
 }

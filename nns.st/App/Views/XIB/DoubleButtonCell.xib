@@ -41,6 +41,9 @@
                                 <color key="value" red="0.78354843799999996" green="0.78354843799999996" blue="0.78354843799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="goOfferPage:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9tP-1L-N8Z"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="オファーする" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXQ-pN-dLv">
                         <rect key="frame" x="237" y="38" width="189" height="14"/>
@@ -67,6 +70,9 @@
                                 <color key="value" red="0.78354843799999996" green="0.78354843799999996" blue="0.78354843799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="goProfilePage:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fbN-X1-mtX"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="プロフィールを確認" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-hA-S8e">
                         <rect key="frame" x="20" y="38" width="189" height="14"/>

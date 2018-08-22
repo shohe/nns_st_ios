@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol DoubleButtonCellDelegate {
+    func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell)
+    func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell)
+}
+
 class DoubleButtonCell: UITableViewCell {
     
     
@@ -22,6 +27,8 @@ class DoubleButtonCell: UITableViewCell {
             return UINib(nibName: "DoubleButtonCell", bundle: nil)
         }
     }
+    
+    var delegate: DoubleButtonCellDelegate? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +39,20 @@ class DoubleButtonCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+}
+
+
+// MARK: - IBAction
+extension DoubleButtonCell {
+    
+    @IBAction func goOfferPage(_ sender: PriceButton) {
+        self.delegate?.doubleButtonCell(_didSelectedOfferButton: self)
+    }
+    
+    @IBAction func goProfilePage(_ sender: PriceButton) {
+        self.delegate?.doubleButtonCell(_didSelectedProfileButton: self)
     }
     
 }
