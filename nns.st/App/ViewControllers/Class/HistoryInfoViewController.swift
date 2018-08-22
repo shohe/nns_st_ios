@@ -98,7 +98,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
 // MARK: - DoubleButtonCellDelegate
 extension HistoryInfoViewController: DoubleButtonCellDelegate {
     func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
-        self.navigationController?.pushViewController(MakeOfferViewController.instantiateViewController(withStylist: 1), animated: true)
+        self.present(MakeOfferViewController.instantiateViewController(withStylist: 1), animated: true, completion: nil)
     }
     
     func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {

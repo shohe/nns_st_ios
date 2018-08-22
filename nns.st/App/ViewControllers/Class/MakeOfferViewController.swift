@@ -43,14 +43,16 @@ class MakeOfferViewController: UIViewController {
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "MONavigationController") as! UINavigationController
+        let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
         return viewController
     }
     
-    static func instantiateViewController(withStylist: Int) -> MakeOfferViewController {
+    static func instantiateViewController(withStylist: Int) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "MakeOfferViewController") as! MakeOfferViewController
-        viewController.isNominated = true
+        let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let root = viewController.viewControllers.first as! MakeOfferViewController
+        root.isNominated = true
+        root.offerItem.stylistId = withStylist
         return viewController
     }
     
@@ -79,12 +81,7 @@ class MakeOfferViewController: UIViewController {
 extension MakeOfferViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
-        if isNominated {
-            self.navigationController?.navigationBar.barTintColor = .white
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            dismiss(animated: true, completion: nil)
-        }
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapDateTimeField(_ sender: UITapGestureRecognizer) {
@@ -191,20 +188,21 @@ extension MakeOfferViewController {
     
     func nominateStylistFormat(isTransform: Bool) {
         if isNominated {
-            let view = self.view as! BackgroundView
-            self.navigationController?.navigationBar.barTintColor = view.topColor
-            fromLabel.frame = CGRect.zero
-            fromLabel.isHidden = true
-            withinLabel.frame = CGRect.zero
-            withinLabel.isHidden = true
-
+            self.hideDistanceInfo()
             mapTitle.text = "Salon Name"
             mapDistance.text = "Stylist Name"
-            mapTitle.font = mapTitle.font.withSize(14)
-            mapDistance.font = mapDistance.font.withSize(22)
-            distanceLabelCenter.constant = -18.0
-            
         }
+    }
+    
+    func hideDistanceInfo() {
+        fromLabel.frame = CGRect.zero
+        fromLabel.isHidden = true
+        withinLabel.frame = CGRect.zero
+        withinLabel.isHidden = true
+        
+        mapTitle.font = mapTitle.font.withSize(14)
+        mapDistance.font = mapDistance.font.withSize(22)
+        distanceLabelCenter.constant = -18.0
     }
     
 }
