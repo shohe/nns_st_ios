@@ -60,6 +60,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: DoubleButtonCell.identifier, for: indexPath) as? DoubleButtonCell {
+                cell.selectionStyle = .none
                 return cell
             }
         case 2:
