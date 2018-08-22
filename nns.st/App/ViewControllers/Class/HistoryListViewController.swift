@@ -76,4 +76,8 @@ extension HistoryListViewController: UITableViewDelegate {
         return UIView()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(), animated: true)
+    }
+    
 }

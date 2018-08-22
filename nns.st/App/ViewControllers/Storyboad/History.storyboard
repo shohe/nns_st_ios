@@ -52,6 +52,48 @@
             </objects>
             <point key="canvasLocation" x="502" y="132"/>
         </scene>
+        <!--History Info View Controller-->
+        <scene sceneID="UAX-Of-dA8">
+            <objects>
+                <viewController storyboardIdentifier="HistoryInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ynw-Ug-8Zz" customClass="HistoryInfoViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ok-C4-zRT" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yOu-Ar-9FT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ynw-Ug-8Zz" id="7cs-NS-deg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yOu-Ar-9FT" firstAttribute="top" secondItem="54Z-qr-T57" secondAttribute="top" id="A4R-uY-Qeo"/>
+                            <constraint firstItem="54Z-qr-T57" firstAttribute="bottom" secondItem="yOu-Ar-9FT" secondAttribute="bottom" id="FeV-Iz-LUq"/>
+                            <constraint firstItem="54Z-qr-T57" firstAttribute="trailing" secondItem="yOu-Ar-9FT" secondAttribute="trailing" id="Rqh-ue-eY7"/>
+                            <constraint firstItem="yOu-Ar-9FT" firstAttribute="leading" secondItem="54Z-qr-T57" secondAttribute="leading" id="xD3-af-u7o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="54Z-qr-T57"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="yOu-Ar-9FT" id="zf8-8H-5Cd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0v-qF-aGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="132"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WHo-dQ-sBf">
             <objects>
