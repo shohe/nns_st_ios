@@ -56,6 +56,8 @@ class MakeOfferViewController: UIViewController {
         self.leftSideCornerRadius(view: snapmap)
         
         if isNominated {
+            let view = self.view as! BackgroundView
+            self.navigationController?.navigationBar.barTintColor = view.topColor
             print("--")
         }
     }
@@ -79,6 +81,7 @@ extension MakeOfferViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
         if isNominated {
+            self.navigationController?.navigationBar.barTintColor = .white
             self.navigationController?.popViewController(animated: true)
         } else {
             dismiss(animated: true, completion: nil)
