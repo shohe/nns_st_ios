@@ -30,6 +30,10 @@ class MakeOfferViewController: UIViewController {
     @IBOutlet weak var long: UIButton!
     @IBOutlet weak var veryLong: UIButton!
     
+    @IBOutlet weak var fromLabel: UILabel!
+    @IBOutlet weak var withinLabel: UILabel!
+    @IBOutlet weak var distanceLabelCenter: NSLayoutConstraint!
+    
     @IBInspectable var selectedColor: UIColor = UIColor.white
     
     private var pickerView: PopupDatePickerView!
@@ -54,12 +58,7 @@ class MakeOfferViewController: UIViewController {
         super.viewWillAppear(animated)
         self.transparentNavigationBar()
         self.leftSideCornerRadius(view: snapmap)
-        
-        if isNominated {
-            let view = self.view as! BackgroundView
-            self.navigationController?.navigationBar.barTintColor = view.topColor
-            print("--")
-        }
+        self.nominateStylistFormat(isTransform: isNominated)
     }
     
     override func viewDidLoad() {
@@ -76,7 +75,7 @@ class MakeOfferViewController: UIViewController {
 }
 
 
-
+// MARK: - IBAction
 extension MakeOfferViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
@@ -99,9 +98,13 @@ extension MakeOfferViewController {
     @IBAction func tapMapField(_ sender: UITapGestureRecognizer) {
         offerMenu.resignFirstResponder()
         
-        let viewController = MapViewController.instantiateViewController()
-        viewController.delegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
+        if isNominated {
+            print("profile page")
+        } else {
+            let viewController = MapViewController.instantiateViewController()
+            viewController.delegate = self
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     @IBAction func selectHairType(_ sender: UIButton) {
@@ -113,6 +116,18 @@ extension MakeOfferViewController {
         offerItem.hairType = HairType(rawValue: sender.tag)
         setEnableButton(offer: offerItem)
     }
+    
+    @IBAction func confirmOffer(_ sender: UIButton) {
+        let viewController = ConfirmOfferViewController.instantiateViewController()
+        viewController.offerItem = self.offerItem
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+}
+
+
+// MARK: - private function
+extension MakeOfferViewController {
     
     func leftSideCornerRadius(view: UIImageView) -> Void {
         let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .topLeft], cornerRadii: CGSize(width: 5, height: 5))
@@ -174,15 +189,28 @@ extension MakeOfferViewController {
         }
     }
     
-    @IBAction func confirmOffer(_ sender: UIButton) {
-        let viewController = ConfirmOfferViewController.instantiateViewController()
-        viewController.offerItem = self.offerItem
-        self.navigationController?.pushViewController(viewController, animated: true)
+    func nominateStylistFormat(isTransform: Bool) {
+        if isNominated {
+            let view = self.view as! BackgroundView
+            self.navigationController?.navigationBar.barTintColor = view.topColor
+            fromLabel.frame = CGRect.zero
+            fromLabel.isHidden = true
+            withinLabel.frame = CGRect.zero
+            withinLabel.isHidden = true
+
+            mapTitle.text = "Salon Name"
+            mapDistance.text = "Stylist Name"
+            mapTitle.font = mapTitle.font.withSize(14)
+            mapDistance.font = mapDistance.font.withSize(22)
+            distanceLabelCenter.constant = -18.0
+            
+        }
     }
     
 }
 
 
+// MARK: - MapViewControllerDelegate
 extension MakeOfferViewController: MapViewControllerDelegate {
     
     func mapView(_mapViewController: MapViewController, didSetDistance item: MapViewItem) {
@@ -199,6 +227,7 @@ extension MakeOfferViewController: MapViewControllerDelegate {
 }
 
 
+// MARK: - PopupDatePickerViewDelegate
 extension MakeOfferViewController: PopupDatePickerViewDelegate {
     
     func popupDatePicker(_pickerView: PopupDatePickerView, didCanceled sender: UIButton) {
@@ -214,6 +243,7 @@ extension MakeOfferViewController: PopupDatePickerViewDelegate {
 }
 
 
+// MARK: - UITextFieldDelegate
 extension MakeOfferViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
