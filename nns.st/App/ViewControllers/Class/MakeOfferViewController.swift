@@ -35,6 +35,7 @@ class MakeOfferViewController: UIViewController {
     private var pickerView: PopupDatePickerView!
     private var hairTypeItem: [UIButton] = []
     private var offerItem: OfferItem = OfferItem()
+    private var isNominated: Bool = false
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -42,10 +43,21 @@ class MakeOfferViewController: UIViewController {
         return viewController
     }
     
+    static func instantiateViewController(withStylist: Int) -> MakeOfferViewController {
+        let storyboard = UIStoryboard(name: "Offer", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MakeOfferViewController") as! MakeOfferViewController
+        viewController.isNominated = true
+        return viewController
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.transparentNavigationBar()
         self.leftSideCornerRadius(view: snapmap)
+        
+        if isNominated {
+            print("--")
+        }
     }
     
     override func viewDidLoad() {
@@ -66,7 +78,11 @@ class MakeOfferViewController: UIViewController {
 extension MakeOfferViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        if isNominated {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func tapDateTimeField(_ sender: UITapGestureRecognizer) {

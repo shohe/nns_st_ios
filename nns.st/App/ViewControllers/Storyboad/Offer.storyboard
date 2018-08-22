@@ -30,7 +30,7 @@
         <!--Make Offer View Controller-->
         <scene sceneID="Qx4-cP-W3h">
             <objects>
-                <viewController id="AlS-eo-ddH" customClass="MakeOfferViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeOfferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AlS-eo-ddH" customClass="MakeOfferViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rfr-Vu-WoP" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -612,7 +612,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="877.51124437781118"/>
+            <point key="canvasLocation" x="746" y="125"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="FFV-RM-4gp">
@@ -655,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc2-qN-ZvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="125"/>
+            <point key="canvasLocation" x="1556" y="125"/>
         </scene>
         <!--Bottom Sheet View Controller-->
         <scene sceneID="Lpz-4w-7YL">
@@ -783,7 +783,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dw5-Cw-tZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="125"/>
+            <point key="canvasLocation" x="2260" y="125"/>
         </scene>
     </scenes>
     <resources>
