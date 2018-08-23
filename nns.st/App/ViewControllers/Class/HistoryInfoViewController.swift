@@ -23,6 +23,9 @@ class HistoryInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // row height automatic
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // register cells
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(DoubleButtonCell.nib, forCellReuseIdentifier: DoubleButtonCell.identifier)

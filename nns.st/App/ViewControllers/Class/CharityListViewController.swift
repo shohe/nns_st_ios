@@ -26,8 +26,11 @@ class CharityListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // row height automatic
+        tableView.rowHeight = UITableViewAutomaticDimension
+        // register cells
+        tableView.register(CharityCell.nib, forCellReuseIdentifier: CharityCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +46,28 @@ extension CharityListViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - UITableViewDataSource
+extension CharityListViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CharityCell.identifier, for: indexPath) as? CharityCell {
+            cell.selectionStyle = .none
+            return cell
+        }
+        return UITableViewCell()
     }
     
 }
