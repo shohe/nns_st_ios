@@ -66,6 +66,12 @@ extension CharityListViewController: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CharityCell.identifier, for: indexPath) as? CharityCell {
             cell.selectionStyle = .none
             cell.delegate = self
+            cell.charityId = indexPath.row  // todo: chnage to real id later
+            
+            if cell.charityId == 1 {
+                cell.setCharity(anim: false)
+            }
+            
             return cell
         }
         return UITableViewCell()
@@ -88,10 +94,19 @@ extension CharityListViewController: UITableViewDelegate {
 }
 
 
+// MARK: - CharityCellDelegate
 extension CharityListViewController: CharityCellDelegate {
     
     func charityCell(cell: CharityCell, _didSelectedCharity sender: UIButton) {
-        print("-")
+        if let charityCells = self.tableView.visibleCells as? [CharityCell] {
+            for _cell in charityCells {
+                if _cell.charityId == cell.charityId {
+                    _cell.setCharity(anim: true)
+                } else {
+                    _cell.resetCharity(anim: true)
+                }
+            }
+        }
     }
     
 }

@@ -20,6 +20,9 @@ class CharityCell: UITableViewCell {
     @IBOutlet weak var information: UILabel!
     @IBOutlet weak var selectButton: UIButton!
     
+    @IBOutlet weak var selectButtonLabelWidth: NSLayoutConstraint!
+    @IBOutlet weak var selectButtonLabelRightConst: NSLayoutConstraint!
+    
     var delegate: CharityCellDelegate? = nil
     var charityId: Int?
     
@@ -46,9 +49,11 @@ class CharityCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    
 }
 
 
+// MARK: - private function
 extension CharityCell {
     
     private func leftSideCornerRadius(view: UIImageView) -> Void {
@@ -76,14 +81,58 @@ extension CharityCell {
         button.layer.mask = maskLayer
     }
     
-}
-
-
-extension CharityCell {
+    private func hideButtonLabel() {
+        self.selectButtonLabelWidth.constant = 0
+        self.selectButtonLabelRightConst.constant = 0
+        self.layoutIfNeeded()
+    }
     
-    @IBAction func selectCharity(_ sender: UIButton) {
-        self.delegate?.charityCell(cell: self, _didSelectedCharity: selectButton)
+    private func showButtonLabel() {
+        self.selectButtonLabelWidth.constant = 111
+        self.selectButtonLabelRightConst.constant = 8
+        self.layoutIfNeeded()
     }
     
 }
 
+
+// MARK: - public function
+extension CharityCell {
+    
+    func setCharity(anim isAnim:Bool) {
+        if isAnim {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.hideButtonLabel()
+            }) { (complete) in
+                // todo: change API
+            }
+        } else {
+            hideButtonLabel()
+            // todo: change API
+        }
+    }
+    
+    func resetCharity(anim isAnim:Bool) {
+        if isAnim {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.showButtonLabel()
+            }) { (complete) in
+                // todo: change API
+            }
+        } else {
+            showButtonLabel()
+            // todo: change API
+        }
+    }
+    
+}
+
+
+// MARK: - IBAction
+extension CharityCell {
+
+    @IBAction func selectCharity(_ sender: Any) {
+        self.delegate?.charityCell(cell: self, _didSelectedCharity: selectButton)
+    }
+    
+}
