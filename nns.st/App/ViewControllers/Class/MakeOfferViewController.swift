@@ -96,7 +96,7 @@ extension MakeOfferViewController {
         offerMenu.resignFirstResponder()
         
         if isNominated {
-            print("profile page")
+            self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
         } else {
             let viewController = MapViewController.instantiateViewController()
             viewController.delegate = self
