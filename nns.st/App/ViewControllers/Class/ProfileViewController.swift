@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     
     static func instantiateViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "PFNavigationController") as! UINavigationController
         return viewController
     }
     
