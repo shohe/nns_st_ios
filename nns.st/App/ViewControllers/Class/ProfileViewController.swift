@@ -21,6 +21,11 @@ class ProfileViewController: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.addBottomSpaceView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,11 +46,19 @@ class ProfileViewController: UIViewController {
 }
 
 
-// MARK: - Navigation
+// MARK: -
 extension ProfileViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func addBottomSpaceView() {
+        let origin: CGPoint = CGPoint(x: 0, y: self.tableView.frame.height-20)
+        let size: CGSize = self.view.frame.size
+        let view = UIView(frame: CGRect(origin: origin, size: size))
+        view.backgroundColor = .white
+        self.tableView.addSubview(view)
     }
     
 }
