@@ -20,6 +20,10 @@ class ConfirmRequestViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
         return viewController
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +47,7 @@ class ConfirmRequestViewController: UIViewController {
 }
 
 
-// MARK: - Navigation
+// MARK: - IBAction
 extension ConfirmRequestViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
@@ -53,8 +57,33 @@ extension ConfirmRequestViewController {
 }
 
 
+// MARK: - private function
+extension ConfirmRequestViewController {
+    
+    private func addBottomSpaceView() {
+        for view in self.tableView.subviews {
+            if view.tag == 99 {
+                view.removeFromSuperview()
+            }
+        }
+        
+        let origin: CGPoint = CGPoint(x: 0, y: tableView.contentSize.height)
+        let size: CGSize = self.view.frame.size
+        let view = UIView(frame: CGRect(origin: origin, size: size))
+        view.backgroundColor = .white
+        view.tag = 99
+        self.tableView.addSubview(view)
+    }
+    
+}
+
+
 // MARK: - UITableViewDelegate
 extension ConfirmRequestViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.addBottomSpaceView()
+    }
     
 }
 
@@ -67,7 +96,7 @@ extension ConfirmRequestViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

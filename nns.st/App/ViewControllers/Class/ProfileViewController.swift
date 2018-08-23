@@ -23,7 +23,6 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.addBottomSpaceView()
     }
     
     override func viewDidLoad() {
@@ -54,10 +53,17 @@ extension ProfileViewController {
     }
     
     private func addBottomSpaceView() {
-        let origin: CGPoint = CGPoint(x: 0, y: self.tableView.frame.height-20)
+        for view in self.tableView.subviews {
+            if view.tag == 99 {
+                view.removeFromSuperview()
+            }
+        }
+        
+        let origin: CGPoint = CGPoint(x: 0, y: tableView.contentSize.height)
         let size: CGSize = self.view.frame.size
         let view = UIView(frame: CGRect(origin: origin, size: size))
         view.backgroundColor = .white
+        view.tag = 99
         self.tableView.addSubview(view)
     }
     
@@ -67,8 +73,8 @@ extension ProfileViewController {
 // MARK: - UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.addBottomSpaceView()
     }
     
 }
@@ -82,7 +88,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,7 +107,7 @@ extension ProfileViewController: UITableViewDataSource {
             
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell {
-                if indexPath.row != 4 {
+                if indexPath.row != 2 {
                     cell.nonTitle()
                 }
                 return cell

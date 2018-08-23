@@ -102,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-jc-0ur">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-jc-0ur">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -114,7 +114,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="v8e-jc-0ur" firstAttribute="leading" secondItem="LIS-RZ-oed" secondAttribute="leading" id="9cT-xT-gle"/>
-                            <constraint firstItem="LIS-RZ-oed" firstAttribute="bottom" secondItem="v8e-jc-0ur" secondAttribute="bottom" id="Kzj-Fo-WfE"/>
+                            <constraint firstAttribute="bottom" secondItem="v8e-jc-0ur" secondAttribute="bottom" id="Kzj-Fo-WfE"/>
                             <constraint firstItem="LIS-RZ-oed" firstAttribute="trailing" secondItem="v8e-jc-0ur" secondAttribute="trailing" id="LQN-Ft-ZXF"/>
                             <constraint firstItem="v8e-jc-0ur" firstAttribute="top" secondItem="LIS-RZ-oed" secondAttribute="top" id="ffk-7s-ATW"/>
                         </constraints>
@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOe-Ed-7yT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="830"/>
+            <point key="canvasLocation" x="2128.8000000000002" y="829.83508245877067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q3X-TF-UH5">

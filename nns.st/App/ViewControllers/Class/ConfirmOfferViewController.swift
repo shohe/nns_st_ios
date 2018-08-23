@@ -57,6 +57,7 @@ class ConfirmOfferViewController: UIViewController {
 }
 
 
+// MARK: - UITableViewDataSource
 extension ConfirmOfferViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -106,6 +107,7 @@ extension ConfirmOfferViewController: UITableViewDataSource {
 }
 
 
+// MARK: - UITableViewDelegate
 extension ConfirmOfferViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -123,15 +125,16 @@ extension ConfirmOfferViewController: UITableViewDelegate {
 }
 
 
+// MARK: - private function
 extension ConfirmOfferViewController {
     
-    func configureObserver() {
+    private func configureObserver() {
         let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func removeObserver() {
+    private func removeObserver() {
         let notification = NotificationCenter.default
         notification.removeObserver(self)
     }
@@ -162,6 +165,12 @@ extension ConfirmOfferViewController {
         })
     }
     
+}
+
+
+// MARK: - IBAction
+extension ConfirmOfferViewController {
+    
     @IBAction func didtapView(_ sender: UITapGestureRecognizer) {
         commentTextView.resignFirstResponder()
     }
@@ -185,5 +194,6 @@ extension ConfirmOfferViewController {
 }
 
 
+// MARK: - UITextViewDelegate
 extension ConfirmOfferViewController: UITextViewDelegate {
 }
