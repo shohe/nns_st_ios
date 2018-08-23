@@ -30,15 +30,29 @@ class MakeOfferViewController: UIViewController {
     @IBOutlet weak var long: UIButton!
     @IBOutlet weak var veryLong: UIButton!
     
+    @IBOutlet weak var fromLabel: UILabel!
+    @IBOutlet weak var withinLabel: UILabel!
+    @IBOutlet weak var distanceLabelCenter: NSLayoutConstraint!
+    
     @IBInspectable var selectedColor: UIColor = UIColor.white
     
     private var pickerView: PopupDatePickerView!
     private var hairTypeItem: [UIButton] = []
     private var offerItem: OfferItem = OfferItem()
+    private var isNominated: Bool = false
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "MONavigationController") as! UINavigationController
+        let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        return viewController
+    }
+    
+    static func instantiateViewController(withStylist: Int) -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Offer", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let root = viewController.viewControllers.first as! MakeOfferViewController
+        root.isNominated = true
+        root.offerItem.stylistId = withStylist
         return viewController
     }
     
@@ -46,6 +60,7 @@ class MakeOfferViewController: UIViewController {
         super.viewWillAppear(animated)
         self.transparentNavigationBar()
         self.leftSideCornerRadius(view: snapmap)
+        self.nominateStylistFormat(isTransform: isNominated)
     }
     
     override func viewDidLoad() {
@@ -62,7 +77,7 @@ class MakeOfferViewController: UIViewController {
 }
 
 
-
+// MARK: - IBAction
 extension MakeOfferViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
@@ -80,9 +95,13 @@ extension MakeOfferViewController {
     @IBAction func tapMapField(_ sender: UITapGestureRecognizer) {
         offerMenu.resignFirstResponder()
         
-        let viewController = MapViewController.instantiateViewController()
-        viewController.delegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
+        if isNominated {
+            self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
+        } else {
+            let viewController = MapViewController.instantiateViewController()
+            viewController.delegate = self
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     @IBAction func selectHairType(_ sender: UIButton) {
@@ -94,6 +113,18 @@ extension MakeOfferViewController {
         offerItem.hairType = HairType(rawValue: sender.tag)
         setEnableButton(offer: offerItem)
     }
+    
+    @IBAction func confirmOffer(_ sender: UIButton) {
+        let viewController = ConfirmOfferViewController.instantiateViewController()
+        viewController.offerItem = self.offerItem
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+}
+
+
+// MARK: - private function
+extension MakeOfferViewController {
     
     func leftSideCornerRadius(view: UIImageView) -> Void {
         let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .topLeft], cornerRadii: CGSize(width: 5, height: 5))
@@ -155,15 +186,29 @@ extension MakeOfferViewController {
         }
     }
     
-    @IBAction func confirmOffer(_ sender: UIButton) {
-        let viewController = ConfirmOfferViewController.instantiateViewController()
-        viewController.offerItem = self.offerItem
-        self.navigationController?.pushViewController(viewController, animated: true)
+    func nominateStylistFormat(isTransform: Bool) {
+        if isNominated {
+            self.hideDistanceInfo()
+            mapTitle.text = "Salon Name"
+            mapDistance.text = "Stylist Name"
+        }
+    }
+    
+    func hideDistanceInfo() {
+        fromLabel.frame = CGRect.zero
+        fromLabel.isHidden = true
+        withinLabel.frame = CGRect.zero
+        withinLabel.isHidden = true
+        
+        mapTitle.font = mapTitle.font.withSize(14)
+        mapDistance.font = mapDistance.font.withSize(22)
+        distanceLabelCenter.constant = -18.0
     }
     
 }
 
 
+// MARK: - MapViewControllerDelegate
 extension MakeOfferViewController: MapViewControllerDelegate {
     
     func mapView(_mapViewController: MapViewController, didSetDistance item: MapViewItem) {
@@ -180,6 +225,7 @@ extension MakeOfferViewController: MapViewControllerDelegate {
 }
 
 
+// MARK: - PopupDatePickerViewDelegate
 extension MakeOfferViewController: PopupDatePickerViewDelegate {
     
     func popupDatePicker(_pickerView: PopupDatePickerView, didCanceled sender: UIButton) {
@@ -195,6 +241,7 @@ extension MakeOfferViewController: PopupDatePickerViewDelegate {
 }
 
 
+// MARK: - UITextFieldDelegate
 extension MakeOfferViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

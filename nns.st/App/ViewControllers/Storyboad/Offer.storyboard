@@ -30,7 +30,7 @@
         <!--Make Offer View Controller-->
         <scene sceneID="Qx4-cP-W3h">
             <objects>
-                <viewController id="AlS-eo-ddH" customClass="MakeOfferViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeOfferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AlS-eo-ddH" customClass="MakeOfferViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rfr-Vu-WoP" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +188,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFq-rG-fk4" userLabel="GestureLayerForMap">
-                                <rect key="frame" x="32" y="320" width="311" height="120"/>
+                                <rect key="frame" x="32" y="320" width="311" height="119.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -469,6 +469,8 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="date" destination="i1o-Vq-gs0" id="mpc-yd-n84"/>
+                        <outlet property="distanceLabelCenter" destination="wmn-ey-08z" id="iIb-Xe-TtD"/>
+                        <outlet property="fromLabel" destination="Jou-Hu-Fbs" id="cdQ-Jq-hls"/>
                         <outlet property="long" destination="ioN-6i-8iI" id="FaU-gE-xic"/>
                         <outlet property="mapDistance" destination="H6p-Ix-cg2" id="w4B-9q-fIJ"/>
                         <outlet property="mapTitle" destination="oQH-Ha-uSt" id="guJ-AS-5fK"/>
@@ -481,6 +483,7 @@
                         <outlet property="time" destination="S75-hH-a05" id="EaZ-nI-s0A"/>
                         <outlet property="veryLong" destination="9gi-zF-lEb" id="Car-mq-wTk"/>
                         <outlet property="veryShort" destination="L0x-ct-Y4o" id="l1y-3b-sy7"/>
+                        <outlet property="withinLabel" destination="trw-5L-6ft" id="Qh8-ly-FFn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYK-V2-61c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -495,7 +498,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="25" y="125"/>
+            <point key="canvasLocation" x="24.800000000000001" y="124.58770614692655"/>
         </scene>
         <!--Confirm Offer View Controller-->
         <scene sceneID="4Kf-aD-Q5k">
@@ -612,7 +615,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="877.51124437781118"/>
+            <point key="canvasLocation" x="746" y="125"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="FFV-RM-4gp">
@@ -655,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc2-qN-ZvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="125"/>
+            <point key="canvasLocation" x="1556" y="125"/>
         </scene>
         <!--Bottom Sheet View Controller-->
         <scene sceneID="Lpz-4w-7YL">
@@ -783,7 +786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dw5-Cw-tZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="125"/>
+            <point key="canvasLocation" x="2260" y="125"/>
         </scene>
     </scenes>
     <resources>

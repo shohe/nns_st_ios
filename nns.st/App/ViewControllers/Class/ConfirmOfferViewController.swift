@@ -40,6 +40,7 @@ class ConfirmOfferViewController: UIViewController {
         tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
         tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
         tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
+        tableView.register(NominationCell.nib, forCellReuseIdentifier: NominationCell.identifier)
         tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
     }
 
@@ -56,6 +57,7 @@ class ConfirmOfferViewController: UIViewController {
 }
 
 
+// MARK: - UITableViewDataSource
 extension ConfirmOfferViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,9 +81,16 @@ extension ConfirmOfferViewController: UITableViewDataSource {
                 return cell
             }
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DistanceInfoCell.identifier, for: indexPath) as? DistanceInfoCell {
-                cell.setEachValue(item: offerItem)
-                return cell
+            if offerItem?.stylistId == nil {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: DistanceInfoCell.identifier, for: indexPath) as? DistanceInfoCell {
+                    cell.setEachValue(item: offerItem)
+                    return cell
+                }
+            } else {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: NominationCell.identifier, for: indexPath) as? NominationCell {
+                    cell.setEachValue(item: offerItem)
+                    return cell
+                }
             }
             
         case 3:
@@ -98,6 +107,7 @@ extension ConfirmOfferViewController: UITableViewDataSource {
 }
 
 
+// MARK: - UITableViewDelegate
 extension ConfirmOfferViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -115,15 +125,16 @@ extension ConfirmOfferViewController: UITableViewDelegate {
 }
 
 
+// MARK: - private function
 extension ConfirmOfferViewController {
     
-    func configureObserver() {
+    private func configureObserver() {
         let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func removeObserver() {
+    private func removeObserver() {
         let notification = NotificationCenter.default
         notification.removeObserver(self)
     }
@@ -154,6 +165,12 @@ extension ConfirmOfferViewController {
         })
     }
     
+}
+
+
+// MARK: - IBAction
+extension ConfirmOfferViewController {
+    
     @IBAction func didtapView(_ sender: UITapGestureRecognizer) {
         commentTextView.resignFirstResponder()
     }
@@ -177,5 +194,6 @@ extension ConfirmOfferViewController {
 }
 
 
+// MARK: - UITextViewDelegate
 extension ConfirmOfferViewController: UITextViewDelegate {
 }

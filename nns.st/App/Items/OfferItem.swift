@@ -18,6 +18,7 @@ class OfferItem: NSObject {
     var place: String?
     var distance: CGFloat?
     var hairType: HairType?
+    var stylistId: Int?
     
     deinit { }
     
@@ -29,8 +30,8 @@ extension OfferItem {
         if menu == nil || menu == "" { return false }
         if price == nil { return false }
         if datetime == nil { return false }
-        if location == nil { return false }
-        if distance == nil { return false }
+        if location == nil && stylistId == nil { return false }
+        if distance == nil && stylistId == nil { return false }
         if hairType == nil { return false }
         return true
     }
