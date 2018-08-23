@@ -76,5 +76,28 @@
             </objects>
             <point key="canvasLocation" x="138" y="215"/>
         </scene>
+        <!--Charity Detail View Controller-->
+        <scene sceneID="wui-1n-IY5">
+            <objects>
+                <viewController storyboardIdentifier="CharityDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MXg-jB-NSe" customClass="CharityDetailViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4dz-8X-lzA" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="XlQ-Q9-uGR"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRC-iA-hvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="215"/>
+        </scene>
     </scenes>
 </document>

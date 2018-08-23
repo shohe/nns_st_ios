@@ -89,6 +89,7 @@
 		09FDE34C212E87DD00A823DA /* CharityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE34B212E87DD00A823DA /* CharityListViewController.swift */; };
 		09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE34D212E90E400A823DA /* CharityCell.swift */; };
 		09FDE350212E90E400A823DA /* CharityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE34E212E90E400A823DA /* CharityCell.xib */; };
+		09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE351212EC36700A823DA /* CharityDetailViewController.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -200,6 +201,7 @@
 		09FDE34B212E87DD00A823DA /* CharityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityListViewController.swift; sourceTree = "<group>"; };
 		09FDE34D212E90E400A823DA /* CharityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityCell.swift; sourceTree = "<group>"; };
 		09FDE34E212E90E400A823DA /* CharityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharityCell.xib; sourceTree = "<group>"; };
+		09FDE351212EC36700A823DA /* CharityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityDetailViewController.swift; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				09BB1975212D1356006562D0 /* HistoryInfoViewController.swift */,
 				09BB197F212E5EC3006562D0 /* ProfileViewController.swift */,
 				09FDE34B212E87DD00A823DA /* CharityListViewController.swift */,
+				09FDE351212EC36700A823DA /* CharityDetailViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				09BB1979212D266C006562D0 /* DoubleButtonCell.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
+				09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */,
 				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
 				09BB196C212C2126006562D0 /* ReviewViewController.swift in Sources */,
 				09BB194C212AA535006562D0 /* OfferItem.swift in Sources */,
