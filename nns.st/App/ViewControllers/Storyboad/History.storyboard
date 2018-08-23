@@ -94,6 +94,49 @@
             </objects>
             <point key="canvasLocation" x="1284" y="132"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="rme-Ex-wna">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jTF-ux-k1c" customClass="ProfileViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PRk-aG-P29" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-jc-0ur">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jTF-ux-k1c" id="GdQ-3o-SOX"/>
+                                    <outlet property="delegate" destination="jTF-ux-k1c" id="dhr-mV-XOy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v8e-jc-0ur" firstAttribute="leading" secondItem="LIS-RZ-oed" secondAttribute="leading" id="9cT-xT-gle"/>
+                            <constraint firstItem="LIS-RZ-oed" firstAttribute="bottom" secondItem="v8e-jc-0ur" secondAttribute="bottom" id="Kzj-Fo-WfE"/>
+                            <constraint firstItem="LIS-RZ-oed" firstAttribute="trailing" secondItem="v8e-jc-0ur" secondAttribute="trailing" id="LQN-Ft-ZXF"/>
+                            <constraint firstItem="v8e-jc-0ur" firstAttribute="top" secondItem="LIS-RZ-oed" secondAttribute="top" id="ffk-7s-ATW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LIS-RZ-oed"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="v8e-jc-0ur" id="Rea-wN-SgE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOe-Ed-7yT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="132"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WHo-dQ-sBf">
             <objects>

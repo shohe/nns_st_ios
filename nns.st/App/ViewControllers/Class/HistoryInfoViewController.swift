@@ -102,6 +102,6 @@ extension HistoryInfoViewController: DoubleButtonCellDelegate {
     }
     
     func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {
-        print("_didSelectedProfileButton")
+        self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
     }
 }
