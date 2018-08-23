@@ -105,3 +105,34 @@ extension HistoryInfoViewController: DoubleButtonCellDelegate {
         self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
     }
 }
+
+
+// MARK: - UITableViewDelegate
+extension HistoryInfoViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.addBottomSpaceView()
+    }
+    
+}
+
+
+// MARK: - private function
+extension HistoryInfoViewController {
+    
+    private func addBottomSpaceView() {
+        for view in self.tableView.subviews {
+            if view.tag == 99 {
+                view.removeFromSuperview()
+            }
+        }
+        
+        let origin: CGPoint = CGPoint(x: 0, y: tableView.contentSize.height)
+        let size: CGSize = self.view.frame.size
+        let view = UIView(frame: CGRect(origin: origin, size: size))
+        view.backgroundColor = .white
+        view.tag = 99
+        self.tableView.addSubview(view)
+    }
+    
+}
