@@ -56,7 +56,7 @@ extension MainViewController {
     }
     
     @IBAction func pressCharityBtn(_ sender: UIButton) {
-        print("pressCharityBtn")
+        self.present(CharityListViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
 }

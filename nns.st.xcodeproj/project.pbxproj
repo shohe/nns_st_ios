@@ -85,6 +85,8 @@
 		09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAE521254FA4009C6428 /* UIColor+image.swift */; };
 		09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAE921258638009C6428 /* Offer.storyboard */; };
 		09DDAAEC212586AC009C6428 /* MakeOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */; };
+		09FDE34A212E87C100A823DA /* Charity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE349212E87C100A823DA /* Charity.storyboard */; };
+		09FDE34C212E87DD00A823DA /* CharityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE34B212E87DD00A823DA /* CharityListViewController.swift */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -192,6 +194,8 @@
 		09DDAAE521254FA4009C6428 /* UIColor+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+image.swift"; sourceTree = "<group>"; };
 		09DDAAE921258638009C6428 /* Offer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Offer.storyboard; sourceTree = "<group>"; };
 		09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOfferViewController.swift; sourceTree = "<group>"; };
+		09FDE349212E87C100A823DA /* Charity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Charity.storyboard; sourceTree = "<group>"; };
+		09FDE34B212E87DD00A823DA /* CharityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityListViewController.swift; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +370,7 @@
 				09BB196F212C57EE006562D0 /* HistoryListViewController.swift */,
 				09BB1975212D1356006562D0 /* HistoryInfoViewController.swift */,
 				09BB197F212E5EC3006562D0 /* ProfileViewController.swift */,
+				09FDE34B212E87DD00A823DA /* CharityListViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 				091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */,
 				09BB1969212C210E006562D0 /* Review.storyboard */,
 				09BB196D212C571D006562D0 /* History.storyboard */,
+				09FDE349212E87C100A823DA /* Charity.storyboard */,
 			);
 			path = Storyboad;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 				09BB1958212AD515006562D0 /* DateInfoCell.xib in Resources */,
 				09BB1960212AD550006562D0 /* DistanceInfoCell.xib in Resources */,
 				09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */,
+				09FDE34A212E87C100A823DA /* Charity.storyboard in Resources */,
 				09BB1954212AC1AA006562D0 /* OutcomeInfoCell.xib in Resources */,
 				09BB197E212DA931006562D0 /* NominationCell.xib in Resources */,
 				09BB197A212D266C006562D0 /* DoubleButtonCell.xib in Resources */,
@@ -735,6 +742,7 @@
 				09DDAAE12125364F009C6428 /* ReviewCell.swift in Sources */,
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				09BB1973212C5FEC006562D0 /* HistoryCell.swift in Sources */,
+				09FDE34C212E87DD00A823DA /* CharityListViewController.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
 				09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */,
 				09BB1976212D1356006562D0 /* HistoryInfoViewController.swift in Sources */,
