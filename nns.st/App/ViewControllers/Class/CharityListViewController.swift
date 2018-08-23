@@ -71,3 +71,13 @@ extension CharityListViewController: UITableViewDataSource {
     }
     
 }
+
+
+// MARK: - UITableViewDelegate
+extension CharityListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+}

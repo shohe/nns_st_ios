@@ -10,6 +10,13 @@ import UIKit
 
 class CharityCell: UITableViewCell {
     
+    @IBOutlet weak var baseView: UIView!
+    @IBOutlet weak var charityImageView: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var information: UILabel!
+    @IBOutlet weak var selectButton: UIButton!
+    
+    
     static var identifier:String {
         get{
             return "CharityCell"
@@ -24,13 +31,44 @@ class CharityCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.leftSideCornerRadius(view: charityImageView)
+        self.rightDownSideCornerRadius(button: selectButton)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+}
+
+
+extension CharityCell {
+    
+    private func leftSideCornerRadius(view: UIImageView) -> Void {
+        // To fill in some space -> I don't know why it makes some space on right side.
+        var _bounds = view.bounds
+        _bounds.size.width += 13.5
+        view.bounds = _bounds
+        
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .topLeft], cornerRadii: CGSize(width: 5, height: 5))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        view.layer.mask = mask
+    }
+    
+    private func rightDownSideCornerRadius(button: UIButton) -> Void {
+        // To fill in some space -> I don't know why it makes some space on right side.
+        var _bounds = button.bounds
+        _bounds.size.width += 15.0
+        button.bounds = _bounds
+        
+        let maskPath = UIBezierPath(roundedRect: button.bounds, byRoundingCorners: [.bottomRight],cornerRadii: CGSize(width: 5, height: 5))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = button.bounds
+        maskLayer.path = maskPath.cgPath
+        button.layer.mask = maskLayer
     }
     
 }
