@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CharityCellDelegate {
+    func charityCell(cell: CharityCell, _didSelectedCharity sender: UIButton)
+}
+
 class CharityCell: UITableViewCell {
     
     @IBOutlet weak var baseView: UIView!
@@ -15,6 +19,9 @@ class CharityCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var information: UILabel!
     @IBOutlet weak var selectButton: UIButton!
+    
+    var delegate: CharityCellDelegate? = nil
+    var charityId: Int?
     
     
     static var identifier:String {
@@ -37,8 +44,6 @@ class CharityCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
@@ -72,3 +77,13 @@ extension CharityCell {
     }
     
 }
+
+
+extension CharityCell {
+    
+    @IBAction func selectCharity(_ sender: UIButton) {
+        self.delegate?.charityCell(cell: self, _didSelectedCharity: selectButton)
+    }
+    
+}
+

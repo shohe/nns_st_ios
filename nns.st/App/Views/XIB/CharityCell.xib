@@ -51,6 +51,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7qm-Nb-Hpd"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="selectCharity:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h8U-Jn-ItM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

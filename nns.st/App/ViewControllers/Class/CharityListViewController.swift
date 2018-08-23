@@ -65,6 +65,7 @@ extension CharityListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CharityCell.identifier, for: indexPath) as? CharityCell {
             cell.selectionStyle = .none
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
@@ -82,6 +83,15 @@ extension CharityListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationController?.pushViewController(CharityDetailViewController.instantiateViewController(), animated: true)
+    }
+    
+}
+
+
+extension CharityListViewController: CharityCellDelegate {
+    
+    func charityCell(cell: CharityCell, _didSelectedCharity sender: UIButton) {
+        print("-")
     }
     
 }
