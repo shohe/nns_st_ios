@@ -80,4 +80,8 @@ extension CharityListViewController: UITableViewDelegate {
         return UIView()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(CharityDetailViewController.instantiateViewController(), animated: true)
+    }
+    
 }
