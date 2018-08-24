@@ -62,7 +62,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="OFK-uV-BVV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="81o-Bk-IiU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="81o-Bk-IiU">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="backPreView:" destination="mSv-sO-ueK" id="NGX-Kl-Tym"/>
