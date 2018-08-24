@@ -28,6 +28,8 @@ class MyPageViewController: UIViewController {
         // register cells
         tableView.register(MypageThumbnailCell.nib, forCellReuseIdentifier: MypageThumbnailCell.identifier)
         tableView.register(MypageNameCell.nib, forCellReuseIdentifier: MypageNameCell.identifier)
+        tableView.register(MypageMailAddressCell.nib, forCellReuseIdentifier: MypageMailAddressCell.identifier)
+        tableView.register(MypagePasswordCell.nib, forCellReuseIdentifier: MypagePasswordCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +69,14 @@ extension MyPageViewController: UITableViewDataSource {
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageNameCell.identifier, for: indexPath) as? MypageNameCell {
+                return cell
+            }
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MypageMailAddressCell.identifier, for: indexPath) as? MypageMailAddressCell {
+                return cell
+            }
+        case 3:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MypagePasswordCell.identifier, for: indexPath) as? MypagePasswordCell {
                 return cell
             }
         default:
