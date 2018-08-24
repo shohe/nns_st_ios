@@ -12,6 +12,8 @@ class MyPageViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var sourceField: UITextField?
+    
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Mypage", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
@@ -63,13 +65,13 @@ extension MyPageViewController {
 // MARK: - private function
 extension MyPageViewController {
     
-    func configureObserver() {
+    private func configureObserver() {
         let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func removeObserver() {
+    private func removeObserver() {
         let notification = NotificationCenter.default
         notification.removeObserver(self)
     }
@@ -77,7 +79,10 @@ extension MyPageViewController {
     @objc func keyboardWillShow(notification: Notification?) {
         if let userInfo = notification?.userInfo {
             if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let _ = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
-                print("-- \(keyboardFrame)")
+                self.view.transform = CGAffineTransform.identity
+                let duplicateHeight: CGFloat = checkDuplicateHeight(baseFrame: keyboardFrame)
+                if duplicateHeight > 0 { return }
+                self.view.transform = CGAffineTransform(translationX: 0, y: duplicateHeight - 12.0)
             }
         }
         
@@ -88,6 +93,16 @@ extension MyPageViewController {
         UIView.animate(withDuration: duration!, animations: { () in
             self.view.transform = CGAffineTransform.identity
         })
+    }
+    
+    private func checkDuplicateHeight(baseFrame: CGRect) -> CGFloat {
+        let convertedKeyboardFrame = self.view.convert(baseFrame, from: nil)
+        let convertedFieldFrame = sourceField!.convert(sourceField!.frame, to: self.view)
+        let height = convertedKeyboardFrame.minY - convertedFieldFrame.minY
+        print("convertedKeyboardFrame-minY: \(convertedKeyboardFrame.minY)")
+        print("convertedFieldFrame-minY: \(convertedFieldFrame.minY)")
+        print("height: \(height)")
+        return height
     }
     
 }
@@ -112,10 +127,13 @@ extension MyPageViewController: UITableViewDataSource {
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageNameCell.identifier, for: indexPath) as? MypageNameCell {
+                cell.firstName.delegate = self
+                cell.lastName.delegate = self
                 return cell
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageMailAddressCell.identifier, for: indexPath) as? MypageMailAddressCell {
+                cell.mailAddress.delegate = self
                 return cell
             }
         case 3:
@@ -156,7 +174,7 @@ extension MyPageViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("---")
+        self.sourceField = textField
         return true
     }
     

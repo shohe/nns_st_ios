@@ -27,7 +27,6 @@ class MypageMailAddressCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.mailAddress.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,13 +37,3 @@ class MypageMailAddressCell: UITableViewCell {
     
 }
 
-
-// MARK: - UITextFieldDelegate
-extension MypageMailAddressCell: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-}

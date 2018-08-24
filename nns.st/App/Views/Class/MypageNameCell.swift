@@ -28,8 +28,6 @@ class MypageNameCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.lastName.delegate = self
-        self.firstName.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,18 +38,3 @@ class MypageNameCell: UITableViewCell {
     
 }
 
-
-// MARK: - UITextFieldDelegate
-extension MypageNameCell: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == lastName {
-            firstName.becomeFirstResponder()
-        } else {
-            lastName.resignFirstResponder()
-            firstName.resignFirstResponder()
-        }
-        return true
-    }
-    
-}
