@@ -90,6 +90,18 @@
 		09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE34D212E90E400A823DA /* CharityCell.swift */; };
 		09FDE350212E90E400A823DA /* CharityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE34E212E90E400A823DA /* CharityCell.xib */; };
 		09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE351212EC36700A823DA /* CharityDetailViewController.swift */; };
+		09FDE354212FB49100A823DA /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE353212FB49100A823DA /* Mypage.storyboard */; };
+		09FDE356212FB4C900A823DA /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE355212FB4C900A823DA /* MyPageViewController.swift */; };
+		09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE357212FBD9600A823DA /* MypageThumbnailCell.swift */; };
+		09FDE35A212FBD9600A823DA /* MypageThumbnailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE358212FBD9600A823DA /* MypageThumbnailCell.xib */; };
+		09FDE35D212FC96B00A823DA /* MypageNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE35B212FC96B00A823DA /* MypageNameCell.swift */; };
+		09FDE35E212FC96B00A823DA /* MypageNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE35C212FC96B00A823DA /* MypageNameCell.xib */; };
+		09FDE361212FD4A200A823DA /* MypageMailAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE35F212FD4A200A823DA /* MypageMailAddressCell.swift */; };
+		09FDE362212FD4A200A823DA /* MypageMailAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE360212FD4A200A823DA /* MypageMailAddressCell.xib */; };
+		09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */; };
+		09FDE366212FD6DF00A823DA /* MypagePasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */; };
+		09FDE3692130162100A823DA /* MypageStatusCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */; };
+		09FDE36A2130162100A823DA /* MypageStatusCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -202,6 +214,18 @@
 		09FDE34D212E90E400A823DA /* CharityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityCell.swift; sourceTree = "<group>"; };
 		09FDE34E212E90E400A823DA /* CharityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharityCell.xib; sourceTree = "<group>"; };
 		09FDE351212EC36700A823DA /* CharityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityDetailViewController.swift; sourceTree = "<group>"; };
+		09FDE353212FB49100A823DA /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
+		09FDE355212FB4C900A823DA /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		09FDE357212FBD9600A823DA /* MypageThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageThumbnailCell.swift; sourceTree = "<group>"; };
+		09FDE358212FBD9600A823DA /* MypageThumbnailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageThumbnailCell.xib; sourceTree = "<group>"; };
+		09FDE35B212FC96B00A823DA /* MypageNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNameCell.swift; sourceTree = "<group>"; };
+		09FDE35C212FC96B00A823DA /* MypageNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageNameCell.xib; sourceTree = "<group>"; };
+		09FDE35F212FD4A200A823DA /* MypageMailAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageMailAddressCell.swift; sourceTree = "<group>"; };
+		09FDE360212FD4A200A823DA /* MypageMailAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageMailAddressCell.xib; sourceTree = "<group>"; };
+		09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypagePasswordCell.swift; sourceTree = "<group>"; };
+		09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypagePasswordCell.xib; sourceTree = "<group>"; };
+		09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageStatusCommentCell.swift; sourceTree = "<group>"; };
+		09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageStatusCommentCell.xib; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -378,6 +402,7 @@
 				09BB197F212E5EC3006562D0 /* ProfileViewController.swift */,
 				09FDE34B212E87DD00A823DA /* CharityListViewController.swift */,
 				09FDE351212EC36700A823DA /* CharityDetailViewController.swift */,
+				09FDE355212FB4C900A823DA /* MyPageViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -393,6 +418,7 @@
 				09BB1969212C210E006562D0 /* Review.storyboard */,
 				09BB196D212C571D006562D0 /* History.storyboard */,
 				09FDE349212E87C100A823DA /* Charity.storyboard */,
+				09FDE353212FB49100A823DA /* Mypage.storyboard */,
 			);
 			path = Storyboad;
 			sourceTree = "<group>";
@@ -432,6 +458,11 @@
 				09BB1977212D266C006562D0 /* DoubleButtonCell.swift */,
 				09BB197B212DA931006562D0 /* NominationCell.swift */,
 				09FDE34D212E90E400A823DA /* CharityCell.swift */,
+				09FDE357212FBD9600A823DA /* MypageThumbnailCell.swift */,
+				09FDE35B212FC96B00A823DA /* MypageNameCell.swift */,
+				09FDE35F212FD4A200A823DA /* MypageMailAddressCell.swift */,
+				09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */,
+				09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -478,6 +509,11 @@
 				09BB1978212D266C006562D0 /* DoubleButtonCell.xib */,
 				09BB197C212DA931006562D0 /* NominationCell.xib */,
 				09FDE34E212E90E400A823DA /* CharityCell.xib */,
+				09FDE358212FBD9600A823DA /* MypageThumbnailCell.xib */,
+				09FDE35C212FC96B00A823DA /* MypageNameCell.xib */,
+				09FDE360212FD4A200A823DA /* MypageMailAddressCell.xib */,
+				09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */,
+				09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -619,6 +655,7 @@
 				09BB196E212C571D006562D0 /* History.storyboard in Resources */,
 				09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */,
 				09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */,
+				09FDE362212FD4A200A823DA /* MypageMailAddressCell.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
 				09BB1974212C5FEC006562D0 /* HistoryCell.xib in Resources */,
 				09BB196A212C210E006562D0 /* Review.storyboard in Resources */,
@@ -627,9 +664,13 @@
 				09DDAADE21251453009C6428 /* CommentCell.xib in Resources */,
 				09BB1968212BE97F006562D0 /* LoadingView.xib in Resources */,
 				09DDAAE22125364F009C6428 /* ReviewCell.xib in Resources */,
+				09FDE35A212FBD9600A823DA /* MypageThumbnailCell.xib in Resources */,
 				091BEEE521130017008ED8C5 /* Main.storyboard in Resources */,
+				09FDE354212FB49100A823DA /* Mypage.storyboard in Resources */,
+				09FDE35E212FC96B00A823DA /* MypageNameCell.xib in Resources */,
 				09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */,
 				09BB1958212AD515006562D0 /* DateInfoCell.xib in Resources */,
+				09FDE36A2130162100A823DA /* MypageStatusCommentCell.xib in Resources */,
 				09BB1960212AD550006562D0 /* DistanceInfoCell.xib in Resources */,
 				09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */,
 				09FDE34A212E87C100A823DA /* Charity.storyboard in Resources */,
@@ -638,6 +679,7 @@
 				09FDE350212E90E400A823DA /* CharityCell.xib in Resources */,
 				09BB197A212D266C006562D0 /* DoubleButtonCell.xib in Resources */,
 				09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */,
+				09FDE366212FD6DF00A823DA /* MypagePasswordCell.xib in Resources */,
 				09BB195C212AD531006562D0 /* HairTypeInfoCell.xib in Resources */,
 				09DDAAC82123FD6B009C6428 /* Confirm.storyboard in Resources */,
 			);
@@ -747,6 +789,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09FDE35D212FC96B00A823DA /* MypageNameCell.swift in Sources */,
 				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
 				09BB195B212AD531006562D0 /* HairTypeInfoCell.swift in Sources */,
 				09DDAAE12125364F009C6428 /* ReviewCell.swift in Sources */,
@@ -760,12 +803,14 @@
 				09BB1970212C57EE006562D0 /* HistoryListViewController.swift in Sources */,
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
 				09BB197D212DA931006562D0 /* NominationCell.swift in Sources */,
+				09FDE3692130162100A823DA /* MypageStatusCommentCell.swift in Sources */,
 				0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */,
 				09DDAAB221207EEB009C6428 /* ContainButtonTextField.swift in Sources */,
 				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
 				09BB195F212AD550006562D0 /* DistanceInfoCell.swift in Sources */,
 				09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */,
+				09FDE361212FD4A200A823DA /* MypageMailAddressCell.swift in Sources */,
 				09BB1979212D266C006562D0 /* DoubleButtonCell.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
@@ -775,6 +820,7 @@
 				09BB194C212AA535006562D0 /* OfferItem.swift in Sources */,
 				09BB1980212E5EC3006562D0 /* ProfileViewController.swift in Sources */,
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
+				09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */,
 				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
 				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
@@ -782,6 +828,7 @@
 				09BB1963212AD747006562D0 /* CommentInfoCell.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */,
+				09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */,
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
 				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
 				09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */,
@@ -797,6 +844,7 @@
 				09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
+				09FDE356212FB4C900A823DA /* MyPageViewController.swift in Sources */,
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
 				091F8D12212723340095608F /* MapViewController.swift in Sources */,
 				09DDAADD21251453009C6428 /* CommentCell.swift in Sources */,
