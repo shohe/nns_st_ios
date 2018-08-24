@@ -37,6 +37,7 @@ class MyPageViewController: UIViewController {
         tableView.register(MypageNameCell.nib, forCellReuseIdentifier: MypageNameCell.identifier)
         tableView.register(MypageMailAddressCell.nib, forCellReuseIdentifier: MypageMailAddressCell.identifier)
         tableView.register(MypagePasswordCell.nib, forCellReuseIdentifier: MypagePasswordCell.identifier)
+        tableView.register(MypageStatusCommentCell.nib, forCellReuseIdentifier: MypageStatusCommentCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,7 +117,7 @@ extension MyPageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -139,6 +140,11 @@ extension MyPageViewController: UITableViewDataSource {
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypagePasswordCell.identifier, for: indexPath) as? MypagePasswordCell {
                 cell.passwordField.delegate = self
+                return cell
+            }
+        case 4:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MypageStatusCommentCell.identifier, for: indexPath) as? MypageStatusCommentCell {
+                cell.statusComment.delegate = self
                 return cell
             }
         default:

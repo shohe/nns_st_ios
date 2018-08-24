@@ -100,6 +100,8 @@
 		09FDE362212FD4A200A823DA /* MypageMailAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE360212FD4A200A823DA /* MypageMailAddressCell.xib */; };
 		09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */; };
 		09FDE366212FD6DF00A823DA /* MypagePasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */; };
+		09FDE3692130162100A823DA /* MypageStatusCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */; };
+		09FDE36A2130162100A823DA /* MypageStatusCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */; };
 		4063F1252BE205D5EE19BA5D /* Pods_nns_st.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E37DF0F74103888F997934 /* Pods_nns_st.framework */; };
 		DCF8B99D9D8D5B102493F765 /* Pods_nns_stTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917695CF5D3F012CC9CD85B0 /* Pods_nns_stTests.framework */; };
 		E1D7DC48836BBD8403958C0E /* Pods_nns_stUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */; };
@@ -222,6 +224,8 @@
 		09FDE360212FD4A200A823DA /* MypageMailAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageMailAddressCell.xib; sourceTree = "<group>"; };
 		09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypagePasswordCell.swift; sourceTree = "<group>"; };
 		09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypagePasswordCell.xib; sourceTree = "<group>"; };
+		09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageStatusCommentCell.swift; sourceTree = "<group>"; };
+		09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypageStatusCommentCell.xib; sourceTree = "<group>"; };
 		1CB6E181BAD395DAF8ED8C5D /* Pods-nns.stTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stTests/Pods-nns.stTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DBA0445126A59B7A867BE77 /* Pods_nns_stUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nns_stUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708A63539EAE6554675AA14D /* Pods-nns.stUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nns.stUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nns.stUITests/Pods-nns.stUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -458,6 +462,7 @@
 				09FDE35B212FC96B00A823DA /* MypageNameCell.swift */,
 				09FDE35F212FD4A200A823DA /* MypageMailAddressCell.swift */,
 				09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */,
+				09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 				09FDE35C212FC96B00A823DA /* MypageNameCell.xib */,
 				09FDE360212FD4A200A823DA /* MypageMailAddressCell.xib */,
 				09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */,
+				09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 				09FDE35E212FC96B00A823DA /* MypageNameCell.xib in Resources */,
 				09DDAABF2122D347009C6428 /* ThreeColumnCell.xib in Resources */,
 				09BB1958212AD515006562D0 /* DateInfoCell.xib in Resources */,
+				09FDE36A2130162100A823DA /* MypageStatusCommentCell.xib in Resources */,
 				09BB1960212AD550006562D0 /* DistanceInfoCell.xib in Resources */,
 				09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */,
 				09FDE34A212E87C100A823DA /* Charity.storyboard in Resources */,
@@ -796,6 +803,7 @@
 				09BB1970212C57EE006562D0 /* HistoryListViewController.swift in Sources */,
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
 				09BB197D212DA931006562D0 /* NominationCell.swift in Sources */,
+				09FDE3692130162100A823DA /* MypageStatusCommentCell.swift in Sources */,
 				0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */,
 				09DDAAB221207EEB009C6428 /* ContainButtonTextField.swift in Sources */,
 				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
