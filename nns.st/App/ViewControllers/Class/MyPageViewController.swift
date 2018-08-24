@@ -26,7 +26,7 @@ class MyPageViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         // register cells
-        // tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
+        tableView.register(MypageThumbnailCell.nib, forCellReuseIdentifier: MypageThumbnailCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +59,16 @@ extension MyPageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MypageThumbnailCell.identifier, for: indexPath) as? MypageThumbnailCell {
+                cell.selectionStyle = .none
+                return cell
+            }
+        default:
+            return UITableViewCell()
+        }
+        
         return UITableViewCell()
     }
     
