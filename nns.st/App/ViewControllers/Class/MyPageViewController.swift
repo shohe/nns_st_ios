@@ -27,6 +27,7 @@ class MyPageViewController: UIViewController {
         
         // register cells
         tableView.register(MypageThumbnailCell.nib, forCellReuseIdentifier: MypageThumbnailCell.identifier)
+        tableView.register(MypageNameCell.nib, forCellReuseIdentifier: MypageNameCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +63,10 @@ extension MyPageViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageThumbnailCell.identifier, for: indexPath) as? MypageThumbnailCell {
-                cell.selectionStyle = .none
+                return cell
+            }
+        case 1:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MypageNameCell.identifier, for: indexPath) as? MypageNameCell {
                 return cell
             }
         default:
