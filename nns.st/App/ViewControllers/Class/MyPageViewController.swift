@@ -10,6 +10,7 @@ import UIKit
 
 class MyPageViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Mypage", bundle: nil)
@@ -21,7 +22,11 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // row height automatic
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // register cells
+        // tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +42,38 @@ extension MyPageViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - UITableViewDataSource
+extension MyPageViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+}
+
+
+// MARK: - UITableViewDelegate
+extension MyPageViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
 }
