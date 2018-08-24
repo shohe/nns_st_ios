@@ -60,6 +60,10 @@ extension MyPageViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func tapScreen(_ sender: UITapGestureRecognizer) {
+        sourceField?.resignFirstResponder()
+    }
+    
 }
 
 
