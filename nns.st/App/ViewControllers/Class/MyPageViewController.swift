@@ -19,6 +19,11 @@ class MyPageViewController: UIViewController {
     }
 
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.configureObserver()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +42,11 @@ class MyPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeObserver()
+    }
+    
 }
 
 
@@ -45,6 +55,39 @@ extension MyPageViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - private function
+extension MyPageViewController {
+    
+    func configureObserver() {
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func removeObserver() {
+        let notification = NotificationCenter.default
+        notification.removeObserver(self)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification?) {
+        if let userInfo = notification?.userInfo {
+            if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue, let _ = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue {
+                print("-- \(keyboardFrame)")
+            }
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: Notification?) {
+        let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!, animations: { () in
+            self.view.transform = CGAffineTransform.identity
+        })
     }
     
 }
@@ -77,6 +120,7 @@ extension MyPageViewController: UITableViewDataSource {
             }
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypagePasswordCell.identifier, for: indexPath) as? MypagePasswordCell {
+                cell.passwordField.delegate = self
                 return cell
             }
         default:
@@ -98,6 +142,22 @@ extension MyPageViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+}
+
+
+// MARK: - UITextFieldDelegate
+extension MyPageViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("---")
+        return true
     }
     
 }
