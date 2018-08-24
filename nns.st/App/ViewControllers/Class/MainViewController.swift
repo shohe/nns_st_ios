@@ -65,7 +65,11 @@ extension MainViewController {
 extension MainViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.present(ConfirmRequestViewController.instantiateViewController(), animated: true, completion: nil)
+        if indexPath.row == 0 {
+            self.present(MyPageViewController.instantiateViewController(), animated: true, completion: nil)
+        } else {
+            self.present(ConfirmRequestViewController.instantiateViewController(), animated: true, completion: nil)
+        }
     }
     
 }
