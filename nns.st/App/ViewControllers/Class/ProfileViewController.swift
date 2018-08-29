@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
 }
 
 
-// MARK: -
+// MARK: - IBAction / private
 extension ProfileViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
