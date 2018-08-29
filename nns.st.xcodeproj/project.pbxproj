@@ -20,6 +20,7 @@
 		091F8D172128567A0095608F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D152128567A0095608F /* SearchResultCell.swift */; };
 		091F8D182128567A0095608F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091F8D162128567A0095608F /* SearchResultCell.xib */; };
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
+		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B4F21298DA300C1FF3F /* MapViewItem.swift */; };
 		09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */; };
 		09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */; };
@@ -144,6 +145,7 @@
 		091F8D152128567A0095608F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		091F8D162128567A0095608F /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
+		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		09A05B4F21298DA300C1FF3F /* MapViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewItem.swift; sourceTree = "<group>"; };
 		09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotMaker.swift; sourceTree = "<group>"; };
 		09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDatePickerView.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				09FDE34B212E87DD00A823DA /* CharityListViewController.swift */,
 				09FDE351212EC36700A823DA /* CharityDetailViewController.swift */,
 				09FDE355212FB4C900A823DA /* MyPageViewController.swift */,
+				0967AF9D21375FB6002D980F /* MyReviewViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				09BB1980212E5EC3006562D0 /* ProfileViewController.swift in Sources */,
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
 				09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */,
+				0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */,
 				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
 				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
