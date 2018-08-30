@@ -8,8 +8,10 @@
 
 import UIKit
 
+@IBDesignable
 class StarView: UIView {
     
+    //* height:width = 1:7 is the best rate *//
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
