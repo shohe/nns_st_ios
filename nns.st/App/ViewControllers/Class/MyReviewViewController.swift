@@ -27,6 +27,7 @@ class MyReviewViewController: UIViewController {
         
         // register cells
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
+        tableView.register(ReviewAverageCell.nib, forCellReuseIdentifier: ReviewAverageCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
     }
 
@@ -94,6 +95,10 @@ extension MyReviewViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as? StylistProfileWithStarCell {
+                return cell
+            }
+        case 1:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewAverageCell.identifier, for: indexPath) as? ReviewAverageCell {
                 return cell
             }
         default:
