@@ -30,16 +30,14 @@ class StarView: UIView {
         }
     }
     
+    
     //* plus number express from left side (default) *//
     //* minus number express from right side *//
-    //* 1 digit: hidden white star *//
-    //* 2 digit: shown white star *//
     //* ex)           ★★★★★
     //* -----------------------
-    //* ex) 4 ->      ★★★★ -
-    //* ex) 12 ->     ★★☆☆☆
-    //* ex) -3 ->     - - ★★★
-    //* ex) -14 ->    ☆★★★★
+    //* ex) 2 ->     ★★ - - -
+    //* ex) -3 ->    - - ★★★
+    //* ex) -13 ->    ☆☆★★★
     
     @IBInspectable var count: Int = 5 {
         didSet {
@@ -83,35 +81,34 @@ extension StarView {
     
     private func initCount() {
         if self.count > 0 { //* count from left side *//
-
             for i in 0..<5 {
-                let count = (self.count > 10) ? self.count - 10 : self.count
-                if self.emptyResouce != nil {
-                    if self.count > 10 {
-                        self.stars[i].isHighlighted = (i < count) ? false : true
-                    } else {
-                        self.stars[i].isHidden = (i < count) ? false : true
-                    }
-                } else {
-                    self.stars[i].alpha = (i < count) ? 1 : (self.count > 10) ? 0.2 : 0
-                }
+                colorChange(_count: self.count, roop: i, isReversed: false)
             }
-            
         } else { //* count from right side *//
             self.count *= -1
-            for i in (0..<5).reversed() {
-                let count = (self.count > 10) ? self.count - 11 : self.count - 1
-                if self.emptyResouce != nil {
-                    if self.count > 10 {
-                        self.stars[i].isHighlighted = (i >= count) ? false : true
-                    } else {
-                        self.stars[i].isHidden = (i >= count) ? false : true
-                    }
-                } else {
-                    self.stars[i].alpha = (i >= count) ? 1 : (self.count > 10) ? 0.2 : 0
-                }
+            for i in 0..<5 {
+                colorChange(_count: self.count, roop: i, isReversed: true)
             }
-            
+        }
+    }
+    
+    private func colorChange(_count: Int, roop: Int, isReversed: Bool) {
+        let count = (_count > 10) ? _count - 10 : _count
+        let isHighlighted = (_count > 10) ? true : false
+        
+        if isReversed {
+            let cnt = 5 - count
+            if isHighlighted {
+                self.stars[roop].isHighlighted = (roop < cnt) ? true : false
+            } else {
+                self.stars[roop].isHidden = (roop < cnt) ? true : false
+            }
+        } else {
+            if isHighlighted {
+                self.stars[roop].isHighlighted = (roop < count) ? false : true
+            } else {
+                self.stars[roop].isHidden = (roop < count) ? false : true
+            }
         }
     }
     
