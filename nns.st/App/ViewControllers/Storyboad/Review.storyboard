@@ -233,5 +233,72 @@
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="31.934032983508249"/>
         </scene>
+        <!--My Review View Controller-->
+        <scene sceneID="HMD-yS-4NK">
+            <objects>
+                <viewController storyboardIdentifier="MyReviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j7C-Sm-jNX" customClass="MyReviewViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4bF-Ff-ayf" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eS-9b-guS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="j7C-Sm-jNX" id="2Ep-SJ-l7M"/>
+                                    <outlet property="delegate" destination="j7C-Sm-jNX" id="Kzf-je-VGo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0eS-9b-guS" firstAttribute="top" secondItem="ZoN-tH-7wB" secondAttribute="top" id="Fp7-EH-h0E"/>
+                            <constraint firstItem="ZoN-tH-7wB" firstAttribute="trailing" secondItem="0eS-9b-guS" secondAttribute="trailing" id="H8I-Zu-0xv"/>
+                            <constraint firstItem="0eS-9b-guS" firstAttribute="leading" secondItem="ZoN-tH-7wB" secondAttribute="leading" id="U1r-fx-aSL"/>
+                            <constraint firstAttribute="bottom" secondItem="0eS-9b-guS" secondAttribute="bottom" id="hoY-6G-Utp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZoN-tH-7wB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" id="CO5-an-KnL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dq7-Lv-KMX">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backPreView:" destination="j7C-Sm-jNX" id="Zvd-yp-LJT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0eS-9b-guS" id="Gzc-zR-YgE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKI-vK-P5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="31.934032983508249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kbi-pR-O1i">
+            <objects>
+                <navigationController storyboardIdentifier="MRNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZVY-XN-4DC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Osl-CQ-hHu">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j7C-Sm-jNX" kind="relationship" relationship="rootViewController" id="Hjm-GH-tXu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8c-Ea-4dt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="32"/>
+        </scene>
     </scenes>
 </document>

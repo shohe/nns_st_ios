@@ -1,30 +1,24 @@
 //
-//  ProfileViewController.swift
+//  MyReviewViewController.swift
 //  nns.st
 //
-//  Created by SHOHE on 2018/08/23.
+//  Created by SHOHE on 2018/08/30.
 //  Copyright © 2018 OhtaniShohe. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class ProfileViewController: UIViewController {
-
+class MyReviewViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     
     
-    static func instantiateViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "History", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "PFNavigationController") as! UINavigationController
+    static func instantiateViewController() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Review", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MRNavigationController") as! UINavigationController
         return viewController
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +27,7 @@ class ProfileViewController: UIViewController {
         
         // register cells
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
-        tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
+        tableView.register(ReviewAverageCell.nib, forCellReuseIdentifier: ReviewAverageCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
     }
 
@@ -45,12 +39,17 @@ class ProfileViewController: UIViewController {
 }
 
 
-// MARK: - IBAction / private
-extension ProfileViewController {
+// MARK: - IBAction
+extension MyReviewViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+}
+
+// MARK: - private
+extension MyReviewViewController {
     
     private func addBottomSpaceView() {
         for view in self.tableView.subviews {
@@ -71,7 +70,7 @@ extension ProfileViewController {
 
 
 // MARK: - UITableViewDelegate
-extension ProfileViewController: UITableViewDelegate {
+extension MyReviewViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.addBottomSpaceView()
@@ -81,7 +80,7 @@ extension ProfileViewController: UITableViewDelegate {
 
 
 // MARK: - UITableViewDataSource
-extension ProfileViewController: UITableViewDataSource {
+extension MyReviewViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -99,12 +98,9 @@ extension ProfileViewController: UITableViewDataSource {
                 return cell
             }
         case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: SalonAddressCell.identifier, for: indexPath) as? SalonAddressCell {
-                let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 35.908887, longitude: 139.482338)
-                SnapShotMaker.drawSnapshot(coordinate: coordinate, source: cell.mapSnap, pinColor: cell.pinColor)
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewAverageCell.identifier, for: indexPath) as? ReviewAverageCell {
                 return cell
             }
-            
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell {
                 if indexPath.row != 2 {

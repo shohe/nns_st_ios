@@ -20,10 +20,15 @@
 		091F8D172128567A0095608F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D152128567A0095608F /* SearchResultCell.swift */; };
 		091F8D182128567A0095608F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091F8D162128567A0095608F /* SearchResultCell.xib */; };
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
+		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
+		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
+		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
 		09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B4F21298DA300C1FF3F /* MapViewItem.swift */; };
 		09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */; };
 		09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */; };
 		09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */; };
+		09A7B728213818F40084E2C9 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B727213818F40084E2C9 /* StarView.swift */; };
+		09A7B72A21381A070084E2C9 /* StarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A7B72921381A070084E2C9 /* StarView.xib */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -144,10 +149,15 @@
 		091F8D152128567A0095608F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		091F8D162128567A0095608F /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
+		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
+		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
+		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
 		09A05B4F21298DA300C1FF3F /* MapViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewItem.swift; sourceTree = "<group>"; };
 		09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotMaker.swift; sourceTree = "<group>"; };
 		09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDatePickerView.swift; sourceTree = "<group>"; };
 		09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupDatePickerView.xib; sourceTree = "<group>"; };
+		09A7B727213818F40084E2C9 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		09A7B72921381A070084E2C9 /* StarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarView.xib; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -403,6 +413,7 @@
 				09FDE34B212E87DD00A823DA /* CharityListViewController.swift */,
 				09FDE351212EC36700A823DA /* CharityDetailViewController.swift */,
 				09FDE355212FB4C900A823DA /* MyPageViewController.swift */,
+				0967AF9D21375FB6002D980F /* MyReviewViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -437,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				09DDAAA4211FF94A009C6428 /* BackgroundView.swift */,
+				09A7B727213818F40084E2C9 /* StarView.swift */,
 				09DDAAA621202D5C009C6428 /* UnderlineTextField.swift */,
 				09DDAAB121207EEB009C6428 /* ContainButtonTextField.swift */,
 				09DDAABC2122D347009C6428 /* ThreeColumnCell.swift */,
@@ -463,6 +475,7 @@
 				09FDE35F212FD4A200A823DA /* MypageMailAddressCell.swift */,
 				09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */,
 				09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */,
+				0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -491,6 +504,8 @@
 		09DDAAC02122D35D009C6428 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */,
+				09A7B72921381A070084E2C9 /* StarView.xib */,
 				09DDAABD2122D347009C6428 /* ThreeColumnCell.xib */,
 				09DDAACC21241688009C6428 /* StylistProfileWithStarCell.xib */,
 				09DDAAD021244D83009C6428 /* PriceButtonCell.xib */,
@@ -498,7 +513,6 @@
 				09DDAADC21251453009C6428 /* CommentCell.xib */,
 				09DDAAE02125364F009C6428 /* ReviewCell.xib */,
 				091F8D162128567A0095608F /* SearchResultCell.xib */,
-				09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */,
 				09BB1952212AC1AA006562D0 /* OutcomeInfoCell.xib */,
 				09BB1956212AD515006562D0 /* DateInfoCell.xib */,
 				09BB195E212AD550006562D0 /* DistanceInfoCell.xib */,
@@ -514,6 +528,7 @@
 				09FDE360212FD4A200A823DA /* MypageMailAddressCell.xib */,
 				09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */,
 				09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */,
+				0967AFA021376CF1002D980F /* ReviewAverageCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -652,10 +667,12 @@
 				09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */,
 				091F8D182128567A0095608F /* SearchResultCell.xib in Resources */,
 				091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */,
+				09A7B72A21381A070084E2C9 /* StarView.xib in Resources */,
 				09BB196E212C571D006562D0 /* History.storyboard in Resources */,
 				09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */,
 				09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */,
 				09FDE362212FD4A200A823DA /* MypageMailAddressCell.xib in Resources */,
+				0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
 				09BB1974212C5FEC006562D0 /* HistoryCell.xib in Resources */,
 				09BB196A212C210E006562D0 /* Review.storyboard in Resources */,
@@ -821,8 +838,10 @@
 				09BB1980212E5EC3006562D0 /* ProfileViewController.swift in Sources */,
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
 				09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */,
+				0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */,
 				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
+				0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */,
 				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09BB1963212AD747006562D0 /* CommentInfoCell.swift in Sources */,
@@ -841,6 +860,7 @@
 				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
 				09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */,
 				09DDAAE421254F70009C6428 /* UIButton+backgroundColor.swift in Sources */,
+				09A7B728213818F40084E2C9 /* StarView.swift in Sources */,
 				09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,

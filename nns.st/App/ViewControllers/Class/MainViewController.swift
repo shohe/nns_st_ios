@@ -55,8 +55,13 @@ extension MainViewController {
         self.present(HistoryListViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
+    // will not use charity
     @IBAction func pressCharityBtn(_ sender: UIButton) {
         self.present(CharityListViewController.instantiateViewController(), animated: true, completion: nil)
+    }
+    
+    @IBAction func pressMyReviewBtn(_ sender: UIButton) {
+        self.present(MyReviewViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
 }
