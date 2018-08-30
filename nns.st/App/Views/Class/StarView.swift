@@ -24,6 +24,12 @@ class StarView: UIView {
         }
     }
     
+    @IBInspectable var emptyResouce: UIImage? = UIImage() {
+        didSet {
+            self.initStars()
+        }
+    }
+    
     //* plus number express from left side (default) *//
     //* minus number express from right side *//
     //* 1 digit: hidden white star *//
@@ -71,22 +77,39 @@ extension StarView {
     private func initStars() {
         for star in stars {
             star.image = resource
+            star.highlightedImage = emptyResouce
         }
     }
     
     private func initCount() {
         if self.count > 0 { //* count from left side *//
-            
+
             for i in 0..<5 {
                 let count = (self.count > 10) ? self.count - 10 : self.count
-                self.stars[i].alpha = (i < count) ? 1 : (self.count > 10) ? 0.2 : 0
+                if self.emptyResouce != nil {
+                    if self.count > 10 {
+                        self.stars[i].isHighlighted = (i < count) ? false : true
+                    } else {
+                        self.stars[i].isHidden = (i < count) ? false : true
+                    }
+                } else {
+                    self.stars[i].alpha = (i < count) ? 1 : (self.count > 10) ? 0.2 : 0
+                }
             }
             
         } else { //* count from right side *//
             self.count *= -1
             for i in (0..<5).reversed() {
                 let count = (self.count > 10) ? self.count - 11 : self.count - 1
-                self.stars[i].alpha = (i >= count) ? 1 : (self.count > 10) ? 0.2 : 0
+                if self.emptyResouce != nil {
+                    if self.count > 10 {
+                        self.stars[i].isHighlighted = (i >= count) ? false : true
+                    } else {
+                        self.stars[i].isHidden = (i >= count) ? false : true
+                    }
+                } else {
+                    self.stars[i].alpha = (i >= count) ? 1 : (self.count > 10) ? 0.2 : 0
+                }
             }
             
         }
