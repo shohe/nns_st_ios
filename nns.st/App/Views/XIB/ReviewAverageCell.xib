@@ -26,13 +26,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6l4-mx-EkL" customClass="StarView" customModule="nns_st" customModuleProvider="target">
                                 <rect key="frame" x="12" y="12" width="55" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6l4-mx-EkL" secondAttribute="height" multiplier="5.5:1" id="UxH-EN-IQg"/>
                                     <constraint firstAttribute="height" constant="10" id="uV0-hw-kHG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="resource" value="test"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="count">
+                                        <integer key="value" value="-3"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
