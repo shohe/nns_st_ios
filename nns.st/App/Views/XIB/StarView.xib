@@ -11,43 +11,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StarView" customModule="nns_st" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StarView" customModule="nns_st" customModuleProvider="target">
+            <connections>
+                <outlet property="fifthStar" destination="kaM-hq-gFT" id="C5U-qN-EM6"/>
+                <outlet property="firstStar" destination="ZZd-nh-cfs" id="aGS-U0-W5O"/>
+                <outlet property="fourthStar" destination="IOU-Qs-XKK" id="I1L-q4-fnp"/>
+                <outlet property="secondStar" destination="zA9-2s-vqj" id="edf-7Z-vOn"/>
+                <outlet property="thirdStar" destination="7OZ-Fl-Y4Y" id="D3W-ib-ZpG"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="843" height="151"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZZd-nh-cfs">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="ZZd-nh-cfs">
                     <rect key="frame" x="0.0" y="0.0" width="151" height="151"/>
-                    <color key="backgroundColor" red="0.86328518389999997" green="0.81925050129999999" blue="0.26698825609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ZZd-nh-cfs" secondAttribute="height" multiplier="1:1" id="ItI-2g-ax4"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zA9-2s-vqj">
                     <rect key="frame" x="173" y="0.0" width="151" height="151"/>
-                    <color key="backgroundColor" red="0.86328518389999997" green="0.81925050129999999" blue="0.26698825609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="zA9-2s-vqj" secondAttribute="height" multiplier="1:1" id="ASC-by-yuV"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7OZ-Fl-Y4Y">
                     <rect key="frame" x="346" y="0.0" width="151" height="151"/>
-                    <color key="backgroundColor" red="0.86328518389999997" green="0.81925050129999999" blue="0.26698825609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="7OZ-Fl-Y4Y" secondAttribute="height" multiplier="1:1" id="Ent-9l-PZU"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IOU-Qs-XKK">
                     <rect key="frame" x="519" y="0.0" width="151" height="151"/>
-                    <color key="backgroundColor" red="0.86328518389999997" green="0.81925050129999999" blue="0.26698825609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="IOU-Qs-XKK" secondAttribute="height" multiplier="1:1" id="QjX-Mq-jIe"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kaM-hq-gFT">
                     <rect key="frame" x="692" y="0.0" width="151" height="151"/>
-                    <color key="backgroundColor" red="0.86328518389999997" green="0.81925050129999999" blue="0.26698825609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="kaM-hq-gFT" secondAttribute="height" multiplier="1:1" id="JKT-u9-La0"/>
                     </constraints>
@@ -116,4 +119,7 @@
             <point key="canvasLocation" x="-218.5" y="175.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="test" width="10" height="10"/>
+    </resources>
 </document>
