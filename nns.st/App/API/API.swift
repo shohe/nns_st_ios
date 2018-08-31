@@ -17,6 +17,11 @@ final class API {
     
     private init() {}
     
+    /** return EmailExistResponse
+     *   API.emailExistRequest(email: "shohe@gmail.com") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
     class func emailExistRequest(email: String, handler: @escaping (String?) -> Void){
         Session.send(API.EmailExistRequest(email: email)) { result in
             switch result {
@@ -27,6 +32,24 @@ final class API {
             }
         }
     }
+    
+    /** return UserRegistResponse
+     *   API.userRegistRequest(name: "test5", email: "test5@gmail.com", password: "testtest") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func userRegistRequest(name: String, email: String, password: String, handler: @escaping (UserRegistResponse?) -> Void){
+        Session.send(API.UserRegistRequest(name: name, email: email, password: password)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: userRegistRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+
 }
 
 /// DecodableDataParser
