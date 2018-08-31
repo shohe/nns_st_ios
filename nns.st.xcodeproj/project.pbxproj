@@ -29,6 +29,9 @@
 		09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */; };
 		09A7B728213818F40084E2C9 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B727213818F40084E2C9 /* StarView.swift */; };
 		09A7B72A21381A070084E2C9 /* StarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A7B72921381A070084E2C9 /* StarView.xib */; };
+		09A7B72C2138CBDE0084E2C9 /* EmailExistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B72B2138CBDE0084E2C9 /* EmailExistResponse.swift */; };
+		09A7B72E2138D0B60084E2C9 /* NNSCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B72D2138D0B60084E2C9 /* NNSCore.swift */; };
+		09A7B7332138D55A0084E2C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B7322138D55A0084E2C9 /* User.swift */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -158,6 +161,9 @@
 		09A05B562129B7BB00C1FF3F /* PopupDatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupDatePickerView.xib; sourceTree = "<group>"; };
 		09A7B727213818F40084E2C9 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		09A7B72921381A070084E2C9 /* StarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarView.xib; sourceTree = "<group>"; };
+		09A7B72B2138CBDE0084E2C9 /* EmailExistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailExistResponse.swift; sourceTree = "<group>"; };
+		09A7B72D2138D0B60084E2C9 /* NNSCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSCore.swift; sourceTree = "<group>"; };
+		09A7B7322138D55A0084E2C9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -342,6 +348,7 @@
 		091BEF0E211303DD008ED8C5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				09A7B7312138D54D0084E2C9 /* Model */,
 				0931AEC2211D7883002E4F78 /* Response */,
 				0931AEC1211D786C002E4F78 /* Request */,
 				091BEF0F2113040E008ED8C5 /* API.swift */,
@@ -361,6 +368,7 @@
 		0931AEC2211D7883002E4F78 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				09A7B72B2138CBDE0084E2C9 /* EmailExistResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -379,8 +387,17 @@
 			isa = PBXGroup;
 			children = (
 				09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */,
+				09A7B72D2138D0B60084E2C9 /* NNSCore.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		09A7B7312138D54D0084E2C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09A7B7322138D55A0084E2C9 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		09DDAA9B211FF47F009C6428 /* ViewControllers */ = {
@@ -838,6 +855,8 @@
 				09BB1980212E5EC3006562D0 /* ProfileViewController.swift in Sources */,
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
 				09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */,
+				09A7B7332138D55A0084E2C9 /* User.swift in Sources */,
+				09A7B72E2138D0B60084E2C9 /* NNSCore.swift in Sources */,
 				0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */,
 				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
@@ -861,6 +880,7 @@
 				09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */,
 				09DDAAE421254F70009C6428 /* UIButton+backgroundColor.swift in Sources */,
 				09A7B728213818F40084E2C9 /* StarView.swift in Sources */,
+				09A7B72C2138CBDE0084E2C9 /* EmailExistResponse.swift in Sources */,
 				09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
