@@ -39,6 +39,8 @@
 		09A7B73D213924410084E2C9 /* PasswordConfirmRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B73C213924410084E2C9 /* PasswordConfirmRequest.swift */; };
 		09A7B73F213928F70084E2C9 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B73E213928F70084E2C9 /* LoginResponse.swift */; };
 		09A7B741213929070084E2C9 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B740213929070084E2C9 /* LoginRequest.swift */; };
+		09A7B74321395A330084E2C9 /* UserUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B74221395A330084E2C9 /* UserUpdateResponse.swift */; };
+		09A7B745213961BB0084E2C9 /* UserUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B744213961BB0084E2C9 /* UserUpdateRequest.swift */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -177,6 +179,8 @@
 		09A7B73C213924410084E2C9 /* PasswordConfirmRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmRequest.swift; sourceTree = "<group>"; };
 		09A7B73E213928F70084E2C9 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		09A7B740213929070084E2C9 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		09A7B74221395A330084E2C9 /* UserUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateResponse.swift; sourceTree = "<group>"; };
+		09A7B744213961BB0084E2C9 /* UserUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateRequest.swift; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -376,6 +380,7 @@
 				09A7B73C213924410084E2C9 /* PasswordConfirmRequest.swift */,
 				09A7B73821391B150084E2C9 /* UserRegistRequest.swift */,
 				09A7B740213929070084E2C9 /* LoginRequest.swift */,
+				09A7B744213961BB0084E2C9 /* UserUpdateRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				09A7B73A213923FB0084E2C9 /* PasswordConfirmResponse.swift */,
 				09A7B736213919690084E2C9 /* UserRegistResponse.swift */,
 				09A7B73E213928F70084E2C9 /* LoginResponse.swift */,
+				09A7B74221395A330084E2C9 /* UserUpdateResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -868,6 +874,7 @@
 				09FDE361212FD4A200A823DA /* MypageMailAddressCell.swift in Sources */,
 				09BB1979212D266C006562D0 /* DoubleButtonCell.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
+				09A7B745213961BB0084E2C9 /* UserUpdateRequest.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */,
 				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
@@ -912,6 +919,7 @@
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
 				091F8D12212723340095608F /* MapViewController.swift in Sources */,
 				09DDAADD21251453009C6428 /* CommentCell.swift in Sources */,
+				09A7B74321395A330084E2C9 /* UserUpdateResponse.swift in Sources */,
 				09BB1957212AD515006562D0 /* DateInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

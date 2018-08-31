@@ -30,7 +30,7 @@ extension NNSRequest {
         guard let accessToken = NNSCore.authToken() else {
             return [:]
         }
-        return ["Authorization": accessToken]
+        return ["Authorization": "Bearer \(accessToken)"]
     }
     
 }
