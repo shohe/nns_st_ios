@@ -9,7 +9,15 @@
 import Foundation
 
 struct User: Decodable {
-    let id: Int
-    let name: String
-    let email: String
+    var id: Int?
+    var name: String?
+    var email: String?
+    var password: String?
+    var image_url: String?
+    var status_comment: String?
+    var is_stylist: Bool = false
+    var salon_name: String?
+    var salon_address: String?
+    var salon_location_lat: Double?
+    var salon_location_lng: Double?
 }
