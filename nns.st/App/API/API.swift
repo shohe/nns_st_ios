@@ -17,13 +17,27 @@ final class API {
     
     private init() {}
     
-    struct TestRequest: NNSRequest {
-        typealias Response = TestResponse
-        
-        let method: HTTPMethod = .get
-        var path: String {
-            return "/todos/\(userId)"
+    class func emailExistRequest(email: String, handler: @escaping (String?) -> Void){
+        Session.send(API.EmailExistRequest(email: email)) { result in
+            switch result {
+            case .success(let response):
+                handler(response.email)
+            case .failure(let error):
+                handler(error.localizedDescription)
+            }
         }
-        let userId: Int
     }
+}
+
+/// DecodableDataParser
+final class DecodableDataParser: DataParser {
+    
+    var contentType: String? {
+        return "application/json"
+    }
+    
+    func parse(data: Data) throws -> Any {
+        return data
+    }
+    
 }

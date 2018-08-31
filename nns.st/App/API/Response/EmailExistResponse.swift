@@ -11,10 +11,8 @@ import Foundation
 struct EmailExistResponse: Decodable {
 
     let email: String
-    let isExisted: Bool
     
     private enum CodingKeys: String, CodingKey {
-        case email = "title"
-        case isExisted
+        case email = "success"
     }
 }

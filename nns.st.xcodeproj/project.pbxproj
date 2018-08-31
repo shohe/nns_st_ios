@@ -32,6 +32,7 @@
 		09A7B72C2138CBDE0084E2C9 /* EmailExistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B72B2138CBDE0084E2C9 /* EmailExistResponse.swift */; };
 		09A7B72E2138D0B60084E2C9 /* NNSCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B72D2138D0B60084E2C9 /* NNSCore.swift */; };
 		09A7B7332138D55A0084E2C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B7322138D55A0084E2C9 /* User.swift */; };
+		09A7B7352138EA0F0084E2C9 /* EmailExistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B7342138EA0F0084E2C9 /* EmailExistRequest.swift */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -60,7 +61,6 @@
 		09BB197D212DA931006562D0 /* NominationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB197B212DA931006562D0 /* NominationCell.swift */; };
 		09BB197E212DA931006562D0 /* NominationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB197C212DA931006562D0 /* NominationCell.xib */; };
 		09BB1980212E5EC3006562D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB197F212E5EC3006562D0 /* ProfileViewController.swift */; };
-		09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
 		09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */; };
 		09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA4211FF94A009C6428 /* BackgroundView.swift */; };
@@ -164,6 +164,7 @@
 		09A7B72B2138CBDE0084E2C9 /* EmailExistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailExistResponse.swift; sourceTree = "<group>"; };
 		09A7B72D2138D0B60084E2C9 /* NNSCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSCore.swift; sourceTree = "<group>"; };
 		09A7B7322138D55A0084E2C9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09A7B7342138EA0F0084E2C9 /* EmailExistRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailExistRequest.swift; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -192,7 +193,6 @@
 		09BB197B212DA931006562D0 /* NominationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominationCell.swift; sourceTree = "<group>"; };
 		09BB197C212DA931006562D0 /* NominationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NominationCell.xib; sourceTree = "<group>"; };
 		09BB197F212E5EC3006562D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		09DDAAA4211FF94A009C6428 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -352,7 +352,6 @@
 				0931AEC2211D7883002E4F78 /* Response */,
 				0931AEC1211D786C002E4F78 /* Request */,
 				091BEF0F2113040E008ED8C5 /* API.swift */,
-				09DDAA97211DBDBC009C6428 /* DecodableDataParser.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -361,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				0931AEC3211D794E002E4F78 /* NNSRequest.swift */,
+				09A7B7342138EA0F0084E2C9 /* EmailExistRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -868,7 +868,6 @@
 				09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */,
 				09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */,
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
-				09DDAA98211DBDBC009C6428 /* DecodableDataParser.swift in Sources */,
 				09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */,
 				091F8D172128567A0095608F /* SearchResultCell.swift in Sources */,
 				09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */,
@@ -877,6 +876,7 @@
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
 				09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */,
 				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
+				09A7B7352138EA0F0084E2C9 /* EmailExistRequest.swift in Sources */,
 				09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */,
 				09DDAAE421254F70009C6428 /* UIButton+backgroundColor.swift in Sources */,
 				09A7B728213818F40084E2C9 /* StarView.swift in Sources */,
