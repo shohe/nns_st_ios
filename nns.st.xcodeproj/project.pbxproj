@@ -35,6 +35,8 @@
 		09A7B7352138EA0F0084E2C9 /* EmailExistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B7342138EA0F0084E2C9 /* EmailExistRequest.swift */; };
 		09A7B737213919690084E2C9 /* UserRegistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B736213919690084E2C9 /* UserRegistResponse.swift */; };
 		09A7B73921391B150084E2C9 /* UserRegistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B73821391B150084E2C9 /* UserRegistRequest.swift */; };
+		09A7B73B213923FB0084E2C9 /* PasswordConfirmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B73A213923FB0084E2C9 /* PasswordConfirmResponse.swift */; };
+		09A7B73D213924410084E2C9 /* PasswordConfirmRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B73C213924410084E2C9 /* PasswordConfirmRequest.swift */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -169,6 +171,8 @@
 		09A7B7342138EA0F0084E2C9 /* EmailExistRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailExistRequest.swift; sourceTree = "<group>"; };
 		09A7B736213919690084E2C9 /* UserRegistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistResponse.swift; sourceTree = "<group>"; };
 		09A7B73821391B150084E2C9 /* UserRegistRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistRequest.swift; sourceTree = "<group>"; };
+		09A7B73A213923FB0084E2C9 /* PasswordConfirmResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmResponse.swift; sourceTree = "<group>"; };
+		09A7B73C213924410084E2C9 /* PasswordConfirmRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordConfirmRequest.swift; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 			children = (
 				0931AEC3211D794E002E4F78 /* NNSRequest.swift */,
 				09A7B7342138EA0F0084E2C9 /* EmailExistRequest.swift */,
+				09A7B73C213924410084E2C9 /* PasswordConfirmRequest.swift */,
 				09A7B73821391B150084E2C9 /* UserRegistRequest.swift */,
 			);
 			path = Request;
@@ -374,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				09A7B72B2138CBDE0084E2C9 /* EmailExistResponse.swift */,
+				09A7B73A213923FB0084E2C9 /* PasswordConfirmResponse.swift */,
 				09A7B736213919690084E2C9 /* UserRegistResponse.swift */,
 			);
 			path = Response;
@@ -832,6 +838,8 @@
 				09FDE35D212FC96B00A823DA /* MypageNameCell.swift in Sources */,
 				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
 				09BB195B212AD531006562D0 /* HairTypeInfoCell.swift in Sources */,
+				09A7B73D213924410084E2C9 /* PasswordConfirmRequest.swift in Sources */,
+				09A7B73B213923FB0084E2C9 /* PasswordConfirmResponse.swift in Sources */,
 				09DDAAE12125364F009C6428 /* ReviewCell.swift in Sources */,
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				09BB1973212C5FEC006562D0 /* HistoryCell.swift in Sources */,

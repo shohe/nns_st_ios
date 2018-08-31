@@ -22,13 +22,31 @@ final class API {
      *      if let res = result { print("result: \(res)") }
      *   }
      */
-    class func emailExistRequest(email: String, handler: @escaping (String?) -> Void){
+    class func emailExistRequest(email: String, handler: @escaping (EmailExistResponse?) -> Void){
         Session.send(API.EmailExistRequest(email: email)) { result in
             switch result {
             case .success(let response):
-                handler(response.email)
+                handler(response)
             case .failure(let error):
-                handler(error.localizedDescription)
+                print("Error: userRegistRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+    /** return PasswordConfirmResponse
+     *   API.passwordConfirmRequest(password: "password1234", c_password: "password1234") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func passwordConfirmRequest(password: String, c_password: String, handler: @escaping (PasswordConfirmResponse?) -> Void){
+        Session.send(API.PasswordConfirmRequest(password: password, c_password: c_password)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: userRegistRequest -> \(error)")
+                handler(nil)
             }
         }
     }
