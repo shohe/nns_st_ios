@@ -67,6 +67,23 @@ final class API {
             }
         }
     }
+    
+    /** return LoginResponse
+     *   API.loginRequest(email: "test5@gmail.com", password: "testtest") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func loginRequest(email: String, password: String, handler: @escaping (LoginResponse?) -> Void){
+        Session.send(API.LoginRequest(email: email, password: password)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: userRegistRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
 
 }
 
