@@ -101,6 +101,23 @@ final class API {
             }
         }
     }
+    
+    /** return UserUpdateResponse
+     *   API.userUpdateRequest(user: user, token: NNSCore.authToken()) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func userGetRequest(handler: @escaping (User?) -> Void){
+        Session.send(API.UserGetRequest()) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: userRegistRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
 
 }
 
