@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import APIKit
 
 struct User: Decodable {
     var id: Int?
