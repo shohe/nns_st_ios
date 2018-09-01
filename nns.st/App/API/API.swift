@@ -128,7 +128,7 @@ extension API {
 extension API {
     
     /** return OfferCreateResponse
-     *   API.userGetRequest { (result) in
+     *   API.offerCreateRequest(offer: offer) { (result) in
      *      if let res = result { print("result: \(res)") }
      *   }
      */
