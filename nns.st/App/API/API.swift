@@ -144,6 +144,23 @@ extension API {
         }
     }
     
+    /** return OfferRequireMatchedResponse
+     *   API.offerRequireMatchedRequest { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func offerRequireMatchedRequest(handler: @escaping (OfferRequireMatchedResponse?) -> Void){
+        Session.send(API.OfferRequireMatchedRequest()) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: offerRequireMatchedRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 /// DecodableDataParser

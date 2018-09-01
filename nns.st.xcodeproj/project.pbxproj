@@ -46,6 +46,8 @@
 		09A7B74D213A63780084E2C9 /* OfferCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B74C213A63780084E2C9 /* OfferCreateResponse.swift */; };
 		09A7B74F213A63AD0084E2C9 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B74E213A63AD0084E2C9 /* Offer.swift */; };
 		09A7B751213A66F10084E2C9 /* OfferCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B750213A66F10084E2C9 /* OfferCreateRequest.swift */; };
+		09A7B753213AFA620084E2C9 /* OfferRequireMatchedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B752213AFA620084E2C9 /* OfferRequireMatchedResponse.swift */; };
+		09A7B755213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B754213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -191,6 +193,8 @@
 		09A7B74C213A63780084E2C9 /* OfferCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCreateResponse.swift; sourceTree = "<group>"; };
 		09A7B74E213A63AD0084E2C9 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		09A7B750213A66F10084E2C9 /* OfferCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCreateRequest.swift; sourceTree = "<group>"; };
+		09A7B752213AFA620084E2C9 /* OfferRequireMatchedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferRequireMatchedResponse.swift; sourceTree = "<group>"; };
+		09A7B754213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferRequireMatchedRequest.swift; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -393,6 +397,7 @@
 				09A7B744213961BB0084E2C9 /* UserUpdateRequest.swift */,
 				09A7B746213A46720084E2C9 /* UserGetRequest.swift */,
 				09A7B750213A66F10084E2C9 /* OfferCreateRequest.swift */,
+				09A7B754213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				09A7B74221395A330084E2C9 /* UserUpdateResponse.swift */,
 				09A7B74A213A60EF0084E2C9 /* UserGetResponse.swift */,
 				09A7B74C213A63780084E2C9 /* OfferCreateResponse.swift */,
+				09A7B752213AFA620084E2C9 /* OfferRequireMatchedResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -862,6 +868,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A7B753213AFA620084E2C9 /* OfferRequireMatchedResponse.swift in Sources */,
 				09FDE35D212FC96B00A823DA /* MypageNameCell.swift in Sources */,
 				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
 				09BB195B212AD531006562D0 /* HairTypeInfoCell.swift in Sources */,
@@ -911,6 +918,7 @@
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
 				09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */,
 				09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */,
+				09A7B755213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift in Sources */,
 				09A7B73921391B150084E2C9 /* UserRegistRequest.swift in Sources */,
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
 				09A7B737213919690084E2C9 /* UserRegistResponse.swift in Sources */,
