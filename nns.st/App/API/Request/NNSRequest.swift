@@ -59,8 +59,8 @@ extension NNSRequest where Response: Decodable {
             return try decoder.decode(Response.self, from: emptyJson.data(using: .utf8)!)
         } else {
             //  ** for debug ** //
-            // let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-            // print("response JSON: \(json)")
+            let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+            print("response JSON: \(json)")
             return try decoder.decode(Response.self, from: data)
         }
     }

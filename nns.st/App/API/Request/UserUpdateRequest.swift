@@ -23,13 +23,13 @@ extension API {
             if let name = user.name { jsonResouce["name"] = name }
             if let email = user.email { jsonResouce["email"] = email }
             if let password = user.password { jsonResouce["password"] = password }
-            if let image_url = user.imageUrl { jsonResouce["imageUrl"] = image_url }
-            if let status_comment = user.statusComment { jsonResouce["statusComment"] = status_comment }
-            if let is_stylist = user.isStylist { jsonResouce["isStylist"] = is_stylist }
-            if let salon_name = user.salonName { jsonResouce["salonName"] = salon_name }
-            if let salon_address = user.salonAddress { jsonResouce["salonAddress"] = salon_address }
-            if let salon_location_lat = user.salonLocationLat { jsonResouce["salonLocationLat"] = salon_location_lat }
-            if let salon_location_lng = user.salonLocationLng { jsonResouce["salonLocationLng"] = salon_location_lng }
+            if let imageUrl = user.imageUrl { jsonResouce["image_url"] = imageUrl }
+            if let statusComment = user.statusComment { jsonResouce["status_comment"] = statusComment }
+            if let isStylist = user.isStylist { jsonResouce["is_stylist"] = isStylist }
+            if let salonName = user.salonName { jsonResouce["salon_name"] = salonName }
+            if let salonAddress = user.salonAddress { jsonResouce["salon_address"] = salonAddress }
+            if let salonLocationLat = user.salonLocationLat { jsonResouce["salon_location_lat"] = salonLocationLat }
+            if let salonLocationLng = user.salonLocationLng { jsonResouce["salon_location_lng"] = salonLocationLng }
             
             return JSONBodyParameters(JSONObject: jsonResouce)
         }

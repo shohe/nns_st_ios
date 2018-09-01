@@ -14,8 +14,11 @@ import APIKit
 
 /// NNSAPI
 final class API {
-    
     private init() {}
+}
+
+// MARK: - api for User
+extension API {
     
     /** return EmailExistResponse
      *   API.emailExistRequest(email: "shohe@gmail.com") { (result) in
@@ -118,7 +121,29 @@ final class API {
             }
         }
     }
+    
+}
 
+// MARK: - api for offer
+extension API {
+    
+    /** return OfferCreateResponse
+     *   API.userGetRequest { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func offerCreateRequest(offer: Offer, handler: @escaping (OfferCreateResponse?) -> Void){
+        Session.send(API.OfferCreateRequest(offer: offer)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: offerCreateRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 /// DecodableDataParser
