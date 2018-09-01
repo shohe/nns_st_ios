@@ -28,7 +28,7 @@ final class API {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: userRegistRequest -> \(error)")
+                print("Error: emailExistRequest -> \(error)")
                 handler(nil)
             }
         }
@@ -45,7 +45,7 @@ final class API {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: userRegistRequest -> \(error)")
+                print("Error: passwordConfirmRequest -> \(error)")
                 handler(nil)
             }
         }
@@ -79,7 +79,7 @@ final class API {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: userRegistRequest -> \(error)")
+                print("Error: loginRequest -> \(error)")
                 handler(nil)
             }
         }
@@ -96,24 +96,24 @@ final class API {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: userRegistRequest -> \(error)")
+                print("Error: userUpdateRequest -> \(error)")
                 handler(nil)
             }
         }
     }
     
-    /** return UserUpdateResponse
-     *   API.userUpdateRequest(user: user, token: NNSCore.authToken()) { (result) in
+    /** return User
+     *   API.userGetRequest { (result) in
      *      if let res = result { print("result: \(res)") }
      *   }
      */
-    class func userGetRequest(handler: @escaping (User?) -> Void){
+    class func userGetRequest(handler: @escaping (UserGetResponse?) -> Void){
         Session.send(API.UserGetRequest()) { result in
             switch result {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: userRegistRequest -> \(error)")
+                print("Error: userGetRequest -> \(error)")
                 handler(nil)
             }
         }

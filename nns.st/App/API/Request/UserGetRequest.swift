@@ -11,7 +11,7 @@ import APIKit
 
 extension API {
     struct UserGetRequest: NNSRequest {
-        typealias Response = User
+        typealias Response = UserGetResponse
         let method: HTTPMethod = .get
         var path: String { return "/api/user" }
     }
