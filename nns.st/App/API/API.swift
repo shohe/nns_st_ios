@@ -201,6 +201,23 @@ extension API {
         }
     }
     
+    /** return RequestGetResponse
+     *   API.requestCreateRequest(offerId: 2, price: 3000, comment: "この値段で切れますよ！") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func requestGetRequest(handler: @escaping (RequestGetResponse?) -> Void){
+        Session.send(API.RequestGetRequest()) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: requestGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 /// DecodableDataParser
