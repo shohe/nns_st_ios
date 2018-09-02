@@ -229,6 +229,23 @@ extension API {
         }
     }
     
+    /** return OfferHistoryListGetResponse
+     *   offerHistoryListGetRequest() { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func offerHistoryListGetRequest(handler: @escaping (OfferHistoryListGetResponse?) -> Void){
+        Session.send(API.OfferHistoryListGetRequest()) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: offerHistoryListGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 
