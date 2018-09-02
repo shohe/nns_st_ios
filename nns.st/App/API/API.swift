@@ -122,6 +122,23 @@ extension API {
         }
     }
     
+    /** return DayCountResponse
+     *   API.userGetRequest { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func dayCountRequest(today: String, handler: @escaping (DayCountResponse?) -> Void){
+        Session.send(API.DayCountRequest(today: today)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: dayCountRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 // MARK: - api for Offer

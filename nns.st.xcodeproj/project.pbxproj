@@ -22,6 +22,8 @@
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
 		0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */; };
 		0952F48A213BC70700B5BCF3 /* RequestTakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */; };
+		0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */; };
+		0952F48E213BCB8A00B5BCF3 /* DayCountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48D213BCB8A00B5BCF3 /* DayCountRequest.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -180,6 +182,8 @@
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
 		0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeResponse.swift; sourceTree = "<group>"; };
 		0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeRequest.swift; sourceTree = "<group>"; };
+		0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCountResponse.swift; sourceTree = "<group>"; };
+		0952F48D213BCB8A00B5BCF3 /* DayCountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCountRequest.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -425,6 +429,7 @@
 				09A7B760213BBB020084E2C9 /* RequestGetRequest.swift */,
 				09A7B766213BC0C90084E2C9 /* RequestDetailGetRequest.swift */,
 				0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */,
+				0952F48D213BCB8A00B5BCF3 /* DayCountRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				09A7B75E213BBA280084E2C9 /* RequestGetResponse.swift */,
 				09A7B764213BBE1C0084E2C9 /* RequestDetailGetResponse.swift */,
 				0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */,
+				0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -934,12 +940,14 @@
 				09FDE361212FD4A200A823DA /* MypageMailAddressCell.swift in Sources */,
 				09BB1979212D266C006562D0 /* DoubleButtonCell.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
+				0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */,
 				09A7B745213961BB0084E2C9 /* UserUpdateRequest.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */,
 				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
 				09BB196C212C2126006562D0 /* ReviewViewController.swift in Sources */,
 				09BB194C212AA535006562D0 /* OfferItem.swift in Sources */,
+				0952F48E213BCB8A00B5BCF3 /* DayCountRequest.swift in Sources */,
 				09BB1980212E5EC3006562D0 /* ProfileViewController.swift in Sources */,
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
 				09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */,
