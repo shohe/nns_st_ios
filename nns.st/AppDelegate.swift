@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        API.requestDetailGetRequest(id: 1) { (result) in
+            if let res = result { print("res: \(res)") }
+        }
         return true
     }
 

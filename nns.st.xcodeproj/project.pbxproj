@@ -54,6 +54,9 @@
 		09A7B75D213B9A030084E2C9 /* RequestCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B75C213B9A030084E2C9 /* RequestCreateRequest.swift */; };
 		09A7B75F213BBA280084E2C9 /* RequestGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B75E213BBA280084E2C9 /* RequestGetResponse.swift */; };
 		09A7B761213BBB020084E2C9 /* RequestGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B760213BBB020084E2C9 /* RequestGetRequest.swift */; };
+		09A7B763213BBD330084E2C9 /* OfferRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B762213BBD330084E2C9 /* OfferRequest.swift */; };
+		09A7B765213BBE1C0084E2C9 /* RequestDetailGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B764213BBE1C0084E2C9 /* RequestDetailGetResponse.swift */; };
+		09A7B767213BC0C90084E2C9 /* RequestDetailGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B766213BC0C90084E2C9 /* RequestDetailGetRequest.swift */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -207,6 +210,9 @@
 		09A7B75C213B9A030084E2C9 /* RequestCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreateRequest.swift; sourceTree = "<group>"; };
 		09A7B75E213BBA280084E2C9 /* RequestGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGetResponse.swift; sourceTree = "<group>"; };
 		09A7B760213BBB020084E2C9 /* RequestGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGetRequest.swift; sourceTree = "<group>"; };
+		09A7B762213BBD330084E2C9 /* OfferRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferRequest.swift; sourceTree = "<group>"; };
+		09A7B764213BBE1C0084E2C9 /* RequestDetailGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailGetResponse.swift; sourceTree = "<group>"; };
+		09A7B766213BC0C90084E2C9 /* RequestDetailGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailGetRequest.swift; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -413,6 +419,7 @@
 				09A7B758213B92480084E2C9 /* OfferGetDetailRequest.swift */,
 				09A7B75C213B9A030084E2C9 /* RequestCreateRequest.swift */,
 				09A7B760213BBB020084E2C9 /* RequestGetRequest.swift */,
+				09A7B766213BC0C90084E2C9 /* RequestDetailGetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -431,6 +438,7 @@
 				09A7B756213B8B1D0084E2C9 /* OfferGetDetailResponse.swift */,
 				09A7B75A213B99880084E2C9 /* RequestCreateResponse.swift */,
 				09A7B75E213BBA280084E2C9 /* RequestGetResponse.swift */,
+				09A7B764213BBE1C0084E2C9 /* RequestDetailGetResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -459,6 +467,7 @@
 			children = (
 				09A7B7322138D55A0084E2C9 /* User.swift */,
 				09A7B74E213A63AD0084E2C9 /* Offer.swift */,
+				09A7B762213BBD330084E2C9 /* OfferRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -887,6 +896,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A7B753213AFA620084E2C9 /* OfferRequireMatchedResponse.swift in Sources */,
+				09A7B767213BC0C90084E2C9 /* RequestDetailGetRequest.swift in Sources */,
 				09FDE35D212FC96B00A823DA /* MypageNameCell.swift in Sources */,
 				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
 				09BB195B212AD531006562D0 /* HairTypeInfoCell.swift in Sources */,
@@ -937,6 +947,7 @@
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				09BB1963212AD747006562D0 /* CommentInfoCell.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
+				09A7B765213BBE1C0084E2C9 /* RequestDetailGetResponse.swift in Sources */,
 				09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */,
 				09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */,
 				09A7B755213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift in Sources */,
@@ -967,6 +978,7 @@
 				09FDE356212FB4C900A823DA /* MyPageViewController.swift in Sources */,
 				09A7B74D213A63780084E2C9 /* OfferCreateResponse.swift in Sources */,
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
+				09A7B763213BBD330084E2C9 /* OfferRequest.swift in Sources */,
 				09A7B761213BBB020084E2C9 /* RequestGetRequest.swift in Sources */,
 				091F8D12212723340095608F /* MapViewController.swift in Sources */,
 				09DDAADD21251453009C6428 /* CommentCell.swift in Sources */,
