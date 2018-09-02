@@ -230,7 +230,7 @@ extension API {
     }
     
     /** return OfferHistoryListGetResponse
-     *   offerHistoryListGetRequest() { (result) in
+     *   API.offerHistoryListGetRequest() { (result) in
      *      if let res = result { print("result: \(res)") }
      *   }
      */
@@ -247,7 +247,7 @@ extension API {
     }
     
     /** return OfferHistoryDetailGetResponse
-     *   offerHistoryDetailGetRequest(id: 1) { (result) in
+     *   API.offerHistoryDetailGetRequest(id: 1) { (result) in
      *      if let res = result { print("result: \(res)") }
      *   }
      */
@@ -354,6 +354,28 @@ extension API {
                 handler(response)
             case .failure(let error):
                 print("Error: reservationListGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+}
+
+// MARK: - api for Review
+extension API {
+    
+    /** return ReviewCreateResponse
+     *   API.reviewCreateRequest(dealUserId: 1, star: 4, comment: "すごく良かったです！") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func reviewCreateRequest(dealUserId:Int, star:Int, comment:String?, handler: @escaping (ReviewCreateResponse?) -> Void){
+        Session.send(API.ReviewCreateRequest(dealUserId: dealUserId, star: star, comment: comment)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: reviewCreateRequest -> \(error)")
                 handler(nil)
             }
         }
