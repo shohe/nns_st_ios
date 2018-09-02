@@ -387,7 +387,24 @@ extension API {
      *   }
      */
     class func ownReviewGetRequest(handler: @escaping (OwnReviewGetResponse?) -> Void){
-        Session.send(API.OwnReviewGetRequest()) { result in
+        Session.send(API.OwnReviewGetRequest(id: nil)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: ownReviewGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+    /** return OwnReviewGetResponse
+     *   API.reviewGetRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func reviewGetRequest(id:Int?, handler: @escaping (OwnReviewGetResponse?) -> Void){
+        Session.send(API.OwnReviewGetRequest(id: id)) { result in
             switch result {
             case .success(let response):
                 handler(response)

@@ -13,6 +13,10 @@ extension API {
     struct OwnReviewGetRequest: NNSRequest {
         typealias Response = OwnReviewGetResponse
         let method: HTTPMethod = .get
-        var path: String { return "/api/review" }
+        let id: Int?
+        var path: String {
+            if let id = id { return "/api/review/\(id)" }
+            else { return "/api/review" }
+        }
     }
 }
