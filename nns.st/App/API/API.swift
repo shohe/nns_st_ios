@@ -156,6 +156,23 @@ extension API {
         }
     }
     
+    /** return ReservationGetResponse
+     *   API.reservationDetailGetRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func reservationDetailGetRequest(id: Int, handler: @escaping (ReservationGetResponse?) -> Void){
+        Session.send(API.ReservationDetailGetRequest(id: id)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: reservationDetailGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 // MARK: - api for Offer
