@@ -28,6 +28,8 @@
 		0952F492213BDD0200B5BCF3 /* ReservationGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F491213BDD0200B5BCF3 /* ReservationGetRequest.swift */; };
 		0952F494213BE44C00B5BCF3 /* ReservationDetailGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F493213BE44C00B5BCF3 /* ReservationDetailGetRequest.swift */; };
 		0952F496213BE49000B5BCF3 /* ReservationDetailGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F495213BE49000B5BCF3 /* ReservationDetailGetResponse.swift */; };
+		0952F498213BF21B00B5BCF3 /* ReservationListGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F497213BF21B00B5BCF3 /* ReservationListGetResponse.swift */; };
+		0952F49A213BF42C00B5BCF3 /* ReservationListGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F499213BF42C00B5BCF3 /* ReservationListGetRequest.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -192,6 +194,8 @@
 		0952F491213BDD0200B5BCF3 /* ReservationGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationGetRequest.swift; sourceTree = "<group>"; };
 		0952F493213BE44C00B5BCF3 /* ReservationDetailGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailGetRequest.swift; sourceTree = "<group>"; };
 		0952F495213BE49000B5BCF3 /* ReservationDetailGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailGetResponse.swift; sourceTree = "<group>"; };
+		0952F497213BF21B00B5BCF3 /* ReservationListGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListGetResponse.swift; sourceTree = "<group>"; };
+		0952F499213BF42C00B5BCF3 /* ReservationListGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListGetRequest.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -440,6 +444,7 @@
 				0952F48D213BCB8A00B5BCF3 /* DayCountRequest.swift */,
 				0952F491213BDD0200B5BCF3 /* ReservationGetRequest.swift */,
 				0952F493213BE44C00B5BCF3 /* ReservationDetailGetRequest.swift */,
+				0952F499213BF42C00B5BCF3 /* ReservationListGetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */,
 				0952F48F213BD9A900B5BCF3 /* ReservationGetResponse.swift */,
 				0952F495213BE49000B5BCF3 /* ReservationDetailGetResponse.swift */,
+				0952F497213BF21B00B5BCF3 /* ReservationListGetResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -984,6 +990,7 @@
 				09A7B755213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift in Sources */,
 				09A7B73921391B150084E2C9 /* UserRegistRequest.swift in Sources */,
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
+				0952F498213BF21B00B5BCF3 /* ReservationListGetResponse.swift in Sources */,
 				09A7B737213919690084E2C9 /* UserRegistResponse.swift in Sources */,
 				09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */,
 				09A7B75B213B99880084E2C9 /* RequestCreateResponse.swift in Sources */,
@@ -1011,6 +1018,7 @@
 				09A7B74D213A63780084E2C9 /* OfferCreateResponse.swift in Sources */,
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
 				09A7B763213BBD330084E2C9 /* OfferRequest.swift in Sources */,
+				0952F49A213BF42C00B5BCF3 /* ReservationListGetRequest.swift in Sources */,
 				09A7B761213BBB020084E2C9 /* RequestGetRequest.swift in Sources */,
 				091F8D12212723340095608F /* MapViewController.swift in Sources */,
 				09DDAADD21251453009C6428 /* CommentCell.swift in Sources */,

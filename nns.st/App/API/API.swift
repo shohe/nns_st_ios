@@ -235,23 +235,6 @@ extension API {
 // MARK: - api for Request
 extension API {
     
-    /** return RequestCreateResponse
-     *   API.requestCreateRequest(offerId: 2, price: 3000, comment: "この値段で切れますよ！") { (result) in
-     *      if let res = result { print("result: \(res)") }
-     *   }
-     */
-    class func requestCreateRequest(offerId: Int, price: Float, comment: String?, handler: @escaping (RequestCreateResponse?) -> Void){
-        Session.send(API.RequestCreateRequest(offerId: offerId, price: price, comment: comment)) { result in
-            switch result {
-            case .success(let response):
-                handler(response)
-            case .failure(let error):
-                print("Error: offerGetDetailRequest -> \(error)")
-                handler(nil)
-            }
-        }
-    }
-    
     /** return RequestGetResponse
      *   API.requestCreateRequest(offerId: 2, price: 3000, comment: "この値段で切れますよ！") { (result) in
      *      if let res = result { print("result: \(res)") }
@@ -298,6 +281,45 @@ extension API {
                 handler(response)
             case .failure(let error):
                 print("Error: requestTakeRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+}
+
+// MARK: - api for Stylist
+extension API {
+    
+    /** return RequestCreateResponse
+     *   API.requestCreateRequest(offerId: 2, price: 3000, comment: "この値段で切れますよ！") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func requestCreateRequest(offerId: Int, price: Float, comment: String?, handler: @escaping (RequestCreateResponse?) -> Void){
+        Session.send(API.RequestCreateRequest(offerId: offerId, price: price, comment: comment)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: offerGetDetailRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+    /** return ReservationListGetResponse
+     *   API.reservationListGetRequest() { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func reservationListGetRequest(handler: @escaping (ReservationListGetResponse?) -> Void){
+        Session.send(API.ReservationListGetRequest()) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: reservationListGetRequest -> \(error)")
                 handler(nil)
             }
         }
