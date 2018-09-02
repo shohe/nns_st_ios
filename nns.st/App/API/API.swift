@@ -381,6 +381,23 @@ extension API {
         }
     }
     
+    /** return OwnReviewGetResponse
+     *   API.ownReviewGetRequest() { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func ownReviewGetRequest(handler: @escaping (OwnReviewGetResponse?) -> Void){
+        Session.send(API.OwnReviewGetRequest()) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: ownReviewGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 /// DecodableDataParser

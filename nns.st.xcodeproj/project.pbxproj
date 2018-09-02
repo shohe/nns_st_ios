@@ -37,6 +37,8 @@
 		0952F4A4213C0B6100B5BCF3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A3213C0B6100B5BCF3 /* Review.swift */; };
 		0952F4A6213C0CA700B5BCF3 /* ReviewCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A5213C0CA700B5BCF3 /* ReviewCreateResponse.swift */; };
 		0952F4A8213C0D2700B5BCF3 /* ReviewCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */; };
+		0952F4AA213C12BE00B5BCF3 /* OwnReviewGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */; };
+		0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -210,6 +212,8 @@
 		0952F4A3213C0B6100B5BCF3 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		0952F4A5213C0CA700B5BCF3 /* ReviewCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCreateResponse.swift; sourceTree = "<group>"; };
 		0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCreateRequest.swift; sourceTree = "<group>"; };
+		0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnReviewGetResponse.swift; sourceTree = "<group>"; };
+		0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnReviewGetRequest.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 				0952F49D213BF97900B5BCF3 /* OfferHistoryListGetRequest.swift */,
 				0952F4A1213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift */,
 				0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */,
+				0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				0952F49B213BF89100B5BCF3 /* OfferHistoryListGetResponse.swift */,
 				0952F49F213BFE7200B5BCF3 /* OfferHistoryDetailGetResponse.swift */,
 				0952F4A5213C0CA700B5BCF3 /* ReviewCreateResponse.swift */,
+				0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1000,6 +1006,7 @@
 				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
 				09DDAAB8212241CB009C6428 /* MainViewController.swift in Sources */,
 				0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */,
+				0952F4AA213C12BE00B5BCF3 /* OwnReviewGetResponse.swift in Sources */,
 				09DDAAD121244D83009C6428 /* PriceButtonCell.swift in Sources */,
 				09DDAAAE21206507009C6428 /* SignUpMailViewController.swift in Sources */,
 				0952F496213BE49000B5BCF3 /* ReservationDetailGetResponse.swift in Sources */,
@@ -1042,6 +1049,7 @@
 				09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
+				0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */,
 				09FDE356212FB4C900A823DA /* MyPageViewController.swift in Sources */,
 				09A7B74D213A63780084E2C9 /* OfferCreateResponse.swift in Sources */,
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
