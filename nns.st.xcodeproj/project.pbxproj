@@ -24,6 +24,8 @@
 		0952F48A213BC70700B5BCF3 /* RequestTakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */; };
 		0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */; };
 		0952F48E213BCB8A00B5BCF3 /* DayCountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48D213BCB8A00B5BCF3 /* DayCountRequest.swift */; };
+		0952F490213BD9A900B5BCF3 /* ReservationGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48F213BD9A900B5BCF3 /* ReservationGetResponse.swift */; };
+		0952F492213BDD0200B5BCF3 /* ReservationGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F491213BDD0200B5BCF3 /* ReservationGetRequest.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -184,6 +186,8 @@
 		0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeRequest.swift; sourceTree = "<group>"; };
 		0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCountResponse.swift; sourceTree = "<group>"; };
 		0952F48D213BCB8A00B5BCF3 /* DayCountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCountRequest.swift; sourceTree = "<group>"; };
+		0952F48F213BD9A900B5BCF3 /* ReservationGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationGetResponse.swift; sourceTree = "<group>"; };
+		0952F491213BDD0200B5BCF3 /* ReservationGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationGetRequest.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -430,6 +434,7 @@
 				09A7B766213BC0C90084E2C9 /* RequestDetailGetRequest.swift */,
 				0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */,
 				0952F48D213BCB8A00B5BCF3 /* DayCountRequest.swift */,
+				0952F491213BDD0200B5BCF3 /* ReservationGetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				09A7B764213BBE1C0084E2C9 /* RequestDetailGetResponse.swift */,
 				0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */,
 				0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */,
+				0952F48F213BD9A900B5BCF3 /* ReservationGetResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -923,6 +929,7 @@
 				09A7B757213B8B1D0084E2C9 /* OfferGetDetailResponse.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
 				0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */,
+				0952F490213BD9A900B5BCF3 /* ReservationGetResponse.swift in Sources */,
 				09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */,
 				09BB1976212D1356006562D0 /* HistoryInfoViewController.swift in Sources */,
 				09DDAAC421231B5A009C6428 /* CarouselFlowLayout.swift in Sources */,
@@ -987,6 +994,7 @@
 				09A7B728213818F40084E2C9 /* StarView.swift in Sources */,
 				09A7B751213A66F10084E2C9 /* OfferCreateRequest.swift in Sources */,
 				09A7B72C2138CBDE0084E2C9 /* EmailExistResponse.swift in Sources */,
+				0952F492213BDD0200B5BCF3 /* ReservationGetRequest.swift in Sources */,
 				09A7B741213929070084E2C9 /* LoginRequest.swift in Sources */,
 				09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,

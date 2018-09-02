@@ -123,7 +123,7 @@ extension API {
     }
     
     /** return DayCountResponse
-     *   API.userGetRequest { (result) in
+     *   API.dayCountRequest(today: "2018-08-23 11:00:00") { (result) in
      *      if let res = result { print("result: \(res)") }
      *   }
      */
@@ -134,6 +134,23 @@ extension API {
                 handler(response)
             case .failure(let error):
                 print("Error: dayCountRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+    /** return ReservationGetResponse
+     *   API.reservationGetRequest(today: "2018-08-23 11:00:00") { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func reservationGetRequest(today: String, handler: @escaping (ReservationGetResponse?) -> Void){
+        Session.send(API.ReservationGetRequest(today: today)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: reservationGetRequest -> \(error)")
                 handler(nil)
             }
         }
