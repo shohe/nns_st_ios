@@ -50,6 +50,8 @@
 		09A7B755213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B754213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift */; };
 		09A7B757213B8B1D0084E2C9 /* OfferGetDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B756213B8B1D0084E2C9 /* OfferGetDetailResponse.swift */; };
 		09A7B759213B92480084E2C9 /* OfferGetDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B758213B92480084E2C9 /* OfferGetDetailRequest.swift */; };
+		09A7B75B213B99880084E2C9 /* RequestCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B75A213B99880084E2C9 /* RequestCreateResponse.swift */; };
+		09A7B75D213B9A030084E2C9 /* RequestCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7B75C213B9A030084E2C9 /* RequestCreateRequest.swift */; };
 		09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */; };
 		09BB194C212AA535006562D0 /* OfferItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194B212AA535006562D0 /* OfferItem.swift */; };
 		09BB194E212AA6EA006562D0 /* HairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB194D212AA6EA006562D0 /* HairType.swift */; };
@@ -199,6 +201,8 @@
 		09A7B754213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferRequireMatchedRequest.swift; sourceTree = "<group>"; };
 		09A7B756213B8B1D0084E2C9 /* OfferGetDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferGetDetailResponse.swift; sourceTree = "<group>"; };
 		09A7B758213B92480084E2C9 /* OfferGetDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferGetDetailRequest.swift; sourceTree = "<group>"; };
+		09A7B75A213B99880084E2C9 /* RequestCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreateResponse.swift; sourceTree = "<group>"; };
+		09A7B75C213B9A030084E2C9 /* RequestCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreateRequest.swift; sourceTree = "<group>"; };
 		09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addDoneToolbar.swift"; sourceTree = "<group>"; };
 		09BB194B212AA535006562D0 /* OfferItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferItem.swift; sourceTree = "<group>"; };
 		09BB194D212AA6EA006562D0 /* HairType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairType.swift; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 				09A7B750213A66F10084E2C9 /* OfferCreateRequest.swift */,
 				09A7B754213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift */,
 				09A7B758213B92480084E2C9 /* OfferGetDetailRequest.swift */,
+				09A7B75C213B9A030084E2C9 /* RequestCreateRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				09A7B74C213A63780084E2C9 /* OfferCreateResponse.swift */,
 				09A7B752213AFA620084E2C9 /* OfferRequireMatchedResponse.swift */,
 				09A7B756213B8B1D0084E2C9 /* OfferGetDetailResponse.swift */,
+				09A7B75A213B99880084E2C9 /* RequestCreateResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -915,6 +921,7 @@
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
 				09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */,
 				09A7B7332138D55A0084E2C9 /* User.swift in Sources */,
+				09A7B75D213B9A030084E2C9 /* RequestCreateRequest.swift in Sources */,
 				09A7B72E2138D0B60084E2C9 /* NNSCore.swift in Sources */,
 				0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */,
 				09BB1953212AC1AA006562D0 /* OutcomeInfoCell.swift in Sources */,
@@ -931,6 +938,7 @@
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
 				09A7B737213919690084E2C9 /* UserRegistResponse.swift in Sources */,
 				09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */,
+				09A7B75B213B99880084E2C9 /* RequestCreateResponse.swift in Sources */,
 				091F8D172128567A0095608F /* SearchResultCell.swift in Sources */,
 				09A7B74F213A63AD0084E2C9 /* Offer.swift in Sources */,
 				09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */,
