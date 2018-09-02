@@ -32,6 +32,8 @@
 		0952F49A213BF42C00B5BCF3 /* ReservationListGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F499213BF42C00B5BCF3 /* ReservationListGetRequest.swift */; };
 		0952F49C213BF89100B5BCF3 /* OfferHistoryListGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F49B213BF89100B5BCF3 /* OfferHistoryListGetResponse.swift */; };
 		0952F49E213BF97900B5BCF3 /* OfferHistoryListGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F49D213BF97900B5BCF3 /* OfferHistoryListGetRequest.swift */; };
+		0952F4A0213BFE7200B5BCF3 /* OfferHistoryDetailGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F49F213BFE7200B5BCF3 /* OfferHistoryDetailGetResponse.swift */; };
+		0952F4A2213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A1213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -200,6 +202,8 @@
 		0952F499213BF42C00B5BCF3 /* ReservationListGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListGetRequest.swift; sourceTree = "<group>"; };
 		0952F49B213BF89100B5BCF3 /* OfferHistoryListGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferHistoryListGetResponse.swift; sourceTree = "<group>"; };
 		0952F49D213BF97900B5BCF3 /* OfferHistoryListGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferHistoryListGetRequest.swift; sourceTree = "<group>"; };
+		0952F49F213BFE7200B5BCF3 /* OfferHistoryDetailGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferHistoryDetailGetResponse.swift; sourceTree = "<group>"; };
+		0952F4A1213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferHistoryDetailGetRequest.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -450,6 +454,7 @@
 				0952F493213BE44C00B5BCF3 /* ReservationDetailGetRequest.swift */,
 				0952F499213BF42C00B5BCF3 /* ReservationListGetRequest.swift */,
 				0952F49D213BF97900B5BCF3 /* OfferHistoryListGetRequest.swift */,
+				0952F4A1213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				0952F495213BE49000B5BCF3 /* ReservationDetailGetResponse.swift */,
 				0952F497213BF21B00B5BCF3 /* ReservationListGetResponse.swift */,
 				0952F49B213BF89100B5BCF3 /* OfferHistoryListGetResponse.swift */,
+				0952F49F213BFE7200B5BCF3 /* OfferHistoryDetailGetResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -999,6 +1005,7 @@
 				09A7B73921391B150084E2C9 /* UserRegistRequest.swift in Sources */,
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
 				0952F498213BF21B00B5BCF3 /* ReservationListGetResponse.swift in Sources */,
+				0952F4A0213BFE7200B5BCF3 /* OfferHistoryDetailGetResponse.swift in Sources */,
 				09A7B737213919690084E2C9 /* UserRegistResponse.swift in Sources */,
 				09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */,
 				09A7B75B213B99880084E2C9 /* RequestCreateResponse.swift in Sources */,
@@ -1011,6 +1018,7 @@
 				09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */,
 				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
 				09A7B7352138EA0F0084E2C9 /* EmailExistRequest.swift in Sources */,
+				0952F4A2213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift in Sources */,
 				09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */,
 				09A7B74B213A60EF0084E2C9 /* UserGetResponse.swift in Sources */,
 				09DDAAE421254F70009C6428 /* UIButton+backgroundColor.swift in Sources */,
