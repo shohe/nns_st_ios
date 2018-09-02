@@ -218,6 +218,40 @@ extension API {
         }
     }
     
+    /** return RequestDetailGetResponse
+     *   API.requestDetailGetRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func requestDetailGetRequest(id: Int, handler: @escaping (RequestDetailGetResponse?) -> Void){
+        Session.send(API.RequestDetailGetRequest(id: id)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: requestDetailGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+    /** return RequestTakeResponse
+     *   API.requestTakeRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func requestTakeRequest(id: Int, handler: @escaping (RequestTakeResponse?) -> Void){
+        Session.send(API.RequestTakeRequest(id: id)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: requestTakeRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 /// DecodableDataParser
