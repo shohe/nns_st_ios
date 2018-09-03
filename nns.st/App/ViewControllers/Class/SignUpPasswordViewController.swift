@@ -13,6 +13,16 @@ class SignUpPasswordViewController: UIViewController {
     @IBOutlet weak var password: ContainButtonTextField!
     @IBOutlet weak var passwordConfirm: ContainButtonTextField!
     
+    private var mailaddress: String?
+    
+    
+    static func instantiateViewController(mailaddress: String) -> SignUpPasswordViewController {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SignUpPasswordViewController") as! SignUpPasswordViewController
+        viewController.mailaddress = mailaddress
+        return viewController
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = UIColor.white

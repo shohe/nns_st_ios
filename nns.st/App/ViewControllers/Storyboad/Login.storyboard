@@ -238,8 +238,8 @@
                                     <constraint firstAttribute="height" constant="160" id="UrU-qr-IXj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※このメールアドレスは既に使用されています。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eui-Gd-tSc">
-                                <rect key="frame" x="32" y="319.5" width="221" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※既に使用されている、もしくは入力エラーです。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eui-Gd-tSc">
+                                <rect key="frame" x="32" y="319.5" width="231" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.66938744480000001" green="0.15602059530000001" blue="0.050897387719999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -262,7 +262,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="lPK-Ao-5Vp" kind="show" id="FBt-3G-AQy"/>
+                                    <action selector="pressNextButton:" destination="kb2-1E-0Oj" eventType="touchUpInside" id="Tk5-DN-9UX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -302,6 +302,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mailaddress" destination="2Zp-lJ-SpY" id="lUu-AB-O3M"/>
+                        <outlet property="nextButton" destination="lzz-Ve-Tec" id="3l9-UY-TDn"/>
+                        <outlet property="warningLabel" destination="eui-Gd-tSc" id="7mw-28-hXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJC-ir-RFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,7 +313,7 @@
         <!--Sign Up Password View Controller-->
         <scene sceneID="T4p-s2-89d">
             <objects>
-                <viewController id="lPK-Ao-5Vp" customClass="SignUpPasswordViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPK-Ao-5Vp" customClass="SignUpPasswordViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kZ1-ax-bQU" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -428,6 +430,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="password" destination="79e-BF-tJj" id="TkD-PD-S4V"/>
                         <outlet property="passwordConfirm" destination="2b4-Bt-l74" id="EZd-dI-Qny"/>
@@ -440,7 +443,7 @@
         <!--Sign Up Name View Controller-->
         <scene sceneID="9mY-9O-xUQ">
             <objects>
-                <viewController id="UN8-5L-ldb" customClass="SignUpNameViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpNameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UN8-5L-ldb" customClass="SignUpNameViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ONW-ba-CYH" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -549,6 +552,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="firstName" destination="7Of-Ka-Q6z" id="Kix-rj-fLJ"/>
                         <outlet property="lastName" destination="JxH-KL-Ue6" id="BUU-5d-HP0"/>
