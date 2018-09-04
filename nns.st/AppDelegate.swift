@@ -17,19 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Debug for login view.
-        NNSCore.setAuthToken("")
-        if NNSCore.authToken() != "" {
-            if let window = window {
-                window.rootViewController = MainViewController.instantiateViewController()
-            }
-        }
-        
-        // If user is loged in already, go to MainView.
-//        if NNSCore.authToken() != nil {
+//        NNSCore.setAuthToken("")
+//        if NNSCore.authToken() != "" {
 //            if let window = window {
 //                window.rootViewController = MainViewController.instantiateViewController()
 //            }
 //        }
+        
+        // If user is loged in already, go to MainView.
+        if NNSCore.authToken() != nil {
+            if let window = window {
+                window.rootViewController = MainViewController.instantiateViewController()
+            }
+        }
         
         return true
     }
