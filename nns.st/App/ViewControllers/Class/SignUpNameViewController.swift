@@ -14,6 +14,18 @@ class SignUpNameViewController: UIViewController {
     @IBOutlet weak var lastName: ContainButtonTextField!
     @IBOutlet weak var firstName: ContainButtonTextField!
     
+    private var mailaddress: String?
+    private var password: String?
+    
+    
+    static func instantiateViewController(mailaddress: String, password: String) -> SignUpNameViewController {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SignUpNameViewController") as! SignUpNameViewController
+        viewController.mailaddress = mailaddress
+        viewController.password = password
+        return viewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
