@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スタイリスト名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peh-8X-xbe">
-                        <rect key="frame" x="0.0" y="8" width="300" height="4"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -40,13 +40,16 @@
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="KHa-CY-crk" secondAttribute="trailing" id="adi-8X-buG"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="KHa-CY-crk" secondAttribute="bottom" id="jeV-aw-6i2"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="Peh-8X-xbe" secondAttribute="trailing" id="rfU-hF-wyV"/>
-                <constraint firstItem="Peh-8X-xbe" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="8" id="vMO-qS-06C"/>
+                <constraint firstItem="Peh-8X-xbe" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="vMO-qS-06C"/>
                 <constraint firstItem="KHa-CY-crk" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="wW2-He-QpL"/>
                 <constraint firstItem="Peh-8X-xbe" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="x5o-mr-uNa"/>
-                <constraint firstItem="KHa-CY-crk" firstAttribute="top" secondItem="Peh-8X-xbe" secondAttribute="bottom" constant="16" id="yfg-Nh-FRC"/>
+                <constraint firstItem="KHa-CY-crk" firstAttribute="top" secondItem="Peh-8X-xbe" secondAttribute="bottom" constant="8" id="yfg-Nh-FRC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="300" height="328"/>
+            <connections>
+                <outlet property="nameLabel" destination="Peh-8X-xbe" id="HHZ-YY-xcV"/>
+            </connections>
             <point key="canvasLocation" x="114" y="169"/>
         </collectionViewCell>
     </objects>
