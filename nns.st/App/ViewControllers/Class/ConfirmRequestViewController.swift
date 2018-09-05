@@ -14,10 +14,13 @@ class ConfirmRequestViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var request: RequestGetItem!
     
-    static func instantiateViewController() -> UINavigationController {
+    static func instantiateViewController(request: RequestGetItem) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
+        let root = viewController.viewControllers.first as! ConfirmRequestViewController
+        root.request = request
         return viewController
     }
     
@@ -37,6 +40,8 @@ class ConfirmRequestViewController: UIViewController {
         tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
         tableView.register(CommentCell.nib, forCellReuseIdentifier: CommentCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
+        
+        print("request: \(self.request)")
     }
 
     override func didReceiveMemoryWarning() {
