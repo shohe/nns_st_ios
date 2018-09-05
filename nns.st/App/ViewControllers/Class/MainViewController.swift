@@ -92,7 +92,8 @@ extension MainViewController: UICollectionViewDelegate {
         if indexPath.row == 0 {
             self.present(MyPageViewController.instantiateViewController(), animated: true, completion: nil)
         } else {
-            self.present(ConfirmRequestViewController.instantiateViewController(), animated: true, completion: nil)
+            let item = requests[indexPath.row-1] // -1 for mypage
+            self.present(ConfirmRequestViewController.instantiateViewController(request: item), animated: true, completion: nil)
         }
     }
     
@@ -112,6 +113,15 @@ extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThreeColumnCell.identifier, for: indexPath) as! ThreeColumnCell
+        
+        if indexPath.row == 0 {
+            cell.nameLabel.isHidden = true
+        } else {
+            let item = requests[indexPath.row-1]
+            cell.nameLabel.isHidden = false
+            cell.nameLabel.text = item.name
+        }
+        
         return cell
     }
     
