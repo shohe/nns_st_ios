@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBInspectable var itemWidth: CGFloat = 0.0
     
+    private var requests: [RequestGetItem] = []
+    
     
     static func instantiateViewController() -> MainViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -33,8 +35,8 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(ThreeColumnCell.nib,
-                                forCellWithReuseIdentifier: ThreeColumnCell.identifier)
+        collectionView.register(ThreeColumnCell.nib, forCellWithReuseIdentifier: ThreeColumnCell.identifier)
+        fetchRequests()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +47,22 @@ class MainViewController: UIViewController {
 }
 
 
+// MARK: - private
+extension MainViewController {
+    
+    private func fetchRequests() {
+        API.requestGetRequest { (result) in
+            if let res = result {
+                self.requests = res.item
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+}
+
+
+// MARK: - IBAction
 extension MainViewController {
     
     @IBAction func pressOfferBtn(_ sender: UIButton) {
@@ -67,6 +85,7 @@ extension MainViewController {
 }
 
 
+// MARK: - UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -80,6 +99,7 @@ extension MainViewController: UICollectionViewDelegate {
 }
 
 
+// MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -87,7 +107,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return requests.count + 1 // +1 for mypage
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
