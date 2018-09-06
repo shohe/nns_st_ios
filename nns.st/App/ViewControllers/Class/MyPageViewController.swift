@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import MediaAccessibility
 
 class MyPageViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private let imagePicker = UIImagePickerController()
+    
     private var sourceField: UITextField?
     private var user: User = User()
+    private var thumbnail: UIImageView?
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Mypage", bundle: nil)
@@ -104,11 +108,11 @@ extension MyPageViewController {
     
     private func checkDuplicateHeight(baseFrame: CGRect) -> CGFloat {
         let convertedKeyboardFrame = self.view.convert(baseFrame, from: nil)
-        let convertedFieldFrame = sourceField!.convert(sourceField!.frame, to: self.view)
+        var convertedFieldFrame = CGRect.zero
+        if let sourceField = self.sourceField {
+            convertedFieldFrame = sourceField.convert(sourceField.frame, to: self.view)
+        }
         let height = convertedKeyboardFrame.minY - convertedFieldFrame.minY
-        print("convertedKeyboardFrame-minY: \(convertedKeyboardFrame.minY)")
-        print("convertedFieldFrame-minY: \(convertedFieldFrame.minY)")
-        print("height: \(height)")
         return height
     }
     
@@ -139,6 +143,7 @@ extension MyPageViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageThumbnailCell.identifier, for: indexPath) as? MypageThumbnailCell {
+                cell.delegate = self
                 return cell
             }
         case 1:
@@ -200,5 +205,39 @@ extension MyPageViewController: UITextFieldDelegate {
         self.sourceField = textField
         return true
     }
+    
+}
+
+
+// MARK: - MypageThumbnailCellDelegate
+extension MyPageViewController: MypageThumbnailCellDelegate {
+    
+    func myThumbnailCell(_ cell: MypageThumbnailCell, didTapPicture thumbnail: UIImageView) {
+        print("myThumbnailCell didTapPicture")
+        
+        self.thumbnail = thumbnail
+        self.imagePicker.allowsEditing = true
+        self.imagePicker.delegate = self
+        self.imagePicker.sourceType = .photoLibrary
+        present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - UIImagePickerControllerDelegate
+extension MyPageViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if var pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            thumbnail?.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+extension MyPageViewController: UINavigationControllerDelegate {
     
 }

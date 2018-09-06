@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol MypageThumbnailCellDelegate {
+    func myThumbnailCell(_ cell: MypageThumbnailCell, didTapPicture thumbnail: UIImageView)
+}
+
 class MypageThumbnailCell: UITableViewCell {
     
     @IBOutlet weak var thumbnailView: UIImageView!
+    
+    var delegate: MypageThumbnailCellDelegate?
     
     static var identifier:String {
         get{
@@ -42,7 +48,7 @@ class MypageThumbnailCell: UITableViewCell {
 extension MypageThumbnailCell {
     
     @IBAction func changePicture(_ sender: Any) {
-        print("changePicture")
+        delegate?.myThumbnailCell(self, didTapPicture: self.thumbnailView)
     }
     
 }
@@ -56,3 +62,4 @@ extension MypageThumbnailCell {
     }
     
 }
+
