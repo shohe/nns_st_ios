@@ -13,6 +13,7 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var sourceField: UITextField?
+    private var user: User = User()
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Mypage", bundle: nil)
@@ -24,6 +25,7 @@ class MyPageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.configureObserver()
+        self.fetchUser()
     }
     
     override func viewDidLoad() {
@@ -110,6 +112,15 @@ extension MyPageViewController {
         return height
     }
     
+    private func fetchUser() {
+        API.userGetRequest { (result) in
+            if let res = result {
+                self.user = res.item
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
 
 
@@ -132,13 +143,14 @@ extension MyPageViewController: UITableViewDataSource {
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageNameCell.identifier, for: indexPath) as? MypageNameCell {
-                cell.firstName.delegate = self
-                cell.lastName.delegate = self
+                cell.name.delegate = self
+                cell.name.text = user.name
                 return cell
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageMailAddressCell.identifier, for: indexPath) as? MypageMailAddressCell {
                 cell.mailAddress.delegate = self
+                cell.mailAddress.text = user.email
                 return cell
             }
         case 3:
@@ -149,6 +161,7 @@ extension MyPageViewController: UITableViewDataSource {
         case 4:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageStatusCommentCell.identifier, for: indexPath) as? MypageStatusCommentCell {
                 cell.statusComment.delegate = self
+                cell.statusComment.text = user.statusComment
                 return cell
             }
         default:

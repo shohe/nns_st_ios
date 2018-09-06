@@ -10,8 +10,7 @@ import UIKit
 
 class MypageNameCell: UITableViewCell {
 
-    @IBOutlet weak var lastName: UITextField!
-    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var name: UITextField!
     
     
     static var identifier:String {
