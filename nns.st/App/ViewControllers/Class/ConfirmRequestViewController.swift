@@ -133,6 +133,8 @@ extension ConfirmRequestViewController: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as? StylistProfileWithStarCell {
                 if let url = self.request.imageUrl { cell.thumbnailView.loadImage(urlString: url) }
                 if let item = self.requestItem {
+                    /* show blank star => +10 */
+                    cell.starView.setStar(number: Int(item.average) + 10)
                     cell.statusComment.text = (item.stylist.statusComment != "") ? item.stylist.statusComment : "I AM \(item.stylist.name!)"
                 }
                 return cell

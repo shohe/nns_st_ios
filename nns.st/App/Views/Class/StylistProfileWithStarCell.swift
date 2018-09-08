@@ -25,6 +25,7 @@ class StylistProfileWithStarCell: UITableViewCell {
     
     @IBOutlet weak var thumbnailView: UIImageView!
     @IBOutlet weak var statusComment: UILabel!
+    @IBOutlet weak var starView: StarView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
