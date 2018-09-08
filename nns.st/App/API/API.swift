@@ -179,8 +179,8 @@ extension API {
      *      if let res = result { print("result: \(res)") }
      *   }
      */
-    class func userImageUploadRequest(image: UIImage, handler: @escaping (UserImageUploadResponse?) -> Void){
-        Session.send(API.UserImageUploadRequest(image: image)) { result in
+    class func userImageUploadRequest(image: UIImage, fileName: String, handler: @escaping (UserImageUploadResponse?) -> Void){
+        Session.send(API.UserImageUploadRequest(image: image, fileName: fileName)) { result in
             switch result {
             case .success(let response):
                 handler(response)

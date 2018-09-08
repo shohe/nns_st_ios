@@ -29,12 +29,12 @@ class MyPageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.configureObserver()
-        self.fetchUser()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.fetchUser()
+        
         // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -266,8 +266,15 @@ extension MyPageViewController: MypageThumbnailCellDelegate {
 extension MyPageViewController: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            thumbnail?.image = pickedImage
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage, let imageURL = info[UIImagePickerControllerImageURL] as? NSURL {
+            
+            let name = imageURL.lastPathComponent != nil ? imageURL.lastPathComponent! : "noNameImage.jpeg"
+            API.userImageUploadRequest(image: pickedImage, fileName: name) { (result) in
+                if let res = result {
+                    self.user.imageUrl = res.url
+                    self.thumbnail?.image = pickedImage
+                }
+            }
         }
         dismiss(animated: true, completion: nil)
     }
