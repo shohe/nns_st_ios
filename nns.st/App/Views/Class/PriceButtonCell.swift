@@ -17,6 +17,7 @@ class PriceButtonCell: UITableViewCell {
     var delegate: PriceButtonCellDelegate? = nil
     
     @IBOutlet weak var priceButton: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
     
     static var identifier:String {
         get{

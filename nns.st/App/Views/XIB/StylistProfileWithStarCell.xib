@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="383" height="256.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mvK-un-WnQ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mvK-un-WnQ">
                         <rect key="frame" x="133.5" y="24" width="115" height="115"/>
                         <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -142,6 +142,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="statusComment" destination="a42-Kv-cai" id="gcd-4x-edQ"/>
+                <outlet property="thumbnailView" destination="mvK-un-WnQ" id="eF5-O5-2Yx"/>
             </connections>
             <point key="canvasLocation" x="19.5" y="142.5"/>
         </tableViewCell>

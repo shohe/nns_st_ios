@@ -15,6 +15,7 @@ class ConfirmRequestViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var request: RequestGetItem!
+    private var requestItem: RequestDetailGetResponse!
     
     static func instantiateViewController(request: RequestGetItem) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
@@ -30,6 +31,7 @@ class ConfirmRequestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetchRequest()
         
         // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -41,7 +43,8 @@ class ConfirmRequestViewController: UIViewController {
         tableView.register(CommentCell.nib, forCellReuseIdentifier: CommentCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
         
-        print("request: \(self.request)")
+        // set name
+        self.navigationController?.navigationItem.title = self.request.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,6 +83,22 @@ extension ConfirmRequestViewController {
         self.tableView.addSubview(view)
     }
     
+    private func fetchRequest() {
+        API.requestDetailGetRequest(id: self.request.requestId) { (result) in
+            if let res = result {
+                self.requestItem = res
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func setSnapShotToCell(cell: SalonAddressCell, salonLocation: SalonLocation?) {
+        if let location = salonLocation {
+            let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lng)
+            SnapShotMaker.drawSnapshot(coordinate: coordinate, source: cell.mapSnap, pinColor: cell.pinColor)
+        }
+    }
+    
 }
 
 
@@ -101,7 +120,10 @@ extension ConfirmRequestViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        if let item = self.requestItem {
+            return item.reviews.count + 4
+        }
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,29 +131,60 @@ extension ConfirmRequestViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as? StylistProfileWithStarCell {
+                if let url = self.request.imageUrl { cell.thumbnailView.loadImage(urlString: url) }
+                if let item = self.requestItem {
+                    cell.statusComment.text = (item.stylist.statusComment != "") ? item.stylist.statusComment : "I AM \(item.stylist.name!)"
+                }
                 return cell
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: PriceButtonCell.identifier, for: indexPath) as? PriceButtonCell {
                 cell.selectionStyle = .none
                 cell.delegate = self as PriceButtonCellDelegate
+                if let item = self.requestItem {
+                    cell.priceLabel.text = "¥\(item.request.price)"
+                }
                 return cell
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: SalonAddressCell.identifier, for: indexPath) as? SalonAddressCell {
-                let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 35.908887, longitude: 139.482338)
-                SnapShotMaker.drawSnapshot(coordinate: coordinate, source: cell.mapSnap, pinColor: cell.pinColor)
+                
+                if let item = self.requestItem {
+                    self.setSnapShotToCell(cell: cell, salonLocation: item.stylist.salonLocation)
+                    cell.salonName.text = item.stylist.salonName
+                    let address = item.stylist.salonAddress?.split(separator: "/")
+                    if address?.count == 3 {
+                        cell.postCode.text = "〒\(String(address![0]))"
+                        cell.city.text = String(address![1])
+                        cell.street.text = String(address![2])
+                    } else {
+                        cell.postCode.isHidden = true
+                        cell.city.isHidden = true
+                        cell.streetTopConst.constant = -30
+                        cell.street.text = item.stylist.salonAddress
+                    }
+                }
+                
                 return cell
             }
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell {
+                if let item = self.requestItem {
+                    cell.comment.text = item.request.comment
+                }
                 return cell
             }
         
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell {
-                if indexPath.row != 4 {
-                    cell.nonTitle()
+                
+                if indexPath.row != 4 { cell.nonTitle() }
+                if let item = self.requestItem {
+                    cell.userName.text = item.reviews[indexPath.row - 4].name
+                    cell.comment.text = item.reviews[indexPath.row - 4].comment
+                    cell.date.text = item.reviews[indexPath.row - 4].date
+                    /* show blank star => +10 */
+                    cell.starView.setStar(number: item.reviews[indexPath.row - 4].star + 10 )
                 }
                 return cell
             }

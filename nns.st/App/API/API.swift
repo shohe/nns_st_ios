@@ -89,7 +89,7 @@ extension API {
     }
     
     /** return UserUpdateResponse
-     *   API.userUpdateRequest(user: user, token: NNSCore.authToken()) { (result) in
+     *   API.userUpdateRequest(user: user) { (result) in
      *      if let res = result { print("result: \(res)") }
      *   }
      */

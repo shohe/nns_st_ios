@@ -24,7 +24,11 @@ extension API {
             if let email = user.email { jsonResouce["email"] = email }
             if let password = user.password { jsonResouce["password"] = password }
             if let imageUrl = user.imageUrl { jsonResouce["image_url"] = imageUrl }
-            if let statusComment = user.statusComment { jsonResouce["status_comment"] = statusComment }
+            if let statusComment = user.statusComment {
+                if statusComment != "" {
+                    jsonResouce["status_comment"] = statusComment
+                }
+            }
             if let isStylist = user.isStylist { jsonResouce["is_stylist"] = isStylist }
             if let salonName = user.salonName { jsonResouce["salon_name"] = salonName }
             if let salonAddress = user.salonAddress { jsonResouce["salon_address"] = salonAddress }

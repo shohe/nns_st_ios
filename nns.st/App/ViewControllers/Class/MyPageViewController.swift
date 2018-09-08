@@ -63,8 +63,13 @@ class MyPageViewController: UIViewController {
 extension MyPageViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
-        print("call API: \(self.user)")
-        dismiss(animated: true, completion: nil)
+        API.userUpdateRequest(user: self.user) { (result) in
+            if result == nil {
+                print("error message")
+            }
+        }
+        sourceField?.resignFirstResponder()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapScreen(_ sender: UITapGestureRecognizer) {
@@ -165,6 +170,9 @@ extension MyPageViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageThumbnailCell.identifier, for: indexPath) as? MypageThumbnailCell {
+                if let url = self.user.imageUrl {
+                    cell.thumbnailView.loadImage(urlString: url)
+                }
                 cell.delegate = self
                 return cell
             }

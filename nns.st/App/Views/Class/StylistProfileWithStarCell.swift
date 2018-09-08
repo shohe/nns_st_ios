@@ -23,6 +23,7 @@ class StylistProfileWithStarCell: UITableViewCell {
     }
 
     
+    @IBOutlet weak var thumbnailView: UIImageView!
     @IBOutlet weak var statusComment: UILabel!
     
     override func awakeFromNib() {

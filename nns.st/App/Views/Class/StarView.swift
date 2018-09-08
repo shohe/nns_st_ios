@@ -36,14 +36,10 @@ class StarView: UIView {
     //* ex)           ★★★★★
     //* -----------------------
     //* ex) 2 ->     ★★ - - -
+    //* ex) 12 ->     ★★☆☆☆
     //* ex) -3 ->    - - ★★★
     //* ex) -13 ->    ☆☆★★★
-    
-    @IBInspectable var count: Int = 5 {
-        didSet {
-            self.initCount()
-        }
-    }
+    var count: Int = 0
     
     private var stars: [UIImageView] = []
     
@@ -57,6 +53,11 @@ class StarView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initView()
+    }
+    
+    func setStar(number: Int) {
+        self.count = number
+        self.initCount()
     }
 
 }

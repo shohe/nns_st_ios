@@ -13,6 +13,10 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var headerHeightConst: NSLayoutConstraint!
     @IBOutlet weak var headerBottomConst: NSLayoutConstraint!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var comment: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var starView: StarView!
     
     static var identifier:String {
         get{

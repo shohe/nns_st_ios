@@ -12,9 +12,13 @@ struct RequestDetailGetResponse: Decodable {
     
     let request: OfferRequest
     let stylist: User
+    let reviews: [Review]
+    let average: Float
     
     private enum CodingKeys: String, CodingKey {
         case request = "success"
         case stylist = "stylist"
+        case reviews = "reviews"
+        case average = "average"
     }
 }

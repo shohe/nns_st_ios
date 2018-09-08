@@ -12,6 +12,11 @@ import MapKit
 class SalonAddressCell: UITableViewCell {
     
     @IBOutlet weak var mapSnap: UIImageView!
+    @IBOutlet weak var salonName: UILabel!
+    @IBOutlet weak var postCode: UILabel!
+    @IBOutlet weak var city: UILabel!
+    @IBOutlet weak var street: UILabel!
+    @IBOutlet weak var streetTopConst: NSLayoutConstraint!
     
     static var identifier:String {
         get{
