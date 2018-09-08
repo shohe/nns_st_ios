@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MediaAccessibility
+import Photos
 
 class MyPageViewController: UIViewController {
     
@@ -63,6 +63,7 @@ class MyPageViewController: UIViewController {
 extension MyPageViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
+        print("call API: \(self.user)")
         dismiss(animated: true, completion: nil)
     }
     
@@ -123,6 +124,27 @@ extension MyPageViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    private func checkPermission() -> Bool {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        var result = false
+        switch photoAuthorizationStatus {
+        case .authorized:
+            result = true
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (status) in
+                result = (status == photoAuthorizationStatus)
+            }
+        case .restricted:
+            // print("restricted")
+            break
+        case .denied:
+            // print("denied")
+            break
+        }
+        
+        return result
     }
     
 }
@@ -206,6 +228,21 @@ extension MyPageViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let fieldType: MypageTextFieldType = MypageTextFieldType(rawValue: textField.tag)!
+        
+        switch fieldType {
+        case .name:
+            self.user.name = textField.text
+        case .email:
+            self.user.email = textField.text
+        case .password:
+            self.user.password = textField.text
+        case .status:
+            self.user.statusComment = textField.text
+        }
+    }
+    
 }
 
 
@@ -213,13 +250,13 @@ extension MyPageViewController: UITextFieldDelegate {
 extension MyPageViewController: MypageThumbnailCellDelegate {
     
     func myThumbnailCell(_ cell: MypageThumbnailCell, didTapPicture thumbnail: UIImageView) {
-        print("myThumbnailCell didTapPicture")
-        
-        self.thumbnail = thumbnail
-        self.imagePicker.allowsEditing = true
-        self.imagePicker.delegate = self
-        self.imagePicker.sourceType = .photoLibrary
-        present(self.imagePicker, animated: true, completion: nil)
+        if self.checkPermission() {
+            self.thumbnail = thumbnail
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .photoLibrary
+            present(self.imagePicker, animated: true, completion: nil)
+        }
     }
     
 }
@@ -229,7 +266,7 @@ extension MyPageViewController: MypageThumbnailCellDelegate {
 extension MyPageViewController: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if var pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             thumbnail?.image = pickedImage
         }
         dismiss(animated: true, completion: nil)
@@ -238,6 +275,7 @@ extension MyPageViewController: UIImagePickerControllerDelegate {
 }
 
 
+// MARK: - UINavigationControllerDelegate
 extension MyPageViewController: UINavigationControllerDelegate {
     
 }

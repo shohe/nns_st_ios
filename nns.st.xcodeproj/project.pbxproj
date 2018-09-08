@@ -20,6 +20,7 @@
 		091F8D172128567A0095608F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D152128567A0095608F /* SearchResultCell.swift */; };
 		091F8D182128567A0095608F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091F8D162128567A0095608F /* SearchResultCell.xib */; };
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
+		09402D0321439EC000082F4F /* MypageTextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D0221439EC000082F4F /* MypageTextFieldType.swift */; };
 		0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */; };
 		0952F48A213BC70700B5BCF3 /* RequestTakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */; };
 		0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */; };
@@ -195,6 +196,7 @@
 		091F8D152128567A0095608F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		091F8D162128567A0095608F /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
+		09402D0221439EC000082F4F /* MypageTextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTextFieldType.swift; sourceTree = "<group>"; };
 		0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeResponse.swift; sourceTree = "<group>"; };
 		0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeRequest.swift; sourceTree = "<group>"; };
 		0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCountResponse.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				09A05B4F21298DA300C1FF3F /* MapViewItem.swift */,
 				09BB194B212AA535006562D0 /* OfferItem.swift */,
 				09BB194D212AA6EA006562D0 /* HairType.swift */,
+				09402D0221439EC000082F4F /* MypageTextFieldType.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -988,6 +991,7 @@
 				09BB1979212D266C006562D0 /* DoubleButtonCell.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */,
+				09402D0321439EC000082F4F /* MypageTextFieldType.swift in Sources */,
 				09A7B745213961BB0084E2C9 /* UserUpdateRequest.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */,

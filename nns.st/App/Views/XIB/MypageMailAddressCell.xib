@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="365" height="91.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxh-qv-eOz">
+                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxh-qv-eOz">
                         <rect key="frame" x="24" y="39" width="317" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Hqu-Ks-QF2"/>
