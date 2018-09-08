@@ -173,6 +173,24 @@ extension API {
         }
     }
     
+    
+    /** return UserImageUploadResponse
+     *   API.reservationDetailGetRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func userImageUploadRequest(image: UIImage, handler: @escaping (UserImageUploadResponse?) -> Void){
+        Session.send(API.UserImageUploadRequest(image: image)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: userImageUploadRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 // MARK: - api for Offer
