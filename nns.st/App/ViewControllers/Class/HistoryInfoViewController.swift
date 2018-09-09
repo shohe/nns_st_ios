@@ -12,11 +12,25 @@ class HistoryInfoViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var isCurrentOrder: Bool = false
+    private var id: Int?
+    private var currentItem: OfferGetDetailItem?
+    private var historyItem: OfferHistoryDetailGetItem?
     
-    static func instantiateViewController() -> HistoryInfoViewController {
+    static func instantiateViewController(offerId: Int) -> HistoryInfoViewController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HistoryInfoViewController") as! HistoryInfoViewController
-        
+        viewController.id = offerId
+        viewController.isCurrentOrder = false
+        return viewController
+    }
+    
+    static func instantiateNavigationController(offerId: Int) -> UINavigationController {
+        let storyboard = UIStoryboard(name: "History", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "HINavigationController") as! UINavigationController
+        let root = viewController.viewControllers.first as! HistoryInfoViewController
+        root.id = offerId
+        root.isCurrentOrder = true
         return viewController
     }
 
@@ -34,6 +48,8 @@ class HistoryInfoViewController: UIViewController {
         tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
         tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
         tableView.register(CommentCell.nib, forCellReuseIdentifier: CommentCell.identifier)
+        
+        self.fetch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,13 +68,18 @@ extension HistoryInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as? StylistProfileWithStarCell {
+                if self.isCurrentOrder {
+                    cell.setItem(item: self.currentItem)
+                } else {
+                    // set historyItem
+                }
                 return cell
             }
         case 1:
@@ -76,15 +97,11 @@ extension HistoryInfoViewController: UITableViewDataSource {
                 return cell
             }
         case 4:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DistanceInfoCell.identifier, for: indexPath) as? DistanceInfoCell {
-                return cell
-            }
-        case 5:
             if let cell = tableView.dequeueReusableCell(withIdentifier: HairTypeInfoCell.identifier, for: indexPath) as? HairTypeInfoCell {
                 return cell
             }
             
-        case 6:
+        case 5:
             if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell {
                 return cell
             }
@@ -101,11 +118,19 @@ extension HistoryInfoViewController: UITableViewDataSource {
 // MARK: - DoubleButtonCellDelegate
 extension HistoryInfoViewController: DoubleButtonCellDelegate {
     func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
-        self.present(MakeOfferViewController.instantiateViewController(withStylist: 1), animated: true, completion: nil)
+        if self.isCurrentOrder {
+            print("-")
+        } else {
+            self.present(MakeOfferViewController.instantiateViewController(withStylist: 1), animated: true, completion: nil)
+        }
     }
     
     func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {
-        self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
+        if self.isCurrentOrder {
+            print("*")
+        } else {
+            self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
+        }
     }
 }
 
@@ -136,6 +161,41 @@ extension HistoryInfoViewController {
         view.backgroundColor = .white
         view.tag = 99
         self.tableView.addSubview(view)
+    }
+    
+    private func fetch() {
+        if self.isCurrentOrder {
+            self.fetchCurrent()
+        } else {
+            self.fetchHistory()
+        }
+    }
+    
+    private func fetchCurrent() {
+        API.offerGetDetailRequest(id: self.id!) { (result) in
+            if let res = result {
+                self.currentItem = res.item
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func fetchHistory() {
+        API.offerHistoryDetailGetRequest(id: self.id!) { (result) in
+            if let res = result {
+                self.historyItem = res.item
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+}
+
+// MARK: - IBAction
+extension HistoryInfoViewController {
+    
+    @IBAction func backPreView(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

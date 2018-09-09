@@ -41,9 +41,13 @@ class MakeOfferViewController: UIViewController {
     private var offerItem: OfferItem = OfferItem()
     private var isNominated: Bool = false
     
-    static func instantiateViewController() -> UINavigationController {
+    private var parentVC: MainViewController?
+    
+    static func instantiateViewController(parent: MainViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let root = viewController.viewControllers.first as! MakeOfferViewController
+        root.parentVC = parent
         return viewController
     }
     
@@ -115,7 +119,7 @@ extension MakeOfferViewController {
     }
     
     @IBAction func confirmOffer(_ sender: UIButton) {
-        let viewController = ConfirmOfferViewController.instantiateViewController()
+        let viewController = ConfirmOfferViewController.instantiateViewController(parent: self.parentVC!)
         viewController.offerItem = self.offerItem
         self.navigationController?.pushViewController(viewController, animated: true)
     }

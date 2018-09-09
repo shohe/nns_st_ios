@@ -10,7 +10,7 @@ import Foundation
 
 struct OfferHistoryDetailGetResponse: Decodable{
     
-    let item: OfferHistoryDetailGetItem
+    let item: OfferHistoryDetailGetItem?
     
     private enum CodingKeys: String, CodingKey {
         case item = "success"

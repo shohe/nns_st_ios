@@ -53,13 +53,19 @@ extension MainViewController {
     private func fetch() {
         if NNSCore.isWaitState() {
             self.fetchDayCount()
-        } else {
+        } else if NNSCore.madeOfferId() > 0 {
             self.fetchRequests()
         }
     }
     
     private func fetchDayCount() {
-        API.dayCountRequest(today: "2018-08-29 10:20:00") { (result) in
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        timeFormatter.dateFormat = "HH:mm:ss"
+
+        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
             if let res = result {
                 print("あと\(res.count)日")
                 self.requests.removeAll()
@@ -84,17 +90,21 @@ extension MainViewController {
 extension MainViewController {
     
     @IBAction func pressOfferBtn(_ sender: UIButton) {
-        self.present(MakeOfferViewController.instantiateViewController(), animated: true, completion: nil)
+        if NNSCore.madeOfferId() > 0 { // if user did make offer already...
+            self.present(HistoryInfoViewController.instantiateNavigationController(offerId: NNSCore.madeOfferId()), animated: true, completion: nil)
+        } else {
+            self.present(MakeOfferViewController.instantiateViewController(parent: self), animated: true, completion: nil)
+        }
     }
     
     @IBAction func pressHistoryBtn(_ sender: UIButton) {
         self.present(HistoryListViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
-    // will not use charity
-    @IBAction func pressCharityBtn(_ sender: UIButton) {
-        self.present(CharityListViewController.instantiateViewController(), animated: true, completion: nil)
-    }
+//    // will not use charity
+//    @IBAction func pressCharityBtn(_ sender: UIButton) {
+//        self.present(CharityListViewController.instantiateViewController(), animated: true, completion: nil)
+//    }
     
     @IBAction func pressMyReviewBtn(_ sender: UIButton) {
         self.present(MyReviewViewController.instantiateViewController(), animated: true, completion: nil)
@@ -161,6 +171,16 @@ extension MainViewController: ConfirmRequestViewControllerDelegate {
         layout.sideItemAlpha = 1.0
         
         self.fetch()
+    }
+    
+}
+
+
+extension MainViewController: ConfirmOfferViewControllerDelegate {
+    
+    func confirmOfferViewController(_ didCreateOffer: Offer) {
+        NNSCore.setMadeOfferId(didCreateOffer.id!)
+        print("waiting request from stylist...")
     }
     
 }

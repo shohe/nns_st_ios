@@ -94,8 +94,8 @@ extension StarView {
     }
     
     private func colorChange(_count: Int, roop: Int, isReversed: Bool) {
-        let count = (_count > 10) ? _count - 10 : _count
-        let isHighlighted = (_count > 10) ? true : false
+        let count = (_count >= 10) ? _count - 10 : _count
+        let isHighlighted = (_count >= 10) ? true : false
         
         if isReversed {
             let cnt = 5 - count

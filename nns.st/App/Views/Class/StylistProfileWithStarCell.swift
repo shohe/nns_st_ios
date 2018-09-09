@@ -38,3 +38,16 @@ class StylistProfileWithStarCell: UITableViewCell {
     }
     
 }
+
+
+extension StylistProfileWithStarCell {
+    
+    func setItem(item: OfferGetDetailItem?) {
+        if let i = item {
+            self.thumbnailView.loadImage(urlString: i.cxImageUrl)
+            self.statusComment.text = "ステータスコメント"
+            self.starView.setStar(number: 10)
+        }
+    }
+    
+}

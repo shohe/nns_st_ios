@@ -77,7 +77,7 @@ extension HistoryListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(), animated: true)
+        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: NNSCore.madeOfferId()), animated: true)
     }
     
 }

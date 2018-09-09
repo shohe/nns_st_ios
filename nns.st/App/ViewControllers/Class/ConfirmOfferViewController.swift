@@ -8,20 +8,25 @@
 
 import UIKit
 
+protocol ConfirmOfferViewControllerDelegate {
+    func confirmOfferViewController(_ didCreateOffer: Offer)
+}
+
 class ConfirmOfferViewController: UIViewController {
     
     var offerItem: OfferItem?
     var loadingView: LoadingView?
+    var delegate: ConfirmOfferViewControllerDelegate?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var commentTextView: UITextView!
     
     
-    static func instantiateViewController() -> ConfirmOfferViewController {
+    static func instantiateViewController(parent: MainViewController) -> ConfirmOfferViewController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ConfirmOfferViewController") as! ConfirmOfferViewController
-        
+        viewController.delegate = parent
         return viewController
     }
     
@@ -217,7 +222,8 @@ extension ConfirmOfferViewController {
             }) { (complete) in
                 /* send this offer to server */
                 API.offerCreateRequest(offer: offer, handler: { (result) in
-                    if result != nil {
+                    if let res = result {
+                        self.delegate?.confirmOfferViewController(res.item)
                         self.dismiss(animated: true, completion: nil)
                     } else {
                         print("create offer error: \(offer)")

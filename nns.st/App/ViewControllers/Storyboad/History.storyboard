@@ -52,10 +52,27 @@
             </objects>
             <point key="canvasLocation" x="501.60000000000002" y="131.78410794602701"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rmE-yb-JSW">
+            <objects>
+                <navigationController storyboardIdentifier="HINavigationController" id="KDy-SW-Vg6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="2Wv-PT-ZV9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ynw-Ug-8Zz" kind="relationship" relationship="rootViewController" id="qK4-cj-zAI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdb-Bw-Ny2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="132"/>
+        </scene>
         <!--History Info View Controller-->
         <scene sceneID="UAX-Of-dA8">
             <objects>
-                <viewController storyboardIdentifier="HistoryInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ynw-Ug-8Zz" customClass="HistoryInfoViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ynw-Ug-8Zz" customClass="HistoryInfoViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ok-C4-zRT" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,6 +103,14 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="sjp-te-W4R">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IFX-s8-B7t">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backPreView:" destination="Ynw-Ug-8Zz" id="gyg-Cg-PlY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="yOu-Ar-9FT" id="zf8-8H-5Cd"/>
@@ -93,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0v-qF-aGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="131.78410794602701"/>
+            <point key="canvasLocation" x="2129" y="132"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="rme-Ex-wna">
@@ -179,6 +204,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izu-Zb-Qsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-296" y="132"/>
+        </scene>
+        <!--History Info View Controller-->
+        <scene sceneID="1eK-vS-XID">
+            <objects>
+                <viewController storyboardIdentifier="HistoryInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qvE-an-u4R" customClass="HistoryInfoViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cN1-FQ-1yS" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cb4-Vg-oz8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qvE-an-u4R" id="wDv-2f-rcC"/>
+                                    <outlet property="delegate" destination="qvE-an-u4R" id="po0-qz-CZ5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Cb4-Vg-oz8" secondAttribute="bottom" id="2IZ-i0-Fez"/>
+                            <constraint firstItem="7Je-QP-UT3" firstAttribute="trailing" secondItem="Cb4-Vg-oz8" secondAttribute="trailing" id="DZF-KN-5cd"/>
+                            <constraint firstItem="Cb4-Vg-oz8" firstAttribute="leading" secondItem="7Je-QP-UT3" secondAttribute="leading" id="eVz-Mo-KVi"/>
+                            <constraint firstItem="Cb4-Vg-oz8" firstAttribute="top" secondItem="7Je-QP-UT3" secondAttribute="top" id="q8d-gf-Jqt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Je-QP-UT3"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Cb4-Vg-oz8" id="cAR-7b-TyP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w7K-Zm-VoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2830" y="132"/>
         </scene>
     </scenes>
 </document>

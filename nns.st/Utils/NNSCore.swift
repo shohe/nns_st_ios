@@ -11,6 +11,7 @@ import Foundation
 enum NNSDataKey: String {
     case authToken = "AuthToken"
     case isWaitState = "WaitState"
+    case isMadeOfferId = "MadeOfferId"
 }
 
 // MARK: - Token
@@ -35,6 +36,20 @@ extension NNSCore {
     
     class func setWaitState(_ isWait: Bool) {
         UserDefaults.standard.set(isWait, forKey: NNSDataKey.isWaitState.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+    
+}
+
+// MARK: - MadeOfferState
+extension NNSCore {
+    
+    class func madeOfferId() -> Int {
+        return UserDefaults.standard.integer(forKey: NNSDataKey.isMadeOfferId.rawValue)
+    }
+    
+    class func setMadeOfferId(_ id: Int) {
+        UserDefaults.standard.set(id, forKey: NNSDataKey.isMadeOfferId.rawValue)
         UserDefaults.standard.synchronize()
     }
     
