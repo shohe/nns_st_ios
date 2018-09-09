@@ -10,8 +10,10 @@ import Foundation
 
 enum NNSDataKey: String {
     case authToken = "AuthToken"
+    case isWaitState = "WaitState"
 }
 
+// MARK: - Token
 class NNSCore {
     class func authToken() -> String? {
         return UserDefaults.standard.string(forKey: NNSDataKey.authToken.rawValue)
@@ -22,4 +24,18 @@ class NNSCore {
         UserDefaults.standard.set(token!, forKey: NNSDataKey.authToken.rawValue)
         UserDefaults.standard.synchronize()
     }
+}
+
+// MARK: - WaitState
+extension NNSCore {
+    
+    class func isWaitState() -> Bool {
+        return UserDefaults.standard.bool(forKey: NNSDataKey.isWaitState.rawValue)
+    }
+    
+    class func setWaitState(_ isWait: Bool) {
+        UserDefaults.standard.set(isWait, forKey: NNSDataKey.isWaitState.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+    
 }

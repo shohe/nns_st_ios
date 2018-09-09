@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(ThreeColumnCell.nib, forCellWithReuseIdentifier: ThreeColumnCell.identifier)
-        fetchRequests()
+        fetch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +49,24 @@ class MainViewController: UIViewController {
 
 // MARK: - private
 extension MainViewController {
+    
+    private func fetch() {
+        if NNSCore.isWaitState() {
+            self.fetchDayCount()
+        } else {
+            self.fetchRequests()
+        }
+    }
+    
+    private func fetchDayCount() {
+        API.dayCountRequest(today: "2018-08-29 10:20:00") { (result) in
+            if let res = result {
+                print("あと\(res.count)日")
+                self.requests.removeAll()
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     private func fetchRequests() {
         API.requestGetRequest { (result) in
@@ -93,7 +111,7 @@ extension MainViewController: UICollectionViewDelegate {
             self.present(MyPageViewController.instantiateViewController(), animated: true, completion: nil)
         } else {
             let item = requests[indexPath.row-1] // -1 for mypage
-            self.present(ConfirmRequestViewController.instantiateViewController(request: item), animated: true, completion: nil)
+            self.present(ConfirmRequestViewController.instantiateViewController(request: item, parent: self), animated: true, completion: nil)
         }
     }
     
@@ -120,9 +138,29 @@ extension MainViewController: UICollectionViewDataSource {
             let item = requests[indexPath.row-1]
             cell.nameLabel.isHidden = false
             cell.nameLabel.text = item.name
+            if let url = item.imageUrl {
+                cell.thumbnailView.loadImage(urlString: url)
+            }
         }
         
         return cell
+    }
+    
+}
+
+
+// MARK: - ConfirmRequestViewControllerDelegate
+extension MainViewController: ConfirmRequestViewControllerDelegate {
+    
+    func confirmRequestView(_ didMakeReservation: Bool) {
+        NNSCore.setWaitState(didMakeReservation)
+        
+        // reset layout
+        let layout:CarouselFlowLayout = self.collectionView.collectionViewLayout as! CarouselFlowLayout
+        layout.sideItemScale = 1.0
+        layout.sideItemAlpha = 1.0
+        
+        self.fetch()
     }
     
 }

@@ -23,10 +23,22 @@ class ThreeColumnCell: UICollectionViewCell {
     }
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var thumbnailView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.initThumbnail()
+    }
+    
+}
+
+
+// MARK: - private
+extension ThreeColumnCell {
+    
+    private func initThumbnail() {
+        let sideMargin: CGFloat = 32 * 2
+        thumbnailView.layer.cornerRadius = (self.frame.width - sideMargin) / 4
     }
     
 }

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                window.rootViewController = MainViewController.instantiateViewController()
 //            }
 //        }
-        
+        NNSCore.setWaitState(false)
         // If user is loged in already, go to MainView.
         if NNSCore.authToken() != nil {
             if let window = window {

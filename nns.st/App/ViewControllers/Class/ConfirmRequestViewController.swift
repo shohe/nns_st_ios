@@ -10,18 +10,26 @@ import UIKit
 import MapKit
 
 
+protocol ConfirmRequestViewControllerDelegate {
+    func confirmRequestView(_ didMakeReservation: Bool)
+}
+
 class ConfirmRequestViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     private var request: RequestGetItem!
     private var requestItem: RequestDetailGetResponse!
+    private var loadingView: LoadingView?
     
-    static func instantiateViewController(request: RequestGetItem) -> UINavigationController {
+    var delegate: ConfirmRequestViewControllerDelegate?
+    
+    static func instantiateViewController(request: RequestGetItem, parent: UIViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
         let root = viewController.viewControllers.first as! ConfirmRequestViewController
         root.request = request
+        root.delegate = parent as? ConfirmRequestViewControllerDelegate
         return viewController
     }
     
@@ -202,7 +210,25 @@ extension ConfirmRequestViewController: UITableViewDataSource {
 extension ConfirmRequestViewController: PriceButtonCellDelegate {
     
     func priceButtonCell(_ didSelectedButton: PriceButton) {
-        dismiss(animated: true, completion: nil)
+        self.loadingView = LoadingView(frame: self.view.bounds)
+        self.view.addSubview(self.loadingView!)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.loadingView!.alpha = 1
+        }) { (complete) in
+            API.requestTakeRequest(id: self.request.requestId, handler: { (result) in
+                if let res = result {
+                    if res.isSuccess {
+                        self.delegate?.confirmRequestView(res.isSuccess)
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        print("take request: error")
+                    }
+                } else {
+                    print("take request: error")
+                }
+            })
+        }
     }
     
 }
