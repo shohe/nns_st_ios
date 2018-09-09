@@ -24,6 +24,7 @@
 		09402D052143A18600082F4F /* UserImageUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D042143A18600082F4F /* UserImageUploadResponse.swift */; };
 		09402D072143A2F900082F4F /* UserImageUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D062143A2F900082F4F /* UserImageUploadRequest.swift */; };
 		09402D092143C0BD00082F4F /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D082143C0BD00082F4F /* UIImageView+loadImage.swift */; };
+		09402D0B2144C2D800082F4F /* CurrencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D0A2144C2D800082F4F /* CurrencyType.swift */; };
 		0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */; };
 		0952F48A213BC70700B5BCF3 /* RequestTakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */; };
 		0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */; };
@@ -203,6 +204,7 @@
 		09402D042143A18600082F4F /* UserImageUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageUploadResponse.swift; sourceTree = "<group>"; };
 		09402D062143A2F900082F4F /* UserImageUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageUploadRequest.swift; sourceTree = "<group>"; };
 		09402D082143C0BD00082F4F /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
+		09402D0A2144C2D800082F4F /* CurrencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyType.swift; sourceTree = "<group>"; };
 		0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeResponse.swift; sourceTree = "<group>"; };
 		0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeRequest.swift; sourceTree = "<group>"; };
 		0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCountResponse.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 				09BB194B212AA535006562D0 /* OfferItem.swift */,
 				09BB194D212AA6EA006562D0 /* HairType.swift */,
 				09402D0221439EC000082F4F /* MypageTextFieldType.swift */,
+				09402D0A2144C2D800082F4F /* CurrencyType.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -1052,6 +1055,7 @@
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
 				09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */,
 				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
+				09402D0B2144C2D800082F4F /* CurrencyType.swift in Sources */,
 				09A7B7352138EA0F0084E2C9 /* EmailExistRequest.swift in Sources */,
 				0952F4A2213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift in Sources */,
 				09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */,

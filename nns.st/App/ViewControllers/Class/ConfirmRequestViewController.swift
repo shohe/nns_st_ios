@@ -144,7 +144,7 @@ extension ConfirmRequestViewController: UITableViewDataSource {
                 cell.selectionStyle = .none
                 cell.delegate = self as PriceButtonCellDelegate
                 if let item = self.requestItem {
-                    cell.priceLabel.text = "¥\(item.request.price)"
+                    cell.setPrice(price: item.request.price, currency: .JPY)
                 }
                 return cell
             }
