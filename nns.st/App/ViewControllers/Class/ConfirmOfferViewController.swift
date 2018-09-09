@@ -165,6 +165,38 @@ extension ConfirmOfferViewController {
         })
     }
     
+    private func createOffer() -> Offer? {
+        if let item = self.offerItem {
+            if let menu = item.menu, let price = item.price, let dateTime = castDateToString(date: item.datetime), let hairType = item.hairType {
+                
+                var offer = Offer(menu: menu, price: Float(price), dateTime: dateTime, hairType: hairType)
+                offer.comment = self.commentTextView.text
+                
+                if let stylistId = item.stylistId {
+                    offer.stylistId = stylistId
+                    return offer
+                } else {
+                    if let range = item.distance, let location = item.location {
+                        offer.distanceRange = Float(range)
+                        offer.fromLocationLat = location.latitude
+                        offer.fromLocationLng = location.longitude
+                        return offer
+                    }
+                }
+            }
+        }
+        return nil
+    }
+    
+    private func castDateToString(date: Date?) -> String? {
+        if let date = date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
+    
 }
 
 
@@ -179,15 +211,20 @@ extension ConfirmOfferViewController {
         loadingView = LoadingView(frame: self.view.bounds)
         self.view.addSubview(loadingView!)
         
-        UIView.animate(withDuration: 0.3, animations: {
-            self.loadingView!.alpha = 1
-        }) { (complete) in
-            /* send this offer to server */
-            // here is just sample. remove after all.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.dismiss(animated: true, completion: nil)
+        if let offer = self.createOffer() {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.loadingView!.alpha = 1
+            }) { (complete) in
+                /* send this offer to server */
+                API.offerCreateRequest(offer: offer, handler: { (result) in
+                    if result != nil {
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        print("create offer error: \(offer)")
+                    }
+                })
+                
             }
-            
         }
     }
     
