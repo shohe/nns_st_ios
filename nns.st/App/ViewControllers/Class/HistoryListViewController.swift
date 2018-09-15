@@ -12,6 +12,8 @@ class HistoryListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var historyItems: [OfferHistoryListGetItem] = []
+    
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
@@ -27,6 +29,8 @@ class HistoryListViewController: UIViewController {
         
         // register cells
         tableView.register(HistoryCell.nib, forCellReuseIdentifier: HistoryCell.identifier)
+        
+        self.fetch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +38,21 @@ class HistoryListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+
+// MARK: - private
+extension HistoryListViewController {
+    
+    private func fetch() {
+        API.offerHistoryListGetRequest { (result) in
+            if let res = result {
+                self.historyItems = res.item
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
 
 
@@ -55,12 +74,13 @@ extension HistoryListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.historyItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: HistoryCell.identifier, for: indexPath) as? HistoryCell {
             cell.selectionStyle = .none
+            cell.setItem(item: self.historyItems[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -77,7 +97,8 @@ extension HistoryListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: NNSCore.madeOfferId()), animated: true)
+        let id = self.historyItems[indexPath.row].id
+        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: id), animated: true)
     }
     
 }

@@ -17,6 +17,7 @@ class HistoryInfoViewController: UIViewController {
     private var currentItem: OfferGetDetailItem?
     private var historyItem: OfferHistoryDetailGetItem?
     private var loadingView: LoadingView?
+    private var stylistStar: Int?
     
     static func instantiateViewController(offerId: Int) -> HistoryInfoViewController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
@@ -80,7 +81,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
                 if self.isCurrentOrder {
                     cell.setItem(item: self.currentItem)
                 } else {
-                    // set historyItem
+                    cell.setItem(item: self.historyItem, star: self.stylistStar)
                 }
                 return cell
             }
@@ -103,7 +104,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
                 if self.isCurrentOrder {
                     cell.setItem(item: self.currentItem)
                 } else {
-                    // set historyItem
+                    cell.setItem(item: self.historyItem)
                 }
                 return cell
             }
@@ -112,7 +113,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
                 if self.isCurrentOrder {
                     cell.setItem(item: self.currentItem)
                 } else {
-                    // set historyItem
+                    cell.setItem(item: self.historyItem)
                 }
                 return cell
             }
@@ -121,7 +122,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
                 if self.isCurrentOrder {
                     cell.setItem(item: self.currentItem)
                 } else {
-                    // set historyItem
+                    cell.setItem(item: self.historyItem)
                 }
                 return cell
             }
@@ -131,7 +132,7 @@ extension HistoryInfoViewController: UITableViewDataSource {
                 if self.isCurrentOrder {
                     cell.setItem(item: self.currentItem)
                 } else {
-                    // set historyItem
+                    cell.setItem(item: self.historyItem)
                 }
                 return cell
             }
@@ -231,6 +232,7 @@ extension HistoryInfoViewController {
         API.offerHistoryDetailGetRequest(id: self.id!) { (result) in
             if let res = result {
                 self.historyItem = res.item
+                self.stylistStar = res.star
                 self.tableView.reloadData()
             }
         }

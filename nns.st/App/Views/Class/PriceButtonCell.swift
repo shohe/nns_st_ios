@@ -50,28 +50,7 @@ class PriceButtonCell: UITableViewCell {
 extension PriceButtonCell {
     
     func setPrice(price: Float, currency: CurrencyType) {
-        let num = NSNumber(value: price)
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = ","
-        formatter.groupingSize = 3
-        var priceText = formatter.string(from: num)
-        if let pt = priceText {
-            switch currency {
-            case .JPY:
-                priceText = ("\(currency.rawValue)\(pt)")
-                break
-            case .USD:
-                priceText = ("\(currency.rawValue)\(pt)")
-                break
-            case .CAD:
-                priceText = ("\(currency.rawValue)\(pt)")
-                break
-            }
-            self.priceLabel.text = priceText
-        } else {
-            self.priceLabel.text = "\(price)"
-        }
+        self.priceLabel.text = PriceLabelMaker.addCarrency(price: price, currency: .JPY, isHiddenSymbol: true)
     }
     
 }

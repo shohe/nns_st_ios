@@ -44,14 +44,25 @@ extension StylistProfileWithStarCell {
     
     func setItem(item: OfferGetDetailItem?) {
         if let i = item {
-            self.thumbnailView.loadImage(urlString: i.cxImageUrl)
+            if let url = i.cxImageUrl { self.thumbnailView.loadImage(urlString: url) }
             self.statusComment.text = i.cxStatusComment
             if let star = i.cxStar {
                 self.starView.setStar(number: star + 10)
             } else {
                 self.starView.setStar(number: 10)
             }
-            
+        }
+    }
+    
+    func setItem(item: OfferHistoryDetailGetItem?, star: Int?) {
+        if let i = item {
+            if let url = i.imageUrl { self.thumbnailView.loadImage(urlString: url) }
+            self.statusComment.text = i.statusComment
+            if let _star = star {
+                self.starView.setStar(number: _star + 10)
+            } else {
+                self.starView.setStar(number: 10)
+            }
         }
     }
     

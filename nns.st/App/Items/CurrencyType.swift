@@ -10,6 +10,13 @@ import Foundation
 
 enum CurrencyType: String {
     case JPY = "¥"
-    case USD = "US$"
-    case CAD = "CA$"
+    case USD, CAD = "$"
+    
+    func symbol() -> String {
+        switch self {
+            case .JPY: return "JPY"
+            case .USD: return "USD"
+            case .CAD: return "CAD"
+        }
+    }
 }

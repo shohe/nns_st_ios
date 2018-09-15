@@ -11,9 +11,11 @@ import Foundation
 struct OfferHistoryDetailGetResponse: Decodable{
     
     let item: OfferHistoryDetailGetItem?
+    let star: Int
     
     private enum CodingKeys: String, CodingKey {
         case item = "success"
+        case star = "star"
     }
 }
 

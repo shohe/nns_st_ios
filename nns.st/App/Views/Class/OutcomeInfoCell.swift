@@ -55,6 +55,15 @@ extension OutcomeInfoCell {
         }
     }
     
+    func setItem(item: OfferHistoryDetailGetItem?) {
+        if let i = item {
+            self.menuLabel.text = i.menu
+            self.priceLabel.text = self.makePriceLabel(price: CGFloat(i.price))
+            self.charityPriceLabel.text = self.makePriceLabel(price: CGFloat(i.price)*charityRate)
+            self.serviceFeeLabel.text = self.makePriceLabel(price: CGFloat(i.price)*serviceFeeRate)
+        }
+    }
+    
     func setEachValue(item: OfferItem?) {
         if let item = item {
             menuLabel.text = item.menu

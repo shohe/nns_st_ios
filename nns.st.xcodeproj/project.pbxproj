@@ -48,6 +48,7 @@
 		096432D0214CD35D007A87A8 /* SingleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432CF214CD35D007A87A8 /* SingleButtonCell.swift */; };
 		096432D2214CDF78007A87A8 /* OfferCancelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */; };
 		096432D4214CDFBF007A87A8 /* OfferCancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */; };
+		096432D6214CEE93007A87A8 /* PriceLabelMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -232,6 +233,7 @@
 		096432CF214CD35D007A87A8 /* SingleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonCell.swift; sourceTree = "<group>"; };
 		096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelResponse.swift; sourceTree = "<group>"; };
 		096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelRequest.swift; sourceTree = "<group>"; };
+		096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelMaker.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 			children = (
 				09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */,
 				09A7B72D2138D0B60084E2C9 /* NNSCore.swift */,
+				096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1013,6 +1016,7 @@
 				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
 				09BB195F212AD550006562D0 /* DistanceInfoCell.swift in Sources */,
+				096432D6214CEE93007A87A8 /* PriceLabelMaker.swift in Sources */,
 				09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */,
 				09FDE361212FD4A200A823DA /* MypageMailAddressCell.swift in Sources */,
 				09BB1979212D266C006562D0 /* DoubleButtonCell.swift in Sources */,

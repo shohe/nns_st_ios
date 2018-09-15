@@ -22,7 +22,7 @@ struct OfferGetDetailItem: Decodable {
     let id: Int
     let cxId: Int
     let cxName: String
-    let cxImageUrl: String
+    let cxImageUrl: String?
     let cxStatusComment: String
     let cxStar: Int?
     let menu: String

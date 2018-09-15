@@ -47,4 +47,10 @@ extension CommentCell {
         }
     }
     
+    func setItem(item: OfferHistoryDetailGetItem?) {
+        if let i = item {
+            comment.text = i.comment
+        }
+    }
+    
 }

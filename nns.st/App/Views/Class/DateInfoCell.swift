@@ -46,6 +46,12 @@ extension DateInfoCell {
         }
     }
     
+    func setItem(item: OfferHistoryDetailGetItem?) {
+        if let i = item {
+            dateLabel.text = self.fixFormat(isoDate: i.dateTime)
+        }
+    }
+    
     func setEachValue(item: OfferItem?) {
         if let item = item {
             setDateTime(date: item.datetime)
