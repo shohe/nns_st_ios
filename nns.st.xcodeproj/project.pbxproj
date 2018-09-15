@@ -46,6 +46,8 @@
 		0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */; };
 		096432CE214CD29F007A87A8 /* SingleButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096432CD214CD29F007A87A8 /* SingleButtonCell.xib */; };
 		096432D0214CD35D007A87A8 /* SingleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432CF214CD35D007A87A8 /* SingleButtonCell.swift */; };
+		096432D2214CDF78007A87A8 /* OfferCancelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */; };
+		096432D4214CDFBF007A87A8 /* OfferCancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -228,6 +230,8 @@
 		0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnReviewGetRequest.swift; sourceTree = "<group>"; };
 		096432CD214CD29F007A87A8 /* SingleButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleButtonCell.xib; sourceTree = "<group>"; };
 		096432CF214CD35D007A87A8 /* SingleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonCell.swift; sourceTree = "<group>"; };
+		096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelResponse.swift; sourceTree = "<group>"; };
+		096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelRequest.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -482,6 +486,7 @@
 				0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */,
 				0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */,
 				09402D062143A2F900082F4F /* UserImageUploadRequest.swift */,
+				096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				0952F4A5213C0CA700B5BCF3 /* ReviewCreateResponse.swift */,
 				0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */,
 				09402D042143A18600082F4F /* UserImageUploadResponse.swift */,
+				096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1065,6 +1071,7 @@
 				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
 				09402D0B2144C2D800082F4F /* CurrencyType.swift in Sources */,
 				09A7B7352138EA0F0084E2C9 /* EmailExistRequest.swift in Sources */,
+				096432D2214CDF78007A87A8 /* OfferCancelResponse.swift in Sources */,
 				0952F4A2213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift in Sources */,
 				09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */,
 				09A7B74B213A60EF0084E2C9 /* UserGetResponse.swift in Sources */,
@@ -1076,6 +1083,7 @@
 				09A7B741213929070084E2C9 /* LoginRequest.swift in Sources */,
 				09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
+				096432D4214CDFBF007A87A8 /* OfferCancelRequest.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
 				0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */,
 				09FDE356212FB4C900A823DA /* MyPageViewController.swift in Sources */,

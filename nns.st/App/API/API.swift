@@ -281,6 +281,23 @@ extension API {
         }
     }
     
+    /** return OfferCancelResponse
+     *   API.offerCancelRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func offerCancelRequest(id: Int, handler: @escaping (OfferCancelResponse?) -> Void){
+        Session.send(API.OfferCancelRequest(id: id)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: offerHistoryDetailGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
 }
 
 
