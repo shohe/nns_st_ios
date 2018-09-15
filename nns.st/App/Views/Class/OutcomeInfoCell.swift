@@ -13,9 +13,10 @@ class OutcomeInfoCell: UITableViewCell {
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var charityPriceLabel: UILabel!
-    @IBOutlet weak var charityTitle: UILabel!
+    @IBOutlet weak var serviceFeeLabel: UILabel!
     
     let charityRate: CGFloat = 0.05
+    let serviceFeeRate: CGFloat = 0.1
     
     static var identifier:String {
         get{
@@ -44,6 +45,15 @@ class OutcomeInfoCell: UITableViewCell {
 
 
 extension OutcomeInfoCell {
+    
+    func setItem(item: OfferGetDetailItem?) {
+        if let i = item {
+            self.menuLabel.text = i.menu
+            self.priceLabel.text = self.makePriceLabel(price: CGFloat(i.price))
+            self.charityPriceLabel.text = self.makePriceLabel(price: CGFloat(i.price)*charityRate)
+            self.serviceFeeLabel.text = self.makePriceLabel(price: CGFloat(i.price)*serviceFeeRate)
+        }
+    }
     
     func setEachValue(item: OfferItem?) {
         if let item = item {

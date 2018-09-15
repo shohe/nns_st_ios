@@ -40,10 +40,23 @@ class DateInfoCell: UITableViewCell {
 
 extension DateInfoCell {
     
+    func setItem(item: OfferGetDetailItem?) {
+        if let i = item {
+            dateLabel.text = self.fixFormat(isoDate: i.dateTime)
+        }
+    }
+    
     func setEachValue(item: OfferItem?) {
         if let item = item {
             setDateTime(date: item.datetime)
         }
+    }
+    
+    private func fixFormat(isoDate: String) -> String {
+        let dateArray = isoDate.components(separatedBy: " ")
+        let timeArray = dateArray[1].components(separatedBy: ":")
+        let fixed = "\(dateArray[0])  \(timeArray[0]) : \(timeArray[1]) ~"
+        return fixed
     }
     
     private func setDateTime(date: Date?) {

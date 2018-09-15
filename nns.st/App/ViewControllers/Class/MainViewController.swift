@@ -70,6 +70,11 @@ extension MainViewController {
                 print("あと\(res.count)日")
                 self.requests.removeAll()
                 self.collectionView.reloadData()
+            } else {
+                print("期限過ぎた")
+                NNSCore.setMadeOfferId(0)
+                NNSCore.setWaitState(false)
+                self.fetch()
             }
         }
     }

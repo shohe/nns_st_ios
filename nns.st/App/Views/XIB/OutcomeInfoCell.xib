@@ -51,7 +51,7 @@
                             <constraint firstAttribute="height" constant="1" id="AfD-jv-bNE"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="寄付金額" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3L-2K-Bgs">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="寄付金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3L-2K-Bgs">
                         <rect key="frame" x="34" y="75" width="264" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="Y8C-p1-NFz"/>
@@ -68,8 +68,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="寄付先" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-gm-cqc">
-                        <rect key="frame" x="34" y="94" width="59" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="サービス手数料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-gm-cqc">
+                        <rect key="frame" x="34" y="94" width="264.5" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="kFW-o4-Lsh"/>
                         </constraints>
@@ -77,8 +77,8 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ナイジェリアから - 命を守る画期的な治療 -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BP-NN-CjI">
-                        <rect key="frame" x="101" y="94" width="243" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0JPY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BP-NN-CjI">
+                        <rect key="frame" x="306.5" y="94" width="37.5" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="0UP-Gp-RvD"/>
                         </constraints>
@@ -114,9 +114,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="charityPriceLabel" destination="6LC-0z-jy0" id="k1v-Px-nEn"/>
-                <outlet property="charityTitle" destination="6BP-NN-CjI" id="jNp-3N-gti"/>
                 <outlet property="menuLabel" destination="gWb-F7-xDx" id="Hdt-34-1eO"/>
                 <outlet property="priceLabel" destination="sDe-Zj-Kwx" id="p2O-91-brm"/>
+                <outlet property="serviceFeeLabel" destination="6BP-NN-CjI" id="q8R-qn-288"/>
             </connections>
             <point key="canvasLocation" x="56" y="108"/>
         </tableViewCell>

@@ -42,6 +42,14 @@ class HairTypeInfoCell: UITableViewCell {
 
 extension HairTypeInfoCell {
     
+    func setItem(item: OfferGetDetailItem?) {
+        if let i = item {
+            let type = HairType(rawValue: i.hairType)
+            setTitle(type: type)
+            setImage(type: type)
+        }
+    }
+    
     func setEachValue(item: OfferItem?) {
         if let item = item {
             setTitle(type: item.hairType)

@@ -45,8 +45,13 @@ extension StylistProfileWithStarCell {
     func setItem(item: OfferGetDetailItem?) {
         if let i = item {
             self.thumbnailView.loadImage(urlString: i.cxImageUrl)
-            self.statusComment.text = "ステータスコメント"
-            self.starView.setStar(number: 10)
+            self.statusComment.text = i.cxStatusComment
+            if let star = i.cxStar {
+                self.starView.setStar(number: star + 10)
+            } else {
+                self.starView.setStar(number: 10)
+            }
+            
         }
     }
     

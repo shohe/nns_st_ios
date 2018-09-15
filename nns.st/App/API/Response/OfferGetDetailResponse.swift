@@ -23,6 +23,8 @@ struct OfferGetDetailItem: Decodable {
     let cxId: Int
     let cxName: String
     let cxImageUrl: String
+    let cxStatusComment: String
+    let cxStar: Int?
     let menu: String
     let price: Float
     let dateTime: String
@@ -38,6 +40,8 @@ struct OfferGetDetailItem: Decodable {
         case cxId = "cxId"
         case cxName = "cxName"
         case cxImageUrl = "cxImageUrl"
+        case cxStatusComment = "cxStatusComment"
+        case cxStar = "average"
         case menu = "menu"
         case price = "price"
         case dateTime = "dateTime"

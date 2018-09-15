@@ -90,19 +90,39 @@ extension HistoryInfoViewController: UITableViewDataSource {
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: OutcomeInfoCell.identifier, for: indexPath) as? OutcomeInfoCell {
+                if self.isCurrentOrder {
+                    cell.setItem(item: self.currentItem)
+                } else {
+                    // set historyItem
+                }
                 return cell
             }
         case 3:
             if let cell = tableView.dequeueReusableCell(withIdentifier: DateInfoCell.identifier, for: indexPath) as? DateInfoCell {
+                if self.isCurrentOrder {
+                    cell.setItem(item: self.currentItem)
+                } else {
+                    // set historyItem
+                }
                 return cell
             }
         case 4:
             if let cell = tableView.dequeueReusableCell(withIdentifier: HairTypeInfoCell.identifier, for: indexPath) as? HairTypeInfoCell {
+                if self.isCurrentOrder {
+                    cell.setItem(item: self.currentItem)
+                } else {
+                    // set historyItem
+                }
                 return cell
             }
             
         case 5:
             if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell {
+                if self.isCurrentOrder {
+                    cell.setItem(item: self.currentItem)
+                } else {
+                    // set historyItem
+                }
                 return cell
             }
         default:
