@@ -44,6 +44,8 @@
 		0952F4A8213C0D2700B5BCF3 /* ReviewCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */; };
 		0952F4AA213C12BE00B5BCF3 /* OwnReviewGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */; };
 		0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */; };
+		096432CE214CD29F007A87A8 /* SingleButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096432CD214CD29F007A87A8 /* SingleButtonCell.xib */; };
+		096432D0214CD35D007A87A8 /* SingleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432CF214CD35D007A87A8 /* SingleButtonCell.swift */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -224,6 +226,8 @@
 		0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCreateRequest.swift; sourceTree = "<group>"; };
 		0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnReviewGetResponse.swift; sourceTree = "<group>"; };
 		0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnReviewGetRequest.swift; sourceTree = "<group>"; };
+		096432CD214CD29F007A87A8 /* SingleButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleButtonCell.xib; sourceTree = "<group>"; };
+		096432CF214CD35D007A87A8 /* SingleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonCell.swift; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -636,6 +640,7 @@
 				09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */,
 				09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */,
 				0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */,
+				096432CF214CD35D007A87A8 /* SingleButtonCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -690,6 +695,7 @@
 				09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */,
 				09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */,
 				0967AFA021376CF1002D980F /* ReviewAverageCell.xib */,
+				096432CD214CD29F007A87A8 /* SingleButtonCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -832,6 +838,7 @@
 				09BB196E212C571D006562D0 /* History.storyboard in Resources */,
 				09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */,
 				09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */,
+				096432CE214CD29F007A87A8 /* SingleButtonCell.xib in Resources */,
 				09FDE362212FD4A200A823DA /* MypageMailAddressCell.xib in Resources */,
 				0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
@@ -988,6 +995,7 @@
 				09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */,
 				09BB1976212D1356006562D0 /* HistoryInfoViewController.swift in Sources */,
 				09DDAAC421231B5A009C6428 /* CarouselFlowLayout.swift in Sources */,
+				096432D0214CD35D007A87A8 /* SingleButtonCell.swift in Sources */,
 				09BB1970212C57EE006562D0 /* HistoryListViewController.swift in Sources */,
 				09A7B747213A46720084E2C9 /* UserGetRequest.swift in Sources */,
 				09402D092143C0BD00082F4F /* UIImageView+loadImage.swift in Sources */,

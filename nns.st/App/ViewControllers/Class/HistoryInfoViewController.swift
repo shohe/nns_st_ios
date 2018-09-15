@@ -43,6 +43,7 @@ class HistoryInfoViewController: UIViewController {
         // register cells
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(DoubleButtonCell.nib, forCellReuseIdentifier: DoubleButtonCell.identifier)
+        tableView.register(SingleButtonCell.nib, forCellReuseIdentifier: SingleButtonCell.identifier)
         tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
         tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
         tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
@@ -83,10 +84,18 @@ extension HistoryInfoViewController: UITableViewDataSource {
                 return cell
             }
         case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: DoubleButtonCell.identifier, for: indexPath) as? DoubleButtonCell {
-                cell.selectionStyle = .none
-                cell.delegate = self as DoubleButtonCellDelegate
-                return cell
+            if self.isCurrentOrder {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: SingleButtonCell.identifier, for: indexPath) as? SingleButtonCell {
+                    cell.selectionStyle = .none
+                    cell.delegate = self
+                    return cell
+                }
+            } else {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: DoubleButtonCell.identifier, for: indexPath) as? DoubleButtonCell {
+                    cell.selectionStyle = .none
+                    cell.delegate = self
+                    return cell
+                }
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: OutcomeInfoCell.identifier, for: indexPath) as? OutcomeInfoCell {
@@ -138,20 +147,21 @@ extension HistoryInfoViewController: UITableViewDataSource {
 // MARK: - DoubleButtonCellDelegate
 extension HistoryInfoViewController: DoubleButtonCellDelegate {
     func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
-        if self.isCurrentOrder {
-            print("-")
-        } else {
-            self.present(MakeOfferViewController.instantiateViewController(withStylist: 1), animated: true, completion: nil)
-        }
+        self.present(MakeOfferViewController.instantiateViewController(withStylist: 1), animated: true, completion: nil)
     }
     
     func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {
-        if self.isCurrentOrder {
-            print("*")
-        } else {
-            self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
-        }
+        self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
     }
+}
+
+
+extension HistoryInfoViewController: SingleButtonCellDelegate {
+    
+    func singleButtonCell(_ didSelectedButton: PriceButton) {
+        print("-")
+    }
+    
 }
 
 
