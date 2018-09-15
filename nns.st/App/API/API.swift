@@ -292,7 +292,7 @@ extension API {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: offerHistoryDetailGetRequest -> \(error)")
+                print("Error: offerCancelRequest -> \(error)")
                 handler(nil)
             }
         }

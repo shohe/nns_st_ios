@@ -10,7 +10,7 @@ import Foundation
 
 struct OfferCancelResponse: Decodable{
     
-    let result: String
+    let result: Bool
     
     private enum CodingKeys: String, CodingKey {
         case result = "success"

@@ -16,11 +16,9 @@ extension API {
         let id: Int
         var path: String { return "/api/offer" }
         var bodyParameters: BodyParameters? {
-            var params: [MultipartFormDataBodyParameters.Part] = []
-            
-            // required params
-            params.append(try! MultipartFormDataBodyParameters.Part(value: id, name: "id"))
-            return MultipartFormDataBodyParameters(parts: params)
+            var jsonResouce: [String: Any] = [:]
+            jsonResouce["id"] = id
+            return JSONBodyParameters(JSONObject: jsonResouce)
         }
     }
 }

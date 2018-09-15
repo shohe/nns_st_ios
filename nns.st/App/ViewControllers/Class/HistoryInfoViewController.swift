@@ -16,6 +16,7 @@ class HistoryInfoViewController: UIViewController {
     private var id: Int?
     private var currentItem: OfferGetDetailItem?
     private var historyItem: OfferHistoryDetailGetItem?
+    private var loadingView: LoadingView?
     
     static func instantiateViewController(offerId: Int) -> HistoryInfoViewController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
@@ -159,7 +160,23 @@ extension HistoryInfoViewController: DoubleButtonCellDelegate {
 extension HistoryInfoViewController: SingleButtonCellDelegate {
     
     func singleButtonCell(_ didSelectedButton: PriceButton) {
-        print("-")
+        loadingView = LoadingView(frame: self.view.bounds)
+        self.view.addSubview(loadingView!)
+        
+        if let id = self.id {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.loadingView!.alpha = 1
+            }) { (complete) in
+                /* cancel offer */
+                API.offerCancelRequest(id: id) { (result) in
+                    if result != nil {
+                        NNSCore.setMadeOfferId(0)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+
     }
     
 }
