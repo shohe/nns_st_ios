@@ -51,33 +51,82 @@ class MainViewController: UIViewController {
 extension MainViewController {
     
     private func fetch() {
-        API.requestGetRequest { (result) in
+        if NNSCore.isWaitState() {
+            self.fetchDayCount()
+        } else if NNSCore.madeOfferId() > 0 {
+            self.fetchRequests()
+        }
+    }
+    
+    private func fetchDayCount() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        timeFormatter.dateFormat = "HH:mm:ss"
+
+        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
             if let res = result {
-                self.requests = res.item
+                // day count
+                print("あと\(res.count)日")
+                self.requests.removeAll()
                 self.collectionView.reloadData()
+            } else {
+                // time to go to review
+                print("レビュー画面に行く")
+                NNSCore.setMadeOfferId(0)
+                NNSCore.setWaitState(false)
             }
         }
     }
     
-//    private func fetchDayCount() {
-//        let date = Date()
-//        let dateFormatter = DateFormatter()
-//        let timeFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        timeFormatter.dateFormat = "HH:mm:ss"
-//
-//        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
-//            if let res = result {
-//                print("あと\(res.count)日")
-//                self.requests.removeAll()
-//                self.collectionView.reloadData()
-//            } else {
-//                print("レビュー画面に行く")
-//                NNSCore.setMadeOfferId(0)
-//                NNSCore.setWaitState(false)
-//            }
-//        }
-//    }
+    private func fetchRequests() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        timeFormatter.dateFormat = "HH:mm:ss"
+        
+        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
+            if let res = result {
+                if res.count >= 0 {
+                    // still offer is working
+                    API.requestGetRequest { (result) in
+                        if let res = result {
+                            self.requests = res.item
+                            self.collectionView.reloadData()
+                        }
+                    }
+                } else {
+                    // dead offer by date-time
+                    self.setCloseDeadOffer()
+                }
+            } else {
+                // dead offer by date-time
+                self.setCloseDeadOffer()
+            }
+        }
+    }
+    
+    private func setCloseDeadOffer() {
+        API.offerCancelRequest(id: NNSCore.madeOfferId()) { (result) in
+            if result != nil {
+                NNSCore.setMadeOfferId(0)
+                NNSCore.setWaitState(false)
+                self.showAleart()
+            }
+        }
+    }
+    
+    private func showAleart() {
+        let title = "期限切れ"
+        let message = "予定の日にちが過ぎたのでオファーは廃棄されます"
+        let buttonTitle = "ok"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okayButton = UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(okayButton)
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }
 
@@ -176,7 +225,6 @@ extension MainViewController: ConfirmOfferViewControllerDelegate {
     
     func confirmOfferViewController(_ didCreateOffer: Offer) {
         NNSCore.setMadeOfferId(didCreateOffer.id!)
-        print("waiting request from stylist...")
     }
     
 }

@@ -11,7 +11,7 @@ import Foundation
 struct DayCountResponse: Decodable {
     
     let count: Int
-    let originalDate: String
+    let originalDate: String?
     
     private enum CodingKeys: String, CodingKey {
         case count = "success"
