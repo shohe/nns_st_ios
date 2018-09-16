@@ -18,6 +18,8 @@ class ConfirmOfferViewController: UIViewController {
     var loadingView: LoadingView?
     var delegate: ConfirmOfferViewControllerDelegate?
     
+    private var stylist: User!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var commentTextView: UITextView!
@@ -27,6 +29,14 @@ class ConfirmOfferViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ConfirmOfferViewController") as! ConfirmOfferViewController
         viewController.delegate = parent
+        return viewController
+    }
+    
+    static func instantiateViewController(parent: MainViewController, stylist: User) -> ConfirmOfferViewController {
+        let storyboard = UIStoryboard(name: "Offer", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ConfirmOfferViewController") as! ConfirmOfferViewController
+        viewController.delegate = parent
+        viewController.stylist = stylist
         return viewController
     }
     
@@ -93,7 +103,7 @@ extension ConfirmOfferViewController: UITableViewDataSource {
                 }
             } else {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: NominationCell.identifier, for: indexPath) as? NominationCell {
-                    cell.setEachValue(item: offerItem)
+                    cell.setEachValue(item: self.stylist)
                     return cell
                 }
             }

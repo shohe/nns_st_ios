@@ -72,11 +72,19 @@ extension ReviewAverageCell {
     
     private func setProgress(item: EvaluateItem) {
         let total = self.getCountOfReviews(item: item)
-        self.oneStarProgress.progress = Float(item.one) / Float(total)
-        self.twoStarProgress.progress = Float(item.two) / Float(total)
-        self.threeStarProgress.progress = Float(item.three) / Float(total)
-        self.fourStarProgress.progress = Float(item.four) / Float(total)
-        self.fiveStarProgress.progress = Float(item.five) / Float(total)
+        if total > 0 {
+            self.oneStarProgress.progress = Float(item.one) / Float(total)
+            self.twoStarProgress.progress = Float(item.two) / Float(total)
+            self.threeStarProgress.progress = Float(item.three) / Float(total)
+            self.fourStarProgress.progress = Float(item.four) / Float(total)
+            self.fiveStarProgress.progress = Float(item.five) / Float(total)
+        } else {
+            self.oneStarProgress.progress = 0
+            self.twoStarProgress.progress = 0
+            self.threeStarProgress.progress = 0
+            self.fourStarProgress.progress = 0
+            self.fiveStarProgress.progress = 0
+        }
     }
     
 }

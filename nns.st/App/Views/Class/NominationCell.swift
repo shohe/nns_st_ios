@@ -12,6 +12,7 @@ class NominationCell: UITableViewCell {
     
     @IBOutlet weak var stylistImage: UIImageView!
     @IBOutlet weak var stylistName: UILabel!
+    @IBOutlet weak var salonName: UILabel!
     
     static var identifier:String {
         get{
@@ -41,10 +42,10 @@ class NominationCell: UITableViewCell {
 
 extension NominationCell {
     
-    func setEachValue(item: OfferItem?) {
-        if let item = item {
-            // todo
-        }
+    func setEachValue(item: User) {
+        self.stylistName.text = item.name
+        self.salonName.text = item.salonName
+        if let url = item.imageUrl { self.stylistImage.loadImage(urlString: url) }
     }
     
 }

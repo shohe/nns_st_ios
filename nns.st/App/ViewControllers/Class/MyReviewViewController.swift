@@ -12,6 +12,8 @@ class MyReviewViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var item: OwnReviewGetResponse?
+    
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Review", bundle: nil)
@@ -29,6 +31,8 @@ class MyReviewViewController: UIViewController {
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(ReviewAverageCell.nib, forCellReuseIdentifier: ReviewAverageCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
+        
+        self.fetch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +70,15 @@ extension MyReviewViewController {
         self.tableView.addSubview(view)
     }
     
+    private func fetch() {
+        API.reviewGetRequest(id: nil) { (result) in
+            if let res = result {
+                self.item = res
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
 
 
@@ -87,7 +100,8 @@ extension MyReviewViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        if let item = self.item { return item.item.count + 2 }
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,10 +109,16 @@ extension MyReviewViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as? StylistProfileWithStarCell {
+                if let item = self.item {
+                    cell.setItem(item: item)
+                }
                 return cell
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewAverageCell.identifier, for: indexPath) as? ReviewAverageCell {
+                if let item = self.item {
+                    cell.setItem(item: item.evaluate)
+                }
                 return cell
             }
         default:

@@ -126,9 +126,17 @@ extension MakeOfferViewController {
     }
     
     @IBAction func confirmOffer(_ sender: UIButton) {
-        let viewController = ConfirmOfferViewController.instantiateViewController(parent: self.parentVC!)
-        viewController.offerItem = self.offerItem
-        self.navigationController?.pushViewController(viewController, animated: true)
+        if isNominated {
+            if let stylist = self.nominateStylist {
+                let viewController = ConfirmOfferViewController.instantiateViewController(parent: self.parentVC!, stylist: stylist)
+                viewController.offerItem = self.offerItem
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        } else {
+            let viewController = ConfirmOfferViewController.instantiateViewController(parent: self.parentVC!)
+            viewController.offerItem = self.offerItem
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
 }

@@ -51,35 +51,6 @@ class MainViewController: UIViewController {
 extension MainViewController {
     
     private func fetch() {
-        if NNSCore.isWaitState() {
-            self.fetchDayCount()
-        } else if NNSCore.madeOfferId() > 0 {
-            self.fetchRequests()
-        }
-    }
-    
-    private func fetchDayCount() {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        let timeFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        timeFormatter.dateFormat = "HH:mm:ss"
-
-        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
-            if let res = result {
-                print("あと\(res.count)日")
-                self.requests.removeAll()
-                self.collectionView.reloadData()
-            } else {
-                print("期限過ぎた")
-                NNSCore.setMadeOfferId(0)
-                NNSCore.setWaitState(false)
-                self.fetch()
-            }
-        }
-    }
-    
-    private func fetchRequests() {
         API.requestGetRequest { (result) in
             if let res = result {
                 self.requests = res.item
@@ -87,6 +58,26 @@ extension MainViewController {
             }
         }
     }
+    
+//    private func fetchDayCount() {
+//        let date = Date()
+//        let dateFormatter = DateFormatter()
+//        let timeFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        timeFormatter.dateFormat = "HH:mm:ss"
+//
+//        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
+//            if let res = result {
+//                print("あと\(res.count)日")
+//                self.requests.removeAll()
+//                self.collectionView.reloadData()
+//            } else {
+//                print("レビュー画面に行く")
+//                NNSCore.setMadeOfferId(0)
+//                NNSCore.setWaitState(false)
+//            }
+//        }
+//    }
     
 }
 
