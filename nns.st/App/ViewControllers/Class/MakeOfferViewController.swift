@@ -51,12 +51,13 @@ class MakeOfferViewController: UIViewController {
         return viewController
     }
     
-    static func instantiateViewController(withStylist: Int) -> UINavigationController {
+    static func instantiateViewController(withStylist: Int, name: String?) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
         let root = viewController.viewControllers.first as! MakeOfferViewController
         root.isNominated = true
         root.offerItem.stylistId = withStylist
+        root.navigationItem.title = name
         return viewController
     }
     
@@ -100,7 +101,9 @@ extension MakeOfferViewController {
         offerMenu.resignFirstResponder()
         
         if isNominated {
-            self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
+            if let id = self.offerItem.stylistId {
+                self.present(ProfileViewController.instantiateViewController(id: id, name: self.navigationItem.title), animated: true, completion: nil)
+            }
         } else {
             let viewController = MapViewController.instantiateViewController()
             viewController.delegate = self

@@ -13,10 +13,15 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private var id: Int = 0
     
-    static func instantiateViewController() -> UIViewController {
+    
+    static func instantiateViewController(id: Int, name: String?) -> UIViewController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "PFNavigationController") as! UINavigationController
+        let root = viewController.viewControllers.first as! ProfileViewController
+        root.id = id
+        root.navigationItem.title = name
         return viewController
     }
     
@@ -35,6 +40,8 @@ class ProfileViewController: UIViewController {
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
+        
+        self.fetch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +72,10 @@ extension ProfileViewController {
         view.backgroundColor = .white
         view.tag = 99
         self.tableView.addSubview(view)
+    }
+    
+    private func fetch() {
+        API
     }
     
 }

@@ -23,7 +23,8 @@ class HistoryListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "履歴"
+        
         // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -98,7 +99,8 @@ extension HistoryListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = self.historyItems[indexPath.row].id
-        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: id), animated: true)
+        let name = self.historyItems[indexPath.row].name
+        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: id, name: name), animated: true)
     }
     
 }
