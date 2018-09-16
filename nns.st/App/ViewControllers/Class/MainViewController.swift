@@ -113,6 +113,8 @@ extension MainViewController {
             if result != nil {
                 NNSCore.setMadeOfferId(0)
                 NNSCore.setWaitState(false)
+                self.requests.removeAll()
+                self.collectionView.reloadData()
                 self.showAleart()
             }
         }
