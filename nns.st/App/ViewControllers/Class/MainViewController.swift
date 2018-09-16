@@ -103,7 +103,7 @@ extension MainViewController {
     }
     
     @IBAction func pressHistoryBtn(_ sender: UIButton) {
-        self.present(HistoryListViewController.instantiateViewController(), animated: true, completion: nil)
+        self.present(HistoryListViewController.instantiateViewController(parent: self), animated: true, completion: nil)
     }
     
 //    // will not use charity

@@ -42,6 +42,7 @@ class MakeOfferViewController: UIViewController {
     private var isNominated: Bool = false
     
     private var parentVC: MainViewController?
+    private var nominateStylist: User?
     
     static func instantiateViewController(parent: MainViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
@@ -51,13 +52,14 @@ class MakeOfferViewController: UIViewController {
         return viewController
     }
     
-    static func instantiateViewController(withStylist: Int, name: String?) -> UINavigationController {
+    static func instantiateViewController(stylist: User, parent: MainViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
         let root = viewController.viewControllers.first as! MakeOfferViewController
         root.isNominated = true
-        root.offerItem.stylistId = withStylist
-        root.navigationItem.title = name
+        root.nominateStylist = stylist
+        root.offerItem.stylistId = stylist.id
+        root.parentVC = parent
         return viewController
     }
     
@@ -101,8 +103,10 @@ extension MakeOfferViewController {
         offerMenu.resignFirstResponder()
         
         if isNominated {
-            if let id = self.offerItem.stylistId {
-                self.present(ProfileViewController.instantiateViewController(id: id, name: self.navigationItem.title), animated: true, completion: nil)
+            if let stylist = self.nominateStylist {
+                if let id = stylist.id, let name = stylist.name {
+                    self.present(ProfileViewController.instantiateViewController(id: id, name: name), animated: true, completion: nil)
+                }
             }
         } else {
             let viewController = MapViewController.instantiateViewController()
@@ -194,10 +198,11 @@ extension MakeOfferViewController {
     }
     
     func nominateStylistFormat(isTransform: Bool) {
-        if isNominated {
+        if isNominated, let stylist = self.nominateStylist {
             self.hideDistanceInfo()
-            mapTitle.text = "Salon Name"
-            mapDistance.text = "Stylist Name"
+            mapTitle.text = stylist.salonName
+            mapDistance.text = stylist.name
+            if let url = stylist.imageUrl { snapmap.loadImage(urlString: url) }
         }
     }
     

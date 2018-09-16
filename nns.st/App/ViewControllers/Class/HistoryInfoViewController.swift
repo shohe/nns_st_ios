@@ -18,13 +18,15 @@ class HistoryInfoViewController: UIViewController {
     private var historyItem: OfferHistoryDetailGetItem?
     private var loadingView: LoadingView?
     private var stylistStar: Int?
+    private var _parent: MainViewController!
     
-    static func instantiateViewController(offerId: Int, name: String?) -> HistoryInfoViewController {
+    static func instantiateViewController(offerId: Int, name: String?, parent: MainViewController) -> HistoryInfoViewController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HistoryInfoViewController") as! HistoryInfoViewController
         viewController.id = offerId
         viewController.isCurrentOrder = false
         viewController.navigationItem.title = name
+        viewController._parent = parent
         return viewController
     }
     
@@ -150,9 +152,12 @@ extension HistoryInfoViewController: UITableViewDataSource {
 // MARK: - DoubleButtonCellDelegate
 extension HistoryInfoViewController: DoubleButtonCellDelegate {
     func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
-        if let id = self.historyItem?.id {
-            self.present(MakeOfferViewController.instantiateViewController(withStylist: id, name: self.navigationItem.title), animated: true, completion: nil)
-        }
+        var stylist = User()
+        stylist.id = self.historyItem?.id
+        stylist.name = self.navigationItem.title
+        stylist.salonName = self.historyItem?.salonName
+        stylist.imageUrl = self.historyItem?.imageUrl
+        self.present(MakeOfferViewController.instantiateViewController(stylist: stylist, parent: self._parent), animated: true, completion: nil)
     }
     
     func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {

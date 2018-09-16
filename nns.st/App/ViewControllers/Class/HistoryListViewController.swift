@@ -13,11 +13,14 @@ class HistoryListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var historyItems: [OfferHistoryListGetItem] = []
+    private var _parent: MainViewController!
     
     
-    static func instantiateViewController() -> UINavigationController {
+    static func instantiateViewController(parent: MainViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "History", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HTNavigationController") as! UINavigationController
+        let root = viewController.viewControllers.first as! HistoryListViewController
+        root._parent = parent
         return viewController
     }
 
@@ -100,7 +103,7 @@ extension HistoryListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = self.historyItems[indexPath.row].id
         let name = self.historyItems[indexPath.row].name
-        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: id, name: name), animated: true)
+        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: id, name: name, parent: self._parent), animated: true)
     }
     
 }

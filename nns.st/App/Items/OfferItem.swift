@@ -30,8 +30,9 @@ extension OfferItem {
         if menu == nil || menu == "" { return false }
         if price == nil { return false }
         if datetime == nil { return false }
-        if location == nil && stylistId == nil { return false }
-        if distance == nil && stylistId == nil { return false }
+        if stylistId == nil {
+            if location == nil || distance == nil { return false }
+        }
         if hairType == nil { return false }
         return true
     }
