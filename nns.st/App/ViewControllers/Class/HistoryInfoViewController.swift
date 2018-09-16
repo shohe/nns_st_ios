@@ -150,13 +150,13 @@ extension HistoryInfoViewController: UITableViewDataSource {
 // MARK: - DoubleButtonCellDelegate
 extension HistoryInfoViewController: DoubleButtonCellDelegate {
     func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
-        if let id = self.id {
+        if let id = self.historyItem?.id {
             self.present(MakeOfferViewController.instantiateViewController(withStylist: id, name: self.navigationItem.title), animated: true, completion: nil)
         }
     }
     
     func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {
-        if let id = self.id {
+        if let id = self.historyItem?.id {
             self.present(ProfileViewController.instantiateViewController(id: id, name: self.navigationItem.title), animated: true, completion: nil)
         }
     }

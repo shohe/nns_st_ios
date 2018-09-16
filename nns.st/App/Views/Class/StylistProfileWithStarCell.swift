@@ -66,4 +66,17 @@ extension StylistProfileWithStarCell {
         }
     }
     
+    func setItem(item: UserItem?, star: Int?) {
+        if let i = item {
+            if let url = i.imageUrl { self.thumbnailView.loadImage(urlString: url) }
+            self.statusComment.text = i.statusComment
+            if let _star = star {
+                self.starView.setStar(number: _star + 10)
+            } else {
+                self.starView.setStar(number: 10)
+            }
+        }
+    }
+    
+    
 }

@@ -26,11 +26,13 @@ struct OwnReviewGetItem: Decodable{
     let writerName: String
     let star: Int
     let comment: String?
+    let dateTime: String?
     
     private enum CodingKeys: String, CodingKey {
         case writerName = "writerName"
         case star = "star"
         case comment = "comment"
+        case dateTime = "createdAt"
     }
 }
 
@@ -58,10 +60,16 @@ struct UserItem: Decodable{
     let imageUrl: String?
     let star: Int
     let statusComment: String?
+    let salonName: String?
+    let salonAddress: String?
+    let salonLocation: SalonLocation?
     
     private enum CodingKeys: String, CodingKey {
         case imageUrl = "imageUrl"
         case star = "star"
         case statusComment = "statusComment"
+        case salonName = "salonName"
+        case salonAddress = "salonAddress"
+        case salonLocation = "salonLocation"
     }
 }

@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var id: Int = 0
+    private var item: OwnReviewGetResponse!
     
     
     static func instantiateViewController(id: Int, name: String?) -> UIViewController {
@@ -38,6 +39,7 @@ class ProfileViewController: UIViewController {
         
         // register cells
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
+        tableView.register(ReviewAverageCell.nib, forCellReuseIdentifier: ReviewAverageCell.identifier)
         tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
         
@@ -75,7 +77,12 @@ extension ProfileViewController {
     }
     
     private func fetch() {
-        API
+        API.reviewGetRequest(id: self.id) { (result) in
+            if let res = result {
+                self.item = res
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }
@@ -99,7 +106,10 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        if let item = self.item {
+            return item.item.count + 3
+        }
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,19 +117,30 @@ extension ProfileViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as? StylistProfileWithStarCell {
+                if let item = self.item {
+                    cell.setItem(item: item.user, star: Int(round(item.evaluate.average)))
+                }
                 return cell
             }
         case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: SalonAddressCell.identifier, for: indexPath) as? SalonAddressCell {
-                let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 35.908887, longitude: 139.482338)
-                SnapShotMaker.drawSnapshot(coordinate: coordinate, source: cell.mapSnap, pinColor: cell.pinColor)
+            if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewAverageCell.identifier, for: indexPath) as? ReviewAverageCell {
+                if let item = self.item {
+                    cell.setItem(item: item.evaluate)
+                }
                 return cell
             }
-            
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SalonAddressCell.identifier, for: indexPath) as? SalonAddressCell {
+                if let item = self.item {
+                    cell.setItem(item: item)
+                }
+                return cell
+            }
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell {
-                if indexPath.row != 2 {
-                    cell.nonTitle()
+                if indexPath.row != 3 { cell.nonTitle() }
+                if let item = self.item {
+                    cell.setItem(item: item.item[indexPath.row-3])
                 }
                 return cell
             }

@@ -444,7 +444,7 @@ extension API {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: ownReviewGetRequest -> \(error)")
+                print("Error: reviewGetRequest -> \(error)")
                 handler(nil)
             }
         }
