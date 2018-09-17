@@ -209,6 +209,7 @@ extension MakeOfferViewController {
         if isNominated, let stylist = self.nominateStylist {
             self.hideDistanceInfo()
             mapTitle.text = stylist.salonName
+            mapTitle.adjustsFontSizeToFitWidth = true
             mapDistance.text = stylist.name
             if let url = stylist.imageUrl { snapmap.loadImage(urlString: url) }
         }
