@@ -11,8 +11,20 @@ import UIKit
 class SignUpNameViewController: UIViewController {
 
     
-    @IBOutlet weak var lastName: ContainButtonTextField!
-    @IBOutlet weak var firstName: ContainButtonTextField!
+    @IBOutlet weak var userName: ContainButtonTextField!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    private var mailaddress: String?
+    private var password: String?
+    
+    
+    static func instantiateViewController(mailaddress: String, password: String) -> SignUpNameViewController {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SignUpNameViewController") as! SignUpNameViewController
+        viewController.mailaddress = mailaddress
+        viewController.password = password
+        return viewController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +42,18 @@ class SignUpNameViewController: UIViewController {
 extension SignUpNameViewController {
     
     @IBAction func pushNextBtn(_ sender: UIButton) {
-        self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
+        if let userName = userName.text {
+            nextButton.isEnabled = false
+            
+            API.userRegistRequest(name: "\(userName)", email: self.mailaddress!, password: self.password!) { (result) in
+                if let res = result {
+                    NNSCore.setAuthToken(res.item.token)
+                    self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
+                } else {
+                    self.nextButton.isEnabled = true
+                }
+            }
+        }
     }
     
 }

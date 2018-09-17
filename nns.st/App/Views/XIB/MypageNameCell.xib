@@ -19,17 +19,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="441" height="90.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVX-lV-XHX">
-                        <rect key="frame" x="24" y="39" width="190.5" height="40"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVX-lV-XHX">
+                        <rect key="frame" x="24" y="39" width="393" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="EqE-22-65b"/>
                         </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAe-jZ-AAd">
-                        <rect key="frame" x="226.5" y="39" width="190.5" height="40"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -46,23 +40,18 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="QAe-jZ-AAd" secondAttribute="trailing" constant="24" id="3ne-3q-fa2"/>
-                    <constraint firstItem="QAe-jZ-AAd" firstAttribute="height" secondItem="JVX-lV-XHX" secondAttribute="height" id="608-zw-wen"/>
                     <constraint firstAttribute="bottom" secondItem="JVX-lV-XHX" secondAttribute="bottom" constant="12" id="CcT-6C-aH9"/>
-                    <constraint firstItem="QAe-jZ-AAd" firstAttribute="centerY" secondItem="JVX-lV-XHX" secondAttribute="centerY" id="NwK-NP-wSo"/>
                     <constraint firstItem="JVX-lV-XHX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="e0D-zH-s8R"/>
                     <constraint firstItem="CMF-sb-9Tb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="qMe-WZ-EpM"/>
+                    <constraint firstAttribute="trailing" secondItem="JVX-lV-XHX" secondAttribute="trailing" constant="24" id="rkz-f6-YtZ"/>
                     <constraint firstItem="JVX-lV-XHX" firstAttribute="top" secondItem="CMF-sb-9Tb" secondAttribute="bottom" constant="12" id="uon-NC-88A"/>
                     <constraint firstItem="CMF-sb-9Tb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="xU0-UN-7qh"/>
-                    <constraint firstItem="JVX-lV-XHX" firstAttribute="width" secondItem="QAe-jZ-AAd" secondAttribute="width" id="xrr-rh-7EP"/>
-                    <constraint firstItem="QAe-jZ-AAd" firstAttribute="leading" secondItem="JVX-lV-XHX" secondAttribute="trailing" constant="12" id="z58-ZB-I47"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="firstName" destination="QAe-jZ-AAd" id="mle-CK-4Du"/>
-                <outlet property="lastName" destination="JVX-lV-XHX" id="HTl-ml-a6O"/>
+                <outlet property="name" destination="JVX-lV-XHX" id="3XG-og-buH"/>
             </connections>
             <point key="canvasLocation" x="-127.5" y="56.5"/>
         </tableViewCell>

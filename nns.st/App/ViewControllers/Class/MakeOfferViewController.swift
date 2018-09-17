@@ -41,18 +41,25 @@ class MakeOfferViewController: UIViewController {
     private var offerItem: OfferItem = OfferItem()
     private var isNominated: Bool = false
     
-    static func instantiateViewController() -> UINavigationController {
+    private var parentVC: MainViewController?
+    private var nominateStylist: User?
+    
+    static func instantiateViewController(parent: MainViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let root = viewController.viewControllers.first as! MakeOfferViewController
+        root.parentVC = parent
         return viewController
     }
     
-    static func instantiateViewController(withStylist: Int) -> UINavigationController {
+    static func instantiateViewController(stylist: User, parent: MainViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Offer", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! UINavigationController
         let root = viewController.viewControllers.first as! MakeOfferViewController
         root.isNominated = true
-        root.offerItem.stylistId = withStylist
+        root.nominateStylist = stylist
+        root.offerItem.stylistId = stylist.id
+        root.parentVC = parent
         return viewController
     }
     
@@ -96,7 +103,11 @@ extension MakeOfferViewController {
         offerMenu.resignFirstResponder()
         
         if isNominated {
-            self.present(ProfileViewController.instantiateViewController(), animated: true, completion: nil)
+            if let stylist = self.nominateStylist {
+                if let id = stylist.id, let name = stylist.name {
+                    self.present(ProfileViewController.instantiateViewController(id: id, name: name), animated: true, completion: nil)
+                }
+            }
         } else {
             let viewController = MapViewController.instantiateViewController()
             viewController.delegate = self
@@ -115,9 +126,17 @@ extension MakeOfferViewController {
     }
     
     @IBAction func confirmOffer(_ sender: UIButton) {
-        let viewController = ConfirmOfferViewController.instantiateViewController()
-        viewController.offerItem = self.offerItem
-        self.navigationController?.pushViewController(viewController, animated: true)
+        if isNominated {
+            if let stylist = self.nominateStylist {
+                let viewController = ConfirmOfferViewController.instantiateViewController(parent: self.parentVC!, stylist: stylist)
+                viewController.offerItem = self.offerItem
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        } else {
+            let viewController = ConfirmOfferViewController.instantiateViewController(parent: self.parentVC!)
+            viewController.offerItem = self.offerItem
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
 }
@@ -187,10 +206,12 @@ extension MakeOfferViewController {
     }
     
     func nominateStylistFormat(isTransform: Bool) {
-        if isNominated {
+        if isNominated, let stylist = self.nominateStylist {
             self.hideDistanceInfo()
-            mapTitle.text = "Salon Name"
-            mapDistance.text = "Stylist Name"
+            mapTitle.text = stylist.salonName
+            mapTitle.adjustsFontSizeToFitWidth = true
+            mapDistance.text = stylist.name
+            if let url = stylist.imageUrl { snapmap.loadImage(urlString: url) }
         }
     }
     

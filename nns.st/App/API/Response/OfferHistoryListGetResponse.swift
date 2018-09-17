@@ -19,6 +19,7 @@ struct OfferHistoryListGetResponse: Decodable{
 
 struct OfferHistoryListGetItem: Decodable{
     
+    let id: Int
     let price: Float
     let dateTime: String
     let menu: String
@@ -26,6 +27,7 @@ struct OfferHistoryListGetItem: Decodable{
     let name: String
     
     private enum CodingKeys: String, CodingKey {
+        case id = "id"
         case price = "price"
         case dateTime = "dateTime"
         case menu = "menu"

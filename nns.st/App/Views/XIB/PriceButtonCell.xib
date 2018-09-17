@@ -74,6 +74,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="priceButton" destination="mUc-Yx-oaJ" id="mXB-16-WXv"/>
+                <outlet property="priceLabel" destination="y4z-GT-7QD" id="WpZ-O8-XgF"/>
             </connections>
             <point key="canvasLocation" x="8" y="128"/>
         </tableViewCell>

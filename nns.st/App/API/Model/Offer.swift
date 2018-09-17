@@ -9,6 +9,7 @@
 import Foundation
 
 struct Offer: Decodable {
+    var id: Int?
     let menu: String
     let price: Float
     let dateTime: String
@@ -28,6 +29,7 @@ struct Offer: Decodable {
     }
     
     private enum CodingKeys: String, CodingKey {
+        case id = "id"
         case menu = "menu"
         case price = "price"
         case dateTime = "dateTime"

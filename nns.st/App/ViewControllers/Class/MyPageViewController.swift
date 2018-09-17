@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Photos
 
 class MyPageViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private let imagePicker = UIImagePickerController()
+    
     private var sourceField: UITextField?
+    private var user: User = User()
+    private var thumbnail: UIImageView?
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Mypage", bundle: nil)
@@ -28,7 +33,8 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.fetchUser()
+        
         // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -57,7 +63,13 @@ class MyPageViewController: UIViewController {
 extension MyPageViewController {
     
     @IBAction func backPreView(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        API.userUpdateRequest(user: self.user) { (result) in
+            if result == nil {
+                print("error message")
+            }
+        }
+        sourceField?.resignFirstResponder()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapScreen(_ sender: UITapGestureRecognizer) {
@@ -102,12 +114,42 @@ extension MyPageViewController {
     
     private func checkDuplicateHeight(baseFrame: CGRect) -> CGFloat {
         let convertedKeyboardFrame = self.view.convert(baseFrame, from: nil)
-        let convertedFieldFrame = sourceField!.convert(sourceField!.frame, to: self.view)
+        var convertedFieldFrame = CGRect.zero
+        if let sourceField = self.sourceField {
+            convertedFieldFrame = sourceField.convert(sourceField.frame, to: self.view)
+        }
         let height = convertedKeyboardFrame.minY - convertedFieldFrame.minY
-        print("convertedKeyboardFrame-minY: \(convertedKeyboardFrame.minY)")
-        print("convertedFieldFrame-minY: \(convertedFieldFrame.minY)")
-        print("height: \(height)")
         return height
+    }
+    
+    private func fetchUser() {
+        API.userGetRequest { (result) in
+            if let res = result {
+                self.user = res.item
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func checkPermission() -> Bool {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        var result = false
+        switch photoAuthorizationStatus {
+        case .authorized:
+            result = true
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (status) in
+                result = (status == photoAuthorizationStatus)
+            }
+        case .restricted:
+            // print("restricted")
+            break
+        case .denied:
+            // print("denied")
+            break
+        }
+        
+        return result
     }
     
 }
@@ -128,17 +170,22 @@ extension MyPageViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageThumbnailCell.identifier, for: indexPath) as? MypageThumbnailCell {
+                if let url = self.user.imageUrl {
+                    cell.thumbnailView.loadImage(urlString: url)
+                }
+                cell.delegate = self
                 return cell
             }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageNameCell.identifier, for: indexPath) as? MypageNameCell {
-                cell.firstName.delegate = self
-                cell.lastName.delegate = self
+                cell.name.delegate = self
+                cell.name.text = user.name
                 return cell
             }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageMailAddressCell.identifier, for: indexPath) as? MypageMailAddressCell {
                 cell.mailAddress.delegate = self
+                cell.mailAddress.text = user.email
                 return cell
             }
         case 3:
@@ -149,6 +196,7 @@ extension MyPageViewController: UITableViewDataSource {
         case 4:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MypageStatusCommentCell.identifier, for: indexPath) as? MypageStatusCommentCell {
                 cell.statusComment.delegate = self
+                cell.statusComment.text = user.statusComment
                 return cell
             }
         default:
@@ -187,5 +235,62 @@ extension MyPageViewController: UITextFieldDelegate {
         self.sourceField = textField
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let fieldType: MypageTextFieldType = MypageTextFieldType(rawValue: textField.tag)!
+        
+        switch fieldType {
+        case .name:
+            self.user.name = textField.text
+        case .email:
+            self.user.email = textField.text
+        case .password:
+            self.user.password = textField.text
+        case .status:
+            self.user.statusComment = textField.text
+        }
+    }
+    
+}
+
+
+// MARK: - MypageThumbnailCellDelegate
+extension MyPageViewController: MypageThumbnailCellDelegate {
+    
+    func myThumbnailCell(_ cell: MypageThumbnailCell, didTapPicture thumbnail: UIImageView) {
+        if self.checkPermission() {
+            self.thumbnail = thumbnail
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .photoLibrary
+            present(self.imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+}
+
+
+// MARK: - UIImagePickerControllerDelegate
+extension MyPageViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage, let imageURL = info[UIImagePickerControllerImageURL] as? NSURL {
+            
+            let name = imageURL.lastPathComponent != nil ? imageURL.lastPathComponent! : "noNameImage.jpeg"
+            API.userImageUploadRequest(image: pickedImage, fileName: name) { (result) in
+                if let res = result {
+                    self.user.imageUrl = res.url
+                    self.thumbnail?.image = pickedImage
+                }
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - UINavigationControllerDelegate
+extension MyPageViewController: UINavigationControllerDelegate {
     
 }

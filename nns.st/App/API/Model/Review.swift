@@ -11,16 +11,16 @@ import Foundation
 struct Review: Decodable {
 
     let id: Int
-    let dealUserId: Int
+    let name: String?
     let star: Int
     let comment: String?
-    let writeUserId: Int
+    let date: String
     
     private enum CodingKeys: String, CodingKey {
         case id = "id"
-        case dealUserId = "dealUserId"
+        case name = "name"
         case star = "star"
         case comment = "comment"
-        case writeUserId = "writeUserId"
+        case date = "createdAt"
     }
 }

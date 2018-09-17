@@ -23,7 +23,9 @@ class StylistProfileWithStarCell: UITableViewCell {
     }
 
     
+    @IBOutlet weak var thumbnailView: UIImageView!
     @IBOutlet weak var statusComment: UILabel!
+    @IBOutlet weak var starView: StarView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,5 +36,55 @@ class StylistProfileWithStarCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+}
+
+
+extension StylistProfileWithStarCell {
+    
+    func setItem(item: OfferGetDetailItem?) {
+        if let i = item {
+            if let url = i.cxImageUrl { self.thumbnailView.loadImage(urlString: url) }
+            self.statusComment.text = i.cxStatusComment
+            if let star = i.cxStar {
+                self.starView.setStar(number: star + 10) // +10 for show blank star
+            } else {
+                self.starView.setStar(number: 10)
+            }
+        }
+    }
+    
+    func setItem(item: OfferHistoryDetailGetItem?, star: Int?) {
+        if let i = item {
+            if let url = i.imageUrl { self.thumbnailView.loadImage(urlString: url) }
+            self.statusComment.text = i.statusComment
+            if let _star = star {
+                self.starView.setStar(number: _star + 10) // +10 for show blank star
+            } else {
+                self.starView.setStar(number: 10)
+            }
+        }
+    }
+    
+    func setItem(item: OwnReviewGetResponse?) {
+        if let i = item {
+            if let url = i.user.imageUrl { self.thumbnailView.loadImage(urlString: url) }
+            self.statusComment.text = i.user.statusComment
+            self.starView.setStar(number: Int(round(i.evaluate.average)) + 10) // +10 for show blank star
+        }
+    }
+    
+    func setItem(item: UserItem?, star: Int?) {
+        if let i = item {
+            if let url = i.imageUrl { self.thumbnailView.loadImage(urlString: url) }
+            self.statusComment.text = i.statusComment
+            if let _star = star {
+                self.starView.setStar(number: _star + 10) // +10 for show blank star
+            } else {
+                self.starView.setStar(number: 10)
+            }
+        }
+    }
+    
     
 }

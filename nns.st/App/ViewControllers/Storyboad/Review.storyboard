@@ -49,12 +49,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-do-X68">
                                 <rect key="frame" x="42" y="86" width="291" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncF-Vy-WGs">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncF-Vy-WGs">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ncF-Vy-WGs" secondAttribute="height" multiplier="1:1" id="kJR-cS-Kd2"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" backgroundImage="blankStar"/>
                                         <connections>
                                             <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="SfU-Ft-THC"/>
                                         </connections>
@@ -65,29 +67,32 @@
                                             <constraint firstAttribute="width" constant="8" id="oo4-MU-ZOM"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6O-V4-DJo">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6O-V4-DJo">
                                         <rect key="frame" x="60" y="0.0" width="51.5" height="52"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="blankStar"/>
                                         <connections>
                                             <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="e1D-ol-vhk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTm-KY-OzY">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTm-KY-OzY">
                                         <rect key="frame" x="119.5" y="0.0" width="52" height="52"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kTm-KY-OzY" secondAttribute="height" multiplier="1:1" id="MrV-da-hyx"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="blankStar"/>
                                         <connections>
                                             <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="izN-3m-a2s"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-KF-hho">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGo-KF-hho">
                                         <rect key="frame" x="179.5" y="0.0" width="51.5" height="52"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="RGo-KF-hho" secondAttribute="height" multiplier="1:1" id="PA5-xa-o9r"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="blankStar"/>
                                         <connections>
                                             <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="xOw-co-s9y"/>
                                         </connections>
@@ -101,12 +106,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3I-2H-MNE">
                                         <rect key="frame" x="231" y="0.0" width="8" height="52"/>
                                     </view>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-tU-WjD">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-tU-WjD">
                                         <rect key="frame" x="239" y="0.0" width="52" height="52"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="x7g-tU-WjD" secondAttribute="height" multiplier="1:1" id="PxL-ev-c5v"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="blankStar"/>
                                         <connections>
                                             <action selector="didTapStar:" destination="MEa-Ts-n61" eventType="touchUpInside" id="msh-yF-i90"/>
                                         </connections>
@@ -301,4 +307,7 @@
             <point key="canvasLocation" x="804" y="32"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blankStar" width="25" height="25"/>
+    </resources>
 </document>

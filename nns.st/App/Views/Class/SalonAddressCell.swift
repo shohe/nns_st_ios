@@ -12,6 +12,11 @@ import MapKit
 class SalonAddressCell: UITableViewCell {
     
     @IBOutlet weak var mapSnap: UIImageView!
+    @IBOutlet weak var salonName: UILabel!
+    @IBOutlet weak var postCode: UILabel!
+    @IBOutlet weak var city: UILabel!
+    @IBOutlet weak var street: UILabel!
+    @IBOutlet weak var streetTopConst: NSLayoutConstraint!
     
     static var identifier:String {
         get{
@@ -43,6 +48,17 @@ class SalonAddressCell: UITableViewCell {
 
 
 extension SalonAddressCell {
+    
+    func setItem(item: OwnReviewGetResponse) {
+        self.salonName.text = item.user.salonName
+        if let address = item.user.salonAddress?.split(separator: "/") {
+            self.postCode.text = "〒\(address[0])"
+            self.city.text = "\(address[1])"
+            self.street.text = "\(address[2])"
+        }
+        let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 35.908887, longitude: 139.482338)
+        SnapShotMaker.drawSnapshot(coordinate: coordinate, source: self.mapSnap, pinColor: self.pinColor)
+    }
     
     func drawSnapshot(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> Void {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

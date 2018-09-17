@@ -20,6 +20,11 @@
 		091F8D172128567A0095608F /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091F8D152128567A0095608F /* SearchResultCell.swift */; };
 		091F8D182128567A0095608F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 091F8D162128567A0095608F /* SearchResultCell.xib */; };
 		0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931AEC3211D794E002E4F78 /* NNSRequest.swift */; };
+		09402D0321439EC000082F4F /* MypageTextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D0221439EC000082F4F /* MypageTextFieldType.swift */; };
+		09402D052143A18600082F4F /* UserImageUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D042143A18600082F4F /* UserImageUploadResponse.swift */; };
+		09402D072143A2F900082F4F /* UserImageUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D062143A2F900082F4F /* UserImageUploadRequest.swift */; };
+		09402D092143C0BD00082F4F /* UIImageView+loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D082143C0BD00082F4F /* UIImageView+loadImage.swift */; };
+		09402D0B2144C2D800082F4F /* CurrencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09402D0A2144C2D800082F4F /* CurrencyType.swift */; };
 		0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */; };
 		0952F48A213BC70700B5BCF3 /* RequestTakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */; };
 		0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */; };
@@ -39,6 +44,13 @@
 		0952F4A8213C0D2700B5BCF3 /* ReviewCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */; };
 		0952F4AA213C12BE00B5BCF3 /* OwnReviewGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */; };
 		0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */; };
+		096432CE214CD29F007A87A8 /* SingleButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096432CD214CD29F007A87A8 /* SingleButtonCell.xib */; };
+		096432D0214CD35D007A87A8 /* SingleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432CF214CD35D007A87A8 /* SingleButtonCell.swift */; };
+		096432D2214CDF78007A87A8 /* OfferCancelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */; };
+		096432D4214CDFBF007A87A8 /* OfferCancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */; };
+		096432D6214CEE93007A87A8 /* PriceLabelMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */; };
+		096432D9214F81B3007A87A8 /* BlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D7214F81B3007A87A8 /* BlankCell.swift */; };
+		096432DA214F81B3007A87A8 /* BlankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096432D8214F81B3007A87A8 /* BlankCell.xib */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -195,6 +207,11 @@
 		091F8D152128567A0095608F /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		091F8D162128567A0095608F /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		0931AEC3211D794E002E4F78 /* NNSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSRequest.swift; sourceTree = "<group>"; };
+		09402D0221439EC000082F4F /* MypageTextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTextFieldType.swift; sourceTree = "<group>"; };
+		09402D042143A18600082F4F /* UserImageUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageUploadResponse.swift; sourceTree = "<group>"; };
+		09402D062143A2F900082F4F /* UserImageUploadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageUploadRequest.swift; sourceTree = "<group>"; };
+		09402D082143C0BD00082F4F /* UIImageView+loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImage.swift"; sourceTree = "<group>"; };
+		09402D0A2144C2D800082F4F /* CurrencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyType.swift; sourceTree = "<group>"; };
 		0952F487213BC6A500B5BCF3 /* RequestTakeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeResponse.swift; sourceTree = "<group>"; };
 		0952F489213BC70700B5BCF3 /* RequestTakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTakeRequest.swift; sourceTree = "<group>"; };
 		0952F48B213BCB3500B5BCF3 /* DayCountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCountResponse.swift; sourceTree = "<group>"; };
@@ -214,6 +231,13 @@
 		0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCreateRequest.swift; sourceTree = "<group>"; };
 		0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnReviewGetResponse.swift; sourceTree = "<group>"; };
 		0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnReviewGetRequest.swift; sourceTree = "<group>"; };
+		096432CD214CD29F007A87A8 /* SingleButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleButtonCell.xib; sourceTree = "<group>"; };
+		096432CF214CD35D007A87A8 /* SingleButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonCell.swift; sourceTree = "<group>"; };
+		096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelResponse.swift; sourceTree = "<group>"; };
+		096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelRequest.swift; sourceTree = "<group>"; };
+		096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelMaker.swift; sourceTree = "<group>"; };
+		096432D7214F81B3007A87A8 /* BlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
+		096432D8214F81B3007A87A8 /* BlankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankCell.xib; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -467,6 +491,8 @@
 				0952F4A1213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift */,
 				0952F4A7213C0D2700B5BCF3 /* ReviewCreateRequest.swift */,
 				0952F4AB213C15F600B5BCF3 /* OwnReviewGetRequest.swift */,
+				09402D062143A2F900082F4F /* UserImageUploadRequest.swift */,
+				096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -495,6 +521,8 @@
 				0952F49F213BFE7200B5BCF3 /* OfferHistoryDetailGetResponse.swift */,
 				0952F4A5213C0CA700B5BCF3 /* ReviewCreateResponse.swift */,
 				0952F4A9213C12BE00B5BCF3 /* OwnReviewGetResponse.swift */,
+				09402D042143A18600082F4F /* UserImageUploadResponse.swift */,
+				096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -505,6 +533,8 @@
 				09A05B4F21298DA300C1FF3F /* MapViewItem.swift */,
 				09BB194B212AA535006562D0 /* OfferItem.swift */,
 				09BB194D212AA6EA006562D0 /* HairType.swift */,
+				09402D0221439EC000082F4F /* MypageTextFieldType.swift */,
+				09402D0A2144C2D800082F4F /* CurrencyType.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -514,6 +544,7 @@
 			children = (
 				09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */,
 				09A7B72D2138D0B60084E2C9 /* NNSCore.swift */,
+				096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -622,6 +653,8 @@
 				09FDE363212FD6DF00A823DA /* MypagePasswordCell.swift */,
 				09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */,
 				0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */,
+				096432CF214CD35D007A87A8 /* SingleButtonCell.swift */,
+				096432D7214F81B3007A87A8 /* BlankCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -630,6 +663,7 @@
 			isa = PBXGroup;
 			children = (
 				09DDAAA9212058B5009C6428 /* UIImage+reSizeImage.swift */,
+				09402D082143C0BD00082F4F /* UIImageView+loadImage.swift */,
 				09DDAAAB2120590F009C6428 /* UIImage+scaleImage.swift */,
 				09DDAAAF212074EA009C6428 /* UIViewController+transparentNavigationBar.swift */,
 				09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */,
@@ -675,6 +709,8 @@
 				09FDE364212FD6DF00A823DA /* MypagePasswordCell.xib */,
 				09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */,
 				0967AFA021376CF1002D980F /* ReviewAverageCell.xib */,
+				096432CD214CD29F007A87A8 /* SingleButtonCell.xib */,
+				096432D8214F81B3007A87A8 /* BlankCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -817,9 +853,11 @@
 				09BB196E212C571D006562D0 /* History.storyboard in Resources */,
 				09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */,
 				09A05B572129B7BB00C1FF3F /* PopupDatePickerView.xib in Resources */,
+				096432CE214CD29F007A87A8 /* SingleButtonCell.xib in Resources */,
 				09FDE362212FD4A200A823DA /* MypageMailAddressCell.xib in Resources */,
 				0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
+				096432DA214F81B3007A87A8 /* BlankCell.xib in Resources */,
 				09BB1974212C5FEC006562D0 /* HistoryCell.xib in Resources */,
 				09BB196A212C210E006562D0 /* Review.storyboard in Resources */,
 				09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */,
@@ -973,8 +1011,10 @@
 				09DDAAD921246BB1009C6428 /* SalonAddressCell.swift in Sources */,
 				09BB1976212D1356006562D0 /* HistoryInfoViewController.swift in Sources */,
 				09DDAAC421231B5A009C6428 /* CarouselFlowLayout.swift in Sources */,
+				096432D0214CD35D007A87A8 /* SingleButtonCell.swift in Sources */,
 				09BB1970212C57EE006562D0 /* HistoryListViewController.swift in Sources */,
 				09A7B747213A46720084E2C9 /* UserGetRequest.swift in Sources */,
+				09402D092143C0BD00082F4F /* UIImageView+loadImage.swift in Sources */,
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
 				09BB197D212DA931006562D0 /* NominationCell.swift in Sources */,
 				09FDE3692130162100A823DA /* MypageStatusCommentCell.swift in Sources */,
@@ -983,11 +1023,13 @@
 				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
 				09BB195F212AD550006562D0 /* DistanceInfoCell.swift in Sources */,
+				096432D6214CEE93007A87A8 /* PriceLabelMaker.swift in Sources */,
 				09BB194A212A91A9006562D0 /* UITextField+addDoneToolbar.swift in Sources */,
 				09FDE361212FD4A200A823DA /* MypageMailAddressCell.swift in Sources */,
 				09BB1979212D266C006562D0 /* DoubleButtonCell.swift in Sources */,
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */,
+				09402D0321439EC000082F4F /* MypageTextFieldType.swift in Sources */,
 				09A7B745213961BB0084E2C9 /* UserUpdateRequest.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */,
@@ -999,6 +1041,7 @@
 				09BB1950212AB2B1006562D0 /* ConfirmOfferViewController.swift in Sources */,
 				09FDE365212FD6DF00A823DA /* MypagePasswordCell.swift in Sources */,
 				0952F48A213BC70700B5BCF3 /* RequestTakeRequest.swift in Sources */,
+				09402D052143A18600082F4F /* UserImageUploadResponse.swift in Sources */,
 				09A7B7332138D55A0084E2C9 /* User.swift in Sources */,
 				09A7B75D213B9A030084E2C9 /* RequestCreateRequest.swift in Sources */,
 				09A7B72E2138D0B60084E2C9 /* NNSCore.swift in Sources */,
@@ -1014,6 +1057,7 @@
 				0952F494213BE44C00B5BCF3 /* ReservationDetailGetRequest.swift in Sources */,
 				09BB1963212AD747006562D0 /* CommentInfoCell.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
+				096432D9214F81B3007A87A8 /* BlankCell.swift in Sources */,
 				09A7B765213BBE1C0084E2C9 /* RequestDetailGetResponse.swift in Sources */,
 				09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */,
 				09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */,
@@ -1021,6 +1065,7 @@
 				0952F4A6213C0CA700B5BCF3 /* ReviewCreateResponse.swift in Sources */,
 				09A7B755213AFAD80084E2C9 /* OfferRequireMatchedRequest.swift in Sources */,
 				0952F4A4213C0B6100B5BCF3 /* Review.swift in Sources */,
+				09402D072143A2F900082F4F /* UserImageUploadRequest.swift in Sources */,
 				09A7B73921391B150084E2C9 /* UserRegistRequest.swift in Sources */,
 				09BB194E212AA6EA006562D0 /* HairType.swift in Sources */,
 				0952F498213BF21B00B5BCF3 /* ReservationListGetResponse.swift in Sources */,
@@ -1036,7 +1081,9 @@
 				09DDAAB421219B7F009C6428 /* SignUpPasswordViewController.swift in Sources */,
 				09DDAAD621245CE1009C6428 /* PriceButton.swift in Sources */,
 				09DDAACD21241688009C6428 /* StylistProfileWithStarCell.swift in Sources */,
+				09402D0B2144C2D800082F4F /* CurrencyType.swift in Sources */,
 				09A7B7352138EA0F0084E2C9 /* EmailExistRequest.swift in Sources */,
+				096432D2214CDF78007A87A8 /* OfferCancelResponse.swift in Sources */,
 				0952F4A2213C000500B5BCF3 /* OfferHistoryDetailGetRequest.swift in Sources */,
 				09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */,
 				09A7B74B213A60EF0084E2C9 /* UserGetResponse.swift in Sources */,
@@ -1048,6 +1095,7 @@
 				09A7B741213929070084E2C9 /* LoginRequest.swift in Sources */,
 				09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */,
 				09DDAAB62121A45A009C6428 /* SignUpNameViewController.swift in Sources */,
+				096432D4214CDFBF007A87A8 /* OfferCancelRequest.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
 				0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */,
 				09FDE356212FB4C900A823DA /* MyPageViewController.swift in Sources */,

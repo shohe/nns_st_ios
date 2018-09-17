@@ -89,7 +89,7 @@ extension API {
     }
     
     /** return UserUpdateResponse
-     *   API.userUpdateRequest(user: user, token: NNSCore.authToken()) { (result) in
+     *   API.userUpdateRequest(user: user) { (result) in
      *      if let res = result { print("result: \(res)") }
      *   }
      */
@@ -168,6 +168,24 @@ extension API {
                 handler(response)
             case .failure(let error):
                 print("Error: reservationDetailGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+    
+    /** return UserImageUploadResponse
+     *   API.reservationDetailGetRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func userImageUploadRequest(image: UIImage, fileName: String, handler: @escaping (UserImageUploadResponse?) -> Void){
+        Session.send(API.UserImageUploadRequest(image: image, fileName: fileName)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: userImageUploadRequest -> \(error)")
                 handler(nil)
             }
         }
@@ -258,6 +276,23 @@ extension API {
                 handler(response)
             case .failure(let error):
                 print("Error: offerHistoryDetailGetRequest -> \(error)")
+                handler(nil)
+            }
+        }
+    }
+    
+    /** return OfferCancelResponse
+     *   API.offerCancelRequest(id: 1) { (result) in
+     *      if let res = result { print("result: \(res)") }
+     *   }
+     */
+    class func offerCancelRequest(id: Int, handler: @escaping (OfferCancelResponse?) -> Void){
+        Session.send(API.OfferCancelRequest(id: id)) { result in
+            switch result {
+            case .success(let response):
+                handler(response)
+            case .failure(let error):
+                print("Error: offerCancelRequest -> \(error)")
                 handler(nil)
             }
         }
@@ -409,7 +444,7 @@ extension API {
             case .success(let response):
                 handler(response)
             case .failure(let error):
-                print("Error: ownReviewGetRequest -> \(error)")
+                print("Error: reviewGetRequest -> \(error)")
                 handler(nil)
             }
         }

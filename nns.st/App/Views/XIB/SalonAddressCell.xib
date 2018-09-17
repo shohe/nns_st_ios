@@ -36,9 +36,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAL-JA-xpL">
                         <rect key="frame" x="165.5" y="16" width="235.5" height="118"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hair salon 店名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-ux-XyM">
-                                <rect key="frame" x="12" y="12" width="211.5" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hair salon 店名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-ux-XyM">
+                                <rect key="frame" x="12" y="12" width="212" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -67,12 +67,12 @@
                             <constraint firstItem="Xgc-cH-YLT" firstAttribute="leading" secondItem="eAL-JA-xpL" secondAttribute="leading" constant="12" id="3hA-wP-8zR"/>
                             <constraint firstItem="nQr-Sb-2cW" firstAttribute="top" secondItem="Xgc-cH-YLT" secondAttribute="bottom" constant="2" id="9JC-XI-aLf"/>
                             <constraint firstAttribute="trailing" secondItem="Xgc-cH-YLT" secondAttribute="trailing" constant="12" id="KvB-2s-Mnn"/>
+                            <constraint firstItem="vTW-8P-eZZ" firstAttribute="top" secondItem="Azg-ux-XyM" secondAttribute="bottom" constant="21" id="OZv-QE-UDS"/>
                             <constraint firstAttribute="trailing" secondItem="Azg-ux-XyM" secondAttribute="trailing" constant="12" id="cJd-ay-rjd"/>
                             <constraint firstAttribute="trailing" secondItem="nQr-Sb-2cW" secondAttribute="trailing" constant="12" id="hEn-8P-Nps"/>
                             <constraint firstItem="vTW-8P-eZZ" firstAttribute="leading" secondItem="eAL-JA-xpL" secondAttribute="leading" constant="12" id="l2T-HW-czO"/>
                             <constraint firstItem="Xgc-cH-YLT" firstAttribute="top" secondItem="vTW-8P-eZZ" secondAttribute="bottom" constant="2" id="nPT-KR-yQc"/>
                             <constraint firstItem="nQr-Sb-2cW" firstAttribute="leading" secondItem="eAL-JA-xpL" secondAttribute="leading" constant="12" id="qYU-CL-vso"/>
-                            <constraint firstAttribute="bottom" secondItem="nQr-Sb-2cW" secondAttribute="bottom" constant="18" id="r4I-eP-3ur"/>
                             <constraint firstItem="Azg-ux-XyM" firstAttribute="leading" secondItem="eAL-JA-xpL" secondAttribute="leading" constant="12" id="rwW-U1-Y3Y"/>
                             <constraint firstAttribute="trailing" secondItem="vTW-8P-eZZ" secondAttribute="trailing" constant="12" id="xnl-Ey-1u7"/>
                         </constraints>
@@ -91,7 +91,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="city" destination="Xgc-cH-YLT" id="KGG-ex-hbW"/>
                 <outlet property="mapSnap" destination="pfR-A9-mIa" id="9FM-tD-CvX"/>
+                <outlet property="postCode" destination="vTW-8P-eZZ" id="TbP-A9-y7Z"/>
+                <outlet property="salonName" destination="Azg-ux-XyM" id="0V9-yf-JVV"/>
+                <outlet property="street" destination="nQr-Sb-2cW" id="ns1-sF-9kA"/>
+                <outlet property="streetTopConst" destination="9JC-XI-aLf" id="W4X-K8-ulW"/>
             </connections>
             <point key="canvasLocation" x="14.5" y="-4"/>
         </tableViewCell>

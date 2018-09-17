@@ -37,3 +37,20 @@ class CommentCell: UITableViewCell {
     }
     
 }
+
+
+extension CommentCell {
+    
+    func setItem(item: OfferGetDetailItem?) {
+        if let i = item {
+            comment.text = i.comment
+        }
+    }
+    
+    func setItem(item: OfferHistoryDetailGetItem?) {
+        if let i = item {
+            comment.text = i.comment
+        }
+    }
+    
+}

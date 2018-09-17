@@ -17,6 +17,7 @@ class PriceButtonCell: UITableViewCell {
     var delegate: PriceButtonCellDelegate? = nil
     
     @IBOutlet weak var priceButton: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
     
     static var identifier:String {
         get{
@@ -45,6 +46,17 @@ class PriceButtonCell: UITableViewCell {
 }
 
 
+// MARK: - public
+extension PriceButtonCell {
+    
+    func setPrice(price: Float, currency: CurrencyType) {
+        self.priceLabel.text = PriceLabelMaker.addCarrency(price: price, currency: .JPY, isHiddenSymbol: true)
+    }
+    
+}
+
+
+// MARK: - IBAction
 extension PriceButtonCell {
     
     @IBAction func makeReservation(_ sender: PriceButton) {

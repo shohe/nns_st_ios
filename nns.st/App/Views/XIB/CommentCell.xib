@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="hdS-qL-kP5">
-                        <rect key="frame" x="32" y="35" width="264" height="137.5"/>
+                        <rect key="frame" x="32" y="35" width="264" height="125.5"/>
                         <string key="text">ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。</string>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="hdS-qL-kP5" firstAttribute="top" secondItem="zkj-0T-fYC" secondAttribute="bottom" constant="8" id="9Sf-0h-J8W"/>
-                    <constraint firstAttribute="bottom" secondItem="hdS-qL-kP5" secondAttribute="bottom" constant="12" id="C3V-WH-IfD"/>
+                    <constraint firstAttribute="bottom" secondItem="hdS-qL-kP5" secondAttribute="bottom" constant="24" id="C3V-WH-IfD"/>
                     <constraint firstAttribute="trailing" secondItem="hdS-qL-kP5" secondAttribute="trailing" constant="24" id="QSF-lN-Wv1"/>
                     <constraint firstItem="hdS-qL-kP5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="ZBs-ML-8H2"/>
                     <constraint firstAttribute="trailing" secondItem="zkj-0T-fYC" secondAttribute="trailing" constant="24" id="cfF-Za-R0X"/>
