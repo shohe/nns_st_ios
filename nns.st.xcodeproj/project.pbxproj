@@ -49,6 +49,8 @@
 		096432D2214CDF78007A87A8 /* OfferCancelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */; };
 		096432D4214CDFBF007A87A8 /* OfferCancelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */; };
 		096432D6214CEE93007A87A8 /* PriceLabelMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */; };
+		096432D9214F81B3007A87A8 /* BlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096432D7214F81B3007A87A8 /* BlankCell.swift */; };
+		096432DA214F81B3007A87A8 /* BlankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096432D8214F81B3007A87A8 /* BlankCell.xib */; };
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
@@ -234,6 +236,8 @@
 		096432D1214CDF78007A87A8 /* OfferCancelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelResponse.swift; sourceTree = "<group>"; };
 		096432D3214CDFBF007A87A8 /* OfferCancelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCancelRequest.swift; sourceTree = "<group>"; };
 		096432D5214CEE93007A87A8 /* PriceLabelMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabelMaker.swift; sourceTree = "<group>"; };
+		096432D7214F81B3007A87A8 /* BlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
+		096432D8214F81B3007A87A8 /* BlankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankCell.xib; sourceTree = "<group>"; };
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
@@ -650,6 +654,7 @@
 				09FDE3672130162100A823DA /* MypageStatusCommentCell.swift */,
 				0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */,
 				096432CF214CD35D007A87A8 /* SingleButtonCell.swift */,
+				096432D7214F81B3007A87A8 /* BlankCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -705,6 +710,7 @@
 				09FDE3682130162100A823DA /* MypageStatusCommentCell.xib */,
 				0967AFA021376CF1002D980F /* ReviewAverageCell.xib */,
 				096432CD214CD29F007A87A8 /* SingleButtonCell.xib */,
+				096432D8214F81B3007A87A8 /* BlankCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -851,6 +857,7 @@
 				09FDE362212FD4A200A823DA /* MypageMailAddressCell.xib in Resources */,
 				0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */,
 				09DDAACE21241688009C6428 /* StylistProfileWithStarCell.xib in Resources */,
+				096432DA214F81B3007A87A8 /* BlankCell.xib in Resources */,
 				09BB1974212C5FEC006562D0 /* HistoryCell.xib in Resources */,
 				09BB196A212C210E006562D0 /* Review.storyboard in Resources */,
 				09DDAAD221244D83009C6428 /* PriceButtonCell.xib in Resources */,
@@ -1050,6 +1057,7 @@
 				0952F494213BE44C00B5BCF3 /* ReservationDetailGetRequest.swift in Sources */,
 				09BB1963212AD747006562D0 /* CommentInfoCell.swift in Sources */,
 				09DDAAAC2120590F009C6428 /* UIImage+scaleImage.swift in Sources */,
+				096432D9214F81B3007A87A8 /* BlankCell.swift in Sources */,
 				09A7B765213BBE1C0084E2C9 /* RequestDetailGetResponse.swift in Sources */,
 				09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */,
 				09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */,

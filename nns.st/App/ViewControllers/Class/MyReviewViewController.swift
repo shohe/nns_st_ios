@@ -31,6 +31,7 @@ class MyReviewViewController: UIViewController {
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
         tableView.register(ReviewAverageCell.nib, forCellReuseIdentifier: ReviewAverageCell.identifier)
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
+        tableView.register(BlankCell.nib, forCellReuseIdentifier: BlankCell.identifier)
         
         self.fetch()
     }
@@ -100,8 +101,10 @@ extension MyReviewViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let item = self.item { return item.item.count + 2 }
-        return 2
+        if let item = self.item {
+            return (item.item.count > 0) ? item.item.count + 2 : 3
+        }
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -123,8 +126,15 @@ extension MyReviewViewController: UITableViewDataSource {
             }
         default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell {
-                if indexPath.row != 2 {
-                    cell.nonTitle()
+                if indexPath.row != 2 { cell.nonTitle() }
+                if let item = self.item {
+                    if item.item.count > 0 {
+                        cell.setItem(item: item.item[indexPath.row-2])
+                    } else {
+                        if let cell = tableView.dequeueReusableCell(withIdentifier: BlankCell.identifier, for: indexPath) as? BlankCell {
+                            return cell
+                        }
+                    }
                 }
                 return cell
             }

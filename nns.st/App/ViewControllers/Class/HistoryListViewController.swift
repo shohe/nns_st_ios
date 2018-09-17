@@ -33,6 +33,7 @@ class HistoryListViewController: UIViewController {
         
         // register cells
         tableView.register(HistoryCell.nib, forCellReuseIdentifier: HistoryCell.identifier)
+        tableView.register(BlankCell.nib, forCellReuseIdentifier: BlankCell.identifier)
         
         self.fetch()
     }
@@ -78,13 +79,20 @@ extension HistoryListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.historyItems.count
+        return (self.historyItems.count > 0) ? self.historyItems.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: HistoryCell.identifier, for: indexPath) as? HistoryCell {
             cell.selectionStyle = .none
-            cell.setItem(item: self.historyItems[indexPath.row])
+            if self.historyItems.count > 0 {
+                cell.setItem(item: self.historyItems[indexPath.row])
+            } else {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: BlankCell.identifier, for: indexPath) as? BlankCell {
+                    cell.title.text = "履歴はまだありません"
+                    return cell
+                }
+            }
             return cell
         }
         return UITableViewCell()
