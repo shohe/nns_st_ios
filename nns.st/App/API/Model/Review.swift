@@ -11,7 +11,7 @@ import Foundation
 struct Review: Decodable {
 
     let id: Int
-    let name: String
+    let name: String?
     let star: Int
     let comment: String?
     let date: String

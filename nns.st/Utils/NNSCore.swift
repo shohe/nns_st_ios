@@ -12,6 +12,7 @@ enum NNSDataKey: String {
     case authToken = "AuthToken"
     case isWaitState = "WaitState"
     case isMadeOfferId = "MadeOfferId"
+    case dealUserId = "dealUserId"
 }
 
 // MARK: - Token
@@ -50,6 +51,20 @@ extension NNSCore {
     
     class func setMadeOfferId(_ id: Int) {
         UserDefaults.standard.set(id, forKey: NNSDataKey.isMadeOfferId.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+    
+}
+
+// MARK: - dealUserId
+extension NNSCore {
+    
+    class func dealUserId() -> Int {
+        return UserDefaults.standard.integer(forKey: NNSDataKey.dealUserId.rawValue)
+    }
+    
+    class func setDealUserId(_ id: Int) {
+        UserDefaults.standard.set(id, forKey: NNSDataKey.dealUserId.rawValue)
         UserDefaults.standard.synchronize()
     }
     

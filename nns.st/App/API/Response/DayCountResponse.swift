@@ -12,9 +12,11 @@ struct DayCountResponse: Decodable {
     
     let count: Int
     let originalDate: String?
+    let isMatched: Bool?
     
     private enum CodingKeys: String, CodingKey {
         case count = "success"
         case originalDate = "origin"
+        case isMatched = "matched"
     }
 }

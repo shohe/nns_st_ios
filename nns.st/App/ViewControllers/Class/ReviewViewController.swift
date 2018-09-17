@@ -21,6 +21,7 @@ class ReviewViewController: UIViewController {
     
     private var stars: [UIButton] = []
     private var loadingView: LoadingView?
+    private var star = 0
     
     static func instantiateViewController() -> ReviewViewController {
         let storyboard = UIStoryboard(name: "Review", bundle: nil)
@@ -65,19 +66,23 @@ extension ReviewViewController {
         }) { (complete) in
             /* send this review to server */
             // here is just sample. remove after all.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
-            }
-            
+            API.reviewCreateRequest(dealUserId: NNSCore.dealUserId(), star: self.star, comment: self.textView.text, handler: { (result) in
+                if result == nil { print("create review error.") }
+                NNSCore.setDealUserId(0)
+                NNSCore.setWaitState(false)
+                NNSCore.setMadeOfferId(0)
+                self.dismiss(animated: true, completion: nil)
+            })
         }
     }
     
     private func evaluateStar(sender: UIButton) {
         for star in stars {
-            star.backgroundColor = .white
+            star.setBackgroundImage(UIImage(named: "blankStar"), for: .normal)
         }
         for evaluate in 1...sender.tag {
-            stars[evaluate - 1].backgroundColor = .yellow
+            stars[evaluate - 1].setBackgroundImage(UIImage(named: "star"), for: .normal)
+            self.star = sender.tag
         }
     }
     

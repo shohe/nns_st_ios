@@ -67,15 +67,21 @@ extension MainViewController {
 
         API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
             if let res = result {
-                // day count
-                print("あと\(res.count)日")
+                if res.count > 0 {
+                    // day count
+                    print("あと\(res.count)日")
+                } else if res.count == 0 {
+                    print("今日")
+                } else {
+                    // time to go to review
+                    self.present(ReviewViewController.instantiateViewController(), animated: true, completion: {
+//                        NNSCore.setMadeOfferId(0)
+//                        NNSCore.setWaitState(false)
+                    })
+                }
                 self.requests.removeAll()
                 self.collectionView.reloadData()
-            } else {
-                // time to go to review
-                print("レビュー画面に行く")
-                NNSCore.setMadeOfferId(0)
-                NNSCore.setWaitState(false)
+                
             }
         }
     }
@@ -227,6 +233,7 @@ extension MainViewController: ConfirmOfferViewControllerDelegate {
     
     func confirmOfferViewController(_ didCreateOffer: Offer) {
         NNSCore.setMadeOfferId(didCreateOffer.id!)
+        NNSCore.setDealUserId(didCreateOffer.stylistId!)
     }
     
 }
