@@ -74,7 +74,8 @@ extension OutcomeInfoCell {
     private func setPrice(price: CGFloat?) {
         if let price = price {
             priceLabel.text = makePriceLabel(price: price)
-            charityPriceLabel.text = makePriceLabel(price: price*charityRate)
+            self.charityPriceLabel.text = self.makePriceLabel(price: price*charityRate)
+            self.serviceFeeLabel.text = self.makePriceLabel(price: price*serviceFeeRate)
         }
     }
     
