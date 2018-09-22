@@ -18,13 +18,13 @@ class ConfirmRequestViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var request: RequestGetItem!
+    private var request: OfferRequireMatchedItem!
     private var requestItem: RequestDetailGetResponse!
     private var loadingView: LoadingView?
     
     var delegate: ConfirmRequestViewControllerDelegate?
     
-    static func instantiateViewController(request: RequestGetItem, parent: UIViewController) -> UINavigationController {
+    static func instantiateViewController(request: OfferRequireMatchedItem, parent: UIViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
         let root = viewController.viewControllers.first as! ConfirmRequestViewController
@@ -92,12 +92,12 @@ extension ConfirmRequestViewController {
     }
     
     private func fetchRequest() {
-        API.requestDetailGetRequest(id: self.request.requestId) { (result) in
-            if let res = result {
-                self.requestItem = res
-                self.tableView.reloadData()
-            }
-        }
+//        API.requestDetailGetRequest(id: self.request.requestId) { (result) in
+//            if let res = result {
+//                self.requestItem = res
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
     private func setSnapShotToCell(cell: SalonAddressCell, salonLocation: SalonLocation?) {
@@ -216,18 +216,18 @@ extension ConfirmRequestViewController: PriceButtonCellDelegate {
         UIView.animate(withDuration: 0.3, animations: {
             self.loadingView!.alpha = 1
         }) { (complete) in
-            API.requestTakeRequest(id: self.request.requestId, handler: { (result) in
-                if let res = result {
-                    if res.isSuccess {
-                        self.delegate?.confirmRequestView(res.isSuccess)
-                        self.dismiss(animated: true, completion: nil)
-                    } else {
-                        print("take request: error")
-                    }
-                } else {
-                    print("take request: error")
-                }
-            })
+//            API.requestTakeRequest(id: self.request.requestId, handler: { (result) in
+//                if let res = result {
+//                    if res.isSuccess {
+//                        self.delegate?.confirmRequestView(res.isSuccess)
+//                        self.dismiss(animated: true, completion: nil)
+//                    } else {
+//                        print("take request: error")
+//                    }
+//                } else {
+//                    print("take request: error")
+//                }
+//            })
         }
     }
     
