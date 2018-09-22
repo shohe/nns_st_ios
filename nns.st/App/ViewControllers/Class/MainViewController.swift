@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBInspectable var itemWidth: CGFloat = 0.0
     
-    private var requests: [RequestGetItem] = []
+    private var items: [OfferRequireMatchedItem] = []
     
     
     static func instantiateViewController() -> MainViewController {
@@ -51,89 +51,19 @@ class MainViewController: UIViewController {
 extension MainViewController {
     
     private func fetch() {
-        if NNSCore.isWaitState() {
-            self.fetchDayCount()
-        } else if NNSCore.madeOfferId() > 0 {
-            self.fetchRequests()
-        }
-    }
-    
-    private func fetchDayCount() {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        let timeFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        timeFormatter.dateFormat = "HH:mm:ss"
-
-        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
+        API.offerRequireMatchedRequest { (result) in
             if let res = result {
-                if res.count > 0 {
-                    // day count
-                    print("あと\(res.count)日")
-                } else if res.count == 0 {
-                    print("今日")
-                } else {
-                    // time to go to review
-                    self.present(ReviewViewController.instantiateViewController(), animated: true, completion: {
-//                        NNSCore.setMadeOfferId(0)
-//                        NNSCore.setWaitState(false)
-                    })
+                for var item in res.located {
+                    item.isNominated = false
+                    self.items.append(item)
                 }
-                self.requests.removeAll()
-                self.collectionView.reloadData()
-                
-            }
-        }
-    }
-    
-    private func fetchRequests() {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        let timeFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        timeFormatter.dateFormat = "HH:mm:ss"
-        
-        API.dayCountRequest(today: "\(dateFormatter.string(from: date)) \(timeFormatter.string(from: date))") { (result) in
-            if let res = result {
-                if res.count >= 0 {
-                    // still offer is working
-                    API.requestGetRequest { (result) in
-                        if let res = result {
-                            self.requests = res.item
-                            self.collectionView.reloadData()
-                        }
-                    }
-                } else {
-                    // dead offer by date-time
-                    self.setCloseDeadOffer()
+                for var item in res.nominated {
+                    item.isNominated = true
+                    self.items.append(item)
                 }
-            } else {
-                // dead offer by date-time
-                self.setCloseDeadOffer()
-            }
-        }
-    }
-    
-    private func setCloseDeadOffer() {
-        API.offerCancelRequest(id: NNSCore.madeOfferId()) { (result) in
-            if result != nil {
-                NNSCore.setMadeOfferId(0)
-                NNSCore.setWaitState(false)
-                self.requests.removeAll()
                 self.collectionView.reloadData()
-                self.showAleart()
             }
         }
-    }
-    
-    private func showAleart() {
-        let title = "期限切れ"
-        let message = "予定の日にちが過ぎたのでオファーは廃棄されます"
-        let buttonTitle = "ok"
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okayButton = UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.cancel, handler: nil)
-        alert.addAction(okayButton)
-        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -142,22 +72,13 @@ extension MainViewController {
 // MARK: - IBAction
 extension MainViewController {
     
-    @IBAction func pressOfferBtn(_ sender: UIButton) {
-        if NNSCore.madeOfferId() > 0 { // if user did make offer already...
-            self.present(HistoryInfoViewController.instantiateNavigationController(offerId: NNSCore.madeOfferId()), animated: true, completion: nil)
-        } else {
-            self.present(MakeOfferViewController.instantiateViewController(parent: self), animated: true, completion: nil)
-        }
+    @IBAction func pressListBtn(_ sender: UIButton) {
+        print("pressListBtn()")
     }
     
     @IBAction func pressHistoryBtn(_ sender: UIButton) {
         self.present(HistoryListViewController.instantiateViewController(parent: self), animated: true, completion: nil)
     }
-    
-//    // will not use charity
-//    @IBAction func pressCharityBtn(_ sender: UIButton) {
-//        self.present(CharityListViewController.instantiateViewController(), animated: true, completion: nil)
-//    }
     
     @IBAction func pressMyReviewBtn(_ sender: UIButton) {
         self.present(MyReviewViewController.instantiateViewController(), animated: true, completion: nil)
@@ -173,7 +94,7 @@ extension MainViewController: UICollectionViewDelegate {
         if indexPath.row == 0 {
             self.present(MyPageViewController.instantiateViewController(), animated: true, completion: nil)
         } else {
-            let item = requests[indexPath.row-1] // -1 for mypage
+            let item = items[indexPath.row-1] // -1 for mypage
             self.present(ConfirmRequestViewController.instantiateViewController(request: item, parent: self), animated: true, completion: nil)
         }
     }
@@ -189,7 +110,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return requests.count + 1 // +1 for mypage
+        return items.count + 1 // +1 for mypage
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -198,9 +119,13 @@ extension MainViewController: UICollectionViewDataSource {
         if indexPath.row == 0 {
             cell.nameLabel.isHidden = true
         } else {
-            let item = requests[indexPath.row-1]
+            let item = items[indexPath.row-1]
             cell.nameLabel.isHidden = false
             cell.nameLabel.text = item.name
+            
+            if item.isNominated! { cell.nameLabel.textColor = .yellow }
+            
+            
             if let url = item.imageUrl {
                 cell.thumbnailView.loadImage(urlString: url)
             }

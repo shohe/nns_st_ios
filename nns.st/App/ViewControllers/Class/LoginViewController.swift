@@ -34,7 +34,18 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     @IBAction func pushNextBtn(_ sender: UIButton) {
-        self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
+        if let email = mailaddress.text, let password = password.text {
+            API.loginRequest(email: email, password: password) { (result) in
+                if let res = result {
+                    NNSCore.setAuthToken(res.item.token)
+                    self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
+                } else {
+                    print("メールアドレスかパスワードが間違っています")
+                }
+            }
+        } else {
+            print("メールアドレスかパスワードが間違っています")
+        }
     }
     
 }
