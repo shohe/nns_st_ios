@@ -13,3 +13,11 @@
 "forgetPassword" = "Forgot Password?";
 "signup" = "Signup";
 "loginErrorMessage" = "* Incorrect Emain or Password";
+
+// [main]
+"history" = "history";
+"offer" = "offer";
+"review" = "review";
+"sumOfDonation" = "Total amount of donation";
+"currency" = "$ %.2f USD";
+"loadingStylistMessage" = "Loading Stylists...";

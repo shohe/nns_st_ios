@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: GradationViewController {
 
     @IBOutlet weak var mailaddress: UnderlineTextField!
     @IBOutlet weak var password: UnderlineTextField!

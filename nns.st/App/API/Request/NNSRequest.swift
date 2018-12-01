@@ -27,7 +27,7 @@ extension NNSRequest {
     }
     
     var headerFields: [String : String] {
-        guard let accessToken = NNSCore.authToken() else {
+        guard let accessToken = NNSCore.userInfo().authToken else {
             return [:]
         }
         return ["Authorization": "Bearer \(accessToken)"]

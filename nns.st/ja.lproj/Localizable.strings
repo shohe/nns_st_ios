@@ -13,3 +13,12 @@
 "forgetPassword" = "パスワードを忘れた場合";
 "signup" = "新規登録";
 "loginErrorMessage" = "* メールアドレスかパスワードが間違っています";
+
+// [main]
+"history" = "履歴";
+"offer" = "オファー";
+"review" = "レビュー";
+"sumOfDonation" = "寄付される合計金額";
+"currency" = "¥ %d JPY";
+"loadingStylistMessage" = "スタイリストを検索中です...";
+

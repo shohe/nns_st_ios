@@ -9,7 +9,14 @@
 import UIKit
 import APIKit
 
-class ViewController: UIViewController {
+class GradationViewController: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let view = self.view as! BackgroundView
+        view.setGradation()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

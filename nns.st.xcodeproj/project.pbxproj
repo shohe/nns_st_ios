@@ -10,8 +10,9 @@
 		0913EBBC21B2889300417928 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0913EBBE21B2889300417928 /* Localizable.strings */; };
 		0913EBC121B288BE00417928 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0913EBC321B288BE00417928 /* Localizable.strings */; };
 		0913EBC521B289D200417928 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913EBC421B289D200417928 /* UserInfo.swift */; };
+		0913EBC721B2E97600417928 /* UIView+animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913EBC621B2E97600417928 /* UIView+animate.swift */; };
 		091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEDF21130017008ED8C5 /* AppDelegate.swift */; };
-		091BEEE221130017008ED8C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEE121130017008ED8C5 /* ViewController.swift */; };
+		091BEEE221130017008ED8C5 /* GradationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEE121130017008ED8C5 /* GradationViewController.swift */; };
 		091BEEE521130017008ED8C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091BEEE321130017008ED8C5 /* Main.storyboard */; };
 		091BEEE721130019008ED8C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091BEEE621130019008ED8C5 /* Assets.xcassets */; };
 		091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091BEEE821130019008ED8C5 /* LaunchScreen.storyboard */; };
@@ -196,9 +197,10 @@
 		0913EBBD21B2889300417928 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0913EBC221B288BE00417928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0913EBC421B289D200417928 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		0913EBC621B2E97600417928 /* UIView+animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+animate.swift"; sourceTree = "<group>"; };
 		091BEEDC21130017008ED8C5 /* nns.st.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nns.st.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		091BEEDF21130017008ED8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		091BEEE121130017008ED8C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		091BEEE121130017008ED8C5 /* GradationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradationViewController.swift; sourceTree = "<group>"; };
 		091BEEE421130017008ED8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		091BEEE621130019008ED8C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		091BEEE921130019008ED8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -583,7 +585,7 @@
 		09DDAA9C211FF4C5009C6428 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				091BEEE121130017008ED8C5 /* ViewController.swift */,
+				091BEEE121130017008ED8C5 /* GradationViewController.swift */,
 				09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */,
 				09DDAAAD21206507009C6428 /* SignUpMailViewController.swift */,
 				09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */,
@@ -680,6 +682,7 @@
 				09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */,
 				09DDAAE521254FA4009C6428 /* UIColor+image.swift */,
 				09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */,
+				0913EBC621B2E97600417928 /* UIView+animate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1017,7 +1020,8 @@
 				09FDE34C212E87DD00A823DA /* CharityListViewController.swift in Sources */,
 				09A7B73F213928F70084E2C9 /* LoginResponse.swift in Sources */,
 				09A7B757213B8B1D0084E2C9 /* OfferGetDetailResponse.swift in Sources */,
-				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
+				0913EBC721B2E97600417928 /* UIView+animate.swift in Sources */,
+				091BEEE221130017008ED8C5 /* GradationViewController.swift in Sources */,
 				0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */,
 				0952F4A8213C0D2700B5BCF3 /* ReviewCreateRequest.swift in Sources */,
 				0952F490213BD9A900B5BCF3 /* ReservationGetResponse.swift in Sources */,
@@ -1323,7 +1327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shohe1218.nns-st-stylist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shohe1218.nns-st";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1342,7 +1346,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shohe1218.nns-st-stylist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shohe1218.nns-st";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

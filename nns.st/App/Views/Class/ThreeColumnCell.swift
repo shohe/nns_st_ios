@@ -24,6 +24,10 @@ class ThreeColumnCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var thumbnailView: UIImageView!
+    @IBOutlet weak var auraBottom: UIImageView!
+    @IBOutlet weak var auraMiddle: UIImageView!
+    @IBOutlet weak var auraTop: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +43,27 @@ extension ThreeColumnCell {
     private func initThumbnail() {
         let sideMargin: CGFloat = 32 * 2
         thumbnailView.layer.cornerRadius = (self.frame.width - sideMargin) / 4
+    }
+    
+    private func setAnim(view: UIView, duration: CFTimeInterval, isRightRotation: Bool) {
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.fromValue = 0.0
+        rotationAnimation.toValue = isRightRotation ? Double.pi * 2 : Double.pi * -2
+        rotationAnimation.duration = duration
+        rotationAnimation.repeatCount = .infinity
+        view.layer.add(rotationAnimation, forKey: nil)
+    }
+    
+}
+
+
+// MARK: - public
+extension ThreeColumnCell {
+    
+    func startAuraAnimation() {
+        setAnim(view: auraBottom, duration: 14.0, isRightRotation: true)
+        setAnim(view: auraMiddle, duration: 16.0, isRightRotation: false)
+        setAnim(view: auraTop, duration: 12.0, isRightRotation: true)
     }
     
 }

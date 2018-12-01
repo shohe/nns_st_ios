@@ -49,3 +49,15 @@ struct SalonLocation: Decodable {
         case lng = "lng"
     }
 }
+
+enum UserStatus: String {
+    case None = "None"
+    case Requested = "Requested"
+    case Reserved = "Reserved"
+    case Serviced = "Serviced"
+}
+
+enum UserType: Int {
+    case Customer = 0
+    case Stylist = 1
+}

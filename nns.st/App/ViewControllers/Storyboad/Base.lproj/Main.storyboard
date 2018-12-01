@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +21,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmW-a0-QEU" userLabel="BtnGroupView">
                                 <rect key="frame" x="0.0" y="347.5" width="375" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcL-hr-CdM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcL-hr-CdM">
                                         <rect key="frame" x="157.5" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="3M3-OR-uDa"/>
                                             <constraint firstAttribute="width" secondItem="hcL-hr-CdM" secondAttribute="height" multiplier="1:1" id="hKl-Sp-4i2"/>
                                         </constraints>
+                                        <state key="normal" image="scissors"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="30"/>
@@ -39,13 +38,14 @@
                                             <action selector="pressListBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mc4-6f-vUH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ow7-xZ-2z1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ow7-xZ-2z1">
                                         <rect key="frame" x="49" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="b6q-8v-oVg"/>
                                             <constraint firstAttribute="width" secondItem="Ow7-xZ-2z1" secondAttribute="height" multiplier="1:1" id="v3f-3f-3YS"/>
                                         </constraints>
+                                        <state key="normal" image="history"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="30"/>
@@ -55,13 +55,14 @@
                                             <action selector="pressHistoryBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dp-Ct-ccm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-SU-PXX">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-SU-PXX">
                                         <rect key="frame" x="266.5" y="0.0" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.40784313729999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="W8j-SU-PXX" secondAttribute="height" multiplier="1:1" id="IZR-v6-KIJ"/>
                                             <constraint firstAttribute="height" constant="60" id="fyS-pk-JkX"/>
                                         </constraints>
+                                        <state key="normal" image="review"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="30"/>
@@ -75,10 +76,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="60"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcQ-d1-ZNo">
-                                        <rect key="frame" x="109" y="0.5" width="48.5" height="60"/>
+                                        <rect key="frame" x="109" y="0.0" width="48.5" height="60"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmC-TA-ccm">
-                                        <rect key="frame" x="217.5" y="0.5" width="49" height="60"/>
+                                        <rect key="frame" x="217.5" y="0.0" width="49" height="60"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc4-sX-tPJ">
                                         <rect key="frame" x="326.5" y="0.0" width="48.5" height="60"/>
@@ -118,29 +119,29 @@
                                     <constraint firstItem="W8j-SU-PXX" firstAttribute="firstBaseline" secondItem="Ow7-xZ-2z1" secondAttribute="firstBaseline" id="xlq-MP-zld"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="履歴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-zo-1rt">
-                                <rect key="frame" x="67" y="413.5" width="23" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWI-zo-1rt">
+                                <rect key="frame" x="61" y="413.5" width="36" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予約リスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k67-E0-0Y1">
-                                <rect key="frame" x="159.5" y="413.5" width="56.5" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="offer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k67-E0-0Y1">
+                                <rect key="frame" x="175" y="413.5" width="25.5" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レビュー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqg-ZN-L3G">
-                                <rect key="frame" x="274" y="413.5" width="45" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqg-ZN-L3G">
+                                <rect key="frame" x="279" y="413.5" width="34.5" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yD8-gg-zmL">
-                                <rect key="frame" x="0.0" y="550" width="374" height="57"/>
+                                <rect key="frame" x="0.0" y="550" width="375" height="57"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥120,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMu-Se-vMk">
-                                        <rect key="frame" x="0.0" y="18" width="374" height="39"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="39"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -152,14 +153,14 @@
                                     <constraint firstAttribute="trailing" secondItem="JMu-Se-vMk" secondAttribute="trailing" id="jNH-A9-trr"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寄付される合計金額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBO-vV-d0t">
-                                <rect key="frame" x="0.0" y="550" width="374" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sumOfDonation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBO-vV-d0t">
+                                <rect key="frame" x="0.0" y="550" width="375" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FUq-oH-Tqy">
-                                <rect key="frame" x="0.0" y="77.5" width="374" height="210"/>
+                                <rect key="frame" x="0.0" y="77.5" width="375" height="210"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="210" id="Zge-Iz-dGL"/>
@@ -235,6 +236,11 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="FUq-oH-Tqy" id="32b-ad-FZG"/>
+                        <outlet property="donationLabel" destination="qBO-vV-d0t" id="oBn-4G-vJS"/>
+                        <outlet property="leftLabel" destination="SWI-zo-1rt" id="wa3-o9-GNP"/>
+                        <outlet property="middleLabel" destination="k67-E0-0Y1" id="RZW-O3-Hiv"/>
+                        <outlet property="priceLabel" destination="JMu-Se-vMk" id="O0T-00-8dF"/>
+                        <outlet property="rightLabel" destination="Bqg-ZN-L3G" id="wfq-4l-Uyd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -242,4 +248,9 @@
             <point key="canvasLocation" x="136.80000000000001" y="99.400299850074973"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="history" width="300" height="300"/>
+        <image name="review" width="300" height="300"/>
+        <image name="scissors" width="300" height="300"/>
+    </resources>
 </document>

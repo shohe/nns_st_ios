@@ -17,15 +17,15 @@ enum NNSDataKey: String {
 
 // MARK: - Token
 class NNSCore {
-    class func authToken() -> String? {
-        return UserDefaults.standard.string(forKey: NNSDataKey.authToken.rawValue)
-    }
-    
-    class func setAuthToken(_ token: String?) {
-        if token == nil {return}
-        UserDefaults.standard.set(token!, forKey: NNSDataKey.authToken.rawValue)
-        UserDefaults.standard.synchronize()
-    }
+//    class func authToken() -> String? {
+//        return UserDefaults.standard.string(forKey: NNSDataKey.authToken.rawValue)
+//    }
+//
+//    class func setAuthToken(_ token: String?) {
+//        if token == nil {return}
+//        UserDefaults.standard.set(token!, forKey: NNSDataKey.authToken.rawValue)
+//        UserDefaults.standard.synchronize()
+//    }
     
     class func userInfo() -> UserInfo {
         guard let unarchivedObject = UserDefaults.standard.object(forKey: UserInfo.key) as? NSData,

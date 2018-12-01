@@ -47,7 +47,9 @@ extension SignUpNameViewController {
             
             API.userRegistRequest(name: "\(userName)", email: self.mailaddress!, password: self.password!) { (result) in
                 if let res = result {
-                    NNSCore.setAuthToken(res.item.token)
+                    let info = NNSCore.userInfo()
+                    info.authToken = res.item.token
+                    NNSCore.setUserInfo(userInfo: info)
                     self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
                 } else {
                     self.nextButton.isEnabled = true

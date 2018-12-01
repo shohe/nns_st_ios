@@ -8,9 +8,15 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: GradationViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var middleLabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
+    @IBOutlet weak var donationLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     @IBInspectable var itemWidth: CGFloat = 0.0
     
     private var items: [OfferRequireMatchedItem] = []
@@ -31,10 +37,14 @@ class MainViewController: UIViewController {
         
         let inset = (UIScreen.main.bounds.width - itemWidth) / 2.0
         layout.sectionInset = UIEdgeInsetsMake(0.0, inset, 0.0, inset)
+        
+        self.collectionView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        localizedText()
         collectionView.register(ThreeColumnCell.nib, forCellWithReuseIdentifier: ThreeColumnCell.identifier)
         fetch()
     }
@@ -66,6 +76,14 @@ extension MainViewController {
         }
     }
     
+    private func localizedText() {
+        leftLabel.text = NSLocalizedString("history", comment: "")
+        middleLabel.text = NSLocalizedString("offer", comment: "")
+        rightLabel.text = NSLocalizedString("review", comment: "")
+        donationLabel.text = NSLocalizedString("sumOfDonation", comment: "")
+        priceLabel.text = String(format: NSLocalizedString("currency", comment: ""), 0.0)
+    }
+    
 }
 
 
@@ -73,7 +91,7 @@ extension MainViewController {
 extension MainViewController {
     
     @IBAction func pressListBtn(_ sender: UIButton) {
-        print("pressListBtn()")
+        self.present(MakeOfferViewController.instantiateViewController(parent: self), animated: true, completion: nil)
     }
     
     @IBAction func pressHistoryBtn(_ sender: UIButton) {
@@ -117,14 +135,16 @@ extension MainViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThreeColumnCell.identifier, for: indexPath) as! ThreeColumnCell
         
         if indexPath.row == 0 {
-            cell.nameLabel.isHidden = true
+            cell.nameLabel.isHidden = false
+            cell.nameLabel.text = NSLocalizedString("loadingStylistMessage", comment: "")
+            cell.thumbnailView.image = UIImage(named: "edword_normal")
+            cell.startAuraAnimation()
         } else {
             let item = items[indexPath.row-1]
             cell.nameLabel.isHidden = false
             cell.nameLabel.text = item.name
             
             if item.isNominated! { cell.nameLabel.textColor = .yellow }
-            
             
             if let url = item.imageUrl {
                 cell.thumbnailView.loadImage(urlString: url)
