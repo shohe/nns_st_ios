@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // If user is loged in already, go to MainView.
-        if NNSCore.authToken() != nil {
+        if NNSCore.userInfo().authToken != nil {
             if let window = window {
                 window.rootViewController = MainViewController.instantiateViewController()
             }

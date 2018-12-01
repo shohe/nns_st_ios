@@ -11,15 +11,15 @@ import UIKit
 class UnderlineTextField: UITextField {
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, 5, 0, 5))
+        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, 30, -2, 30))
     }
     
     override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, 5, 0, 5))
+        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, 30, -2, 30))
     }
     
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, 5, 0, 5))
+        return UIEdgeInsetsInsetRect(bounds, UIEdgeInsetsMake(0, 30, -2, 30))
     }
     
     @IBInspectable var height: CGFloat = 1 {
@@ -71,11 +71,14 @@ class UnderlineTextField: UITextField {
         border.backgroundColor = borderColor.cgColor
         
         let textAttachment = NSTextAttachment(data: nil, ofType: nil)
-        textAttachment.image = placeholderImage.reSizeImage(reSize: CGSize(width: phImgWidth, height: phImgHeight))
+        
+        let holderImageView = UIImageView.init(image: placeholderImage)
+        holderImageView.frame = CGRect(x: 5, y: (self.frame.height - phImgHeight) - 10, width: phImgWidth, height: phImgHeight)
+        self.addSubview(holderImageView)
         
         let attributeString = NSAttributedString(attachment: textAttachment)
         let attributedTxt = NSMutableAttributedString(attributedString: attributeString)
-        let placeholderTxt = NSAttributedString(string: placeholderText, attributes: [NSAttributedStringKey.foregroundColor : placeholderTextColor])
+        let placeholderTxt = NSAttributedString(string: NSLocalizedString(placeholderText, comment: ""), attributes: [NSAttributedStringKey.foregroundColor : placeholderTextColor])
         attributedTxt.append(placeholderTxt)
         
         self.attributedPlaceholder = attributedTxt

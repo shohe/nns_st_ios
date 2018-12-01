@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "レビュー"; ObjectID = "Bqg-ZN-L3G"; */
+"Bqg-ZN-L3G.text" = "レビュー";
+
+/* Class = "UILabel"; text = "¥120,000"; ObjectID = "JMu-Se-vMk"; */
+"JMu-Se-vMk.text" = "¥120,000";
+
+/* Class = "UILabel"; text = "履歴"; ObjectID = "SWI-zo-1rt"; */
+"SWI-zo-1rt.text" = "履歴";
+
+/* Class = "UILabel"; text = "予約リスト"; ObjectID = "k67-E0-0Y1"; */
+"k67-E0-0Y1.text" = "予約リスト";
+
+/* Class = "UILabel"; text = "寄付される合計金額"; ObjectID = "qBO-vV-d0t"; */
+"qBO-vV-d0t.text" = "寄付される合計金額";
