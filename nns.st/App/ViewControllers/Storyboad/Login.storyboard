@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="D7n-V8-UZc"/>
                                 </constraints>
-                                <state key="normal" title="新規登録">
+                                <state key="normal" title="Sign in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -40,16 +40,16 @@
                                 <rect key="frame" x="0.0" y="271.5" width="375" height="184"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz2-ED-xye">
-                                        <rect key="frame" x="24" y="168" width="113" height="16"/>
+                                        <rect key="frame" x="24" y="168" width="81" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="lZ9-9p-tLS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <state key="normal" title="パスワードを忘れた場合">
+                                        <state key="normal" title="Forgot Password">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="パスワード" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RxH-Z2-frU" customClass="UnderlineTextField" customModule="nns_st" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RxH-Z2-frU" customClass="UnderlineTextField" customModule="nns_st" customModuleProvider="target">
                                         <rect key="frame" x="24" y="53" width="327" height="35"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,7 +65,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
                                                 <color key="value" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="パスワード"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="password"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="phImgWidth">
                                                 <real key="value" value="17"/>
                                             </userDefinedRuntimeAttribute>
@@ -78,7 +78,7 @@
                                             <outlet property="delegate" destination="tXA-LB-ADx" id="IQG-Ae-bwa"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="メールアドレス" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0TI-m2-dl6" customClass="UnderlineTextField" customModule="nns_st" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mail address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0TI-m2-dl6" customClass="UnderlineTextField" customModule="nns_st" customModuleProvider="target">
                                         <rect key="frame" x="24" y="0.0" width="327" height="35"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -97,7 +97,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
                                                 <color key="value" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="メールアドレス"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="mailAddress"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="phImgWidth">
                                                 <real key="value" value="17"/>
                                             </userDefinedRuntimeAttribute>
@@ -129,7 +129,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="XFH-MN-7hW"/>
                                 </constraints>
-                                <state key="normal" title="ログイン">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  nns.st
+
+  Created by SHOHE on 2018/12/01.
+  Copyright © 2018 OhtaniShohe. All rights reserved.
+*/
+
+// [login]
+"mailAddress" = "Email";
+"password" = "Password";
+"login" = "Login";
+"forgetPassword" = "Forgot Password?";
+"signup" = "Signup";

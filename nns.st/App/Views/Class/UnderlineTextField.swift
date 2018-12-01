@@ -78,7 +78,7 @@ class UnderlineTextField: UITextField {
         
         let attributeString = NSAttributedString(attachment: textAttachment)
         let attributedTxt = NSMutableAttributedString(attributedString: attributeString)
-        let placeholderTxt = NSAttributedString(string: placeholderText, attributes: [NSAttributedStringKey.foregroundColor : placeholderTextColor])
+        let placeholderTxt = NSAttributedString(string: NSLocalizedString(placeholderText, comment: ""), attributes: [NSAttributedStringKey.foregroundColor : placeholderTextColor])
         attributedTxt.append(placeholderTxt)
         
         self.attributedPlaceholder = attributedTxt

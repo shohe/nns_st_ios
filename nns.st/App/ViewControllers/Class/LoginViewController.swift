@@ -20,8 +20,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.localizedText()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +63,19 @@ extension LoginViewController : UITextFieldDelegate {
 }
 
 extension LoginViewController {
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+}
+
+extension LoginViewController {
+    
+    private func localizedText() {
+        loginBtn.setTitle(NSLocalizedString("login", comment: ""), for: UIControlState.normal)
+        forgetBtn.setTitle(NSLocalizedString("forgetPassword", comment: ""), for: UIControlState.normal)
+        signupBtn.setTitle(NSLocalizedString("signup", comment: ""), for: UIControlState.normal)
+    }
+    
 }
