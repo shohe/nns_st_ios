@@ -141,19 +141,12 @@
                                     <action selector="pushNextBtn:" destination="tXA-LB-ADx" eventType="touchUpInside" id="EiF-Qx-ugB"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5V4-nW-6rN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_main" translatesAutoresizingMaskIntoConstraints="NO" id="5V4-nW-6rN">
                                 <rect key="frame" x="24" y="71.5" width="327" height="160"/>
-                                <color key="backgroundColor" red="0.0" green="0.40784313725490196" blue="0.53333333333333333" alpha="0.30075334821428573" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="eCi-Wh-aJX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9B-VE-QdI">
-                                <rect key="frame" x="161.5" y="141" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.52156862745098043" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -165,13 +158,11 @@
                             <constraint firstItem="AUv-8E-drh" firstAttribute="top" secondItem="RxH-Z2-frU" secondAttribute="bottom" constant="28" id="TJ8-Km-Uer"/>
                             <constraint firstItem="AUv-8E-drh" firstAttribute="leading" secondItem="7vo-x0-TEQ" secondAttribute="leading" constant="24" id="Uxh-4H-13D"/>
                             <constraint firstItem="7vo-x0-TEQ" firstAttribute="centerX" secondItem="uw7-4g-eBw" secondAttribute="centerX" id="VTY-yM-9Ti"/>
-                            <constraint firstItem="s9B-VE-QdI" firstAttribute="centerX" secondItem="5V4-nW-6rN" secondAttribute="centerX" id="VYW-6S-dVu"/>
                             <constraint firstItem="7vo-x0-TEQ" firstAttribute="top" secondItem="5V4-nW-6rN" secondAttribute="bottom" constant="40" id="cD7-hY-FrR"/>
                             <constraint firstItem="lz2-ED-xye" firstAttribute="top" secondItem="AUv-8E-drh" secondAttribute="bottom" constant="8" id="eDx-ut-NXa"/>
                             <constraint firstItem="uw7-4g-eBw" firstAttribute="trailing" secondItem="5V4-nW-6rN" secondAttribute="trailing" constant="24" id="fpQ-Ut-Gdo"/>
                             <constraint firstItem="AUv-8E-drh" firstAttribute="trailing" secondItem="7vo-x0-TEQ" secondAttribute="trailing" constant="-24" id="iMD-lc-ryx"/>
                             <constraint firstItem="7vo-x0-TEQ" firstAttribute="centerY" secondItem="uw7-4g-eBw" secondAttribute="centerY" constant="20" id="uT2-lY-h0l"/>
-                            <constraint firstItem="s9B-VE-QdI" firstAttribute="centerY" secondItem="5V4-nW-6rN" secondAttribute="centerY" id="whb-OK-qI5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uw7-4g-eBw"/>
                         <userDefinedRuntimeAttributes>
@@ -542,6 +533,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="login_main" width="654" height="320"/>
         <image name="mail" width="168" height="116"/>
         <image name="password" width="206" height="250"/>
     </resources>
