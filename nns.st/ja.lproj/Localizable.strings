@@ -12,3 +12,4 @@
 "login" = "ログイン";
 "forgetPassword" = "パスワードを忘れた場合";
 "signup" = "新規登録";
+"loginErrorMessage" = "* メールアドレスかパスワードが間違っています";

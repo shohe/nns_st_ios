@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var mailaddress: UnderlineTextField!
     @IBOutlet weak var password: UnderlineTextField!
+    @IBOutlet weak var errorMessage: UILabel!
     
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var forgetBtn: UIButton!
@@ -20,7 +21,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.localizedText()
+        errorMessage.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,14 +39,16 @@ extension LoginViewController {
         if let email = mailaddress.text, let password = password.text {
             API.loginRequest(email: email, password: password) { (result) in
                 if let res = result {
-                    NNSCore.setAuthToken(res.item.token)
+                    let info = NNSCore.userInfo()
+                    info.authToken = res.item.token
+                    NNSCore.setUserInfo(userInfo: info)
                     self.present(MainViewController.instantiateViewController(), animated: true, completion: nil)
                 } else {
-                    print("メールアドレスかパスワードが間違っています")
+                    self.showErrorMessage()
                 }
             }
         } else {
-            print("メールアドレスかパスワードが間違っています")
+            self.showErrorMessage()
         }
     }
     
@@ -73,9 +78,16 @@ extension LoginViewController {
 extension LoginViewController {
     
     private func localizedText() {
+        errorMessage.text = NSLocalizedString("loginErrorMessage", comment: "")
         loginBtn.setTitle(NSLocalizedString("login", comment: ""), for: UIControlState.normal)
         forgetBtn.setTitle(NSLocalizedString("forgetPassword", comment: ""), for: UIControlState.normal)
         signupBtn.setTitle(NSLocalizedString("signup", comment: ""), for: UIControlState.normal)
+    }
+    
+    private func showErrorMessage() {
+        self.errorMessage.isHidden = false
+        self.mailaddress.borderColor = self.errorMessage.textColor
+        self.password.borderColor = self.errorMessage.textColor
     }
     
 }

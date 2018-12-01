@@ -26,6 +26,20 @@ class NNSCore {
         UserDefaults.standard.set(token!, forKey: NNSDataKey.authToken.rawValue)
         UserDefaults.standard.synchronize()
     }
+    
+    class func userInfo() -> UserInfo {
+        guard let unarchivedObject = UserDefaults.standard.object(forKey: UserInfo.key) as? NSData,
+            let userInfo = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject as Data) as? UserInfo else {
+            return UserInfo()
+        }
+        return userInfo
+    }
+    
+    class func setUserInfo(userInfo: UserInfo) {
+        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: userInfo)
+        UserDefaults.standard.set(archivedObject, forKey: UserInfo.key)
+        UserDefaults.standard.synchronize()
+    }
 }
 
 // MARK: - WaitState

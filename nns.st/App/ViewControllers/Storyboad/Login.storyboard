@@ -147,6 +147,12 @@
                                     <constraint firstAttribute="height" constant="160" id="eCi-Wh-aJX"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loginErrorMessage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTV-Mt-LH5">
+                                <rect key="frame" x="28" y="259.5" width="90.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.70793308169429836" green="0.0" blue="0.10940635919095761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.52156862745098043" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -155,12 +161,14 @@
                             <constraint firstItem="IZr-4p-Ox7" firstAttribute="leading" secondItem="uw7-4g-eBw" secondAttribute="leading" constant="24" id="N9G-Mg-D89"/>
                             <constraint firstItem="uw7-4g-eBw" firstAttribute="trailing" secondItem="7vo-x0-TEQ" secondAttribute="trailing" id="Nni-pu-kJ5"/>
                             <constraint firstItem="5V4-nW-6rN" firstAttribute="leading" secondItem="uw7-4g-eBw" secondAttribute="leading" constant="24" id="S3G-Y8-Nv2"/>
+                            <constraint firstItem="0TI-m2-dl6" firstAttribute="top" secondItem="uTV-Mt-LH5" secondAttribute="bottom" id="SHf-1F-bnX"/>
                             <constraint firstItem="AUv-8E-drh" firstAttribute="top" secondItem="RxH-Z2-frU" secondAttribute="bottom" constant="28" id="TJ8-Km-Uer"/>
                             <constraint firstItem="AUv-8E-drh" firstAttribute="leading" secondItem="7vo-x0-TEQ" secondAttribute="leading" constant="24" id="Uxh-4H-13D"/>
                             <constraint firstItem="7vo-x0-TEQ" firstAttribute="centerX" secondItem="uw7-4g-eBw" secondAttribute="centerX" id="VTY-yM-9Ti"/>
                             <constraint firstItem="7vo-x0-TEQ" firstAttribute="top" secondItem="5V4-nW-6rN" secondAttribute="bottom" constant="40" id="cD7-hY-FrR"/>
                             <constraint firstItem="lz2-ED-xye" firstAttribute="top" secondItem="AUv-8E-drh" secondAttribute="bottom" constant="8" id="eDx-ut-NXa"/>
                             <constraint firstItem="uw7-4g-eBw" firstAttribute="trailing" secondItem="5V4-nW-6rN" secondAttribute="trailing" constant="24" id="fpQ-Ut-Gdo"/>
+                            <constraint firstItem="uTV-Mt-LH5" firstAttribute="leading" secondItem="uw7-4g-eBw" secondAttribute="leading" constant="28" id="h1j-c0-vEw"/>
                             <constraint firstItem="AUv-8E-drh" firstAttribute="trailing" secondItem="7vo-x0-TEQ" secondAttribute="trailing" constant="-24" id="iMD-lc-ryx"/>
                             <constraint firstItem="7vo-x0-TEQ" firstAttribute="centerY" secondItem="uw7-4g-eBw" secondAttribute="centerY" constant="20" id="uT2-lY-h0l"/>
                         </constraints>
@@ -175,6 +183,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="errorMessage" destination="uTV-Mt-LH5" id="k9m-he-PQh"/>
                         <outlet property="forgetBtn" destination="lz2-ED-xye" id="yCj-n6-RFc"/>
                         <outlet property="loginBtn" destination="AUv-8E-drh" id="LRq-rw-Y8W"/>
                         <outlet property="mailaddress" destination="0TI-m2-dl6" id="wEf-cD-SOo"/>

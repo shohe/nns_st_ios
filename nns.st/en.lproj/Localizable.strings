@@ -12,3 +12,4 @@
 "login" = "Login";
 "forgetPassword" = "Forgot Password?";
 "signup" = "Signup";
+"loginErrorMessage" = "* Incorrect Emain or Password";
