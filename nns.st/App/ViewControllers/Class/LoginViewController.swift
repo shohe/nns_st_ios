@@ -49,3 +49,22 @@ extension LoginViewController {
     }
     
 }
+
+extension LoginViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case mailaddress: password.becomeFirstResponder()
+            case password: pushNextBtn(loginBtn)
+            default: break
+        }
+        return true
+    }
+    
+}
+
+extension LoginViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
