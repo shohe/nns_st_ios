@@ -182,7 +182,9 @@ extension HistoryInfoViewController: SingleButtonCellDelegate {
                 /* cancel offer */
                 API.offerCancelRequest(id: id) { (result) in
                     if result != nil {
-                        NNSCore.setMadeOfferId(0)
+                        let info = NNSCore.userInfo()
+                        info.offerId = nil
+                        NNSCore.setUserInfo(userInfo: info)
                         self.dismiss(animated: true, completion: nil)
                     }
                 }

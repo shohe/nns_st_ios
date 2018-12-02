@@ -84,21 +84,47 @@ extension MainViewController {
         priceLabel.text = String(format: NSLocalizedString("currency", comment: ""), 0.0)
     }
     
+    private func setEdward(cell: ThreeColumnCell) {
+        switch NNSCore.userInfo().userStatus {
+            case .None:
+                cell.nameLabel.isHidden = true
+                cell.thumbnailView.image = UIImage(named: "edword_normal")
+            case .Requested:
+                cell.nameLabel.isHidden = false
+                cell.nameLabel.text = NSLocalizedString("loadingStylistMessage", comment: "")
+                cell.startAuraAnimation()
+                cell.thumbnailView.image = UIImage(named: "edword_normal")
+            case .Reserved:
+                cell.nameLabel.isHidden = false
+                cell.nameLabel.text = String(format: NSLocalizedString("waitingStylistMessage", comment: ""), 5)
+                cell.thumbnailView.image = UIImage(named: "edword_waiting")
+            case .Serviced:
+                break
+        }
+    }
+    
 }
 
 
 // MARK: - IBAction
 extension MainViewController {
     
-    @IBAction func pressListBtn(_ sender: UIButton) {
-        self.present(MakeOfferViewController.instantiateViewController(parent: self), animated: true, completion: nil)
+    @IBAction func pressCenterBtn(_ sender: UIButton) {
+        switch NNSCore.userInfo().userStatus {
+            case .None, .Serviced:
+                self.present(MakeOfferViewController.instantiateViewController(parent: self), animated: true, completion: nil)
+            case .Requested, .Reserved:
+                if let offerId = NNSCore.userInfo().offerId {
+                    self.present(HistoryInfoViewController.instantiateNavigationController(offerId: offerId), animated: true, completion: nil)
+                }
+        }
     }
     
-    @IBAction func pressHistoryBtn(_ sender: UIButton) {
+    @IBAction func pressLeftBtn(_ sender: UIButton) {
         self.present(HistoryListViewController.instantiateViewController(parent: self), animated: true, completion: nil)
     }
     
-    @IBAction func pressMyReviewBtn(_ sender: UIButton) {
+    @IBAction func pressRightBtn(_ sender: UIButton) {
         self.present(MyReviewViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
@@ -135,10 +161,7 @@ extension MainViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThreeColumnCell.identifier, for: indexPath) as! ThreeColumnCell
         
         if indexPath.row == 0 {
-            cell.nameLabel.isHidden = false
-            cell.nameLabel.text = NSLocalizedString("loadingStylistMessage", comment: "")
-            cell.thumbnailView.image = UIImage(named: "edword_normal")
-            cell.startAuraAnimation()
+            setEdward(cell: cell)
         } else {
             let item = items[indexPath.row-1]
             cell.nameLabel.isHidden = false
@@ -161,7 +184,11 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: ConfirmRequestViewControllerDelegate {
     
     func confirmRequestView(_ didMakeReservation: Bool) {
-        NNSCore.setWaitState(didMakeReservation)
+        if didMakeReservation {
+            let info = NNSCore.userInfo()
+            info.userStatus = .Reserved
+            NNSCore.setUserInfo(userInfo: info)
+        }
         
         // reset layout
         let layout:CarouselFlowLayout = self.collectionView.collectionViewLayout as! CarouselFlowLayout
@@ -177,8 +204,11 @@ extension MainViewController: ConfirmRequestViewControllerDelegate {
 extension MainViewController: ConfirmOfferViewControllerDelegate {
     
     func confirmOfferViewController(_ didCreateOffer: Offer) {
-        NNSCore.setMadeOfferId(didCreateOffer.id!)
-        NNSCore.setDealUserId(didCreateOffer.stylistId!)
+        let info = NNSCore.userInfo()
+        info.offerId = didCreateOffer.id
+        info.dealUserId = didCreateOffer.stylistId
+        info.userStatus = .Requested
+        NNSCore.setUserInfo(userInfo: info)
     }
     
 }

@@ -35,7 +35,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="pressListBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mc4-6f-vUH"/>
+                                            <action selector="pressCenterBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PcE-mO-TCc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ow7-xZ-2z1">
@@ -52,7 +52,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="pressHistoryBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dp-Ct-ccm"/>
+                                            <action selector="pressLeftBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AiC-Sg-VOW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8j-SU-PXX">
@@ -69,7 +69,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="pressMyReviewBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TlT-FC-7hQ"/>
+                                            <action selector="pressRightBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AZ5-zD-MQe"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGo-D8-OfQ">

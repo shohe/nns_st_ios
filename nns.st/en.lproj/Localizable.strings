@@ -21,3 +21,4 @@
 "sumOfDonation" = "Total amount of donation";
 "currency" = "$ %.2f USD";
 "loadingStylistMessage" = "Loading Stylists...";
+"waitingStylistMessage" = "Reservation is %d days away";

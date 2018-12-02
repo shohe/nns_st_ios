@@ -32,6 +32,9 @@ class ThreeColumnCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initThumbnail()
+        auraBottom.isHidden = true
+        auraMiddle.isHidden = true
+        auraTop.isHidden = true
     }
     
 }
@@ -61,6 +64,10 @@ extension ThreeColumnCell {
 extension ThreeColumnCell {
     
     func startAuraAnimation() {
+        auraBottom.isHidden = false
+        auraMiddle.isHidden = false
+        auraTop.isHidden = false
+        
         setAnim(view: auraBottom, duration: 14.0, isRightRotation: true)
         setAnim(view: auraMiddle, duration: 16.0, isRightRotation: false)
         setAnim(view: auraTop, duration: 12.0, isRightRotation: true)

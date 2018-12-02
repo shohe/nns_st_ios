@@ -66,13 +66,17 @@ extension ReviewViewController {
         }) { (complete) in
             /* send this review to server */
             // here is just sample. remove after all.
-            API.reviewCreateRequest(dealUserId: NNSCore.dealUserId(), star: self.star, comment: self.textView.text, handler: { (result) in
-                if result == nil { print("create review error.") }
-                NNSCore.setDealUserId(0)
-                NNSCore.setWaitState(false)
-                NNSCore.setMadeOfferId(0)
-                self.dismiss(animated: true, completion: nil)
-            })
+            if let dealUserId = NNSCore.userInfo().dealUserId {
+                API.reviewCreateRequest(dealUserId: dealUserId, star: self.star, comment: self.textView.text, handler: { (result) in
+                    if result == nil { print("create review error.") }
+                    let info = NNSCore.userInfo()
+                    info.dealUserId = nil
+                    info.userStatus = .None
+                    info.offerId = nil
+                    NNSCore.setUserInfo(userInfo: info)
+                    self.dismiss(animated: true, completion: nil)
+                })
+            }
         }
     }
     

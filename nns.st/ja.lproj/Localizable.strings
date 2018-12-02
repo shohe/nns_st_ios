@@ -21,4 +21,5 @@
 "sumOfDonation" = "寄付される合計金額";
 "currency" = "¥ %d JPY";
 "loadingStylistMessage" = "スタイリストを検索中です...";
+"waitingStylistMessage" = "予約の日程まであと%d日";
 
