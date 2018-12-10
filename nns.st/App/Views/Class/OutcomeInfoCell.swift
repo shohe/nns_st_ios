@@ -8,7 +8,11 @@
 
 import UIKit
 
-class OutcomeInfoCell: UITableViewCell {
+class OutcomeInfoCell: NNSTableViewCell {
+    
+    @IBOutlet weak var detailInfoTitle: UILabel!
+    @IBOutlet weak var donationPriceLabel: UILabel!
+    @IBOutlet weak var serviceFeeTitleLabel: UILabel!
     
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -32,13 +36,18 @@ class OutcomeInfoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func localizedText() {
+        detailInfoTitle.text = NSLocalizedString("detailInfo", comment: "")
+        donationPriceLabel.text = NSLocalizedString("donation", comment: "")
+        serviceFeeTitleLabel.text = NSLocalizedString("serviceFee", comment: "")
     }
     
 }
@@ -85,8 +94,10 @@ extension OutcomeInfoCell {
         let formattedPrice = numberFormatter.string(from: NSNumber(value: Float(price)))
         if let price = formattedPrice {
             return "¥\(price)JPY"
+            // String(format: NSLocalizedString("currency", comment: ""), price) >> this is error becaus of camma
         }
         return "¥0JPY"
     }
+    
     
 }

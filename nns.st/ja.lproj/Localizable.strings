@@ -19,7 +19,39 @@
 "offer" = "オファー";
 "review" = "レビュー";
 "sumOfDonation" = "寄付される合計金額";
-"currency" = "¥ %d JPY";
 "loadingStylistMessage" = "スタイリストを検索中です...";
 "waitingStylistMessage" = "予約の日程まであと%d日";
 
+// [offer]
+"offerTitle" = "オファー作成";
+"placeholderMenu" = "メニュー : カット, カラー";
+"placeholderOfferPrice" = "予算金額 : ¥4,500";
+"time" = "時間";
+"unspecified" = "未設定";
+"confirmOffer" = "オファー確認画面へ";
+
+// [confirm offer]
+"confirmOfferTitle" = "オファー確認";
+"detailInfo" = "支払詳細";
+"donation" = "寄付金";
+"serviceFee" = "サービス手数料";
+"offerRange" = "オファーする範囲";
+"sendOffer" = "この内容でオファーする";
+
+// [map]
+"currentLocation" = "現在地";
+"fromCurrentLocation" = "現在地から";
+"setRange" = "この範囲を設定";
+
+// [common]
+"comment" = "コメント";
+"from" = "から";
+"within" = "圏内";
+"currentLength" = "現在の長さ";
+"longHairLabel" = "ロング";
+"mediumLongHairLabel" = "セミロング";
+"mediumHairLabel" = "ミディアム";
+"mediumShortHairLabel" = "セミショート";
+"shortHairLabel" = "ショート";
+"currency" = "¥ %d JPY";
+"date" = "日程";

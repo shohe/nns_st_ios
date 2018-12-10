@@ -12,7 +12,7 @@ protocol ConfirmOfferViewControllerDelegate {
     func confirmOfferViewController(_ didCreateOffer: Offer)
 }
 
-class ConfirmOfferViewController: UIViewController {
+class ConfirmOfferViewController: NNSViewController {
     
     var offerItem: OfferItem?
     var loadingView: LoadingView?
@@ -20,9 +20,11 @@ class ConfirmOfferViewController: UIViewController {
     
     private var stylist: User!
     
+    @IBOutlet weak var commentTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var offerButton: UIButton!
     
     
     static func instantiateViewController(parent: MainViewController) -> ConfirmOfferViewController {
@@ -43,6 +45,9 @@ class ConfirmOfferViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.configureObserver()
+        navigationItem.title = NSLocalizedString("confirmOfferTitle", comment: "")
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(hex: "007C9D")]
+        navigationController?.navigationBar.tintColor = UIColor(hex: "007C9D")
     }
 
     override func viewDidLoad() {
@@ -51,12 +56,7 @@ class ConfirmOfferViewController: UIViewController {
         // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        // register cells
-        tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
-        tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
-        tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
-        tableView.register(NominationCell.nib, forCellReuseIdentifier: NominationCell.identifier)
-        tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
+        self.navigationItem.leftBarButtonItem  = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.back))
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +67,23 @@ class ConfirmOfferViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.removeObserver()
+    }
+    
+    override func localizedText() {
+        commentTitleLabel.text = NSLocalizedString("comment", comment: "")
+        offerButton.setTitle(NSLocalizedString("sendOffer", comment: ""), for: .normal)
+    }
+    
+    override func initializedCells() {
+        tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
+        tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
+        tableView.register(DistanceInfoCell.nib, forCellReuseIdentifier: DistanceInfoCell.identifier)
+        tableView.register(NominationCell.nib, forCellReuseIdentifier: NominationCell.identifier)
+        tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
+    }
+    
+    @objc private func back() {
+        self.navigationController?.popViewController(animated: true)
     }
 
 }
@@ -229,6 +246,8 @@ extension ConfirmOfferViewController {
         if let offer = self.createOffer() {
             UIView.animate(withDuration: 0.3, animations: {
                 self.loadingView!.alpha = 1
+                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+                self.navigationController?.navigationBar.tintColor = UIColor.white
             }) { (complete) in
                 /* send this offer to server */
                 API.offerCreateRequest(offer: offer, handler: { (result) in

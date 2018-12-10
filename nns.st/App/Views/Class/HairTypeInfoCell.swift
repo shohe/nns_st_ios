@@ -8,8 +8,9 @@
 
 import UIKit
 
-class HairTypeInfoCell: UITableViewCell {
+class HairTypeInfoCell: NNSTableViewCell {
     
+    @IBOutlet weak var hairLengthTitleLabel: UILabel!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var typeImage: UIImageView!
     
@@ -35,6 +36,10 @@ class HairTypeInfoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func localizedText() {
+        hairLengthTitleLabel.text = NSLocalizedString("currentLength", comment: "")
     }
     
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakeOfferViewController: UIViewController {
+class MakeOfferViewController: GradationViewController {
     
     @IBOutlet weak var offerMenu: UITextField!
     @IBOutlet weak var offerPrice: UITextField! {
@@ -17,6 +17,8 @@ class MakeOfferViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var snapmap: UIImageView!
     @IBOutlet weak var mapTitle: UILabel!
     @IBOutlet weak var mapDistance: UILabel!
@@ -24,15 +26,25 @@ class MakeOfferViewController: UIViewController {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var offerButton: UIButton!
     
+    // ↓ hair button
     @IBOutlet weak var veryShort: UIButton!
     @IBOutlet weak var short: UIButton!
     @IBOutlet weak var midium: UIButton!
     @IBOutlet weak var long: UIButton!
     @IBOutlet weak var veryLong: UIButton!
     
+    // ↓ hair label
+    @IBOutlet weak var longLabel: UILabel!
+    @IBOutlet weak var mediumLongLabel: UILabel!
+    @IBOutlet weak var mediumLabel: UILabel!
+    @IBOutlet weak var mediumShortLabel: UILabel!
+    @IBOutlet weak var shortLabel: UILabel!
+    
+    @IBOutlet weak var currentLengthLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var withinLabel: UILabel!
     @IBOutlet weak var distanceLabelCenter: NSLayoutConstraint!
+    
     
     @IBInspectable var selectedColor: UIColor = UIColor.white
     
@@ -68,6 +80,9 @@ class MakeOfferViewController: UIViewController {
         self.transparentNavigationBar()
         self.leftSideCornerRadius(view: snapmap)
         self.nominateStylistFormat(isTransform: isNominated)
+        
+        navigationItem.title = NSLocalizedString("offerTitle", comment: "")
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     override func viewDidLoad() {
@@ -79,6 +94,23 @@ class MakeOfferViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func localizedText() {
+        offerMenu.placeholder = NSLocalizedString("placeholderMenu", comment: "")
+        offerPrice.placeholder = NSLocalizedString("placeholderOfferPrice", comment: "")
+        dateLabel.text = NSLocalizedString("date", comment: "")
+        timeLabel.text = NSLocalizedString("time", comment: "")
+        fromLabel.text = NSLocalizedString("from", comment: "")
+        withinLabel.text = NSLocalizedString("within", comment: "")
+        mapTitle.text = NSLocalizedString("unspecified", comment: "")
+        currentLengthLabel.text = NSLocalizedString("currentLength", comment: "")
+        offerButton.setTitle(NSLocalizedString("confirmOffer", comment: ""), for: .normal)
+        longLabel.text = NSLocalizedString("longHairLabel", comment: "")
+        mediumLongLabel.text = NSLocalizedString("mediumLongHairLabel", comment: "")
+        mediumLabel.text = NSLocalizedString("mediumHairLabel", comment: "")
+        mediumShortLabel.text = NSLocalizedString("mediumShortHairLabel", comment: "")
+        shortLabel.text = NSLocalizedString("shortHairLabel", comment: "")
     }
     
 }
@@ -145,24 +177,24 @@ extension MakeOfferViewController {
 // MARK: - private function
 extension MakeOfferViewController {
     
-    func leftSideCornerRadius(view: UIImageView) -> Void {
+     private func leftSideCornerRadius(view: UIImageView) -> Void {
         let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .topLeft], cornerRadii: CGSize(width: 5, height: 5))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         view.layer.mask = mask
     }
     
-    func addPickerView() {
+    private func addPickerView() {
         pickerView = PopupDatePickerView(frame: self.view.bounds)
         pickerView.delegate = self
         self.view.addSubview(pickerView)
     }
     
-    func removePickerView() {
+    private func removePickerView() {
         pickerView.hidePopupDatePicker()
     }
     
-    func setDateTime(date: Date) {
+    private func setDateTime(date: Date) {
         let dateFormatter = DateFormatter()
         let timeFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy / MM / dd"
@@ -174,7 +206,7 @@ extension MakeOfferViewController {
         offerItem.datetime = date
     }
     
-    func textToPrice(text: String?) -> String {
+    private func textToPrice(text: String?) -> String {
         if let price = (text as NSString?)?.floatValue {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
@@ -186,7 +218,7 @@ extension MakeOfferViewController {
         return ""
     }
     
-    func priceToNumber(text: String?) -> String? {
+    private func priceToNumber(text: String?) -> String? {
         if var price = (text as NSString?) {
             price = price.replacingOccurrences(of: "¥", with: "") as NSString
             price = price.replacingOccurrences(of: ",", with: "") as NSString
@@ -197,7 +229,7 @@ extension MakeOfferViewController {
         return nil
     }
     
-    func setEnableButton(offer: OfferItem) {
+    private func setEnableButton(offer: OfferItem) {
         UIView.animate(withDuration: 0.3, animations: {
             self.offerButton.alpha = (offer.checkAllValue()) ? 1 : 0.3
         }) { (complete) in
@@ -205,7 +237,7 @@ extension MakeOfferViewController {
         }
     }
     
-    func nominateStylistFormat(isTransform: Bool) {
+    private func nominateStylistFormat(isTransform: Bool) {
         if isNominated, let stylist = self.nominateStylist {
             self.hideDistanceInfo()
             mapTitle.text = stylist.salonName
@@ -215,7 +247,7 @@ extension MakeOfferViewController {
         }
     }
     
-    func hideDistanceInfo() {
+    private func hideDistanceInfo() {
         fromLabel.frame = CGRect.zero
         fromLabel.isHidden = true
         withinLabel.frame = CGRect.zero

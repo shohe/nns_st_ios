@@ -8,10 +8,13 @@
 
 import UIKit
 
-class DistanceInfoCell: UITableViewCell {
+class DistanceInfoCell: NNSTableViewCell {
     
+    @IBOutlet weak var offerRangeTitleLabel: UILabel!
     @IBOutlet weak var placeTitle: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var fromLabel: UILabel!
+    @IBOutlet weak var withinLabel: UILabel!
     
     static var identifier:String {
         get{
@@ -27,13 +30,18 @@ class DistanceInfoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func localizedText() {
+        offerRangeTitleLabel.text = NSLocalizedString("offerRange", comment: "")
+        fromLabel.text = NSLocalizedString("from", comment: "")
+        withinLabel.text = NSLocalizedString("within", comment: "")
     }
     
 }

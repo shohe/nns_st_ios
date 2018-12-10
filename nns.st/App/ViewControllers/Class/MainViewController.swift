@@ -44,7 +44,6 @@ class MainViewController: GradationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        localizedText()
         collectionView.register(ThreeColumnCell.nib, forCellWithReuseIdentifier: ThreeColumnCell.identifier)
         fetch()
     }
@@ -52,6 +51,14 @@ class MainViewController: GradationViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func localizedText() {
+        leftLabel.text = NSLocalizedString("history", comment: "")
+        middleLabel.text = NSLocalizedString("offer", comment: "")
+        rightLabel.text = NSLocalizedString("review", comment: "")
+        donationLabel.text = NSLocalizedString("sumOfDonation", comment: "")
+        priceLabel.text = String(format: NSLocalizedString("currency", comment: ""), 0.0)
     }
 
 }
@@ -76,30 +83,22 @@ extension MainViewController {
         }
     }
     
-    private func localizedText() {
-        leftLabel.text = NSLocalizedString("history", comment: "")
-        middleLabel.text = NSLocalizedString("offer", comment: "")
-        rightLabel.text = NSLocalizedString("review", comment: "")
-        donationLabel.text = NSLocalizedString("sumOfDonation", comment: "")
-        priceLabel.text = String(format: NSLocalizedString("currency", comment: ""), 0.0)
-    }
-    
     private func setEdward(cell: ThreeColumnCell) {
         switch NNSCore.userInfo().userStatus {
-            case .None:
-                cell.nameLabel.isHidden = true
-                cell.thumbnailView.image = UIImage(named: "edword_normal")
-            case .Requested:
-                cell.nameLabel.isHidden = false
-                cell.nameLabel.text = NSLocalizedString("loadingStylistMessage", comment: "")
-                cell.startAuraAnimation()
-                cell.thumbnailView.image = UIImage(named: "edword_normal")
-            case .Reserved:
-                cell.nameLabel.isHidden = false
-                cell.nameLabel.text = String(format: NSLocalizedString("waitingStylistMessage", comment: ""), 5)
-                cell.thumbnailView.image = UIImage(named: "edword_waiting")
-            case .Serviced:
-                break
+        case .None:
+            cell.nameLabel.isHidden = true
+            cell.thumbnailView.image = UIImage(named: "edword_normal")
+        case .Requested:
+            cell.nameLabel.isHidden = false
+            cell.nameLabel.text = NSLocalizedString("loadingStylistMessage", comment: "")
+            cell.startAuraAnimation()
+            cell.thumbnailView.image = UIImage(named: "edword_normal")
+        case .Reserved:
+            cell.nameLabel.isHidden = false
+            cell.nameLabel.text = String(format: NSLocalizedString("waitingStylistMessage", comment: ""), 5)
+            cell.thumbnailView.image = UIImage(named: "edword_waiting")
+        case .Serviced:
+            break
         }
     }
     

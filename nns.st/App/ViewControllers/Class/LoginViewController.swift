@@ -22,13 +22,19 @@ class LoginViewController: GradationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.localizedText()
         errorMessage.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func localizedText() {
+        errorMessage.text = NSLocalizedString("loginErrorMessage", comment: "")
+        loginBtn.setTitle(NSLocalizedString("login", comment: ""), for: UIControlState.normal)
+        forgetBtn.setTitle(NSLocalizedString("forgetPassword", comment: ""), for: UIControlState.normal)
+        signupBtn.setTitle(NSLocalizedString("signup", comment: ""), for: UIControlState.normal)
     }
 
 }
@@ -67,22 +73,9 @@ extension LoginViewController : UITextFieldDelegate {
     
 }
 
-extension LoginViewController {
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-}
+
 
 extension LoginViewController {
-    
-    private func localizedText() {
-        errorMessage.text = NSLocalizedString("loginErrorMessage", comment: "")
-        loginBtn.setTitle(NSLocalizedString("login", comment: ""), for: UIControlState.normal)
-        forgetBtn.setTitle(NSLocalizedString("forgetPassword", comment: ""), for: UIControlState.normal)
-        signupBtn.setTitle(NSLocalizedString("signup", comment: ""), for: UIControlState.normal)
-    }
     
     private func showErrorMessage() {
         self.errorMessage.isHidden = false

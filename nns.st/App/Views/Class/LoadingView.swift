@@ -8,9 +8,12 @@
 
 import UIKit
 
-class LoadingView: UIView {
+class LoadingView: BackgroundView {
 
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var auraBottom: UIImageView!
+    @IBOutlet weak var auraMiddle: UIImageView!
+    @IBOutlet weak var auraTop: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

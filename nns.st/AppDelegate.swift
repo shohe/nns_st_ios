@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let info = NNSCore.userInfo()
         info.userStatus = .None
         NNSCore.setUserInfo(userInfo: info)
+        
         if NNSCore.userInfo().authToken != nil {
             if let window = window {
                 window.rootViewController = MainViewController.instantiateViewController()

@@ -15,7 +15,7 @@ protocol MapViewControllerDelegate {
     func mapView(_mapViewController: MapViewController, didSetDistance item: MapViewItem)
 }
 
-class MapViewController: UIViewController {
+class MapViewController: NNSViewController {
     
     @IBOutlet weak var mapview: MKMapView!
     @IBInspectable var CRstrokeColor: UIColor = UIColor.white
@@ -67,6 +67,10 @@ class MapViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func localizedText() {
+        
     }
     
 }
@@ -205,7 +209,7 @@ extension MapViewController: BottomSheetDelegate {
     }
     
     func bottomSheet(_bottmSheet: BottomSheetViewController, didSetDistance button: UIButton) {
-        let title = (bottomSheet.searchBar.text != "") ? bottomSheet.searchBar.text : "現在地"
+        let title = (bottomSheet.searchBar.text != "") ? bottomSheet.searchBar.text : NSLocalizedString("currentLocation", comment: "")
         if let title = title {
             let item = MapViewItem(coordinate: coordinate, title: title, distance: CGFloat(round(circleRadius/100)/10))
             delegate?.mapView(_mapViewController: self, didSetDistance: item)

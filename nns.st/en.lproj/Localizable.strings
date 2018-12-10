@@ -19,6 +19,39 @@
 "offer" = "offer";
 "review" = "review";
 "sumOfDonation" = "Total amount of donation";
-"currency" = "$ %.2f USD";
 "loadingStylistMessage" = "Loading Stylists...";
 "waitingStylistMessage" = "Reservation is %d days away";
+
+// [offer]
+"offerTitle" = "Create Offer";
+"placeholderMenu" = "Menu : cut, color";
+"placeholderOfferPrice" = "Offer price : $45.00";
+"time" = "Time";
+"unspecified" = "Unspecified";
+"confirmOffer" = "Confirm Offer";
+
+// [confirm offer]
+"confirmOfferTitle" = "Confirm Offer";
+"detailInfo" = "Billing Details";
+"donation" = "Donation";
+"serviceFee" = "Service Fee";
+"offerRange" = "Range Of Offer";
+"sendOffer" = "Send Offer";
+
+// [map]
+"currentLocation" = "Current Location";
+"fromCurrentLocation" = "From Current Location";
+"setRange" = "Set This Range";
+
+// [common]
+"comment" = "Comment";
+"from" = "From";
+"within" = "Within";
+"currentLength" = "Current Hiar Length";
+"longHairLabel" = "long";
+"mediumLongHairLabel" = "medium long";
+"mediumHairLabel" = "medium";
+"mediumShortHairLabel" = "medium short";
+"shortHairLabel" = "short";
+"currency" = "$ %.2f USD";
+"date" = "Date";

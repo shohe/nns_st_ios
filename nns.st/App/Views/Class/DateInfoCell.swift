@@ -8,8 +8,10 @@
 
 import UIKit
 
-class DateInfoCell: UITableViewCell {
+class DateInfoCell: NNSTableViewCell {
     
+
+    @IBOutlet weak var dateTitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     static var identifier:String {
@@ -26,13 +28,16 @@ class DateInfoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func localizedText() {
+        dateTitleLabel.text = NSLocalizedString("date", comment: "")
     }
     
 }

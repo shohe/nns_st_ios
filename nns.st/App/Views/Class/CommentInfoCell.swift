@@ -8,8 +8,9 @@
 
 import UIKit
 
-class CommentInfoCell: UITableViewCell {
+class CommentInfoCell: NNSTableViewCell {
     
+    @IBOutlet weak var commentTitleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
     static var identifier:String {
@@ -33,6 +34,10 @@ class CommentInfoCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func localizedText() {
+        commentTitleLabel.text = NSLocalizedString("comment", comment: "")
     }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import APIKit
 
-class GradationViewController: UIViewController {
+class GradationViewController: NNSViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,3 +31,10 @@ class GradationViewController: UIViewController {
 
 }
 
+extension GradationViewController {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+}

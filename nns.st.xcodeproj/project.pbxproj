@@ -58,6 +58,11 @@
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
+		097BA4C821B58D5F00FC43C3 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097BA4C721B58D5F00FC43C3 /* WaveView.swift */; };
+		097BA4CA21B58DE000FC43C3 /* WaveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097BA4C921B58DE000FC43C3 /* WaveView.xib */; };
+		097CAEDD21BCF16F00232336 /* NNSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CAEDC21BCF16F00232336 /* NNSTableViewCell.swift */; };
+		097CAEDF21BCF97500232336 /* NNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CAEDE21BCF97500232336 /* NNSViewController.swift */; };
+		097CAEE121BD115600232336 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CAEE021BD115600232336 /* UIColor+hex.swift */; };
 		09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B4F21298DA300C1FF3F /* MapViewItem.swift */; };
 		09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */; };
 		09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */; };
@@ -251,6 +256,11 @@
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
+		097BA4C721B58D5F00FC43C3 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		097BA4C921B58DE000FC43C3 /* WaveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaveView.xib; sourceTree = "<group>"; };
+		097CAEDC21BCF16F00232336 /* NNSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSTableViewCell.swift; sourceTree = "<group>"; };
+		097CAEDE21BCF97500232336 /* NNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSViewController.swift; sourceTree = "<group>"; };
+		097CAEE021BD115600232336 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		09A05B4F21298DA300C1FF3F /* MapViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewItem.swift; sourceTree = "<group>"; };
 		09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotMaker.swift; sourceTree = "<group>"; };
 		09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDatePickerView.swift; sourceTree = "<group>"; };
@@ -604,6 +614,7 @@
 				09FDE351212EC36700A823DA /* CharityDetailViewController.swift */,
 				09FDE355212FB4C900A823DA /* MyPageViewController.swift */,
 				0967AF9D21375FB6002D980F /* MyReviewViewController.swift */,
+				097CAEDE21BCF97500232336 /* NNSViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -668,6 +679,8 @@
 				0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */,
 				096432CF214CD35D007A87A8 /* SingleButtonCell.swift */,
 				096432D7214F81B3007A87A8 /* BlankCell.swift */,
+				097BA4C721B58D5F00FC43C3 /* WaveView.swift */,
+				097CAEDC21BCF16F00232336 /* NNSTableViewCell.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -681,6 +694,7 @@
 				09DDAAAF212074EA009C6428 /* UIViewController+transparentNavigationBar.swift */,
 				09DDAAE321254F70009C6428 /* UIButton+backgroundColor.swift */,
 				09DDAAE521254FA4009C6428 /* UIColor+image.swift */,
+				097CAEE021BD115600232336 /* UIColor+hex.swift */,
 				09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */,
 				0913EBC621B2E97600417928 /* UIView+animate.swift */,
 			);
@@ -725,6 +739,7 @@
 				0967AFA021376CF1002D980F /* ReviewAverageCell.xib */,
 				096432CD214CD29F007A87A8 /* SingleButtonCell.xib */,
 				096432D8214F81B3007A87A8 /* BlankCell.xib */,
+				097BA4C921B58DE000FC43C3 /* WaveView.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -863,6 +878,7 @@
 				09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */,
 				091F8D182128567A0095608F /* SearchResultCell.xib in Resources */,
 				091BEEEA21130019008ED8C5 /* LaunchScreen.storyboard in Resources */,
+				097BA4CA21B58DE000FC43C3 /* WaveView.xib in Resources */,
 				09A7B72A21381A070084E2C9 /* StarView.xib in Resources */,
 				09BB196E212C571D006562D0 /* History.storyboard in Resources */,
 				09BB1964212AD747006562D0 /* CommentInfoCell.xib in Resources */,
@@ -1010,6 +1026,7 @@
 				09A7B767213BC0C90084E2C9 /* RequestDetailGetRequest.swift in Sources */,
 				09FDE35D212FC96B00A823DA /* MypageNameCell.swift in Sources */,
 				09DDAABE2122D347009C6428 /* ThreeColumnCell.swift in Sources */,
+				097CAEDD21BCF16F00232336 /* NNSTableViewCell.swift in Sources */,
 				09BB195B212AD531006562D0 /* HairTypeInfoCell.swift in Sources */,
 				09A7B73D213924410084E2C9 /* PasswordConfirmRequest.swift in Sources */,
 				09A7B73B213923FB0084E2C9 /* PasswordConfirmResponse.swift in Sources */,
@@ -1033,6 +1050,7 @@
 				09A7B747213A46720084E2C9 /* UserGetRequest.swift in Sources */,
 				09402D092143C0BD00082F4F /* UIImageView+loadImage.swift in Sources */,
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
+				097BA4C821B58D5F00FC43C3 /* WaveView.swift in Sources */,
 				09BB197D212DA931006562D0 /* NominationCell.swift in Sources */,
 				09FDE3692130162100A823DA /* MypageStatusCommentCell.swift in Sources */,
 				0913EBC521B289D200417928 /* UserInfo.swift in Sources */,
@@ -1116,10 +1134,12 @@
 				096432D4214CDFBF007A87A8 /* OfferCancelRequest.swift in Sources */,
 				091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */,
 				0952F4AC213C15F600B5BCF3 /* OwnReviewGetRequest.swift in Sources */,
+				097CAEE121BD115600232336 /* UIColor+hex.swift in Sources */,
 				09FDE356212FB4C900A823DA /* MyPageViewController.swift in Sources */,
 				09A7B74D213A63780084E2C9 /* OfferCreateResponse.swift in Sources */,
 				09DDAAAA212058B5009C6428 /* UIImage+reSizeImage.swift in Sources */,
 				09A7B763213BBD330084E2C9 /* OfferRequest.swift in Sources */,
+				097CAEDF21BCF97500232336 /* NNSViewController.swift in Sources */,
 				0952F49A213BF42C00B5BCF3 /* ReservationListGetRequest.swift in Sources */,
 				09A7B761213BBB020084E2C9 /* RequestGetRequest.swift in Sources */,
 				091F8D12212723340095608F /* MapViewController.swift in Sources */,

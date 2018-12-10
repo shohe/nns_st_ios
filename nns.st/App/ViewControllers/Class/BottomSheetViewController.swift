@@ -16,7 +16,7 @@ protocol BottomSheetDelegate {
     func bottomSheet(_bottmSheet: BottomSheetViewController, didSetDistance button: UIButton)
 }
 
-class BottomSheetViewController: UIViewController {
+class BottomSheetViewController: NNSViewController {
     
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
@@ -71,6 +71,11 @@ class BottomSheetViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func localizedText() {
+        setButton.setTitle(NSLocalizedString("setRange", comment: ""), for: .normal)
+        searchBar.placeholder = NSLocalizedString("fromCurrentLocation", comment: "")
     }
     
 }

@@ -25,6 +25,10 @@ class BackgroundView: UIView {
         }
     }
     
+    override func layoutSubviews() {
+        setGradation()
+    }
+    
     func setGradation() {
         gradientLayer?.removeFromSuperlayer()
         gradientLayer = CAGradientLayer()
