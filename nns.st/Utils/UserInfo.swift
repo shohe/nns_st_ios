@@ -29,12 +29,8 @@ class UserInfo: NSObject, NSCoding {
         } else {
             self.userStatus = UserStatus.None
         }
-        
-        if let type = aDecoder.decodeObject(forKey: "userType") as? Int {
-            self.userType = UserType(rawValue: type) ?? UserType.Customer
-        } else {
-            self.userType = UserType.Customer
-        }
+
+        self.userType = UserType(rawValue: aDecoder.decodeInteger(forKey: "userType")) ?? UserType.Customer
     }
     
     func encode(with aCoder: NSCoder) {

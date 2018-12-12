@@ -39,6 +39,10 @@ class MainViewController: GradationViewController {
         layout.sectionInset = UIEdgeInsetsMake(0.0, inset, 0.0, inset)
         
         self.collectionView.reloadData()
+        
+        if NNSCore.userInfo().userType == UserType.Stylist {
+            print("---")
+        }
     }
 
     override func viewDidLoad() {

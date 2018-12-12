@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // If user is loged in already, go to MainView.
         let info = NNSCore.userInfo()
-        info.userStatus = .None
+        info.userStatus = .Requested
+        info.userType = .Stylist
         NNSCore.setUserInfo(userInfo: info)
         
         if NNSCore.userInfo().authToken != nil {
