@@ -241,6 +241,9 @@ extension ConfirmOfferViewController {
     
     @IBAction func makeOffer(_ sender: UIButton) {
         loadingView = LoadingView(frame: self.view.bounds)
+        loadingView?.setComment(text: NSLocalizedString("sendingOffer", comment: ""))
+        loadingView?.startAuraAnimation()
+        
         self.view.addSubview(loadingView!)
         
         if let offer = self.createOffer() {

@@ -28,6 +28,7 @@ class LoadingView: BackgroundView {
 }
 
 
+
 extension LoadingView {
     
     private func initView() {
@@ -37,8 +38,28 @@ extension LoadingView {
         addSubview(contentView)
     }
     
+    private func setAnim(view: UIView, duration: CFTimeInterval, isRightRotation: Bool) {
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.fromValue = 0.0
+        rotationAnimation.toValue = isRightRotation ? Double.pi * 2 : Double.pi * -2
+        rotationAnimation.duration = duration
+        rotationAnimation.repeatCount = .infinity
+        view.layer.add(rotationAnimation, forKey: nil)
+    }
+    
+}
+
+
+extension LoadingView {
+    
     func setComment(text: String?) {
         commentLabel.text = text
+    }
+    
+    func startAuraAnimation() {
+        setAnim(view: auraBottom, duration: 14.0, isRightRotation: true)
+        setAnim(view: auraMiddle, duration: 16.0, isRightRotation: false)
+        setAnim(view: auraTop, duration: 12.0, isRightRotation: true)
     }
     
 }

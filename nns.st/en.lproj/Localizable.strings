@@ -55,3 +55,6 @@
 "shortHairLabel" = "short";
 "currency" = "$ %.2f USD";
 "date" = "Date";
+
+// [loading]
+"sendingOffer" = "Sending Offer...";

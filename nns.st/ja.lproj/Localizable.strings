@@ -55,3 +55,6 @@
 "shortHairLabel" = "ショート";
 "currency" = "¥ %d JPY";
 "date" = "日程";
+
+// [loading]
+"sendingOffer" = "オファー送信中...";

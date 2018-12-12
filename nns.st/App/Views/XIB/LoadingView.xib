@@ -16,7 +16,6 @@
                 <outlet property="auraMiddle" destination="9RM-IV-gl6" id="nHv-sC-922"/>
                 <outlet property="auraTop" destination="dW5-HI-Ho0" id="PKl-Nm-FCh"/>
                 <outlet property="commentLabel" destination="OHM-pO-jx2" id="BxR-4D-wm6"/>
-                <outlet property="offerLabel" destination="OHM-pO-jx2" id="1qj-d1-IgU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
