@@ -63,6 +63,8 @@
 		097CAEDD21BCF16F00232336 /* NNSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CAEDC21BCF16F00232336 /* NNSTableViewCell.swift */; };
 		097CAEDF21BCF97500232336 /* NNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CAEDE21BCF97500232336 /* NNSViewController.swift */; };
 		097CAEE121BD115600232336 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097CAEE021BD115600232336 /* UIColor+hex.swift */; };
+		0995031921C2F1FC00D14171 /* CustomerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995031821C2F1FC00D14171 /* CustomerMainViewController.swift */; };
+		0995031B21C2F90B00D14171 /* StylistMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995031A21C2F90B00D14171 /* StylistMainViewController.swift */; };
 		09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B4F21298DA300C1FF3F /* MapViewItem.swift */; };
 		09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */; };
 		09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */; };
@@ -261,6 +263,8 @@
 		097CAEDC21BCF16F00232336 /* NNSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSTableViewCell.swift; sourceTree = "<group>"; };
 		097CAEDE21BCF97500232336 /* NNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSViewController.swift; sourceTree = "<group>"; };
 		097CAEE021BD115600232336 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		0995031821C2F1FC00D14171 /* CustomerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMainViewController.swift; sourceTree = "<group>"; };
+		0995031A21C2F90B00D14171 /* StylistMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylistMainViewController.swift; sourceTree = "<group>"; };
 		09A05B4F21298DA300C1FF3F /* MapViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewItem.swift; sourceTree = "<group>"; };
 		09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotMaker.swift; sourceTree = "<group>"; };
 		09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDatePickerView.swift; sourceTree = "<group>"; };
@@ -601,6 +605,8 @@
 				09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */,
 				09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */,
 				09DDAAB7212241CB009C6428 /* MainViewController.swift */,
+				0995031821C2F1FC00D14171 /* CustomerMainViewController.swift */,
+				0995031A21C2F90B00D14171 /* StylistMainViewController.swift */,
 				09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */,
 				09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */,
 				091F8D11212723340095608F /* MapViewController.swift */,
@@ -1052,6 +1058,7 @@
 				09DDAAA721202D5C009C6428 /* UnderlineTextField.swift in Sources */,
 				097BA4C821B58D5F00FC43C3 /* WaveView.swift in Sources */,
 				09BB197D212DA931006562D0 /* NominationCell.swift in Sources */,
+				0995031921C2F1FC00D14171 /* CustomerMainViewController.swift in Sources */,
 				09FDE3692130162100A823DA /* MypageStatusCommentCell.swift in Sources */,
 				0913EBC521B289D200417928 /* UserInfo.swift in Sources */,
 				0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */,
@@ -1066,6 +1073,7 @@
 				09DDAACA2123FEBF009C6428 /* ConfirmRequestViewController.swift in Sources */,
 				0952F48C213BCB3500B5BCF3 /* DayCountResponse.swift in Sources */,
 				09402D0321439EC000082F4F /* MypageTextFieldType.swift in Sources */,
+				0995031B21C2F90B00D14171 /* StylistMainViewController.swift in Sources */,
 				09A7B745213961BB0084E2C9 /* UserUpdateRequest.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
 				09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */,

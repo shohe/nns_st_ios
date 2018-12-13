@@ -14,6 +14,7 @@ class UserInfo: NSObject, NSCoding {
     var authToken: String? = nil
     var userStatus: UserStatus = UserStatus.None
     var userType: UserType = UserType.Customer
+    var userMode: UserType = UserType.Customer
     var offerId: Int? = nil
     var dealUserId: Int? = nil
     
@@ -31,6 +32,7 @@ class UserInfo: NSObject, NSCoding {
         }
 
         self.userType = UserType(rawValue: aDecoder.decodeInteger(forKey: "userType")) ?? UserType.Customer
+        self.userMode = UserType(rawValue: aDecoder.decodeInteger(forKey: "userMode")) ?? UserType.Customer
     }
     
     func encode(with aCoder: NSCoder) {
@@ -39,5 +41,6 @@ class UserInfo: NSObject, NSCoding {
         aCoder.encode(self.dealUserId, forKey: "dealUserId")
         aCoder.encode(self.userStatus.rawValue, forKey: "userStatus")
         aCoder.encode(self.userType.rawValue, forKey: "userType")
+        aCoder.encode(self.userMode.rawValue, forKey: "userMode")
     }
 }

@@ -40,8 +40,11 @@ class MainViewController: GradationViewController {
         
         self.collectionView.reloadData()
         
-        if NNSCore.userInfo().userType == UserType.Stylist {
-            print("---")
+        if NNSCore.userInfo().userMode == .Stylist {
+            // - todo: >> color change
+            let view = self.view as! BackgroundView
+            view.topColor = UIColor.init(hex: "112e58")
+            view.bottomColor = UIColor.init(hex: "112e58")
         }
     }
 
@@ -72,6 +75,13 @@ class MainViewController: GradationViewController {
 extension MainViewController {
     
     private func fetch() {
+        switch NNSCore.userInfo().userMode {
+            case .Customer: fetchResponsesForCustomer()
+            case .Stylist: fetchOffersForStylist()
+        }
+    }
+    
+    private func fetchOffersForStylist() {
         API.offerRequireMatchedRequest { (result) in
             if let res = result {
                 for var item in res.located {
@@ -82,6 +92,15 @@ extension MainViewController {
                     item.isNominated = true
                     self.items.append(item)
                 }
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func fetchResponsesForCustomer() {
+        API.requestGetRequest { (result) in
+            if let res = result {
+                print("item: \(res.item)")
                 self.collectionView.reloadData()
             }
         }
