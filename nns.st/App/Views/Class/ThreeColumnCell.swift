@@ -24,17 +24,18 @@ class ThreeColumnCell: UICollectionViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var thumbnailView: UIImageView!
-    @IBOutlet weak var auraBottom: UIImageView!
-    @IBOutlet weak var auraMiddle: UIImageView!
-    @IBOutlet weak var auraTop: UIImageView!
+    @IBOutlet weak var auraTop: WaveEdgeView!
+    @IBOutlet weak var auraMiddle: WaveEdgeView!
+    @IBOutlet weak var auraBottom: WaveEdgeView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initThumbnail()
-        auraBottom.isHidden = true
-        auraMiddle.isHidden = true
-        auraTop.isHidden = true
+    }
+    
+    override func prepareForReuse() {
+        self.hideAura()
     }
     
 }
@@ -48,29 +49,22 @@ extension ThreeColumnCell {
         thumbnailView.layer.cornerRadius = (self.frame.width - sideMargin) / 4
     }
     
-    private func setAnim(view: UIView, duration: CFTimeInterval, isRightRotation: Bool) {
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotationAnimation.fromValue = 0.0
-        rotationAnimation.toValue = isRightRotation ? Double.pi * 2 : Double.pi * -2
-        rotationAnimation.duration = duration
-        rotationAnimation.repeatCount = .infinity
-        view.layer.add(rotationAnimation, forKey: nil)
-    }
-    
 }
 
 
 // MARK: - public
 extension ThreeColumnCell {
     
-    func startAuraAnimation() {
+    func showAura() {
         auraBottom.isHidden = false
         auraMiddle.isHidden = false
         auraTop.isHidden = false
-        
-        setAnim(view: auraBottom, duration: 14.0, isRightRotation: true)
-        setAnim(view: auraMiddle, duration: 16.0, isRightRotation: false)
-        setAnim(view: auraTop, duration: 12.0, isRightRotation: true)
+    }
+    
+    func hideAura() {
+        auraBottom.isHidden = true
+        auraMiddle.isHidden = true
+        auraTop.isHidden = true
     }
     
 }

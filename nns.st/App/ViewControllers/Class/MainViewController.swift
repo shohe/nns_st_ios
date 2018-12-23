@@ -40,12 +40,7 @@ class MainViewController: GradationViewController {
         
         self.collectionView.reloadData()
         
-        if NNSCore.userInfo().userMode == .Stylist {
-            // - todo: >> color change
-            let view = self.view as! BackgroundView
-            view.topColor = UIColor.init(hex: "112e58")
-            view.bottomColor = UIColor.init(hex: "112e58")
-        }
+        setBackGround()
     }
 
     override func viewDidLoad() {
@@ -74,6 +69,14 @@ class MainViewController: GradationViewController {
 // MARK: - private
 extension MainViewController {
     
+    private func setBackGround() {
+        if NNSCore.userInfo().userMode == .Stylist {
+            let view = self.view as! BackgroundView
+            view.topColor = UIColor.init(hex: "112e58")
+            view.bottomColor = UIColor.init(hex: "112e58")
+        }
+    }
+    
     private func fetch() {
         switch NNSCore.userInfo().userMode {
             case .Customer: fetchResponsesForCustomer()
@@ -99,10 +102,7 @@ extension MainViewController {
     
     private func fetchResponsesForCustomer() {
         API.requestGetRequest { (result) in
-            if let res = result {
-                print("item: \(res.item)")
-                self.collectionView.reloadData()
-            }
+            if result != nil { self.collectionView.reloadData() }
         }
     }
     
@@ -114,7 +114,6 @@ extension MainViewController {
         case .Requested:
             cell.nameLabel.isHidden = false
             cell.nameLabel.text = NSLocalizedString("loadingStylistMessage", comment: "")
-            cell.startAuraAnimation()
             cell.thumbnailView.image = UIImage(named: "edword_normal")
         case .Reserved:
             cell.nameLabel.isHidden = false
@@ -161,7 +160,13 @@ extension MainViewController: UICollectionViewDelegate {
             self.present(MyPageViewController.instantiateViewController(), animated: true, completion: nil)
         } else {
             let item = items[indexPath.row-1] // -1 for mypage
-            self.present(ConfirmRequestViewController.instantiateViewController(request: item, parent: self), animated: true, completion: nil)
+        
+            switch NNSCore.userInfo().userType {
+                case .Customer:
+                    self.present(ConfirmRequestViewController.instantiateViewController(request: item, parent: self), animated: true, completion: nil)
+                case .Stylist:
+                    self.present(OfferDetailViewController.instantiateViewController(offer: item, parent: self), animated: true, completion: nil)
+            }
         }
     }
     
@@ -188,6 +193,7 @@ extension MainViewController: UICollectionViewDataSource {
             let item = items[indexPath.row-1]
             cell.nameLabel.isHidden = false
             cell.nameLabel.text = item.name
+            cell.showAura()
             
             if item.isNominated! { cell.nameLabel.textColor = .yellow }
             

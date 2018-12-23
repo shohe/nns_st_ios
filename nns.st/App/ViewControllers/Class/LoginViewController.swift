@@ -23,6 +23,12 @@ class LoginViewController: GradationViewController {
         super.viewDidLoad()
         
         errorMessage.isHidden = true
+        
+//        let wave = WaveEdgeView()
+//        wave.frame = CGRect(x: UIScreen.main.bounds.width/2-100,
+//                            y: UIScreen.main.bounds.height/2-100,
+//                            width: 200, height: 200)
+//        self.view.addSubview(wave)
     }
 
     override func didReceiveMemoryWarning() {

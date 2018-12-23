@@ -20,19 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let info = NNSCore.userInfo()
         info.userStatus = .None
         info.userType = .Stylist
-        info.userMode = .Customer
+        info.userMode = .Stylist
+        info.authToken = nil
         NNSCore.setUserInfo(userInfo: info)
         
         if NNSCore.userInfo().authToken != nil {
             if let window = window {
-//                switch(NNSCore.userInfo().userMode) {
-//                    case .Customer:
-//                        window.rootViewController = CustomerMainViewController.instantiateViewController()
-//                        break
-//                    case .Stylist:
-//                        window.rootViewController = StylistMainViewController.instantiateViewController()
-//                        break
-//                }
                 window.rootViewController = MainViewController.instantiateViewController()
             }
         }

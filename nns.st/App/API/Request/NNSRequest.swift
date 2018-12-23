@@ -60,7 +60,7 @@ extension NNSRequest where Response: Decodable {
         } else {
             //  ** for debug ** //
             let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-            print("response JSON: \(json)")
+            print("response JSON: \(String(describing: json))")
             return try decoder.decode(Response.self, from: data)
         }
     }
