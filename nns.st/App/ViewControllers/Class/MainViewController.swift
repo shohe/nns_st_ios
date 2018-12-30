@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class MainViewController: GradationViewController {
     
@@ -39,6 +40,8 @@ class MainViewController: GradationViewController {
         layout.sectionInset = UIEdgeInsetsMake(0.0, inset, 0.0, inset)
         
         self.collectionView.reloadData()
+        
+        setBackGround()
     }
 
     override func viewDidLoad() {
@@ -67,7 +70,22 @@ class MainViewController: GradationViewController {
 // MARK: - private
 extension MainViewController {
     
+    private func setBackGround() {
+        if NNSCore.userInfo().userMode == .Stylist {
+            let view = self.view as! BackgroundView
+            view.topColor = UIColor.init(hex: "112e58")
+            view.bottomColor = UIColor.init(hex: "112e58")
+        }
+    }
+    
     private func fetch() {
+        switch NNSCore.userInfo().userMode {
+            case .Customer: fetchResponsesForCustomer()
+            case .Stylist: fetchOffersForStylist()
+        }
+    }
+    
+    private func fetchOffersForStylist() {
         API.offerRequireMatchedRequest { (result) in
             if let res = result {
                 for var item in res.located {
@@ -83,6 +101,12 @@ extension MainViewController {
         }
     }
     
+    private func fetchResponsesForCustomer() {
+        API.requestGetRequest { (result) in
+            if result != nil { self.collectionView.reloadData() }
+        }
+    }
+    
     private func setEdward(cell: ThreeColumnCell) {
         switch NNSCore.userInfo().userStatus {
         case .None:
@@ -91,7 +115,6 @@ extension MainViewController {
         case .Requested:
             cell.nameLabel.isHidden = false
             cell.nameLabel.text = NSLocalizedString("loadingStylistMessage", comment: "")
-            cell.startAuraAnimation()
             cell.thumbnailView.image = UIImage(named: "edword_normal")
         case .Reserved:
             cell.nameLabel.isHidden = false
@@ -138,7 +161,13 @@ extension MainViewController: UICollectionViewDelegate {
             self.present(MyPageViewController.instantiateViewController(), animated: true, completion: nil)
         } else {
             let item = items[indexPath.row-1] // -1 for mypage
-            self.present(ConfirmRequestViewController.instantiateViewController(request: item, parent: self), animated: true, completion: nil)
+        
+            switch NNSCore.userInfo().userType {
+                case .Customer:
+                    self.present(ConfirmRequestViewController.instantiateViewController(request: item, parent: self), animated: true, completion: nil)
+                case .Stylist:
+                    self.present(OfferDetailViewController.instantiateViewController(offer: item, parent: self), animated: true, completion: nil)
+            }
         }
     }
     
@@ -165,6 +194,7 @@ extension MainViewController: UICollectionViewDataSource {
             let item = items[indexPath.row-1]
             cell.nameLabel.isHidden = false
             cell.nameLabel.text = item.name
+            cell.showAura()
             
             if item.isNominated! { cell.nameLabel.textColor = .yellow }
             
@@ -174,6 +204,25 @@ extension MainViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+}
+
+extension MainViewController: UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach { (index) in
+            if index.row != 0 {
+                let item = items[index.row]
+                if let url = URL(string: item.imageUrl ?? "") {
+                    ImagePipeline.shared.loadImage(with: url)
+                }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
     }
     
 }

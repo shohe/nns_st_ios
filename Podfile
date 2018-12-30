@@ -8,6 +8,7 @@ target 'nns.st' do
   # Pods for nns.st
   pod 'Alamofire', '~> 4.4'
   pod 'Himotoki', '~> 3.0'
+  pod 'Nuke', '~> 7.0'
   pod 'BrightFutures'
   pod 'APIKit', '~> 3.1'
 

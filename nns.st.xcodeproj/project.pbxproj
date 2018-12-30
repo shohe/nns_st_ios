@@ -10,7 +10,7 @@
 		0913EBBC21B2889300417928 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0913EBBE21B2889300417928 /* Localizable.strings */; };
 		0913EBC121B288BE00417928 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0913EBC321B288BE00417928 /* Localizable.strings */; };
 		0913EBC521B289D200417928 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913EBC421B289D200417928 /* UserInfo.swift */; };
-		0913EBC721B2E97600417928 /* UIView+animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0913EBC621B2E97600417928 /* UIView+animate.swift */; };
+		091AB46B21CE2636005AFE4F /* WaveEdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091AB46A21CE2636005AFE4F /* WaveEdgeView.swift */; };
 		091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEDF21130017008ED8C5 /* AppDelegate.swift */; };
 		091BEEE221130017008ED8C5 /* GradationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEE121130017008ED8C5 /* GradationViewController.swift */; };
 		091BEEE521130017008ED8C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091BEEE321130017008ED8C5 /* Main.storyboard */; };
@@ -125,6 +125,7 @@
 		09BB197D212DA931006562D0 /* NominationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB197B212DA931006562D0 /* NominationCell.swift */; };
 		09BB197E212DA931006562D0 /* NominationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BB197C212DA931006562D0 /* NominationCell.xib */; };
 		09BB1980212E5EC3006562D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB197F212E5EC3006562D0 /* ProfileViewController.swift */; };
+		09C46D4B21CF723C00F7F06D /* UIBezierPath+roundedPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C46D4A21CF723C00F7F06D /* UIBezierPath+roundedPolygon.swift */; };
 		09DDAA9F211FF613009C6428 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAA9E211FF613009C6428 /* Login.storyboard */; };
 		09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */; };
 		09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAA4211FF94A009C6428 /* BackgroundView.swift */; };
@@ -157,6 +158,7 @@
 		09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAE521254FA4009C6428 /* UIColor+image.swift */; };
 		09DDAAEA21258638009C6428 /* Offer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DDAAE921258638009C6428 /* Offer.storyboard */; };
 		09DDAAEC212586AC009C6428 /* MakeOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */; };
+		09EE9A3A21CE0468008ED9FE /* OfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE9A3921CE0468008ED9FE /* OfferDetailViewController.swift */; };
 		09FDE34A212E87C100A823DA /* Charity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09FDE349212E87C100A823DA /* Charity.storyboard */; };
 		09FDE34C212E87DD00A823DA /* CharityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE34B212E87DD00A823DA /* CharityListViewController.swift */; };
 		09FDE34F212E90E400A823DA /* CharityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDE34D212E90E400A823DA /* CharityCell.swift */; };
@@ -202,7 +204,7 @@
 		0913EBBD21B2889300417928 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0913EBC221B288BE00417928 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0913EBC421B289D200417928 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		0913EBC621B2E97600417928 /* UIView+animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+animate.swift"; sourceTree = "<group>"; };
+		091AB46A21CE2636005AFE4F /* WaveEdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEdgeView.swift; sourceTree = "<group>"; };
 		091BEEDC21130017008ED8C5 /* nns.st.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nns.st.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		091BEEDF21130017008ED8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		091BEEE121130017008ED8C5 /* GradationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradationViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		09BB197B212DA931006562D0 /* NominationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominationCell.swift; sourceTree = "<group>"; };
 		09BB197C212DA931006562D0 /* NominationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NominationCell.xib; sourceTree = "<group>"; };
 		09BB197F212E5EC3006562D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		09C46D4A21CF723C00F7F06D /* UIBezierPath+roundedPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+roundedPolygon.swift"; sourceTree = "<group>"; };
 		09DDAA9E211FF613009C6428 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		09DDAAA0211FF6F9009C6428 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		09DDAAA4211FF94A009C6428 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -355,6 +358,7 @@
 		09DDAAE521254FA4009C6428 /* UIColor+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+image.swift"; sourceTree = "<group>"; };
 		09DDAAE921258638009C6428 /* Offer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Offer.storyboard; sourceTree = "<group>"; };
 		09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOfferViewController.swift; sourceTree = "<group>"; };
+		09EE9A3921CE0468008ED9FE /* OfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailViewController.swift; sourceTree = "<group>"; };
 		09FDE349212E87C100A823DA /* Charity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Charity.storyboard; sourceTree = "<group>"; };
 		09FDE34B212E87DD00A823DA /* CharityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityListViewController.swift; sourceTree = "<group>"; };
 		09FDE34D212E90E400A823DA /* CharityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityCell.swift; sourceTree = "<group>"; };
@@ -602,6 +606,7 @@
 				09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */,
 				09DDAAB7212241CB009C6428 /* MainViewController.swift */,
 				09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */,
+				09EE9A3921CE0468008ED9FE /* OfferDetailViewController.swift */,
 				09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */,
 				091F8D11212723340095608F /* MapViewController.swift */,
 				091F8D13212726330095608F /* BottomSheetViewController.swift */,
@@ -681,6 +686,7 @@
 				096432D7214F81B3007A87A8 /* BlankCell.swift */,
 				097BA4C721B58D5F00FC43C3 /* WaveView.swift */,
 				097CAEDC21BCF16F00232336 /* NNSTableViewCell.swift */,
+				091AB46A21CE2636005AFE4F /* WaveEdgeView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -696,7 +702,7 @@
 				09DDAAE521254FA4009C6428 /* UIColor+image.swift */,
 				097CAEE021BD115600232336 /* UIColor+hex.swift */,
 				09BB1949212A91A9006562D0 /* UITextField+addDoneToolbar.swift */,
-				0913EBC621B2E97600417928 /* UIView+animate.swift */,
+				09C46D4A21CF723C00F7F06D /* UIBezierPath+roundedPolygon.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -946,6 +952,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
 				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -954,6 +961,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,13 +1039,13 @@
 				09A7B73D213924410084E2C9 /* PasswordConfirmRequest.swift in Sources */,
 				09A7B73B213923FB0084E2C9 /* PasswordConfirmResponse.swift in Sources */,
 				09DDAAE12125364F009C6428 /* ReviewCell.swift in Sources */,
+				091AB46B21CE2636005AFE4F /* WaveEdgeView.swift in Sources */,
 				09DDAAA1211FF6F9009C6428 /* LoginViewController.swift in Sources */,
 				09A7B759213B92480084E2C9 /* OfferGetDetailRequest.swift in Sources */,
 				09BB1973212C5FEC006562D0 /* HistoryCell.swift in Sources */,
 				09FDE34C212E87DD00A823DA /* CharityListViewController.swift in Sources */,
 				09A7B73F213928F70084E2C9 /* LoginResponse.swift in Sources */,
 				09A7B757213B8B1D0084E2C9 /* OfferGetDetailResponse.swift in Sources */,
-				0913EBC721B2E97600417928 /* UIView+animate.swift in Sources */,
 				091BEEE221130017008ED8C5 /* GradationViewController.swift in Sources */,
 				0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */,
 				0952F4A8213C0D2700B5BCF3 /* ReviewCreateRequest.swift in Sources */,
@@ -1057,6 +1065,7 @@
 				0931AEC4211D794E002E4F78 /* NNSRequest.swift in Sources */,
 				09DDAAB221207EEB009C6428 /* ContainButtonTextField.swift in Sources */,
 				09DDAAA5211FF94A009C6428 /* BackgroundView.swift in Sources */,
+				09C46D4B21CF723C00F7F06D /* UIBezierPath+roundedPolygon.swift in Sources */,
 				091BEF102113040E008ED8C5 /* API.swift in Sources */,
 				09BB195F212AD550006562D0 /* DistanceInfoCell.swift in Sources */,
 				096432D6214CEE93007A87A8 /* PriceLabelMaker.swift in Sources */,
@@ -1068,6 +1077,7 @@
 				09402D0321439EC000082F4F /* MypageTextFieldType.swift in Sources */,
 				09A7B745213961BB0084E2C9 /* UserUpdateRequest.swift in Sources */,
 				09DDAAE621254FA4009C6428 /* UIColor+image.swift in Sources */,
+				09EE9A3A21CE0468008ED9FE /* OfferDetailViewController.swift in Sources */,
 				09FDE352212EC36700A823DA /* CharityDetailViewController.swift in Sources */,
 				091F8D14212726330095608F /* BottomSheetViewController.swift in Sources */,
 				09BB196C212C2126006562D0 /* ReviewViewController.swift in Sources */,

@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If user is loged in already, go to MainView.
         let info = NNSCore.userInfo()
         info.userStatus = .None
+        info.userType = .Stylist
+        info.userMode = .Stylist
+        info.authToken = nil
         NNSCore.setUserInfo(userInfo: info)
         
         if NNSCore.userInfo().authToken != nil {

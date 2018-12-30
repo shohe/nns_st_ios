@@ -21,6 +21,16 @@ class WaveView: UIImageView {
         initView()
     }
     
+    override func draw(_ rect: CGRect) {
+        let line = UIBezierPath()
+        line.move(to: CGPoint(x: 100, y: 300))
+        line.addLine(to: CGPoint(x: 400, y: 900))
+        line.close()
+        UIColor.gray.setStroke()
+        line.lineWidth = 3
+        line.stroke()
+    }
+    
 }
 
 extension WaveView {
