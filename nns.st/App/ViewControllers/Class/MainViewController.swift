@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class MainViewController: GradationViewController {
     
@@ -203,6 +204,25 @@ extension MainViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+}
+
+extension MainViewController: UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach { (index) in
+            if index.row != 0 {
+                let item = items[index.row]
+                if let url = URL(string: item.imageUrl ?? "") {
+                    ImagePipeline.shared.loadImage(with: url)
+                }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
     }
     
 }

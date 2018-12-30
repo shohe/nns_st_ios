@@ -5,6 +5,7 @@ PODS:
   - BrightFutures (6.0.1):
     - Result (~> 3.2.4)
   - Himotoki (3.2.0)
+  - Nuke (7.3.2)
   - Result (3.2.4)
 
 DEPENDENCIES:
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - APIKit (~> 3.1)
   - BrightFutures
   - Himotoki (~> 3.0)
+  - Nuke (~> 7.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - APIKit
     - BrightFutures
     - Himotoki
+    - Nuke
     - Result
 
 SPEC CHECKSUMS:
@@ -26,8 +29,9 @@ SPEC CHECKSUMS:
   APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
   BrightFutures: 9c03dab79e73ffe504b7bafc15c5bfdaeee54890
   Himotoki: 2618fc6b939ad6d9b71c52c90fe210f54ea28167
+  Nuke: a9a31bbd6c6723753ab024ef22057dcaaf046c1b
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
-PODFILE CHECKSUM: 633c62627a457bc7c97467e0bf5811495fcfd010
+PODFILE CHECKSUM: 2c915fa8b51227939ea2090d356de924cf77428a
 
 COCOAPODS: 1.5.3

@@ -19,7 +19,7 @@ class WaveEdgeView: UIView {
     private let animationGroup = CAAnimationGroup()
     private var isFirst: Bool = true
     
-    @IBInspectable var fillColor: UIColor = UIColor.init(hex: "FFFFFF", alpha: 0.6)
+    @IBInspectable var fillColor: UIColor = UIColor.init(hex: "427FC5", alpha: 0.6)
     @IBInspectable var corner: Int = 7
     @IBInspectable var max: CGFloat = 15.0
     @IBInspectable var isReverse: Bool = false
@@ -44,14 +44,7 @@ class WaveEdgeView: UIView {
         animatePath()
     }
     
-    override func layoutSubviews() {
-//        self.points = initPoints(r: Double(frame.width*0.5), corner: corner)
-//        self.outLinePoints = initPoints(r: Double((frame.width+max)*0.5), corner: corner)
-//        self.inLinePoints = initPoints(r: Double((frame.width-max)*0.5), corner: corner)
-//
-//        initShapeLayer()
-//        animatePath()
-    }
+    override func layoutSubviews() { }
     
     
     private func initView() {
@@ -83,6 +76,7 @@ class WaveEdgeView: UIView {
     private func currentPath() -> CGPath {
         let path = UIBezierPath(roundedPolygon: points, ratio: 0.7)
         path.close()
+        
         return path.cgPath
     }
     
