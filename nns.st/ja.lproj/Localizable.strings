@@ -58,3 +58,7 @@
 
 // [loading]
 "sendingOffer" = "オファー送信中...";
+
+// [History]
+"historyTitle" = "履歴";
+"noHistory" = "現在履歴はありません";

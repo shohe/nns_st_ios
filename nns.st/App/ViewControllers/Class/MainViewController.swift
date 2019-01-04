@@ -72,9 +72,9 @@ extension MainViewController {
     
     private func setBackGround() {
         if NNSCore.userInfo().userMode == .Stylist {
-            let view = self.view as! BackgroundView
-            view.topColor = UIColor.init(hex: "112e58")
-            view.bottomColor = UIColor.init(hex: "112e58")
+//            let view = self.view as! BackgroundView
+//            view.topColor = UIColor.init(hex: "112e58")
+//            view.bottomColor = UIColor.init(hex: "112e58")
         }
     }
     

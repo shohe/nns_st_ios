@@ -58,3 +58,7 @@
 
 // [loading]
 "sendingOffer" = "Sending Offer...";
+
+// [History]
+"historyTitle" = "History";
+"noHistory" = "You don't have any histories";

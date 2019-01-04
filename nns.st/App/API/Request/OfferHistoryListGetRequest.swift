@@ -13,6 +13,7 @@ extension API {
     struct OfferHistoryListGetRequest: NNSRequest {
         typealias Response = OfferHistoryListGetResponse
         let method: HTTPMethod = .get
-        var path: String { return "/api/offerHistoryList" }
+        let isStylist: Int
+        var path: String { return "/api/offerHistoryList/\(isStylist)" }
     }
 }

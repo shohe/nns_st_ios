@@ -26,7 +26,7 @@ class HistoryListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "履歴"
+        self.navigationItem.title = NSLocalizedString("historyTitle", comment: "")
         
         // row height automatic
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -50,7 +50,8 @@ class HistoryListViewController: UIViewController {
 extension HistoryListViewController {
     
     private func fetch() {
-        API.offerHistoryListGetRequest { (result) in
+        let isStylist: Int = NNSCore.userInfo().userMode == .Stylist ? 1 : 0
+        API.offerHistoryListGetRequest(isStylist: isStylist) { (result) in
             if let res = result {
                 self.historyItems = res.item
                 self.tableView.reloadData()
@@ -89,7 +90,7 @@ extension HistoryListViewController: UITableViewDataSource {
                 cell.setItem(item: self.historyItems[indexPath.row])
             } else {
                 if let cell = tableView.dequeueReusableCell(withIdentifier: BlankCell.identifier, for: indexPath) as? BlankCell {
-                    cell.title.text = "履歴はまだありません"
+                    cell.title.text = NSLocalizedString("noHistory", comment: "")
                     return cell
                 }
             }
@@ -109,9 +110,11 @@ extension HistoryListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = self.historyItems[indexPath.row].id
-        let name = self.historyItems[indexPath.row].name
-        self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: id, name: name, parent: self._parent), animated: true)
+        if self.historyItems.count > 0 {
+            let id = self.historyItems[indexPath.row].id
+            let name = self.historyItems[indexPath.row].name
+            self.navigationController?.pushViewController(HistoryInfoViewController.instantiateViewController(offerId: id, name: name, parent: self._parent), animated: true)
+        }
     }
     
 }

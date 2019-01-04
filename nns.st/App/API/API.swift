@@ -252,8 +252,8 @@ extension API {
      *      if let res = result { print("result: \(res)") }
      *   }
      */
-    class func offerHistoryListGetRequest(handler: @escaping (OfferHistoryListGetResponse?) -> Void){
-        Session.send(API.OfferHistoryListGetRequest()) { result in
+    class func offerHistoryListGetRequest(isStylist: Int, handler: @escaping (OfferHistoryListGetResponse?) -> Void){
+        Session.send(API.OfferHistoryListGetRequest(isStylist: isStylist)) { result in
             switch result {
             case .success(let response):
                 handler(response)

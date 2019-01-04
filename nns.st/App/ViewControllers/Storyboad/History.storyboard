@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FjE-4Z-YfL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FjE-4Z-YfL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +37,7 @@
                         <viewLayoutGuide key="safeArea" id="vKn-cJ-Hvc"/>
                     </view>
                     <navigationItem key="navigationItem" id="oV7-tA-f9A">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="j9V-mf-Cys">
+                        <barButtonItem key="leftBarButtonItem" image="cancel" id="j9V-mf-Cys">
                             <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backPreView:" destination="ple-gn-ecx" id="lan-ne-FSd"/>
@@ -250,4 +250,7 @@
             <point key="canvasLocation" x="1156" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel" width="20" height="20"/>
+    </resources>
 </document>
